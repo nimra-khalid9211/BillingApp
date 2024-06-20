@@ -1,4 +1,4 @@
-import Cheque from "../assets/image/Cheque.svg"
+import Cheque from "../../assets/image/Cheque.svg"
 export default function TotalBill() {
   return (
     <div className="flex justify-between border border rounded-[25px] font-semibold shadow-custom">

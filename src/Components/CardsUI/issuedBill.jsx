@@ -1,4 +1,4 @@
-import Cheque from "../assets/image/Cheque.svg"
+import Cheque from "../../assets/image/Cheque.svg"
 export default function IssuedBill() {
   return (
     <div className="p-5 border rounded-[25px] font-semibold shadow-custom">
