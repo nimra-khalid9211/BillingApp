@@ -1,6 +1,6 @@
 import React from 'react'
-import DashboardLayout from '../DashboardLayout'
 import { Card1, Card2 } from '../../UI/Cards'
+import DashboardLayout from '../DashboardLayout'
 
 const Dashboard = () => {
   return (
