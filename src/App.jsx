@@ -6,6 +6,7 @@ import GovtPayments from './Components/MainComponents/GovtPayments'
 import MobileTopUp from './Components/MainComponents/MobileTopUp'
 import PaymentMethods from './Components/MainComponents/PaymentMethods'
 import Transactions from './Components/MainComponents/Transactions'
+import DashboardPage from './Pages/dashboardPage'
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
       <Routes>
 
 
-          <Route path='/' element={<Dashboard/>}/>
+          <Route path='/' element={<DashboardPage/>}/>
           <Route path='/bill-management' element={<BillManagement/>}/>
           <Route path='/govt-payments' element={<GovtPayments/>}/>
           <Route path='/mobile-top-up' element={<MobileTopUp/>}/>
