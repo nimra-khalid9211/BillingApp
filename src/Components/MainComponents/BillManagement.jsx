@@ -3,9 +3,7 @@ import DashboardLayout from '../DashboardLayout'
 
 const BillManagement = () => {
   return (
-    <DashboardLayout>
-        Bill Management
-    </DashboardLayout>
+       <div>Bill Management</div> 
   )
 }
 

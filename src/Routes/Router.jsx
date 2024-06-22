@@ -1,0 +1,39 @@
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "../Components/MainComponents/Dashboard";
+import Transactions from "../Components/MainComponents/Transactions";
+import Maneger from "../Components/Maneger";
+import GovtPayments from "../Components/MainComponents/GovtPayments";
+import PaymentMethods from "../Components/MainComponents/PaymentMethods";
+import DepartmentNumber from "../Pages/GovtPaymentSections/departmentNumber";
+import SignInForm from "../Aurthority Pages/signInForm";
+import SignUpForm from "../Aurthority Pages/signUpForm";
+import ForgotPassword from "../Aurthority Pages/forgotPassword";
+import SetPassword from "../Aurthority Pages/setPassword";
+import ChangedPassword from "../Aurthority Pages/changedPassword";
+import VerifiedCode from "../Aurthority Pages/verifiedCode";
+import MobileTopUp from "../Components/MainComponents/MobileTopUp";
+import BillManagement from "../Components/MainComponents/BillManagement";
+
+export default function Router() {
+  return (
+    <>
+      <Routes>
+        <Route element={<Maneger />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/bill-management" element={<BillManagement />} />
+          <Route path="/govt-payments" element={<GovtPayments/>} />
+          <Route path="/mobile-top-up" element={<MobileTopUp />} />
+          <Route path="/payment-methods" element={<PaymentMethods />} />
+          <Route path="/transactions" element={<Transactions/>} />
+          <Route path="/tab1" element={<DepartmentNumber />} />
+        </Route>
+        <Route path="/sign-in" element={<SignInForm />} />
+        <Route path="/sign-up" element={<SignUpForm />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/set-password" element={<SetPassword />} />
+        <Route path="/changed-password" element={<ChangedPassword />} />
+        <Route path="/verified-code" element={<VerifiedCode />} />
+      </Routes>
+    </>
+  );
+}
