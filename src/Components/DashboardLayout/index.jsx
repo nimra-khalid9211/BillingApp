@@ -8,7 +8,13 @@ return (
     <div className='hidden md:block md:col-span-2'>
     <LeftSideBar/>
     </div>
+<<<<<<< HEAD
     <div className='col-span-12 md:col-span-10 p-10'>
+=======
+
+    <div className='col-span-12 md:col-span-10 m-4 px-4'>
+
+>>>>>>> billingManagement
     <Header/>
       <div>
         {children}

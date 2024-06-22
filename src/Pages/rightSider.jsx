@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> billingManagement
 import DashboardLayout from "../Components/DashboardLayout";
 import IssuedBill from "../Components/CardsUI/issuedBill";
 import PaymentStatus from "../Components/CardsUI/paymentStatus";
@@ -7,7 +10,9 @@ import PaymentMethodCard from "../Components/CardsUI/paymentMethodCard";
 import BillsList from "../Components/CardsUI/billsList";
 import TransactionsHistory from "../Components/CardsUI/transactionsHistory";
 import GoogleChart from "../Components/CardsUI/googleChart";
+import { MyBills } from "../Components/Tables";
 
+<<<<<<< HEAD
 
 
 export default function RightSider() {
@@ -16,6 +21,22 @@ export default function RightSider() {
       <div className="grid grid-cols-5 gap-4">
         <div className="col-span-3">
           <div className="grid grid-cols-3 gap-4">
+=======
+export default function RightSider() {
+  return (
+    <DashboardLayout className="container mx-auto pt-5 bg-[#D6D4DE]">
+      <div className="py-10 px-5 flex justify-between items-center">
+        <div className="font-semibold text-2xl">Good Morning, Nimra Khalid</div>
+        <div>
+          <div className="flex">
+            <div>654</div>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-7 gap-4">
+        <div className="col-span-4">
+          <div className="grid grid-cols-3 gap-4 ">
+>>>>>>> billingManagement
             <TotalBill />
             <IssuedBill />
             <div className="flex justify-around flex-col">
@@ -33,9 +54,21 @@ export default function RightSider() {
               />
             </div>
           </div>
+<<<<<<< HEAD
           <div>
             <BillsList />
           </div>
+=======
+          {/* <div><BillsList/></div> */}
+
+        {/* testing */}
+
+        <div><MyBills from="dashboard"/></div>
+
+
+
+
+>>>>>>> billingManagement
           <div className="mt-10 drop-shadow-xl rounded-[2rem]">
             <GoogleChart />
           </div>
