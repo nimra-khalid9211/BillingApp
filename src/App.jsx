@@ -6,17 +6,26 @@ import MobileTopUp from './Components/MainComponents/MobileTopUp'
 import PaymentMethods from './Components/MainComponents/PaymentMethods'
 import Transactions from './Components/MainComponents/Transactions'
 import RightSider from './Pages/rightSider'
+<<<<<<< HEAD
 import SignInForm from './Aurthority Pages/signInForm'
 import SignUpForm from './Aurthority Pages/signUpForm'
 import ForgotPassword from './Aurthority Pages/forgotPassword'
 import SetPassword from './Aurthority Pages/setPassword'
 import ChangedPassword from './Aurthority Pages/changedPassword'
 import VerifiedCode from './Aurthority Pages/verifiedCode'
+=======
+
+>>>>>>> origin/testing
 const App = () => {
   return (
     <>
 
       <Routes>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/testing
           <Route path='/' element={<RightSider/>}/>
           <Route path='/bill-management' element={<BillManagement/>}/>
           <Route path='/govt-payments' element={<GovtPayments/>}/>
