@@ -10,7 +10,7 @@ const DashboardLayout = ({children}) => {
     <LeftSideBar/>
     </div>
 
-    <div className='col-span-12 md:col-span-10 m-4'>
+    <div className='col-span-12 md:col-span-10 m-4 px-4'>
 
     <Header/>
 

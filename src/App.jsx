@@ -1,31 +1,26 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import BillManagement from './Components/MainComponents/BillManagement'
 import GovtPayments from './Components/MainComponents/GovtPayments'
 import MobileTopUp from './Components/MainComponents/MobileTopUp'
 import PaymentMethods from './Components/MainComponents/PaymentMethods'
 import Transactions from './Components/MainComponents/Transactions'
 import RightSider from './Pages/rightSider'
-<<<<<<< HEAD
 import SignInForm from './Aurthority Pages/signInForm'
 import SignUpForm from './Aurthority Pages/signUpForm'
 import ForgotPassword from './Aurthority Pages/forgotPassword'
 import SetPassword from './Aurthority Pages/setPassword'
 import ChangedPassword from './Aurthority Pages/changedPassword'
 import VerifiedCode from './Aurthority Pages/verifiedCode'
-=======
+import BillManagement from './Components/MainComponents/BillManagement'
 
->>>>>>> origin/testing
+
+
+
 const App = () => {
   return (
     <>
 
       <Routes>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/testing
           <Route path='/' element={<RightSider/>}/>
           <Route path='/bill-management' element={<BillManagement/>}/>
           <Route path='/govt-payments' element={<GovtPayments/>}/>
