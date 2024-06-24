@@ -1,16 +1,18 @@
-import LeftArrow from '../assets/image/leftarrow.svg'
+import LeftArrow from '../assets/image/arrow-left.png'
+import AuthLogo from "../assets/image/authlogo.png";
 export default function ForgotPassword() {
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col  justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+    <section className="verification-bg auth-bg">
+    <div className="content">
+      <div className="flex flex-col w-full  justify-center mx-auto h-screen">
+        <div className="w-full bg-white rounded-[3rem] py-20 px-10">
           <div className="flex items-center justify-center mt-5">
-            <img
-              className="w-8 h-8 mr-2"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-              alt="logo"
-            />
+            <img className="w-44 h-16" src={AuthLogo} />
           </div>
+          <div className="text-[#176BA3] text-center underline text-sm font-semibold">
+            Simplify Your Bills with BPay
+          </div>
+
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <div className="text-center">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-[#176BA3]">
@@ -38,13 +40,14 @@ export default function ForgotPassword() {
                 Reset Password
               </button>
               <div className='text-[#6C7293] flex items-center justify-center'>
-                <div><img src={LeftArrow} alt="" /></div>
+                <div><img src={LeftArrow} className='h-5 w-6' /></div>
                 <button className='ml-2'>Back to Login</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }

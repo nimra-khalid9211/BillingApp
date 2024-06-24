@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import RightArrow from "../../assets/image/arrow-right.png"
+import Challan from "../../assets/image/challan.png"
 
 export default function GovtDepartments() {
   const navigate = useNavigate();
@@ -17,12 +18,16 @@ export default function GovtDepartments() {
           <div onClick={() => handleClick("Govt E-Challan")}>
             <div className="flex items-center justify-between border border-[#E8E7EC] rounded-2xl px-5 py-7 mb-5">
               <div className="flex items-center">
-                <div>icon</div>
+                <div className="w-14 h-14">
+                <img className="w-full h-full" src={Challan} alt="" />
+                </div>
                 <div className="ml-2 text-base font-semibold">
                   Govt E-Challan
                 </div>
               </div>
-              <div>arrow</div>
+           <div className="w-6 h-3">
+           <img src={RightArrow} className="w-full h-full" />
+           </div>
             </div>
           </div>
           <div onClick={() => handleClick("Bill Payment")}>
