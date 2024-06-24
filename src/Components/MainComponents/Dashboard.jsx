@@ -1,16 +1,9 @@
 import React from 'react'
-import DashboardLayout from '../DashboardLayout'
-import { Card1, Card2 } from '../../UI/Cards'
+import RightSider from '../../Pages/rightSider'
 
-const Dashboard = () => {
+export default function Dashboard ()  {
   return (
-    <DashboardLayout>
-
-<Card1/>
-<Card2/>
-
-    </DashboardLayout>
+  
+  <div><RightSider/></div>
   )
 }
-
-export default Dashboard

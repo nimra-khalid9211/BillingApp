@@ -1,7 +1,7 @@
 import Cheque from "../../assets/image/Cheque.svg"
 export default function TotalBill() {
   return (
-    <div className="flex justify-between border border rounded-[25px] font-semibold shadow-custom bg-white">
+    <div className="flex justify-between border rounded-[25px] font-semibold shadow-custom bg-white">
       <div className="p-5 text-lg">
         <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
            <img src={Cheque} alt="My SVG" className="" />

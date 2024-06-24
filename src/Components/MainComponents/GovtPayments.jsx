@@ -1,9 +1,9 @@
 import React from 'react'
-import DashboardLayout from '../DashboardLayout'
+import InnerGovtPayments from '../../Pages/GovtPaymentSections/innerGovtPayments'
 
 const GovtPayments = () => {
   return (
-    <DashboardLayout>GovtPayments</DashboardLayout>
+      <InnerGovtPayments/>
   )
 }
 

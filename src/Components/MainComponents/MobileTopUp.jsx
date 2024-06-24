@@ -3,7 +3,7 @@ import DashboardLayout from '../DashboardLayout'
 
 const MobileTopUp = () => {
   return (
-    <DashboardLayout>MobileTopUp</DashboardLayout>
+    <div>mobile</div>
   )
 }
 
