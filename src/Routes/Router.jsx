@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/MainComponents/Dashboard";
 import Transactions from "../Components/MainComponents/Transactions";
 import Maneger from "../Components/Maneger";
-import GovtPayments from "../Components/MainComponents/GovtPayments";
 import PaymentMethods from "../Components/MainComponents/PaymentMethods";
-import DepartmentNumber from "../Pages/GovtPaymentSections/departmentNumber";
 import SignInForm from "../Aurthority Pages/signInForm";
 import SignUpForm from "../Aurthority Pages/signUpForm";
 import ForgotPassword from "../Aurthority Pages/forgotPassword";
@@ -12,7 +9,9 @@ import SetPassword from "../Aurthority Pages/setPassword";
 import ChangedPassword from "../Aurthority Pages/changedPassword";
 import VerifiedCode from "../Aurthority Pages/verifiedCode";
 import MobileTopUp from "../Components/MainComponents/MobileTopUp";
-import BillManagement from "../Components/MainComponents/BillManagement";
+import GovtPayments from "../Pages/GovtPayments";
+import BillManagement from "../Pages/BillManagement";
+import Dashboard from "../Pages/Dashboard";
 
 export default function Router() {
   return (
@@ -25,7 +24,6 @@ export default function Router() {
           <Route path="/mobile-top-up" element={<MobileTopUp />} />
           <Route path="/payment-methods" element={<PaymentMethods />} />
           <Route path="/transactions" element={<Transactions/>} />
-          <Route path="/tab1" element={<DepartmentNumber />} />
         </Route>
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />

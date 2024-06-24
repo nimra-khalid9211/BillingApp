@@ -1,5 +1,5 @@
 import React from 'react'
-import { MyBills } from '../../Tables'
+import { MyBills } from '../../Components/Tables'
 
 const Bills = ({from}) => {
   return (

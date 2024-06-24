@@ -3,6 +3,10 @@ import { useLocation } from 'react-router-dom';
 export default function DepartmentNumber() {
   const location = useLocation();
   const componentName = location.state?.componentName || 'Default Component Name';
+
+  // console.log(componentName)
+
+
   return (
     <div className="rounded-[3rem] border">
       <div className="bg-[#377CF6] text-white p-3 mb-10 rounded-t-lg">
@@ -16,7 +20,7 @@ export default function DepartmentNumber() {
           <input
             type="number"
             placeholder="Enter PSID Number"
-            className="text-base border text-sm rounded-lg p-2.5 outline-none w-full"
+            className=" border text-sm rounded-lg p-2.5 outline-none w-full"
             required
           />
         </div>

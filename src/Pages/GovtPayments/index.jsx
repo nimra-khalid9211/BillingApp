@@ -3,13 +3,14 @@ import DepartmentNumber from "./departmentNumber";
 import GovtDepartments from "./govtDepartments";
 import GovtList from "./govtList";
 
-export default function InnerGovtPayments() {
-  const [isActive, setIsActive] = useState(false);
 
+
+export default function GovtPayments() {
+  const [isActive, setIsActive] = useState(false);
+  
   const handleFocus = () => {
     setIsActive(true);
   };
-
   const handleBlur = (e) => {
     if (e.target.value === '') {
       setIsActive(false);
@@ -41,3 +42,12 @@ export default function InnerGovtPayments() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+

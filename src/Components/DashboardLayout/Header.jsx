@@ -6,6 +6,10 @@ import { IoSearchOutline } from 'react-icons/io5'
 import { LuCalendarDays } from 'react-icons/lu'
 
 const Header = () => {
+
+  const date = Date().slice(0,15);
+
+
   return (
 
     <div className='flex items-center justify-between  mt-8'>
@@ -18,7 +22,7 @@ const Header = () => {
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full flex gap-3'>
-                <LuCalendarDays size={20}/> <b className='text-sm'>Mon, 02 Aug 2021</b>
+                <LuCalendarDays size={20}/> <b className='text-sm'>{date}</b>
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full gap-3'>

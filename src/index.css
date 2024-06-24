@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Exo', sans-serif;
-}
 
 
 .left-sidebar-shadow{
