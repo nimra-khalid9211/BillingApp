@@ -25,7 +25,7 @@ const BillManagement = () => {
 
 
   return (
-    <DashboardLayout>
+    <>
 
       <div className='flex justify-between items-center mt-20'>
 
@@ -52,7 +52,7 @@ const BillManagement = () => {
     {billOverview && <BillingOverview/>}
 
      
-    </DashboardLayout>
+    </>
   )
 }
 
