@@ -1,6 +1,9 @@
-import { AiOutlineAppstore } from "react-icons/ai";
-import { Bills, Govt , Creditcard,Help,Mobile,Settings,Transaction,ArrowLeft } from "../../assets/icon";
-
+import { TbDeviceMobileUp } from "react-icons/tb";
+import { MdDashboardCustomize,MdOutlinePayment , MdContactSupport  } from "react-icons/md";
+import { FaMoneyBills } from "react-icons/fa6";
+import { RiGovernmentFill,RiLogoutBoxLine  } from "react-icons/ri";
+import { GrTransaction } from "react-icons/gr";
+import { CiSettings } from "react-icons/ci";
 
 const menuList = [
   {
@@ -8,32 +11,32 @@ const menuList = [
     lists: [
       {
         title: "Dashboard",
-        icon: <AiOutlineAppstore size={18}/>,
+        icon: <MdDashboardCustomize />,
         link:"/",
       },
       {
         title: "Bill Management",
-        icon: <img src={Bills} alt="" />,
+        icon: <FaMoneyBills />,
         link:"/bill-management",
       },
       {
         title: "Govt Payments",
-        icon: <img src={Govt} alt="" />,
+        icon: <RiGovernmentFill />,
         link:"/govt-payments",
       },
       {
         title: "Mobile Top Up",
-        icon: <img src={Mobile} alt="" />,
+        icon: <TbDeviceMobileUp/>,
         link:"/mobile-top-up",
       },
       {
         title: "Payment Methods",
-        icon: <img src={Creditcard} alt="" />,
+        icon: <MdOutlinePayment />        ,
         link:"/payment-methods",
       },
       {
         title: "Transactions",
-        icon: <img src={Transaction} alt="" />,
+        icon: <GrTransaction />        ,
         link:"/transactions",
       },
     ],
@@ -43,16 +46,18 @@ const menuList = [
     lists: [
       {
         title: "Settings",
-        icon: <img src={Settings} alt="" />,
+        icon: <CiSettings />
+        ,
       },
       {
         title: "Help & Support",
-        icon: <img src={Help} alt="" />,
+        icon: <MdContactSupport />
+        ,
       },
       {
         classses: "mt-16 border-solid border border-[#E8E7EC] rounded-lg",
         title: "Logout",
-        icon: <img src={ArrowLeft} alt="" />,
+        icon: <RiLogoutBoxLine />,
       },
     ],
   },

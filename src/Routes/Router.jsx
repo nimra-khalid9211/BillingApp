@@ -12,6 +12,8 @@ import MobileTopUp from "../Components/MainComponents/MobileTopUp";
 import GovtPayments from "../Pages/GovtPayments";
 import BillManagement from "../Pages/BillManagement";
 import Dashboard from "../Pages/Dashboard";
+import GovtPaymentTable from "../Components/Tables/govtPaymentTable";
+import DepartmentNumber from "../Pages/GovtPayments/departmentNumber";
 
 export default function Router() {
   return (
@@ -24,6 +26,8 @@ export default function Router() {
           <Route path="/mobile-top-up" element={<MobileTopUp />} />
           <Route path="/payment-methods" element={<PaymentMethods />} />
           <Route path="/transactions" element={<Transactions/>} />
+          <Route path="/add-no" element={<DepartmentNumber/>}/>
+          <Route path ="/add-no/search-no" element={<GovtPaymentTable/>}/>
         </Route>
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />
@@ -31,6 +35,7 @@ export default function Router() {
         <Route path="/set-password" element={<SetPassword />} />
         <Route path="/changed-password" element={<ChangedPassword />} />
         <Route path="/verified-code" element={<VerifiedCode />} />
+      
       </Routes>
     </>
   );

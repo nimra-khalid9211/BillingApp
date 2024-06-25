@@ -39,7 +39,6 @@ export default function GoogleChart() {
           // title: 'Box Office Earnings in First Two Weeks of Opening',
           // subtitle: 'in millions of dollars (USD)'
         },
-        width: 900,
         height: 400,
         colors: ["#377CF6", "#24A959"], // Blue and Orange
         axes: {

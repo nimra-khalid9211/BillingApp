@@ -1,26 +1,23 @@
-import { useState } from "react";
-import DepartmentNumber from "./departmentNumber";
 import GovtDepartments from "./govtDepartments";
-import GovtList from "./govtList";
 
 
 
 export default function GovtPayments() {
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
   
-  const handleFocus = () => {
-    setIsActive(true);
-  };
-  const handleBlur = (e) => {
-    if (e.target.value === '') {
-      setIsActive(false);
-    }
-  };
+  // const handleFocus = () => {
+  //   setIsActive(true);
+  // };
+  // const handleBlur = (e) => {
+  //   if (e.target.value === '') {
+  //     setIsActive(false);
+  //   }
+  // };
   return (
     <>
       <GovtDepartments />
-      {/* <GovtList/> */}
-      <div className="relative mt-10">
+     
+      {/* <div className="relative mt-10">
       <input
         type="text"
         placeholder=" "
@@ -38,7 +35,7 @@ export default function GovtPayments() {
       >
         Enter Name
       </label>
-    </div>
+    </div> */}
     </>
   );
 }

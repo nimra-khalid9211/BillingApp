@@ -52,7 +52,4 @@ input [type= "text"]:focus ~ .input-text{
 .forgot-pg{
   background-image: url('assets//image/bg2.png');
 }
-.hover-stroke-white svg:hover {
-  color: white;
-}
 

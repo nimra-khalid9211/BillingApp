@@ -57,3 +57,26 @@ export const MyBillList = [
         // actions:""
     },
 ]
+
+export const GovtPaymentList = [
+    {
+        psid: "089723",
+        violationType: "Traffic Signal Violation",
+        placeOfViolation: "Faisal Chowk",
+        offenseTime : "08 Apr 2024, 11:52 AM",
+        penalty: "600",
+        dueDate : "08 Apr 2024",
+        owner : "Usman Fazal",
+        vehicleDetails : "Toyota GLI - AGE 5428"
+    },
+    {
+        psid: "089723",
+        violationType: "Traffic Signal Violation",
+        placeOfViolation: "Faisal Chowk",
+        offenseTime : "08 Apr 2024, 11:52 AM",
+        penalty: "600",
+        dueDate : "08 Apr 2024",
+        owner : "Usman Fazal",
+        vehicleDetails : "Toyota GLI - AGE 5428"
+    }
+]
