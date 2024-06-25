@@ -1,4 +1,9 @@
-import { AiOutlineAppstore } from "react-icons/ai";
+import { TbDeviceMobileUp } from "react-icons/tb";
+import { MdDashboardCustomize,MdOutlinePayment , MdContactSupport  } from "react-icons/md";
+import { FaMoneyBills } from "react-icons/fa6";
+import { RiGovernmentFill,RiLogoutBoxLine  } from "react-icons/ri";
+import { GrTransaction } from "react-icons/gr";
+import { CiSettings } from "react-icons/ci";
 
 const menuList = [
   {
@@ -6,32 +11,32 @@ const menuList = [
     lists: [
       {
         title: "Dashboard",
-        icon: <AiOutlineAppstore size={18}/>,
+        icon: <MdDashboardCustomize />,
         link:"/",
       },
       {
         title: "Bill Management",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <FaMoneyBills />,
         link:"/bill-management",
       },
       {
         title: "Govt Payments",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <RiGovernmentFill />,
         link:"/govt-payments",
       },
       {
         title: "Mobile Top Up",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <TbDeviceMobileUp/>,
         link:"/mobile-top-up",
       },
       {
         title: "Payment Methods",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <MdOutlinePayment />        ,
         link:"/payment-methods",
       },
       {
         title: "Transactions",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <GrTransaction />        ,
         link:"/transactions",
       },
     ],
@@ -41,16 +46,18 @@ const menuList = [
     lists: [
       {
         title: "Settings",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <CiSettings />
+        ,
       },
       {
         title: "Help & Support",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <MdContactSupport />
+        ,
       },
       {
         classses: "mt-16 border-solid border border-[#E8E7EC] rounded-lg",
         title: "Logout",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <RiLogoutBoxLine />,
       },
     ],
   },

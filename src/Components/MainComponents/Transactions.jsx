@@ -3,7 +3,7 @@ import DashboardLayout from '../DashboardLayout'
 
 const Transactions = () => {
   return (
-    <DashboardLayout>Transactions</DashboardLayout>
+    <div>Transactions</div>
   )
 }
 
