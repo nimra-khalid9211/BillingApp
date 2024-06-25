@@ -1,6 +1,9 @@
 import CreditCard from "../../assets/image/Bitmap.svg"
 import Easypaisa from "../../assets/image/easypaisa.svg"
 import VisaCard from "../../assets/image/visacard.svg"
+
+
+
 export default function PaymentMethodCard(){
     return(
         <div className="rounded-[25px] border border-[#377CF6] bg-[#DBF0FF] p-5">
