@@ -5,7 +5,11 @@ export default function PaymentStatus({ bgColor, status, amount, borderColor,ico
       style={{ backgroundColor: bgColor, borderColor: borderColor, borderWidth: '1px', borderStyle: 'solid' }}
     >
       <div className="flex items-center">
-        <div className="mr-3 w-11 h-11"><img className="h-full w-full" src={icon} alt="" /></div>
+
+        <div className="mr-3 w-11 h-11">
+          <img className="h-full w-full" src={icon} alt="" />
+          </div>
+          
         <div>{status}</div>
       </div>
       <div>{amount}</div>

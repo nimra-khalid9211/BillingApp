@@ -2,11 +2,12 @@ import React from 'react'
 import TotalBill from '../../Components/CardsUI/totalBill'
 import IssuedBill from '../../Components/CardsUI/issuedBill'
 import PaymentStatus from '../../Components/CardsUI/paymentStatus'
-import BillsList from '../../Components/CardsUI/billsList'
 import GoogleChart from '../../Components/CardsUI/googleChart'
 import PaymentMethodCard from '../../Components/CardsUI/paymentMethodCard'
 import TransactionsHistory from '../../Components/CardsUI/transactionsHistory'
 import { MyBills } from '../../Components/Tables'
+import Paid from "../../assets/image/paid.png"
+import Unpaid from "../../assets/image/unpaid.png"
 
 const Dashboard = () => {
   return (
@@ -26,12 +27,14 @@ const Dashboard = () => {
               amount="26,000"
               bgColor="#D8EBE1"
               borderColor="#24A959"
+              icon ={Paid}
             />
 
             <PaymentStatus
               status="Unpaid(01)"
               amount="10,000"
               bgColor="#FFD5DF"
+              icon ={Unpaid}
               borderColor="#F1416C"
             />
 
@@ -43,6 +46,7 @@ const Dashboard = () => {
           {/* <BillsList /> */}
 
           <MyBills from="dashboard" />
+
         </div>
 
         <div className="mt-10 drop-shadow-xl rounded-[2rem]">
