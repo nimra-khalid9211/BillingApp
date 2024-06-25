@@ -17,6 +17,7 @@ export default function Router() {
   return (
     <>
       <Routes>
+        
         <Route element={<Maneger />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/bill-management" element={<BillManagement />} />
@@ -25,6 +26,11 @@ export default function Router() {
           <Route path="/payment-methods" element={<PaymentMethods />} />
           <Route path="/transactions" element={<Transactions/>} />
         </Route>
+
+
+
+
+
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

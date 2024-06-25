@@ -3,6 +3,8 @@ import React from 'react'
 import { MyBillList } from '../../data/tables'
 import { bitmap } from '../../assets/image'
 import { maskCardNumber } from '../../Hooks'
+import { LuDownload } from 'react-icons/lu'
+import { FaShareNodes } from 'react-icons/fa6'
 
 
 const ViewReceiptModal = ({setOpenModal, openModal, id}) => {
@@ -21,8 +23,9 @@ const ViewReceiptModal = ({setOpenModal, openModal, id}) => {
     width={450}
     centered
     open={openModal}
-    // onOk={() => setOpenModal(false)}
-    // onCancel={() => setOpenModal(false)}
+    onOk={() => setOpenModal(false)}
+    onCancel={() => setOpenModal(false)}
+    footer={null}
   >
 
                 <table className='w-full bg-white text-base'>
@@ -83,9 +86,9 @@ const ViewReceiptModal = ({setOpenModal, openModal, id}) => {
 
                 </table>
 
-                <div className='flex justify-center items-center gap-4'>
-                    <Button>download</Button>
-                    <Button>share</Button>
+                <div className='flex justify-center items-center gap-4 py-3'>
+                        <Button shape='round' className='border-[#4371D1] text-[#4371D1]' icon={<LuDownload />}>Download</Button>
+                        <Button shape='round' icon={<FaShareNodes />} className='bg-[#4371D1] text-white'>Share</Button>
                 </div>
 
   </Modal>

@@ -6,14 +6,16 @@ import { FiDownload } from "react-icons/fi";
 import { IoMdEye } from "react-icons/io";
 import { FaShareNodes } from "react-icons/fa6";
 import ViewReceiptModal from "../Modals";
-
-
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
 
 
 const dashedBorderRight = "border-dashed border-r border-[#eff0fb]"
 
 export const SelectableBills =({type})=>{
+
+    const {setTab, setBills} = _BillingCondition();
+
     const [selectedBills, setSelectedBills] = useState([]);
 
     const [openModal, setOpenModal] = useState(false);
@@ -87,7 +89,7 @@ export const SelectableBills =({type})=>{
 
             <th scope="col" className="p-4 border-dashed border-r border-[#eff0fb]">
                     <div className="flex items-center">
-                        <input id="checkbox-all-search" type="checkbox" onChange={handleSelectAllChange }  checked={selectedBills.length === filteredBills.length}
+                        <input id="checkbox-all-search" type="checkbox" onChange={handleSelectAllChange }  checked={selectedBills.length }
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600  focus:ring-2 "/>
                         <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
                     </div>
@@ -200,7 +202,7 @@ export const SelectableBills =({type})=>{
         </div>
 
         <div>
-            <Button type='primary' style={{padding: "0 30px"}} shape='round'>Pay All</Button>
+            <Button type='primary' style={{padding: "0 30px"}} shape='round' onClick={()=>{setTab(false); setBills(selectedBills)}}>Pay All</Button>
         </div>
 
     </div>

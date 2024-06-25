@@ -1,6 +1,3 @@
-
-
-
 export function maskCardNumber(cardNumber) {
     // Convert input to string and trim any whitespace
     let cardNumberStr = String(cardNumber).trim();
@@ -23,5 +20,19 @@ export function maskCardNumber(cardNumber) {
     // Concatenate with the last 4 digits
     return formatted + lastFourDigits;
 }
+
+
+export const isOverdue = (dueDate) => {
+    const due = new Date(dueDate);
+    const today = new Date();
+    
+    // Set time to midnight for both dates
+    due.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+
+    return due < today;
+};
+
+
 
 
