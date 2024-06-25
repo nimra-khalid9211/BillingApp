@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs } from 'antd';
-import { SelectableBills } from '../../Components/Tables';
+import { SelectableBills } from '../../Components/Tables/SelectableBills';
 
 
 const items = [

@@ -56,3 +56,17 @@ input [type= "text"]:focus ~ .input-text{
   color: white;
 }
 
+
+
+/* paidreceipt modal ant design css overlapping */
+.ant-modal .ant-modal-header{
+  background-color: #F7F8F9;
+  border-radius: 36px;
+}
+
+.ant-modal .ant-modal-content{
+  background-color: #F7F8F9;
+  padding: 0;
+  border-radius: 36px;
+}
+

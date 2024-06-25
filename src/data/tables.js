@@ -1,6 +1,7 @@
 
 export const MyBillList = [
     {
+        id:"1",
         type:"internet",
         billname: "PTCL Home",
         consumerID: "123456798",
@@ -12,9 +13,12 @@ export const MyBillList = [
         autoDebit:true,
         payPreference:"Debit Card-5215",
         status: "paid",
-        // actions:""
+        transactionID: "1713875280652-ALFA",
+        payDate: "23 May 2024",
+        payTime: "10:04 PM"
     },
     {
+        id:"2",
         type:"gas",
         billname: "Home Gas",
         consumerID: "123456798",
@@ -29,6 +33,7 @@ export const MyBillList = [
         // actions:""
     },
     {
+        id:"3",
         type:"electricity",
         billname: "Home Electricity",
         consumerID: "123456798",
@@ -40,9 +45,12 @@ export const MyBillList = [
         autoDebit: false,
         payPreference:"Jazz Cash-5215",
         status: "paid",
-        // actions:""
+      transactionID: "1713875280857-BETA",
+        payDate: "15 May 2024",
+        payTime: "07:04 PM"
     },
     {
+        id:"4",
         type:"electricity",
         billname: "Office Eelectricity",
         consumerID: "123456798",
