@@ -1,4 +1,6 @@
 import { AiOutlineAppstore } from "react-icons/ai";
+import { Bills, Govt , Creditcard,Help,Mobile,Settings,Transaction,ArrowLeft } from "../../assets/icon";
+
 
 const menuList = [
   {
@@ -11,27 +13,27 @@ const menuList = [
       },
       {
         title: "Bill Management",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <img src={Bills} alt="" />,
         link:"/bill-management",
       },
       {
         title: "Govt Payments",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <img src={Govt} alt="" />,
         link:"/govt-payments",
       },
       {
         title: "Mobile Top Up",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <img src={Mobile} alt="" />,
         link:"/mobile-top-up",
       },
       {
         title: "Payment Methods",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <img src={Creditcard} alt="" />,
         link:"/payment-methods",
       },
       {
         title: "Transactions",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <img src={Transaction} alt="" />,
         link:"/transactions",
       },
     ],
@@ -41,16 +43,16 @@ const menuList = [
     lists: [
       {
         title: "Settings",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <img src={Settings} alt="" />,
       },
       {
         title: "Help & Support",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <img src={Help} alt="" />,
       },
       {
         classses: "mt-16 border-solid border border-[#E8E7EC] rounded-lg",
         title: "Logout",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <img src={ArrowLeft} alt="" />,
       },
     ],
   },
