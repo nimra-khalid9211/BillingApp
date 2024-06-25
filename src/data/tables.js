@@ -80,3 +80,26 @@ export const GovtPaymentList = [
         vehicleDetails : "Toyota GLI - AGE 5428"
     }
 ]
+
+export const MobileTopUpList = [
+    {
+        name : "Usman Fazal Jazz",
+        mobileOperator : "Jazz",
+        mobileNumber : "0302 110 0478",
+    },
+    {
+        name : "Ali Raza Ufone",
+        mobileOperator : "Ufone",
+        mobileNumber : "0302 110 0478",
+    },
+    {
+        name : "Shaun Abbott",
+        mobileOperator : "Zong",
+        mobileNumber : "0302 110 0478",
+    },
+    {
+        name : "Shaun Abbott",
+        mobileOperator : "Zong",
+        mobileNumber : "0302 110 0478",
+    }
+]

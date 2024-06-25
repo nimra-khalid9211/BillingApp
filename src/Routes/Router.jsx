@@ -8,12 +8,12 @@ import ForgotPassword from "../Aurthority Pages/forgotPassword";
 import SetPassword from "../Aurthority Pages/setPassword";
 import ChangedPassword from "../Aurthority Pages/changedPassword";
 import VerifiedCode from "../Aurthority Pages/verifiedCode";
-import MobileTopUp from "../Components/MainComponents/MobileTopUp";
 import GovtPayments from "../Pages/GovtPayments";
 import BillManagement from "../Pages/BillManagement";
 import Dashboard from "../Pages/Dashboard";
 import GovtPaymentTable from "../Components/Tables/govtPaymentTable";
 import DepartmentNumber from "../Pages/GovtPayments/departmentNumber";
+import MobileTopUp from "../Pages/MobileTopUp";
 
 export default function Router() {
   return (
@@ -23,7 +23,7 @@ export default function Router() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/bill-management" element={<BillManagement />} />
           <Route path="/govt-payments" element={<GovtPayments/>} />
-          <Route path="/mobile-top-up" element={<MobileTopUp />} />
+          <Route path="/mobile-top-up" element={<MobileTopUp/>} />
           <Route path="/payment-methods" element={<PaymentMethods />} />
           <Route path="/transactions" element={<Transactions/>} />
           <Route path="/add-no" element={<DepartmentNumber/>}/>

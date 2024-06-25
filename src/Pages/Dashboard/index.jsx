@@ -16,9 +16,7 @@ const Dashboard = () => {
         <div className="col-span-4">
           <div className="grid grid-cols-3 gap-4">
             <TotalBill />
-
             <IssuedBill />
-
             <div className="flex justify-around flex-col">
               <PaymentStatus
                 status="Paid(02)"
@@ -27,33 +25,26 @@ const Dashboard = () => {
                 borderColor="#24A959"
                 icon={Paid}
               />
-
-             <div className="mt-3">
-             <PaymentStatus
-                status="Unpaid(01)"
-                amount="10,000"
-                bgColor="#FFD5DF"
-                icon={Unpaid}
-                borderColor="#F1416C"
-              />
-             </div>
+              <div className="mt-3">
+                <PaymentStatus
+                  status="Unpaid(01)"
+                  amount="10,000"
+                  bgColor="#FFD5DF"
+                  icon={Unpaid}
+                  borderColor="#F1416C"
+                />
+              </div>
             </div>
           </div>
-
           <div>
-            {/* <BillsList /> */}
-
             <MyBills from="dashboard" />
           </div>
-
           <div className="mt-10 drop-shadow-xl rounded-[2rem]">
             <GoogleChart />
           </div>
         </div>
-
         <div className="col-span-2">
           <PaymentMethodCard />
-
           <TransactionsHistory />
         </div>
       </div>
