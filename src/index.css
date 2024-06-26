@@ -65,29 +65,15 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .forgot-pg{
   background-image: url('assets//image/bg2.png');
 }
-<<<<<<< HEAD
-
-
-
-/* paidreceipt modal ant design css changing */
-.ant-modal .ant-modal-header{
-  background-color: #F7F8F9;
-  border-radius: 30px;
-=======
 /* paidreceipt modal ant design css overlapping */
 .ant-modal .ant-modal-header{
   background-color: #F7F8F9;
   border-radius: 3rem;
->>>>>>> origin/mobileTopup
 }
 .ant-modal .ant-modal-content{
   background-color: #F7F8F9;
   padding: 0;
-<<<<<<< HEAD
-  border-radius: 30px;
-=======
   border-radius: 3rem;
->>>>>>> origin/mobileTopup
 }
 
 

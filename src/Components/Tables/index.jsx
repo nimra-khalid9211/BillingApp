@@ -72,6 +72,7 @@ export const MyBills = ({ from }) => {
                 <td className="px-6 py-4 text-center">{x.consumerName}</td>
                 <td className="px-6 py-4 text-center">{x.billCompany}</td>
                 <td className="px-6 py-4 text-center">{x.dueDate}</td>
+                
                 {from === "BMB" && (
                   <td className="px-6 py-4 text-center">
                     <Switch defaultChecked={x.autoDebit} />
@@ -88,14 +89,14 @@ export const MyBills = ({ from }) => {
 
                 <td className="px-6 py-4 text-center">
                   {from === "dashboard" && (
-                    <td className="px-6 py-4">
+                    <div className="px-6 py-4">
                       <a
                         href="#"
                         className="font-medium text-[#24A959] border border-[#24A959] rounded-lg py-1 px-2 text-xs"
                       >
                         Pay Now
                       </a>
-                    </td>
+                    </div>
                   )}
 
                   {from === "BMB" && (
