@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Tabs } from 'antd';
-import { SelectableBills } from '../../Components/Tables';
-
+import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
+import SelectedBills from './SelectedBills';
+import { SelectableBills } from '../../Components/Tables/SelectableBills';
 
 const items = [
   {
@@ -31,9 +32,18 @@ const items = [
   },
 ];
 
+const BillingOverview = () => {
+  
+const {tab} = _BillingCondition();
 
-const BillingOverview = () => <Tabs className='text-base font-medium mt-6' defaultActiveKey="1" items={items}  />;
+  return (
+    <>
 
+   {tab ? <Tabs className='text-base font-medium mt-6' defaultActiveKey="1" items={items}  /> : <SelectedBills/>}
+
+    </>
+  )
+}
     
 
 export default BillingOverview
