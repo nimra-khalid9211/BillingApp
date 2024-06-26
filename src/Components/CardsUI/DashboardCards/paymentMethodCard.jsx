@@ -1,6 +1,6 @@
-import CreditCard from "../../assets/image/Bitmap.svg"
-import Easypaisa from "../../assets/image/easypaisa.svg"
-import VisaCard from "../../assets/image/visacard.svg"
+import CreditCard from "../../../assets/image/Bitmap.svg"
+import Easypaisa from "../../../assets/image/easypaisa.svg"
+import VisaCard from "../../../assets/image/visacard.svg"
 
 
 

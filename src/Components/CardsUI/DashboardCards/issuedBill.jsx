@@ -1,4 +1,4 @@
-import Cheque from "../../assets/image/Cheque.svg"
+import Cheque from "../../../assets/image/Cheque.svg"
 
 
 export default function IssuedBill() {
