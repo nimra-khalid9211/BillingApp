@@ -1,0 +1,112 @@
+import { LuDownload } from "react-icons/lu";
+import { bitmap } from "../../../assets/image";
+import { maskCardNumber } from "../../../Hooks";
+import { Button } from "antd";
+
+export default function PaymentReciept({ bill, from }) {
+  return (
+    <div className="">
+      <div className="w-full bg-white text-base p-6">
+        
+        <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+          <span className="text-[#6C7293] font-medium">Transaction ID</span>
+          <span className="font-semibold text-black">{bill.transactionID}</span>
+        </div>
+
+        {!from === "Receipt" && (
+          <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+            <span className="text-[#6C7293] font-medium">Bill Name</span>
+            <span className="font-semibold text-black">{bill.billname}</span>
+          </div>
+        )}
+        {from === "Receipt" && (
+          <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+            <span className="text-[#6C7293] font-medium">Top Up Name</span>
+            <span className="font-semibold text-black">{bill.topUpName}</span>
+          </div>
+        )}
+        {from === "Receipt" && (
+          <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+            <span className="text-[#6C7293] font-medium">Mobile Operator</span>
+            <span className="font-semibold text-black">
+              {bill.mobileOperator}
+            </span>
+          </div>
+        )}
+        {from === "Receipt" && (
+          <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+            <span className="text-[#6C7293] font-medium">Mobile Number</span>
+            <span className="font-semibold text-black">
+              {bill.mobileNumber}
+            </span>
+          </div>
+        )}
+        {!from === "Receipt" && (
+          <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+            <span className="text-[#6C7293] font-medium">Consumer ID</span>
+            <span className="font-semibold text-black">{bill.consumerID}</span>
+          </div>
+        )}
+
+        {!from === "Receipt" && (
+          <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+            <span className="text-[#6C7293] font-medium">Company Code</span>
+            <span className="font-semibold text-black">{bill.billCompany}</span>
+          </div>
+        )}
+
+        <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+          <span className="text-[#6C7293] font-medium">Pay Date</span>
+          <span className="font-semibold text-black">{bill.payDate}</span>
+        </div>
+
+        <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+          <span className="text-[#6C7293] font-medium">Pay Time</span>
+          <span className="font-semibold text-black">{bill.payTime}</span>
+        </div>
+
+        <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
+          <span className="text-lg text-[#377CF6] font-medium">
+            Amount Paid
+          </span>
+          <span className="text-2xl text-[#377CF6] font-semibold">
+            {bill.amount}
+          </span>
+        </div>
+
+        <div className="py-3 border-dashed border-b border-[#eff0fb]">
+          <span className="text-[#6C7293] font-medium text-start block">
+            Payment Method
+          </span>
+          <div className="flex justify-between items-center text-sm text-[#6C7293] font-normal mt-3">
+            <div className="flex items-center">
+              <img
+                src={bitmap}
+                alt=""
+                className="border border-1 px-2 rounded-lg"
+              />
+              <span className="pl-8">Usman Afzal</span>
+            </div>
+            <span>{maskCardNumber(1234567891234567)}</span>
+          </div>
+        </div>
+        
+      </div>
+      <div className="flex justify-center items-center gap-4 py-3 bg-[#E8E7EC] rounded-b-[3rem]">
+            <Button
+              className="border-[#4371D1] text-[#4371D1]"
+              icon={<LuDownload />}
+            >
+              Download
+            </Button>
+            {/* <Button
+          shape="round"
+          icon={<FaShareNodes />}
+          className="bg-[#4371D1] text-white"
+        >
+          Share
+        </Button> */}
+          </div>
+    </div>
+  );
+}

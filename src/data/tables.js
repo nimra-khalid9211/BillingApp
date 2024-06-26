@@ -141,3 +141,13 @@ export const MobileTopUpList = [
         mobileNumber : "0302 110 0478",
     }
 ]
+export const MobileTopUpReceipt=
+    {
+        transactionID : "135781236578-ALYR",
+        topUpName : "Nimra Khalid",
+        mobileOperator : "Jazz",
+        mobileNumber : "03643848748",
+        payDate : "03-Apr-2024",
+        payTime : "06:25",
+        amount : "100"
+    }

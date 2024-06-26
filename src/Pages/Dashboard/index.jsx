@@ -1,13 +1,13 @@
 import React from "react";
-import TotalBill from "../../Components/CardsUI/totalBill";
-import IssuedBill from "../../Components/CardsUI/issuedBill";
-import PaymentStatus from "../../Components/CardsUI/paymentStatus";
-import GoogleChart from "../../Components/CardsUI/googleChart";
-import PaymentMethodCard from "../../Components/CardsUI/paymentMethodCard";
-import TransactionsHistory from "../../Components/CardsUI/transactionsHistory";
 import { MyBills } from "../../Components/Tables";
-import Paid from "../../assets/image/paid.png";
-import Unpaid from "../../assets/image/unpaid.png";
+import TotalBill from "../../Components/CardsUI/DashboardCards/totalBill";
+import IssuedBill from "../../Components/CardsUI/DashboardCards/issuedBill";
+import PaymentStatus from "../../Components/CardsUI/DashboardCards/paymentStatus";
+import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
+import PaymentMethodCard from "../../Components/CardsUI/DashboardCards/paymentMethodCard";
+import TransactionsHistory from "../../Components/CardsUI/DashboardCards/transactionsHistory";
+import Paid from "../../assets/image/paid.png"
+import Unpaid from "../../assets/image/unpaid.png"
 
 const Dashboard = () => {
   return (
@@ -15,8 +15,8 @@ const Dashboard = () => {
       <div className="grid grid-cols-6 gap-4">
         <div className="col-span-4">
           <div className="grid grid-cols-3 gap-4">
-            <TotalBill />
-            <IssuedBill />
+            <TotalBill/>
+            <IssuedBill/>
             <div className="flex justify-around flex-col">
               <PaymentStatus
                 status="Paid(02)"

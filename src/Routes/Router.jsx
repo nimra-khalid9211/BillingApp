@@ -14,8 +14,13 @@ import Dashboard from "../Pages/Dashboard";
 import GovtPaymentTable from "../Components/Tables/govtPaymentTable";
 import DepartmentNumber from "../Pages/GovtPayments/departmentNumber";
 import MobileTopUp from "../Pages/MobileTopUp";
+<<<<<<< HEAD
 import PaymentMethod from "../Pages/BillManagement/PaymentMethod";
 import SelectedBills from "../Pages/BillManagement/SelectedBills";
+=======
+import ChangeAccount from "../Pages/MobileTopUp/changeAccount";
+import Receipt from "../Pages/MobileTopUp/receipt";
+>>>>>>> origin/mobileTopup
 
 export default function Router() {
   return (
@@ -40,11 +45,10 @@ export default function Router() {
           <Route path="/transactions" element={<Transactions/>} />
           <Route path="/add-no" element={<DepartmentNumber/>}/>
           <Route path ="/add-no/search-no" element={<GovtPaymentTable/>}/>
+          <Route path ="/mobile-top-up/changing-account" element={<ChangeAccount/>}/>
+          <Route path ="/mobile-top-up/changing-account/successfull" element={<Receipt/>}/>
+
         </Route>
-
-
-
-
 
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />

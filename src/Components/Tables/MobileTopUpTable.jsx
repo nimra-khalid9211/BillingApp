@@ -1,6 +1,7 @@
 import { MobileTopUpList } from "../../data/tables";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export default function MobileTopUpTable(){
     
@@ -44,12 +45,12 @@ export default function MobileTopUpTable(){
                   <td className="px-6 py-4 text-center">{x.mobileOperator}</td>
                   <td className="px-6 py-4 text-center">{x.mobileNumber}</td>
                   <td className="px-6 py-4">
-                    <a
+                    <Link to= "changing-account"
                       href="#"
                       className="font-medium text-[#377CF6] border-2 border-[##6C7293] rounded-lg py-1 px-3 text-xs"
                     >
                       Recharge Now
-                    </a>
+                    </Link>
                   </td>
                   <td>
                   <div className="flex justify-center items-center gap-3">

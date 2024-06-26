@@ -1,6 +1,6 @@
-import Electric from "../../assets/image/plug-cable.svg"
-import WaterBill from "../../assets/image/waterbill.svg"
-import Gas from "../../assets/image/fire-burner.svg"
+import Electric from "../../../assets/image/plug-cable.svg"
+import WaterBill from "../../../assets/image/waterbill.svg"
+import Gas from "../../../assets/image/fire-burner.svg"
 
 export default function TransactionsHistory() {
   return (

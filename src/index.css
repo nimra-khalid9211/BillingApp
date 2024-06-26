@@ -2,27 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #377CF6;
+}
+.primary-bg {
+  background-color: var(--primary-color);
+}
+.primary-text {
+  color: var(--primary-color);
+}
 
+/* FOR THE REMOVAL OF ARROW INPUT TYPE "NUMBER" */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+}
 .left-sidebar-shadow{
 box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-
 .ant-drawer .ant-drawer-header{
   border-bottom: 0;
   padding: 0 24px;
 }
-
 .ant-divider-horizontal{
   margin: 10px 0;
   color: black;
 }
-
 .ant-drawer .ant-drawer-body{
   padding: 0 24px;
 }
-
-
 .auth-bg{
   background-size: cover; 
   background-position: center; 
@@ -50,6 +65,7 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .forgot-pg{
   background-image: url('assets//image/bg2.png');
 }
+<<<<<<< HEAD
 
 
 
@@ -57,12 +73,21 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .ant-modal .ant-modal-header{
   background-color: #F7F8F9;
   border-radius: 30px;
+=======
+/* paidreceipt modal ant design css overlapping */
+.ant-modal .ant-modal-header{
+  background-color: #F7F8F9;
+  border-radius: 3rem;
+>>>>>>> origin/mobileTopup
 }
-
 .ant-modal .ant-modal-content{
   background-color: #F7F8F9;
   padding: 0;
+<<<<<<< HEAD
   border-radius: 30px;
+=======
+  border-radius: 3rem;
+>>>>>>> origin/mobileTopup
 }
 
 
