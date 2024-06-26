@@ -5,8 +5,9 @@ import { Button, Switch } from "antd";
 import { FiDownload } from "react-icons/fi";
 import { IoMdEye } from "react-icons/io";
 import { FaShareNodes } from "react-icons/fa6";
-import ViewReceiptModal from "../Modals";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
+import { useNavigate } from "react-router-dom";
+import { ViewReceiptModal } from "../Modals";
 
 
 
@@ -14,7 +15,9 @@ const dashedBorderRight = "border-dashed border-r border-[#eff0fb]"
 
 export const SelectableBills =({type})=>{
 
-    const {setTab, setBills} = _BillingCondition();
+    const navigate = useNavigate();
+
+    const {setBills} = _BillingCondition();
 
     const [selectedBills, setSelectedBills] = useState([]);
 
@@ -163,11 +166,13 @@ export const SelectableBills =({type})=>{
                   {x.status === "unpaid" ? 
 
                   <div className='flex flex-col justify-center items-center'>
+
                     <div>
                     <a href="#" className="font-medium text-[#24A959] border border-[#24A959] rounded-lg py-1 px-2 text-xs">Pay Now</a>  
                     </div>
 
                     {isOverdue(x.dueDate) ? <span className='text-[#F1416C] pt-1 text-xs'>Overdue</span>:""}
+
                 </div>
                         :
                 <div className='flex items-center justify-evenly px-6 py-2 '>
@@ -186,6 +191,7 @@ export const SelectableBills =({type})=>{
         </tbody>
 
     </table>
+    
 </div>
 
     {selectedBills.length > 0 && 
@@ -194,15 +200,13 @@ export const SelectableBills =({type})=>{
         <div>
 
         <span className='text-[#377CF6] text-lg '>{selectedBills.length} Bills Selected</span>
-
-      
+    
             <span className='ml-20 text-base'>Total Amount =  {totalAmount.toLocaleString()} </span>
-
       
         </div>
 
         <div>
-            <Button type='primary' style={{padding: "0 30px"}} shape='round' onClick={()=>{setTab(false); setBills(selectedBills)}}>Pay All</Button>
+            <Button type='primary' style={{padding: "0 30px"}} shape='round' onClick={()=>{navigate("/bill-management/selected-bills"); setBills(selectedBills)}}>Pay All</Button>
         </div>
 
     </div>

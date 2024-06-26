@@ -12,7 +12,7 @@ const menuList = [
       {
         title: "Dashboard",
         icon: <MdDashboardCustomize />,
-        link:"/",
+        link:"/dashboard",
       },
       {
         title: "Bill Management",

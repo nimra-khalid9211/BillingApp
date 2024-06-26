@@ -64,6 +64,36 @@ export const MyBillList = [
         status: "unpaid",
         // actions:""
     },
+    {
+        id:"5",
+        type:"gas",
+        billname: "Home Gas",
+        consumerID: "123456798",
+        consumerName:"Usman Afzal",
+        billCompany:"SNGPL",
+        dueDate: "05 May 2024",
+        amount:"7,000",
+        afterDueAmount: "7,630",
+        autoDebit: false,
+        payPreference:"Jazz Cash-5215",
+        status: "unpaid",
+        // actions:""
+    },
+    {
+        id:"6",
+        type:"gas",
+        billname: "Home Gas",
+        consumerID: "123456798",
+        consumerName:"Usman Afzal",
+        billCompany:"SNGPL",
+        dueDate: "05 May 2024",
+        amount:"7,000",
+        afterDueAmount: "7,630",
+        autoDebit: false,
+        payPreference:"Jazz Cash-5215",
+        status: "unpaid",
+        // actions:""
+    },
 ]
 
 export const GovtPaymentList = [

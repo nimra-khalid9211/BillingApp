@@ -14,14 +14,14 @@ const AddBillDrawer = ({addBill, setAddBill}) => {
           }
 
           closeIcon = {null}
-
+          
         placement="right"
         // closable={addBill}
         onClose={()=>setAddBill(false)}
         open={addBill}
         key="right"
         size='large'
-        className='rounded-tl-[80px] p-8'
+        className='rounded-tl-[80px] rounded-bl-[80px] p-8'
       >
 
         <span className='text-[#646464] font-medium'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consectetur labore.</span>

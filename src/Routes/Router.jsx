@@ -14,6 +14,8 @@ import Dashboard from "../Pages/Dashboard";
 import GovtPaymentTable from "../Components/Tables/govtPaymentTable";
 import DepartmentNumber from "../Pages/GovtPayments/departmentNumber";
 import MobileTopUp from "../Pages/MobileTopUp";
+import PaymentMethod from "../Pages/BillManagement/PaymentMethod";
+import SelectedBills from "../Pages/BillManagement/SelectedBills";
 
 export default function Router() {
   return (
@@ -21,8 +23,17 @@ export default function Router() {
       <Routes>
         
         <Route element={<Maneger />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+
           <Route path="/bill-management" element={<BillManagement />} />
+          
+          <Route path="/bill-management/selected-bills" element={<SelectedBills />} />
+
+          
+          <Route path="/bill-management/payment-method" element={<PaymentMethod />} />
+
+
+
           <Route path="/govt-payments" element={<GovtPayments/>} />
           <Route path="/mobile-top-up" element={<MobileTopUp/>} />
           <Route path="/payment-methods" element={<PaymentMethods />} />

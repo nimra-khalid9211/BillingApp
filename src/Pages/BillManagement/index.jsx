@@ -8,32 +8,20 @@ import { _BillingCondition } from '../../actions/Context/BillingOverviewConditio
 
 const BillManagement = () => {
   
-  const {tab} = _BillingCondition();
+  const {tab, setTab} = _BillingCondition();
 
-
-  const [billOverview, setBillOverview] = useState(false);
-  const [bills, setBills] = useState(true);
   const [addBill, setAddBill] = useState(false);
 
-
   const handleBills = () =>{
-    setBills(true);
-    setBillOverview(false);
+    setTab(!tab);
   }
-
-  
-  const handleOverviewBills = () =>{
-    setBills(false);
-    setBillOverview(true);
-  }
-
 
   return (
     <>
 
       <div className='flex justify-between items-center mt-20'>
 
-<BreadCrumbs menu={"Dashboard"} subMenu={bills ? "Bills" : "Billing Overview"}/>
+<BreadCrumbs menu={"Dashboard"} subMenu={tab ? "Bills" : "Billing Overview"}/>
 
 <Button type="primary" shape='round' onClick={()=>setAddBill(true)}>Add Bill</Button>
 
@@ -41,19 +29,19 @@ const BillManagement = () => {
 
 <Divider className='mt-3'/>
 
-  {tab && <div>
-    <button className={`${billOverview ? "bg-[#377CF6] text-white"  :"bg-[#E8E7EC]" } py-2 px-6 font-medium rounded-tl rounded-bl hover:bg-[#588fed] hover:text-white`}
-    onClick={handleOverviewBills}>Billing Overview
+  <div>
+    <button className={`${!tab ? "bg-[#377CF6] text-white"  :"bg-[#E8E7EC]" } py-2 px-6 font-medium rounded-tl rounded-bl hover:bg-[#588fed] hover:text-white`}
+    onClick={handleBills}>Billing Overview
     </button>
-    <button className={`${bills ? "bg-[#377CF6] text-white " : "bg-[#E8E7EC]"} py-2 px-6 font-medium rounded-tr rounded-br hover:bg-[#588fed] hover:text-white`} onClick={handleBills}>My Bills</button>
+    <button className={`${tab ? "bg-[#377CF6] text-white " : "bg-[#E8E7EC]"} py-2 px-6 font-medium rounded-tr rounded-br hover:bg-[#588fed] hover:text-white`} onClick={handleBills}>My Bills</button>
 
-    </div>}
+    </div>
 
     <AddBillDrawer addBill ={addBill} setAddBill={setAddBill}/>
     
-    {bills && <Bills from={"BMB"}/>}
+    {tab && <Bills from={"BMB"}/>}
 
-    {billOverview && <BillingOverview/>}
+    {!tab && <BillingOverview/>}
 
      
     </>

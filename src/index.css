@@ -53,15 +53,20 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 
 
 
-/* paidreceipt modal ant design css overlapping */
+/* paidreceipt modal ant design css changing */
 .ant-modal .ant-modal-header{
   background-color: #F7F8F9;
-  border-radius: 36px;
+  border-radius: 30px;
 }
 
 .ant-modal .ant-modal-content{
   background-color: #F7F8F9;
   padding: 0;
-  border-radius: 36px;
+  border-radius: 30px;
 }
 
+
+/* payment method of bill management changing the css of ant design card */
+.ant-card .ant-card-body{
+  padding: 0;
+}
