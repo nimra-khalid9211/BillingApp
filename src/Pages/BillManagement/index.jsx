@@ -4,8 +4,13 @@ import { Button, Divider, Radio } from 'antd'
 import Bills from './Bills'
 import BillingOverview from './BillingOverview'
 import AddBillDrawer from './AddBillDrawer'
+import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions'
 
 const BillManagement = () => {
+  
+  const {tab} = _BillingCondition();
+
+
   const [billOverview, setBillOverview] = useState(false);
   const [bills, setBills] = useState(true);
   const [addBill, setAddBill] = useState(false);
@@ -36,13 +41,13 @@ const BillManagement = () => {
 
 <Divider className='mt-3'/>
 
-    <div>
+  {tab && <div>
     <button className={`${billOverview ? "bg-[#377CF6] text-white"  :"bg-[#E8E7EC]" } py-2 px-6 font-medium rounded-tl rounded-bl hover:bg-[#588fed] hover:text-white`}
     onClick={handleOverviewBills}>Billing Overview
     </button>
     <button className={`${bills ? "bg-[#377CF6] text-white " : "bg-[#E8E7EC]"} py-2 px-6 font-medium rounded-tr rounded-br hover:bg-[#588fed] hover:text-white`} onClick={handleBills}>My Bills</button>
 
-    </div>
+    </div>}
 
     <AddBillDrawer addBill ={addBill} setAddBill={setAddBill}/>
     
