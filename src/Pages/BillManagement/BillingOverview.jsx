@@ -3,6 +3,7 @@ import { Tabs } from 'antd';
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
 import SelectedBills from './SelectedBills';
 import { SelectableBills } from '../../Components/Tables/SelectableBills';
+import BillsList from '../../Components/Tables/BillsList';
 
 const items = [
   {
@@ -13,7 +14,7 @@ const items = [
   {
     key: '2',
     label: 'Electricity',
-    children: <SelectableBills type="electricity"/>,
+    children: <BillsList type="electricity"/>,
   },
   {
     key: '3',
@@ -39,7 +40,7 @@ const {tab} = _BillingCondition();
   return (
     <>
 
-   {tab ? <Tabs className='text-base font-medium mt-6' defaultActiveKey="1" items={items}  /> : <SelectedBills/>}
+   <Tabs className='text-base font-medium mt-6' defaultActiveKey="1" items={items} />
 
     </>
   )

@@ -32,7 +32,7 @@ const LeftSideBar = () => {
                     className={`flex items-center gap-3 px-3 font-medium text-[#6C7293] py-2 mx-3 my-6 ${
                       x.classses && x.classses
                     } hover:bg-[#588fed] hover:text-white rounded-lg ${
-                      x.link === path ? "bg-[#377CF6] text-white" : ""
+                      path.includes(x.link) ? "bg-[#377CF6] text-white" : ""
                     }`}
                   >
                     <div className="hover-stroke-white"> {x.icon}</div>

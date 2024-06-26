@@ -13,5 +13,7 @@ import dashboardPanel  from "./dashboard-panel.svg"
 import easyPaisa  from "./easypaisa.svg"
 import faucet  from "./faucet.svg"
 import fireBurner  from "./fire-burner.svg"
+import visaCard from './visacard.svg'
+import paymentSuccessfull from './paymentSuccessful.png'
 
-export {ArrowLeft, arrowRight, authLogo, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner}
+export {ArrowLeft, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner}
