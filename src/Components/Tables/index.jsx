@@ -16,12 +16,6 @@ export const MyBillHeading = [
   { title: "Download Bill" },
   { title: "Actions" },
 ];
-{
-  /* custom color */
-}
-{
-  /* c1c1c3 */
-}
 
 const dashedBorderRight = "border-dashed border-r border-[#eff0fb]";
 

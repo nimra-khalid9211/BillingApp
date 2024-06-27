@@ -15,5 +15,8 @@ import faucet  from "./faucet.svg"
 import fireBurner  from "./fire-burner.svg"
 import visaCard from './visacard.svg'
 import paymentSuccessfull from './paymentSuccessful.png'
+import jazzcash from './jazzcash.png'
 
-export {ArrowLeft, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner}
+export {ArrowLeft, arrowRight, jazzcash, paymentSuccessfull, authLogo,
+     visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, 
+     dashboardPanel,easyPaisa, faucet, fireBurner}

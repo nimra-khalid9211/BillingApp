@@ -81,3 +81,58 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .ant-card .ant-card-body{
   padding: 0;
 }
+
+/* ant design collapse css overlapping */
+.ant-collapse .ant-collapse-content>.ant-collapse-content-box{
+  padding: 0;
+}
+
+
+.ant-collapse-expand-icon{
+ color: #377CF6;
+ background-color: #E8E7EC;
+ padding-inline-end: 0px;
+ margin-right: 10px;
+ padding: 10px;
+ border-radius: 100%;
+ font-size: 20px;
+}
+
+
+.ant-collapse-header-text{
+  color: #192440;
+  font-size: 16px;
+}
+
+/* .ant-tabs-tab .ant-tabs-tab-active{
+  background-color: #377CF6 !important;
+  color: white !important;
+} */
+
+.ant-tabs-card.ant-tabs-top >.ant-tabs-nav .ant-tabs-tab-active{
+  background-color: #377CF6 !important;
+  color: white !important; 
+}
+
+
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+  /* border: 1px solid #d9d9d9; */
+  background-color: #E8E7EC;
+}
+
+/* .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab:hover {
+  color: white;
+} */
+
+.ant-tabs-tab-btn{
+  font-size: 16px;
+  font-weight: 600;
+  /* background-color: ; */
+  /* color: #ffffff; */
+}
+
+.ant-tabs-tab-active{
+  color: white;
+}
+
+

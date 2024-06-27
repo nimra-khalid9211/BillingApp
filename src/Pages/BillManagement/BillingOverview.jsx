@@ -14,7 +14,7 @@ const items = [
   {
     key: '2',
     label: 'Electricity',
-    children: <BillsList type="electricity"/>,
+    children: <SelectableBills type="electricity"/>,
   },
   {
     key: '3',
