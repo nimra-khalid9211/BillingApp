@@ -1,26 +1,41 @@
 export function maskCardNumber(cardNumber) {
     // Convert input to string and trim any whitespace
     let cardNumberStr = String(cardNumber).trim();
-
+    console.log(cardNumberStr.length)
+    if(cardNumberStr.length <= 11){
     // Check if the input is a valid card number (must be at least 12 digits)
-    if (cardNumberStr.length < 16) {
-        console.error("Invalid card number. Must be at least 12 digits.");
+    if (cardNumberStr.length < 11 ) {
+        console.error("Mobile number. Must be at 11 digits.");
         return null;
     }
-
     // Extract the last 4 digits
-    let lastFourDigits = cardNumberStr.slice(-4);
-
+    let lastFourDigits = cardNumberStr.slice(-3);
     // Mask the rest of the digits with '*'
-    let masked = cardNumberStr.slice(0, -4).replace(/./g, '*');
-
+    let masked = cardNumberStr.slice(0, -3).replace(/./g, '*');
     // Format the masked number with spaces in groups of 4
     let formatted = masked.replace(/(.{4})/g, '$1 ');
-
     // Concatenate with the last 4 digits
     return formatted + lastFourDigits;
 }
-
+else if(cardNumberStr.length <= 16){
+    // Check if the input is a valid card number (must be at least 12 digits)
+    if (cardNumberStr.length < 16 ) {
+        console.error("Card number. Must be atleast 16 digits.");
+        return null;
+    }
+    // Extract the last 4 digits
+    let lastFourDigits = cardNumberStr.slice(-4);
+    // Mask the rest of the digits with '*'
+    let masked = cardNumberStr.slice(0, -4).replace(/./g, '*');
+    // Format the masked number with spaces in groups of 4
+    let formatted = masked.replace(/(.{4})/g, '$1 ');
+    // Concatenate with the last 4 digits
+    return formatted + lastFourDigits;
+}
+else{
+    console.log("Invalid card or mobile number")
+}
+    }
 
 export const isOverdue = (dueDate) => {
     const due = new Date(dueDate);

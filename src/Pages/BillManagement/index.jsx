@@ -24,7 +24,7 @@ const BillManagement = () => {
         />
 
         <Button type="primary" shape="round" onClick={() => setAddBill(true)}>
-          Add Bill
+         + Add Bill
         </Button>
       </div>
 
