@@ -3,7 +3,7 @@ import DashboardLayout from '../DashboardLayout'
 
 const PaymentMethods = () => {
   return (
-    <DashboardLayout>PaymentMethods</DashboardLayout>
+    <div>PaymentMethods</div>
   )
 }
 
