@@ -13,21 +13,24 @@ import Dashboard from "../Pages/Dashboard";
 import GovtPaymentTable from "../Components/Tables/govtPaymentTable";
 import DepartmentNumber from "../Pages/GovtPayments/departmentNumber";
 import MobileTopUp from "../Pages/MobileTopUp";
-import PaymentMethod from "../Pages/BillManagement/PaymentMethod";
 import SelectedBills from "../Pages/BillManagement/SelectedBills";
 import ChangeAccount from "../Pages/MobileTopUp/changeAccount";
 import Receipt from "../Pages/MobileTopUp/receipt";
+<<<<<<< HEAD
 import Transactions from "../Pages/Transactions";
+=======
+import PaymentMethod from "../Pages/PaymentMethod";
+import AddPayment from "../Pages/PaymentMethod/addPayment";
+>>>>>>> 38a14a66411eebeae1897090a253fcc4441a780c
 
 export default function Router() {
   return (
     <>
       <Routes>
-        
         <Route element={<Maneger />}>
           <Route path="/dashboard" element={<Dashboard />} />
-
           <Route path="/bill-management" element={<BillManagement />} />
+<<<<<<< HEAD
           
           <Route path="/bill-management/selected-bills" element={<SelectedBills />} />
 
@@ -47,16 +50,27 @@ export default function Router() {
           <Route path ="/add-no/search-no" element={<GovtPaymentTable/>}/>
           <Route path ="/mobile-top-up/changing-account" element={<ChangeAccount/>}/>
           <Route path ="/mobile-top-up/changing-account/successfull" element={<Receipt/>}/>
+=======
+          <Route path="/bill-management/selected-bills" element={<SelectedBills />}/>
+          <Route path="/bill-management/payment-method" element={<PaymentMethod />}/>
+          <Route path="/govt-payments" element={<GovtPayments />} />
+          <Route path="/mobile-top-up" element={<MobileTopUp />} />
+          <Route path="/payment-methods" element={<PaymentMethod />} />
+          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/add-no" element={<DepartmentNumber />} />
+          <Route path="/add-no/search-no" element={<GovtPaymentTable />} />
+          <Route path="/mobile-top-up/changing-account" element={<ChangeAccount />} />
+          <Route path="/mobile-top-up/changing-account/successfull" element={<Receipt />}/>
+          <Route path="/add-payment" element={<AddPayment />}/>
+>>>>>>> 38a14a66411eebeae1897090a253fcc4441a780c
 
         </Route>
-
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/set-password" element={<SetPassword />} />
         <Route path="/changed-password" element={<ChangedPassword />} />
         <Route path="/verified-code" element={<VerifiedCode />} />
-      
       </Routes>
     </>
   );

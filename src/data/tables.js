@@ -1,3 +1,4 @@
+import { bitmap } from "../assets/image";
 
 export const MyBillList = [
     {
@@ -151,3 +152,30 @@ export const MobileTopUpReceipt=
         payTime : "06:25",
         amount : "100"
     }
+
+export const accounts = [
+    {
+      userName: 'User Name 1',
+      cardNumber: '7868767824134334',
+      expiry: '10/26',
+      status: 'Default',
+      cardImg: bitmap, 
+    },
+    {
+      userName: 'User Name 2',
+      cardNumber: '1234698694444444',
+      expiry: '11/27',
+      status: 'Set as default',
+      cardImg: bitmap, 
+    },
+    {
+        userName: 'User Name 3',
+        cardNumber: '12346986944',
+        expiry: '11/27',
+        status: 'Set as default',
+        cardImg: bitmap, 
+      }
+    // Add more account objects as needed
+  ];
+  
+      
