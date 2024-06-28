@@ -15,18 +15,12 @@ import faucet  from "./faucet.svg"
 import fireBurner  from "./fire-burner.svg"
 import visaCard from './visacard.svg'
 import paymentSuccessfull from './paymentSuccessful.png'
-<<<<<<< HEAD
-import jazzcash from './jazzcash.png'
-
-export {ArrowLeft, arrowRight, jazzcash, paymentSuccessfull, authLogo,
-     visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, 
-     dashboardPanel,easyPaisa, faucet, fireBurner}
-=======
 import jazz from "./jazz.png"
 import master from "./master.png"
 import visa from "./visa.png"
 import debit from "./debit.png"
 import easypa from "./easypa.png"
+import jazzcash from "./jazzcash.png"
+import paymentPopup from "./paymentPopup.png"
 
-export {ArrowLeft, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa}
->>>>>>> 38a14a66411eebeae1897090a253fcc4441a780c
+export {paymentPopup,ArrowLeft,jazzcash, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa}

@@ -49,7 +49,7 @@ export default function JazzEasypaisa() {
             </div>
             <p className="mt-5">
               Didn't get a code?
-              <span className="text-[#377CF6]">Click to resend</span>
+              <span className="text-[#377CF6] font-semibold"> Click to resend</span>
             </p>
             <button className="bg-[#24A959] text-white rounded-[2rem] px-10 py-3 font-semibold my-7">
               Verify Account

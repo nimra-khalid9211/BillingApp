@@ -1,14 +1,14 @@
-import { Button, Modal } from 'antd'
-import React from 'react'
-import { MyBillList } from '../../data/tables'
-import { bitmap, paymentSuccessfull } from '../../assets/image'
-import { useNavigate } from 'react-router-dom'
+import { Button, Modal } from "antd";
+import React from "react";
+import { MyBillList } from "../../data/tables";
+import { bitmap, paymentSuccessfull } from "../../assets/image";
+import { useNavigate } from "react-router-dom";
 import PaymentReciept from "../CardsUI/PaymentReciept";
 
 export const ViewReceiptModal = ({ setOpenModal, openModal, id }) => {
   const bill = MyBillList.find((bill) => bill.id === id);
-  console.log(id)
-  console.log(bill, "from view receipt modal")
+  console.log(id);
+  console.log(bill, "from view receipt modal");
   return (
     <Modal
       title={
@@ -31,7 +31,6 @@ export const ViewReceiptModal = ({ setOpenModal, openModal, id }) => {
   );
 };
 
-
 // export const ViewReceiptModal = ({setOpenModal, openModal, id}) => {
 
 //     const bill = MyBillList.find(bill => bill.id === id)
@@ -40,7 +39,7 @@ export const ViewReceiptModal = ({ setOpenModal, openModal, id }) => {
 
 //   return (
 
-//     <Modal 
+//     <Modal
 //     title={<div className='flex flex-col justify-center items-center py-6'>
 //         <span className='text-2xl'>Payment Receipt</span>
 //         <span className='text-base mt-1 text-[#24A959]'>Successful Payment</span>
@@ -120,33 +119,77 @@ export const ViewReceiptModal = ({ setOpenModal, openModal, id }) => {
 //   )
 // }
 
+export const PaymentSuccessfullModal = ({
+  setReceiptModal,
+  receiptModal,
+  img,
+  title,
+  firstHeading,
+  secondHeading,
+  buttonText,
+  from,
+  width,
+  onButtonClick,
+  debitTextOne,
+  debitTextTwo
+}) => {
+  const navigate = useNavigate();
 
+  const handleButtonClick = () => {
+    onButtonClick();
+    setReceiptModal(false);
+  };
 
-export const PaymentSuccessfullModal = ({setReceiptModal, receiptModal, bills})=>{
-    const navigate = useNavigate();
+  return (
+    <Modal
+      centered
+      open={receiptModal}
+      onOk={() => setReceiptModal(false)}
+      onCancel={() => setReceiptModal(false)}
+      width={width}
+      footer={null}
+    >
+      <div className="pt-8 px-10 flex flex-col justify-center items-center">
+        <img className="" src={img} alt="" width={300} />
 
-    return(
-        <Modal
-        centered
-        open={receiptModal}
-        onOk={() => setReceiptModal(false)}
-        onCancel={() => setReceiptModal(false)}
-        width={400}
-        footer={null}
-      >
-        <div className='pt-8 px-10 flex flex-col justify-center items-center'>
-        <img src={paymentSuccessfull} alt="" width={300}/>
+        <span className="text-[#377CF6] font-medium text-2xl mt-2">
+          {title}
+        </span>
 
+        <span className="mt-3 text-sm font-medium text-center">
+          {firstHeading}
+        </span>
+        {from === "payment" && (
+          <p className="mt-3 text-sm font-medium text-center">
+            {secondHeading}
+          </p>
+        )}
+        {from === "debitAccount" && (
+          <>
+            <p className="text-sm font-medium text-center mt-10">
+              {debitTextOne}
+            </p>
+            <p className="font-bold mt-5">
+              {debitTextTwo}
+            </p>
+            <div>
+              <input type="text" />
+              <input type="number" />
+            </div>
+          </>
+        )}
 
-                <span className='text-[#377CF6] font-medium text-2xl mt-2'>Payment Successfull</span>
-
-                <span className='mt-3 text-sm font-medium text-center'>We are pleased to inform you that the payment for the {bills?.length} bills have been successfully processed.</span>
-
-        <Button shape='round' className='mt-6 mb-10 bg-[#377CF6] text-white' onClick={()=>navigate("/bill-management")}>Billing Overview</Button>
-
-        </div>
-      </Modal>
-    )
-}
+        <button
+          className="bg-[#377CF6] text-white rounded-[2rem] px-20 py-2 font-semibold mt-6 mb-10"
+          // onClick={() => navigate("/bill-management")}
+          // onClick={() => navigate(link)}
+          onClick={handleButtonClick}
+        >
+          {buttonText}
+        </button>
+      </div>
+    </Modal>
+  );
+};
 
 export default ViewReceiptModal;

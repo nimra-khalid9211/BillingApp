@@ -18,7 +18,7 @@ export default function AddPayment(){
         {
           key: '2',
           label: <div className="w-[11rem]"><img src={visa} alt="" /></div>,
-          children: 'Content of Tab Pane 2',
+          children: <MasterVisaCard/>,
         },
         {
           key: '3',
@@ -28,7 +28,7 @@ export default function AddPayment(){
         {
             key: '4',
             label: <div className="w-[11rem]"><img src={jazz} alt="" /></div>,
-            children: <div>nimra</div>,
+            children: <JazzEasypaisa/>,
           },
           {
             key: '5',
@@ -40,13 +40,13 @@ export default function AddPayment(){
         <>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
         <div className="bg-[#377CF6] text-white p-3">Add Payment Methods</div>
-        <div className="p-5 bg-white">
-        <div className="font-semibold text-lg mt-2">Select your payment method:</div>
+        <div className="px-10 py-7 bg-white">
+        <div className="font-semibold text-lg mb-5">Select your payment method:</div>
 
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} type="card" />
         </div>
       </div>
-        <Buttons/>
+        <Buttons button1="Cancel" button2="Save"/>
         </>
     )
 }
