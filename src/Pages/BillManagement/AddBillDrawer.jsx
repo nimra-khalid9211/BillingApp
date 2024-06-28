@@ -18,7 +18,8 @@ const AddBillDrawer = ({ addBill, setAddBill }) => {
       onClose={() => setAddBill(false)}
       open={addBill}
       key="right"
-      size="large"
+      // size="large"
+      width={1200}
       className="rounded-tl-[80px] rounded-bl-[80px] p-8"
     >
       <span className="text-[#646464] font-medium">

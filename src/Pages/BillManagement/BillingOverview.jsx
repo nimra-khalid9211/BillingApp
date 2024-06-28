@@ -1,46 +1,74 @@
 import React, { useState } from 'react'
-import { Tabs } from 'antd';
+import { Menu, Tabs } from 'antd';
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
 import SelectedBills from './SelectedBills';
 import { SelectableBills } from '../../Components/Tables/SelectableBills';
 import BillsList from '../../Components/Tables/BillsList';
+import TransactionRecord from '../../Components/Tables/TransactionRecord';
 
 const items = [
   {
-    key: '1',
-    label: 'All',
-    children: <SelectableBills type="all"/>,
+    label: 'All Bills',
+    key: 'all',
   },
   {
-    key: '2',
     label: 'Electricity',
-    children: <SelectableBills type="electricity"/>,
+    key: 'electricity',
   },
   {
-    key: '3',
     label: 'Gas',
-    children: <SelectableBills type="gas"/>,
+    key: 'gas',
   },
   {
-    key: '4',
     label: 'Water',
-    children: <SelectableBills type="water"/>,
+    key: 'water',
   },
   {
-    key: '5',
     label: 'Internet',
-    children: <SelectableBills type="internet"/>,
+    key: 'internet',
   },
 ];
 
+
+
 const BillingOverview = () => {
-  
-const {tab} = _BillingCondition();
+
+const [current, setCurrent] = useState('all');
+
+const onClick = (e) => {
+  // console.log('click ', e);
+  setCurrent(e.key);
+};
+
+const renderContent = () => {
+  switch (current) {
+    case 'all':
+      return  <SelectableBills type="all"/>;
+    case 'electricity':
+      return <TransactionRecord type="electricity" from="billingOverview"/>;
+    case 'gas':
+      return <TransactionRecord type="gas" from="billingOverview"/>;
+    case 'water':
+      return <TransactionRecord type="water" from="billingOverview"/>;
+    case 'internet':
+      return  <TransactionRecord type="internet" from="billingOverview"/>;
+    default:
+      return <div>Select a menu item</div>;
+  }
+};
 
   return (
     <>
 
-   <Tabs className='text-base font-medium mt-6' defaultActiveKey="1" items={items} />
+<div>
+      <Menu onClick={onClick} selectedKeys={[current]}
+       className='custom-menu text-base font-medium my-4'
+       mode="horizontal" 
+       items={items} />
+      <div className="mt-4">
+        {renderContent()}
+      </div>
+    </div>
 
     </>
   )

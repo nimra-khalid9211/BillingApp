@@ -2,7 +2,7 @@ import { Button } from "antd";
 import BreadCrumbs from "../../UI/BreadCrumbs";
 import UserMultipleAccount from "./UserMultipleAccount";
 
-export default function PaymentMethod() {
+export default function PaymentMethods() {
   return (
     <>
       <div className="flex justify-between">

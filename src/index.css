@@ -81,7 +81,6 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .ant-card .ant-card-body{
   padding: 0;
 }
-<<<<<<< HEAD
 
 /* ant design collapse css overlapping */
 .ant-collapse .ant-collapse-content>.ant-collapse-content-box{
@@ -116,7 +115,7 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 }
 
 
-.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+.custom-tab-background .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
   /* border: 1px solid #d9d9d9; */
   background-color: #E8E7EC;
 }
@@ -128,16 +127,28 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .ant-tabs-tab-btn{
   font-size: 16px;
   font-weight: 600;
-  /* background-color: ; */
-  /* color: #ffffff; */
+  color: #000000  ;
 }
 
-.ant-tabs-tab-active{
+ .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
   color: white;
-=======
-.ant-tabs-active{
-  border: 5px solid red;
->>>>>>> 38a14a66411eebeae1897090a253fcc4441a780c
 }
 
+.active-color{
+  color: green
+}
 
+.custom-menu .ant-menu-item:hover {
+  color: #377CF6 !important;
+}
+.custom-menu .ant-menu-item-active {
+  color: #377CF6 !important;
+}
+
+.ant-menu-light{
+  background: none;
+}
+
+.ant-menu-horizontal{
+  border-bottom: 0;
+}

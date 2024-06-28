@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Maneger from "../Components/Maneger";
-import PaymentMethods from "../Components/MainComponents/PaymentMethods";
 import SignInForm from "../Aurthority Pages/signInForm";
 import SignUpForm from "../Aurthority Pages/signUpForm";
 import ForgotPassword from "../Aurthority Pages/forgotPassword";
@@ -16,12 +15,10 @@ import MobileTopUp from "../Pages/MobileTopUp";
 import SelectedBills from "../Pages/BillManagement/SelectedBills";
 import ChangeAccount from "../Pages/MobileTopUp/changeAccount";
 import Receipt from "../Pages/MobileTopUp/receipt";
-<<<<<<< HEAD
 import Transactions from "../Pages/Transactions";
-=======
-import PaymentMethod from "../Pages/PaymentMethod";
+import PaymentMethods from "../Pages/PaymentMethod";
 import AddPayment from "../Pages/PaymentMethod/addPayment";
->>>>>>> 38a14a66411eebeae1897090a253fcc4441a780c
+import BillPaymentMethod from "../Pages/BillManagement/BillPaymentMethod";
 
 export default function Router() {
   return (
@@ -30,12 +27,10 @@ export default function Router() {
         <Route element={<Maneger />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/bill-management" element={<BillManagement />} />
-<<<<<<< HEAD
           
           <Route path="/bill-management/selected-bills" element={<SelectedBills />} />
 
           
-          <Route path="/bill-management/payment-method" element={<PaymentMethod />} />
 
 
 
@@ -50,19 +45,16 @@ export default function Router() {
           <Route path ="/add-no/search-no" element={<GovtPaymentTable/>}/>
           <Route path ="/mobile-top-up/changing-account" element={<ChangeAccount/>}/>
           <Route path ="/mobile-top-up/changing-account/successfull" element={<Receipt/>}/>
-=======
           <Route path="/bill-management/selected-bills" element={<SelectedBills />}/>
-          <Route path="/bill-management/payment-method" element={<PaymentMethod />}/>
+          <Route path="/bill-management/payment-method" element={<BillPaymentMethod />}/>
           <Route path="/govt-payments" element={<GovtPayments />} />
           <Route path="/mobile-top-up" element={<MobileTopUp />} />
-          <Route path="/payment-methods" element={<PaymentMethod />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/add-no" element={<DepartmentNumber />} />
           <Route path="/add-no/search-no" element={<GovtPaymentTable />} />
           <Route path="/mobile-top-up/changing-account" element={<ChangeAccount />} />
           <Route path="/mobile-top-up/changing-account/successfull" element={<Receipt />}/>
           <Route path="/add-payment" element={<AddPayment />}/>
->>>>>>> 38a14a66411eebeae1897090a253fcc4441a780c
 
         </Route>
         <Route path="/sign-in" element={<SignInForm />} />
