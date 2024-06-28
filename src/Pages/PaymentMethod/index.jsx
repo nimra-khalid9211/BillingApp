@@ -3,7 +3,7 @@ import BreadCrumbs from "../../UI/BreadCrumbs";
 import UserMultipleAccount from "./UserMultipleAccount";
 import { Link } from "react-router-dom";
 
-export default function PaymentMethod() {
+export default function PaymentMethods() {
   return (
     <>
       <div className="flex justify-between">

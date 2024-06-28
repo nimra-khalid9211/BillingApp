@@ -10,13 +10,13 @@ export default function PaymentReciept({ bill, from }) {
         
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-[#6C7293] font-medium">Transaction ID</span>
-          <span className="font-semibold text-black">{bill.transactionID}</span>
+          <span className="font-semibold text-black">123456789</span>
         </div>
 
-        {!from === "Receipt" && (
+        {from === "paymentReceipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Bill Name</span>
-            <span className="font-semibold text-black">{bill.billname}</span>
+            <span className="font-semibold text-black">biling</span>
           </div>
         )}
         {from === "Receipt" && (
@@ -41,28 +41,28 @@ export default function PaymentReciept({ bill, from }) {
             </span>
           </div>
         )}
-        {!from === "Receipt" && (
+        {from === "paymentReceipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Consumer ID</span>
-            <span className="font-semibold text-black">{bill.consumerID}</span>
+            <span className="font-semibold text-black">123456789</span>
           </div>
         )}
 
-        {!from === "Receipt" && (
+        {from === "paymentReceipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Company Code</span>
-            <span className="font-semibold text-black">{bill.billCompany}</span>
+            <span className="font-semibold text-black">GEPCO</span>
           </div>
         )}
 
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-[#6C7293] font-medium">Pay Date</span>
-          <span className="font-semibold text-black">{bill.payDate}</span>
+          <span className="font-semibold text-black">10 June 2024</span>
         </div>
 
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-[#6C7293] font-medium">Pay Time</span>
-          <span className="font-semibold text-black">{bill.payTime}</span>
+          <span className="font-semibold text-black">10: 12 AM</span>
         </div>
 
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
@@ -70,7 +70,7 @@ export default function PaymentReciept({ bill, from }) {
             Amount Paid
           </span>
           <span className="text-2xl text-[#377CF6] font-semibold">
-            {bill.amount}
+            23,000
           </span>
         </div>
 
@@ -93,7 +93,7 @@ export default function PaymentReciept({ bill, from }) {
         
       </div>
       <div className="flex justify-center items-center gap-4 py-3 bg-[#E8E7EC] rounded-b-[3rem]">
-            <Button
+            <Button shape="round"
               className="border-[#4371D1] text-[#4371D1]"
               icon={<LuDownload />}
             >

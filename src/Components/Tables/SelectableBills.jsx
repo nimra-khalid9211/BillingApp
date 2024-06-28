@@ -78,14 +78,13 @@ export const SelectableBills =({type})=>{
 
     return(
         <>
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
 
-    <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center">
+    <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-xl rounded-tr-xl mt-10">
     <span>All Bills</span>
     <span className='text-sm'>This Month</span>
     </div>
 
-    <table className="w-full text-sm">
+    <table className="w-full text-sm rounded-bl-xl rounded-br-xl">
 
         <thead className="text-xs text-[#377CF6] text-center bg-[#DBF0FF]">
             <tr>
@@ -191,8 +190,7 @@ export const SelectableBills =({type})=>{
         </tbody>
 
     </table>
-    
-</div>
+
 
     {selectedBills.length > 0 && 
     <div className='bg-[#E8E7EC] mt-10 py-4 px-10 rounded-2xl flex justify-between items-center'>
@@ -212,7 +210,7 @@ export const SelectableBills =({type})=>{
     </div>
 }
 
-{id && <ViewReceiptModal setOpenModal={setOpenModal} openModal={openModal} id={id}/>}
+{id && <ViewReceiptModal setOpenModal={setOpenModal} openModal={openModal} id={id} from={"paymentReceipt"}/>}
 
 </>
 

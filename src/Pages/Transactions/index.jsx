@@ -6,27 +6,27 @@ const items = [
     {
       key: '1',
       label: 'All Transactions',
-      children: <TransactionRecord type="all"/>,
+      children: <TransactionRecord type="all" from="transactions"/>,
     },
     {
       key: '2',
-      label: 'Electricity',
-    //   children: <SelectableBills type="electricity"/>,
+      label: 'Master Card',
+      children: <TransactionRecord type="master" from="transactions"/>,
     },
     {
       key: '3',
-      label: 'Gas',
-    //   children: <SelectableBills type="gas"/>,
+      label: 'Visa Card',
+      children: <TransactionRecord type="visa" from="transactions"/>,
     },
     {
       key: '4',
-      label: 'Water',
-    //   children: <SelectableBills type="water"/>,
+      label: 'JazzCash',
+      children: <TransactionRecord type="jazzCash" from="transactions"/>,
     },
     {
       key: '5',
-      label: 'Internet',
-    //   children: <SelectableBills type="internet"/>,
+      label: 'EasyPaisa',
+      children: <TransactionRecord type="easyPaisa" from="transactions"/>,
     },
   ];
 
@@ -42,14 +42,11 @@ const Transactions = () => {
 
   return (
     <>
-   <Tabs
-      activeKey={activeTab}
+   <Tabs 
+      // activeKey={activeTab}
       onChange={handleChange}
-      tabBarStyle={{ color: 'white' }} 
-      // tabBarActiveTextColor="white" // Optional: Set active tab text color
-      // tabBarInactiveTextColor="#000000" 
-    type="card"
-    items={items}
+      type="card"
+      items={items}
   />
     </>
   )

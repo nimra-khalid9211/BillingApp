@@ -7,7 +7,7 @@ import { isOverdue } from '../../Hooks'
 import { useNavigate } from 'react-router-dom'
 import { PaymentSuccessfullModal } from '../../Components/Modals'
 
-const PaymentMethod = () => {
+const BillPaymentMethod = () => {
     const {bills} = _BillingCondition();
     const navigate = useNavigate();
 
@@ -131,4 +131,4 @@ const PaymentMethod = () => {
   )
 }
 
-export default PaymentMethod
+export default BillPaymentMethod

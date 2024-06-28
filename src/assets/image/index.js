@@ -15,6 +15,9 @@ import faucet  from "./faucet.svg"
 import fireBurner  from "./fire-burner.svg"
 import visaCard from './visacard.svg'
 import paymentSuccessfull from './paymentSuccessful.png'
+import jazzc from './jazzcash.png'
+
+
 import jazz from "./jazz.png"
 import master from "./master.png"
 import visa from "./visa.png"
@@ -23,4 +26,4 @@ import easypa from "./easypa.png"
 import jazzcash from "./jazzcash.png"
 import paymentPopup from "./paymentPopup.png"
 
-export {paymentPopup,ArrowLeft,jazzcash, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa}
+export {ArrowLeft,jazzc,paymentPopup, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash}
