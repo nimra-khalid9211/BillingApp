@@ -158,6 +158,7 @@ export const accounts = [
       userName: 'User Name 1',
       cardNumber: '7868767824134334',
       expiry: '10/26',
+      verify: 'verified',
       status: 'Default',
       cardImg: bitmap, 
     },
@@ -165,6 +166,7 @@ export const accounts = [
       userName: 'User Name 2',
       cardNumber: '1234698694444444',
       expiry: '11/27',
+      verify: 'verified',
       status: 'Set as default',
       cardImg: bitmap, 
     },
@@ -172,6 +174,7 @@ export const accounts = [
         userName: 'User Name 3',
         cardNumber: '12346986944',
         expiry: '11/27',
+        verify: 'verify now',
         status: 'Set as default',
         cardImg: bitmap, 
       }

@@ -1,4 +1,4 @@
-import { Button, Modal } from "antd";
+import { Button, Input, Modal } from "antd";
 import React from "react";
 import { MyBillList } from "../../data/tables";
 import { bitmap, paymentSuccessfull } from "../../assets/image";
@@ -29,11 +29,10 @@ export const ViewReceiptModal = ({ setOpenModal, openModal, id, from }) => {
       onCancel={() => setOpenModal(false)}
       footer={null}
     >
-      <PaymentReciept bill={bill} from={from}/>
+      <PaymentReciept bill={bill} from={from} />
     </Modal>
   );
 };
-
 
 export const PaymentSuccessfullModal = ({
   setReceiptModal,
@@ -47,7 +46,10 @@ export const PaymentSuccessfullModal = ({
   width,
   onButtonClick,
   debitTextOne,
-  debitTextTwo
+  debitTextTwo,
+  cancelSecondHeading,
+  cancelFirstHeading,
+  cancelTitle,
 }) => {
   const navigate = useNavigate();
 
@@ -65,32 +67,39 @@ export const PaymentSuccessfullModal = ({
       width={width}
       footer={null}
     >
+      {(from === "payment" || from === "debitAccountVerified") && (
       <div className="pt-8 px-10 flex flex-col justify-center items-center">
-        <img className="" src={img} alt="" width={300} />
+      
+         
+            <img className="" src={img} alt="" width={300} />
 
-        <span className="text-[#377CF6] font-medium text-2xl mt-2">
-          {title}
-        </span>
+            <span className="text-[#377CF6] font-medium text-2xl mt-2 ">
+              {title}
+            </span>
 
-        <span className="mt-3 text-sm font-medium text-center">
-          {firstHeading}
-        </span>
+            <span className="mt-3 text-sm font-medium text-center">
+              {firstHeading}
+            </span>
+        
+      
         {from === "payment" && (
           <p className="mt-3 text-sm font-medium text-center">
             {secondHeading}
           </p>
         )}
-        {from === "debitAccount" && (
+        {from === "debitAccountVerified" && (
           <>
             <p className="text-sm font-medium text-center mt-10">
               {debitTextOne}
             </p>
-            <p className="font-bold mt-5">
-              {debitTextTwo}
-            </p>
-            <div>
-              <input type="text" />
-              <input type="number" />
+            <p className="font-bold my-5">{debitTextTwo}</p>
+            <div className="flex items-center my-5">
+              <div>
+                <Input addonBefore="Rs." defaultValue="1.10" />
+              </div>
+              <div className="ml-5">
+                <Input addonBefore="Rs." defaultValue="1.10" />
+              </div>
             </div>
           </>
         )}
@@ -104,6 +113,29 @@ export const PaymentSuccessfullModal = ({
           {buttonText}
         </button>
       </div>
+        )}
+      {from === "debitAccountCancelled" && (
+        <div className="py-8 px-10 text-center">
+            <div className="text-[#F1416C] font-medium text-2xl mt-2 ">
+              {cancelTitle}
+            </div>
+            <p className="mt-10 text-lg font-semibold text-center">
+              {cancelSecondHeading}
+            </p>
+            <span className="mt-3 text-sm font-medium text-center">
+              {cancelFirstHeading}
+            </span>
+            <div className="flex flex-col mt-10">
+              <label htmlFor="" className="text-start">
+                What is the reason for cancelling Verfication
+              </label>
+              <textarea name="" id="" className="border border-[#6C7293 rounded-lg bg-transparent p-2"></textarea>
+            </div>
+              <button className="bg-[#F1416C] text-white rounded-[2rem] px-10 py-3 font-semibold ml-3"   onClick={handleButtonClick}>
+                Yes, Cancel it
+              </button>
+        </div>
+      )}
     </Modal>
   );
 };

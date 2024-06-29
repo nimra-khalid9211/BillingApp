@@ -1,8 +1,24 @@
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { maskCardNumber } from "../../Hooks";
 import { TikCheck, smallArrow } from "../../assets/icon";
 import Card from "../../assets/image/Bitmap.svg";
 import { accounts } from "../../data/tables";
+import { FaEdit } from "react-icons/fa";
+import { PaymentSuccessfullModal } from "../../Components/Modals";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 export default function UserMultipleAccount() {
+ const [verifyPopup, setVerifyPopup] = useState(false);
+ const { setPaymentType , setCheckShown} = _BillingCondition()
+
+ const navigate = useNavigate()
+ const handleVerifyPopup = () => {
+  setVerifyPopup(true);
+};
+const handleModalClose = () => {
+  setVerifyPopup(false);
+};
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
       <div className="bg-[#377CF6] text-white p-3">Payment Methods</div>
@@ -10,7 +26,7 @@ export default function UserMultipleAccount() {
         {accounts.map((account, index) => (
           <div
             key={index}
-            className="grid grid-cols-5 gap-4 rounded-lg mt-5 bg-white p-5"
+            className="grid grid-cols-6 gap-4 rounded-lg mt-5 bg-white p-5"
           >
             <div className="flex items-center border-r-2">
               <div>
@@ -31,24 +47,43 @@ export default function UserMultipleAccount() {
             <div className="border-r-2 text-center">
               Expiry: {account.expiry}
             </div>
-            <div className="border-r-2 flex items-center justify-center text-[#377CF6]">
-              <div
-                className={`rounded-2xl w-[10rem] p-2 text-center ${
-                  account.status === "Default" ? "bg-[#DBF0FF]" : "bg-[#fff]"
-                }`}
-              >
-                {account.status}
-              </div>
+            <button
+              className={`border-r-2 text-center ${
+                account.verify === "verified" ? "text-[#24A959]" : "text-black"
+              }`} onClick={handleVerifyPopup}
+            >
+              {account.verify}
+            </button>
+            <div
+              className={`border-r-2 flex items-center justify-center ${
+                account.status === "Default" ? "text-[#329DFF]" : "text-black"
+              }`}
+            >
+              {account.status}
             </div>
-            <div className="flex items-center justify-center">
-              <div className="text-[#377CF6] underline">Change Account</div>
-              <div className="ml-2">
-                <img src={smallArrow} alt="icon" />
+            <div className="flex justify-center items-center gap-3">
+              <div className="p-2 rounded-lg bg-[#DBF0FF] text-center">
+                <FaEdit size={20} color="#006AB2" />
+              </div>
+
+              <div className="p-2 rounded-lg bg-[#FFD5DF] text-center">
+                <RiDeleteBin5Line size={20} color="#F1416C" />
               </div>
             </div>
           </div>
         ))}
       </div>
+      <PaymentSuccessfullModal
+        receiptModal={verifyPopup}
+        setReceiptModal={handleModalClose}
+        title="Verify Your Bank Account"
+        debitTextOne="We will send you 2 small deposits (each between Rs 1.01 and Rs 1.50) to your Usman Fazal Bank Account for the verification."
+        debitTextTwo="Please enter the amounts to verify you own the account."
+        buttonText="Verify Account"
+        from="debitAccountVerified"
+        onButtonClick={()=>{navigate("/payment-methods/add-payment");setPaymentType("button5");setCheckShown(false)}}
+
+      />
     </div>
   );
 }

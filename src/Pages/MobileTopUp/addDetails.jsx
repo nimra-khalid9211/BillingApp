@@ -102,7 +102,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
             <span className="text-[#377CF6]">Click to resend</span>
           </p>
         </div>
-        <Buttons/>
+        <Buttons button1="Cancel" button2="Save"/>
       </div>
     </Drawer>
   );
