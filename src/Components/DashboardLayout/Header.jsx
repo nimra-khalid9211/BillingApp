@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
 
-    <div className='flex items-center justify-between  mt-8'>
+    <div className='flex items-center justify-between  mt-5'>
             <b className='text-2xl'>Good Morning, Shaun Abbott</b>
 
             <div className='flex justify-between items-center gap-3'>

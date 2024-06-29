@@ -10,7 +10,7 @@ import { MyBillList } from '../../data/tables';
 const {Panel} = Collapse;
 
 const billHeading = [
-    {title: "Payment Details"},
+    {title: "Bill Name"},
     {title: "Consumer ID"},
     {title: "Consumer Name"},
     {title: "Company Code"},
@@ -35,8 +35,6 @@ const TransactionRecord = ({type, from}) => {
         setActive(!active)
       };
 
-
-
         const filteredBills = transactionData.map(bill=>{
         const filteredTransaction = type === "all" ? bill.transaction :
         bill.transaction.filter(trans => from === "billingOverview" ? trans.type === type : trans.cardType === type)
@@ -45,33 +43,40 @@ const TransactionRecord = ({type, from}) => {
         };
       }).filter(bill => bill.transaction.length > 0);
 
-
   return (
     
           <>
       
-            <div className="overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
+            <div className="overflow-x-auto rounded-[25px] mt-5">
 
-            {from !== "transactions" && <div className="bg-[#377CF6] font-medium text-lg text-white p-3">
-               {type === "all" ? "All Transactions": type === "electricity" ? "Electricity" : type === "gas" ? "Gas" : type === "water" ? "Water" : type === "internet" ? "Internet" : ""}
-              </div> }
+            {(from === "billingOverview" || type === "all") && 
+
+             <div className="bg-[#377CF6] font-medium text-lg text-white p-3">
+
+               {type === "all" ? "All Transactions" : 
+               type === "electricity" ? "Electricity" : 
+               type === "gas" ? "Gas" : 
+               type === "water" ? "Water" :
+                type === "internet" ? "Internet" :
+                 ""}
+
+              </div> 
+              } 
                     
-              <div className={`grid ${from === "transactions" ? 'grid-cols-6 rounded-tl-lg rounded-tr-lg' : 'grid-cols-8'} mt-2 bg-[#DBF0FF]`}>
-              
+              <div className={`grid ${from === "transactions" ? 'grid-cols-6 rounded-tl-lg rounded-tr-lg' : 'grid-cols-8'} mt-2 bg-[#DBF0FF]`}>              
 
                 {billHeading.map((x, index)=>{
                   if (
                     (x.title === "Account" && type !== "all") ||
-                    (x.title === "Consumer Name" && type === "all" || from !=="transactions") ||
-                    (x.title === "Company Code" && type === "all") ||
-                    (x.title === "Bill Month" && type === "all") ||
-                    (x.title === "Status" && type !== "all") 
+                    (x.title === "Consumer Name" && from !== "billingOverview") ||
+                    (x.title === "Company Code" && from !== "billingOverview") ||
+                    (x.title === "Bill Month" && from !== "billingOverview") ||
+                    (x.title === "Status" && from === "billingOverview") 
                   ) {
                     return null; // Skip rendering this column
                   }
                   return (
                   
-
                     <div key={index} className={`${x.title === "Account" && "col-span-2"} text-center px-5 w-full py-3 border-r border-[#eff0fb] border-dashed
                       justify-self-center text-sm font-semibold text-[#377CF6]`}>
 
@@ -81,7 +86,6 @@ const TransactionRecord = ({type, from}) => {
                
 })}
                     </div> 
-
 
                 <Collapse accordion activeKey={activeKey} onChange={handleAccordionChange}
 

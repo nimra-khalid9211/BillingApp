@@ -2,8 +2,6 @@ export function maskCardNumber(cardNumber) {
     // Convert input to string and trim any whitespace
     let cardNumberStr = String(cardNumber).trim();
 
-    console.log(cardNumberStr.length)
-
     if(cardNumberStr.length <= 11){
 
     // Check if the input is a valid card number (must be at least 12 digits)

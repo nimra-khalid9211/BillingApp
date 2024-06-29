@@ -6,7 +6,7 @@ const items = [
     {
       key: '1',
       label: 'All Transactions',
-      children: <TransactionRecord type="all" from="transactions"/>,
+      children: <TransactionRecord type="all"/>,
     },
     {
       key: '2',

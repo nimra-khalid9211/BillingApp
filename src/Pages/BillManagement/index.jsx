@@ -28,18 +28,12 @@ const BillManagement = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center mt-20">
         <BreadCrumbs
           menu={"Dashboard"}
           subMenu={"Bills"}
+          btnTitle2={"Add Bill"}
+          btnEvent2={()=>setAddBill(true)}
         />
-
-        <Button type="primary" shape="round" onClick={() => setAddBill(true)}>
-         + Add Bill
-        </Button>
-      </div>
-
-      <Divider className="mt-3" />
 
       <Tabs
         defaultActiveKey="1"

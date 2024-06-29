@@ -36,6 +36,11 @@ export default function Router() {
           <Route path="/add-no/search-no" element={<GovtPaymentTable />} />
           <Route path="/mobile-top-up/changing-account" element={<ChangeAccount />} />
           <Route path="/mobile-top-up/changing-account/successfull" element={<Receipt />}/>
+          
+        
+
+          <Route path="/payment-methods" element={<PaymentMethod />}/>
+
           <Route path="/payment-methods/add-payment" element={<AddPayment />}/>
 
         </Route>

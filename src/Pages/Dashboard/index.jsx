@@ -8,10 +8,20 @@ import PaymentMethodCard from "../../Components/CardsUI/DashboardCards/paymentMe
 import TransactionsHistory from "../../Components/CardsUI/DashboardCards/transactionsHistory";
 import Paid from "../../assets/image/paid.png"
 import Unpaid from "../../assets/image/unpaid.png"
+import BreadCrumbs from "../../UI/BreadCrumbs";
+import { MdDashboardCustomize } from "react-icons/md";
+import { Button } from "antd";
 
 const Dashboard = () => {
   return (
-    <div className="container mx-auto pt-5 bg-[#F6F6F8]">
+      <>
+
+
+
+      <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} btnTitle1={"Quick Pay"} btnTitle2={"Add Bill"}/>
+
+
+    <div className="container mx-auto bg-[#F6F6F8]">
       <div className="grid grid-cols-6 gap-4">
         <div className="col-span-4">
           <div className="grid grid-cols-3 gap-4">
@@ -49,6 +59,8 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+
+    </>
   );
 };
 
