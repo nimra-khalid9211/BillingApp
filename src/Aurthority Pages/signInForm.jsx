@@ -1,21 +1,24 @@
-export default function SignInForm(){
-    return(
-        <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col  justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+import AuthLogo from "../assets/image/authlogo.png"
+export default function SignInForm() {
+  return (
+    <div className="auth-bg sign-page">
+      <section className="content">
+        <div className="flex flex-col w-full  justify-center mx-auto h-screen">
+          <div className="w-full bg-white rounded-[3rem] py-20 px-10">
             <div className="flex items-center justify-center mt-5">
-            <img
-              className="w-8 h-8 mr-2"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-              alt="logo"
-            />
+              <img
+                className="w-44 h-16"
+                src={AuthLogo}
+              />
             </div>
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <div className="text-center">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-[#176BA3]">
+                <h1 className="text-2xl font-bold leading-tight tracking-tight text-[#176BA3] mb-2">
                   Sign in to your account
                 </h1>
-                <p className="text-[#6C7293]">Enter your email and password to login</p>
+                <p className="text-[#6C7293] text-base">
+                  Enter your email and password to login
+                </p>
               </div>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div>
@@ -59,16 +62,13 @@ export default function SignInForm(){
                       className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                       required
                     />
-                    <label
-                      htmlFor="terms"
-                      className="font-semibold ml-2"
-                    >
-                        Remember Me
+                    <label htmlFor="terms" className="font-semibold ml-2">
+                      Remember Me
                     </label>
                   </div>
                   <div className="text-[#F1416C] underline ">
-                      Forgot Password?
-                    </div>
+                    Forgot Password?
+                  </div>
                 </div>
                 <button
                   type="submit"
@@ -76,7 +76,7 @@ export default function SignInForm(){
                 >
                   Sign in
                 </button>
-                <p className="text-sm font-light text-center text-[#6C7293]">
+                <p className="text-sm font-light text-center text-[#6C7293] pb-10">
                   Don't have an account?
                   <a
                     href="#"
@@ -90,5 +90,6 @@ export default function SignInForm(){
           </div>
         </div>
       </section>
-    )
+    </div>
+  );
 }
