@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MyBills } from "../../Components/Tables";
 import TotalBill from "../../Components/CardsUI/DashboardCards/totalBill";
 import IssuedBill from "../../Components/CardsUI/DashboardCards/issuedBill";
@@ -11,15 +11,19 @@ import Unpaid from "../../assets/image/unpaid.png"
 import BreadCrumbs from "../../UI/BreadCrumbs";
 import { MdDashboardCustomize } from "react-icons/md";
 import { Button } from "antd";
+import { AddBillDrawer } from "../../Components/Drawers";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
 const Dashboard = () => {
+  const {addBill, setAddBill} = _BillingCondition();
+  const [from, setFrom] = useState();
+  
   return (
       <>
 
-
-
-      <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} btnTitle1={"Quick Pay"} btnTitle2={"Add Bill"}/>
-
+      <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} 
+       btnTitle1={"Quick Pay"} btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
+       btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 
     <div className="container mx-auto bg-[#F6F6F8]">
       <div className="grid grid-cols-6 gap-4">
@@ -59,6 +63,8 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+
+    <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from}/>
 
     </>
   );

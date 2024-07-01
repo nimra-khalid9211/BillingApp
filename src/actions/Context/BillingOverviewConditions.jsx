@@ -9,11 +9,12 @@ export const BillingConditionProvider = ({children})=>{
 
      const [tab,setTab] = useState(true);
      const [bills, setBills] = useState();
+     const [addBill, setAddBill] = useState(false);
 
     //  console.log(tab, "billling condition provider");
 
     return(
-        <BillingCondition.Provider value={{tab,setTab, bills, setBills}}>
+        <BillingCondition.Provider value={{tab,setTab, bills, setBills, addBill, setAddBill}}>
             {children}
         </BillingCondition.Provider>
     )

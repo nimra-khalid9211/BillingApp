@@ -1,23 +1,22 @@
-import { maskCardNumber } from "../../Hooks";
-import { TikCheck, smallArrow } from "../../assets/icon";
-import Card from "../../assets/image/Bitmap.svg";
-import { accounts } from "../../data/tables";
+import React from 'react'
+import { accounts } from '../../data/tables'
+import { TikCheck, smallArrow } from '../../assets/icon'
+import { maskCardNumber } from '../../Hooks'
 
-export default function UserMultipleAccount() {
+const PayMethodCard = ({from}) => {
+
+    console.log(from)
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
-      <div className="bg-[#377CF6] text-white p-3">Payment Methods</div>
-
-      <div className="pb-10 pt-5 px-5">
+    <div>
         {accounts.map((account, index) => (
           <div
             key={index}
             className="grid grid-cols-5 gap-4 rounded-lg mt-5 bg-white p-5"
           >
             <div className="flex items-center border-r-2">
-              <div>
+             {from === "quickPay" && <div>
                 <img src={TikCheck} alt="icon" />
-              </div>
+              </div>}
               <div className="flex items-center ml-7">
                 <div className="border">
                   <img src={account.cardImg} alt="card icon" />
@@ -28,7 +27,7 @@ export default function UserMultipleAccount() {
               </div>
             </div>
             <div className="border-r-2 text-center font-semibold text-lg">
-              {maskCardNumber(account.cardNumber)}
+             <span>ending</span>{account.cardNumber}
             </div>
             <div className="border-r-2 text-center">
               Expiry: {account.expiry}
@@ -50,7 +49,8 @@ export default function UserMultipleAccount() {
             </div>
           </div>
         ))}
-      </div>
     </div>
-  );
+  )
 }
+
+export default PayMethodCard

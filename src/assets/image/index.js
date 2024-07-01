@@ -26,4 +26,6 @@ import easypa from "./easypa.png"
 import jazzcash from "./jazzcash.png"
 import paymentPopup from "./paymentPopup.png"
 
-export {ArrowLeft,jazzc,paymentPopup, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash}
+import logo from './brandlogo.png'
+
+export {ArrowLeft,jazzc,paymentPopup, logo, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash}

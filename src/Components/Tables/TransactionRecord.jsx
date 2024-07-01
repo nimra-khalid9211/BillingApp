@@ -6,6 +6,7 @@ import { IoMdEye } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
 import ViewReceiptModal from '../Modals';
 import { MyBillList } from '../../data/tables';
+import { PDFTemplate } from '../PDFTemplate';
 
 const {Panel} = Collapse;
 
@@ -137,7 +138,7 @@ const TransactionRecord = ({type, from}) => {
                                     </div>
 
                                     <div className='p-2 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-xl'>
-                                    <MdOutlineFileDownload size={20} role='button' color='#377CF6'/>
+                                    <MdOutlineFileDownload size={20} role='button' color='#377CF6'  onClick={PDFTemplate}/>
                                     </div>
 
                                     </div> 

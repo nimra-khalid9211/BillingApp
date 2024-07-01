@@ -3,8 +3,8 @@ import BreadCrumbs from "../../UI/BreadCrumbs";
 import { Button, Divider, Radio, Tabs } from "antd";
 import Bills from "./Bills";
 import BillingOverview from "./BillingOverview";
-import AddBillDrawer from "./AddBillDrawer";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
+import { AddBillDrawer } from "../../Components/Drawers";
 
 
 const items = [
@@ -23,7 +23,8 @@ const items = [
 
 
 const BillManagement = () => {
-  const [addBill, setAddBill] = useState(false);
+   const {addBill, setAddBill} = _BillingCondition();
+   const [from, setFrom] = useState(false);
 
 
   return (
@@ -32,7 +33,7 @@ const BillManagement = () => {
           menu={"Dashboard"}
           subMenu={"Bills"}
           btnTitle2={"Add Bill"}
-          btnEvent2={()=>setAddBill(true)}
+          btnEvent2={()=>{setAddBill(true); setFrom("addBill")}}
         />
 
       <Tabs
@@ -41,7 +42,7 @@ const BillManagement = () => {
         items={items }
       />
       
-      <AddBillDrawer addBill={addBill} setAddBill={setAddBill} />
+      <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from}/>
 
     </>
   );

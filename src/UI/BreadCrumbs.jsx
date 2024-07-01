@@ -1,5 +1,6 @@
 import { Button, Divider } from 'antd'
 import React from 'react'
+import { BlueButton, WhiteButton } from './Buttons'
 
 const BreadCrumbs = ({icon, menu, subMenu, btnTitle1, btnTitle2, btnEvent1, btnEvent2}) => {
   return (
@@ -23,15 +24,13 @@ const BreadCrumbs = ({icon, menu, subMenu, btnTitle1, btnTitle2, btnEvent1, btnE
 
        {btnTitle1 && 
 
-       <Button className='mr-5 border-[#377CF6] text-[#377CF6]' shape='round' onClick={btnEvent1}>
-        {btnTitle1}
-        </Button>}
+       <WhiteButton title={btnTitle1} clickEvent={btnEvent1}/>
+}
 
        {btnTitle2 && 
        
-       <Button className='mr-5 bg-[#377CF6] text-white' shape='round' onClick={btnEvent2}>
-        {btnTitle2}
-        </Button>}
+       <BlueButton title={btnTitle2} clickEvent={btnEvent2}/>
+       }
         
       </div> 
 

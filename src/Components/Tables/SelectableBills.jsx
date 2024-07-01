@@ -8,12 +8,15 @@ import { FaShareNodes } from "react-icons/fa6";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { useNavigate } from "react-router-dom";
 import { ViewReceiptModal } from "../Modals";
+import { PDFTemplate } from "../PDFTemplate";
 
 
 
 const dashedBorderRight = "border-dashed border-r border-[#eff0fb]"
 
 export const SelectableBills =({type})=>{
+
+    
 
     const navigate = useNavigate();
 
@@ -178,7 +181,7 @@ export const SelectableBills =({type})=>{
                 
                     <Button className='p-2 bg-[#DBF0FF] rounded-lg'><IoMdEye size={20} onClick={()=>SetModalAndID(x.id)}/></Button>
                     
-                    <Button className='p-2 bg-[#DBF0FF] rounded-lg'><FaShareNodes size={20}/></Button>
+                    <Button className='p-2 bg-[#DBF0FF] rounded-lg'><FiDownload size={20}  onClick={PDFTemplate}/></Button>
 
                 </div>
                 }
