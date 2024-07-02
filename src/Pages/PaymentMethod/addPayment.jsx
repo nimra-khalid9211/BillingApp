@@ -4,11 +4,20 @@ import MasterVisaCard from "./PaymentType/MasterVisaCards";
 import Buttons from "../../Components/SaveCancelButton/buttons";
 import JazzEasypaisa from "./PaymentType/jazzEasypaisa";
 import DebitCard from "./PaymentType/debitCard";
+import { BlueButton, WhiteButton } from "../../UI/Buttons";
+import { IoChevronBack } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import BreadCrumbs from "../../UI/BreadCrumbs";
+import { MdOutlinePayment } from "react-icons/md";
 
 export default function AddPayment(){
+  const navigate = useNavigate();
+
+
     const onChange = (key) => {
         console.log(key);
       };
+
       const items = [
         {
           key: '1',
@@ -36,17 +45,33 @@ export default function AddPayment(){
             children: <DebitCard/>,
           },
       ];
+
     return(
         <>
+
+        <BreadCrumbs icon={<MdOutlinePayment />} menu={"Payment Method"} subMenu={"Add Payment"}
+        btnTitle2={"Back"} btnIcon2={<IoChevronBack />} btnEvent2={()=>navigate("/payment-methods")}
+        />
+
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
-        <div className="bg-[#377CF6] text-white p-3">Add Payment Methods</div>
+        <div className="bg-[#377CF6] flex justify-between items-center text-white p-3">
+          Add Payment Methods
+          
+         
+          </div>
         <div className="px-10 py-7 bg-white">
         <div className="font-semibold text-lg mb-5">Select your payment method:</div>
 
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} type="card" />
         </div>
       </div>
-        <Buttons button1="Cancel" button2="Save"/>
+
+      <div className="mt-10">
+        <WhiteButton title={"Cancel"} clickEvent={()=>navigate("/payment-methods")}/>
+
+          <BlueButton title={"Save"} />
+        </div>
+
         </>
     )
 }

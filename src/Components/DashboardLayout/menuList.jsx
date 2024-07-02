@@ -46,12 +46,14 @@ const menuList = [
     lists: [
       {
         title: "Settings",
-        icon: <CiSettings />
+        icon: <CiSettings />,
+        link: "/settings"
         ,
       },
       {
-        title: "Help & Support",
-        icon: <MdContactSupport />
+        title: "Help",
+        icon: <MdContactSupport />,
+        link: "/help"
         ,
       },
       {

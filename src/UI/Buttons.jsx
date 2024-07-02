@@ -12,11 +12,11 @@ export const WhiteButton = ({title, clickEvent}) => {
   )
 }
 
-export const BlueButton = ({title, clickEvent}) => {
+export const BlueButton = ({title, clickEvent, icon}) => {
     return (
       <Button shape='round' className='btn-custom-padding bg-[#377CF6] text-white' 
       onClick={clickEvent}>
-
+        {icon}
          {title} 
       
       </Button>

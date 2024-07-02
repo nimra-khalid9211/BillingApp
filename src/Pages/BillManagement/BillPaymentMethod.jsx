@@ -6,6 +6,7 @@ import { IoChevronDownCircleOutline } from 'react-icons/io5'
 import { isOverdue } from '../../Hooks'
 import { useNavigate } from 'react-router-dom'
 import { PaymentSuccessfullModal } from '../../Components/Modals'
+import { paymentSuccessfull } from '../../assets/image'
 
 const BillPaymentMethod = () => {
     const {bills} = _BillingCondition();
@@ -125,7 +126,12 @@ const BillPaymentMethod = () => {
 
     </div>
 
-    <PaymentSuccessfullModal receiptModal={receiptModal} setReceiptModal={setReceiptModal} bills={bills}/>
+    <PaymentSuccessfullModal receiptModal={receiptModal} img={paymentSuccessfull} title={"Payment Successful"}
+     setReceiptModal={setReceiptModal} bills={bills} width={450}
+     firstHeading={`We are pleased to inform you that the payment for ${bills.length} bills have been successfully processed.`}
+     buttonText={"Billing Overview"}
+     onButtonClick={()=>navigate("/bill-management")}
+     />
 
     </Card>
   )

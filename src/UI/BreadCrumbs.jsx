@@ -2,7 +2,7 @@ import { Button, Divider } from 'antd'
 import React from 'react'
 import { BlueButton, WhiteButton } from './Buttons'
 
-const BreadCrumbs = ({icon, menu, subMenu, btnTitle1, btnTitle2, btnEvent1, btnEvent2}) => {
+const BreadCrumbs = ({icon, menu, subMenu, btnTitle1, btnIcon1, btnIcon2, btnTitle2, btnEvent1, btnEvent2}) => {
   return (
 
     <div className='my-8'>
@@ -24,12 +24,12 @@ const BreadCrumbs = ({icon, menu, subMenu, btnTitle1, btnTitle2, btnEvent1, btnE
 
        {btnTitle1 && 
 
-       <WhiteButton title={btnTitle1} clickEvent={btnEvent1}/>
+       <WhiteButton title={btnTitle1} icon={btnIcon1} clickEvent={btnEvent1}/>
 }
 
        {btnTitle2 && 
        
-       <BlueButton title={btnTitle2} clickEvent={btnEvent2}/>
+       <BlueButton title={btnTitle2} icon={btnIcon2} clickEvent={btnEvent2}/>
        }
         
       </div> 

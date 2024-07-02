@@ -165,7 +165,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
           <WhiteButton title={"Cancel"} clickEvent={()=>setAddBill(false)}/>
 
-          <BlueButton  title={"Add Bill"}/>
+          <BlueButton  title={from === "addBill" ? "Add Bill" : from === "quickPay" ? "Quick Pay" : ""}/>
 
         </div>
       

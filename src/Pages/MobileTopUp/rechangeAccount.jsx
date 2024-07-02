@@ -1,9 +1,24 @@
+import { IoChevronBack } from "react-icons/io5";
+import { BlueButton } from "../../UI/Buttons";
 import { smallArrow, TikCheck } from "../../assets/icon/index";
 import Card from "../../assets/image/Bitmap.svg";
+import { useNavigate } from "react-router-dom";
+
+
 export default function RechangeAccount() {
+  const navigate = useNavigate();
+
+
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
-      <div className="bg-[#377CF6] text-white p-3">Mobile Top Up</div>
+      <div className="bg-[#377CF6] flex justify-between items-center text-white p-3">
+
+        <span>Mobile Top Up</span>
+
+        <BlueButton clickEvent={()=>navigate("/mobile-top-up")} title={"Back"} icon={<IoChevronBack size={18} />}/>
+
+        
+        </div>
       <div className="py-10 px-5">
         <div className="font-bold bold text-lg">Your Account Details</div>
         <div className="grid grid-cols-5 gap-4 rounded-lg mt-5 bg-white p-5">

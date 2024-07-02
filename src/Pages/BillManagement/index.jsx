@@ -5,6 +5,7 @@ import Bills from "./Bills";
 import BillingOverview from "./BillingOverview";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { AddBillDrawer } from "../../Components/Drawers";
+import { FaMoneyBills } from "react-icons/fa6";
 
 
 const items = [
@@ -31,6 +32,7 @@ const BillManagement = () => {
     <>
         <BreadCrumbs
           menu={"Dashboard"}
+          icon={<FaMoneyBills />}
           subMenu={"Bills"}
           btnTitle2={"Add Bill"}
           btnEvent2={()=>{setAddBill(true); setFrom("addBill")}}

@@ -95,14 +95,14 @@ export const PaymentSuccessfullModal = ({
           </>
         )}
 
-        <button
-          className="bg-[#377CF6] text-white rounded-[2rem] px-20 py-2 font-semibold mt-6 mb-10"
+        <Button
+          className="bg-[#377CF6] text-white rounded-[2rem] px-10 py-1 font-medium mt-6 mb-10"
           // onClick={() => navigate("/bill-management")}
           // onClick={() => navigate(link)}
           onClick={handleButtonClick}
         >
           {buttonText}
-        </button>
+        </Button>
       </div>
     </Modal>
   );

@@ -4,13 +4,17 @@ import { _BillingCondition } from '../../actions/Context/BillingOverviewConditio
 import { Button } from 'antd';
 import { isOverdue } from '../../Hooks';
 import { useNavigate } from 'react-router-dom';
+import { BlueButton } from '../../UI/Buttons';
+import { IoChevronBack } from 'react-icons/io5';
+import BreadCrumbs from '../../UI/BreadCrumbs';
+import { FaMoneyBills } from 'react-icons/fa6';
 
 const SelectedBills = () => {
     const navigate = useNavigate();
 
     const {setBills, bills} = _BillingCondition();
 
-    console.log(bills)
+    // console.log(bills)
 
     const totalAmount = bills?.reduce((total, bill) => {
         const amountString = isOverdue(bill.dueDate)  ? bill.afterDueAmount : bill.amount;
@@ -22,9 +26,23 @@ const SelectedBills = () => {
   return (
 
     <>
+
+        <BreadCrumbs
+          menu={"Dashboard"}
+          icon={<FaMoneyBills />}
+          subMenu={"Bills"}
+          btnIcon2={<IoChevronBack />}
+          btnTitle2={"Back"}
+          btnEvent2={()=>{navigate("/bill-management")}}
+        />
+
     <div className='w-100 bg-white p-6 rounded-3xl'>
 
+        <div className='flex justify-between items-center'>
         <span className='text-2xl font-semibold'>Selected Bills ({bills?.length})</span>
+
+      
+        </div>
 
            {bills?.map((x)=>(
             <div key={x.id} className='bg-[#F1F1F1] my-4 rounded-3xl'> 

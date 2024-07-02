@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf'
 import React from 'react'
-import { logo, master } from '../../assets/image';
+import { logo, master, thankyou } from '../../assets/image';
 import { maskCardNumber } from '../../Hooks';
 
 
@@ -21,7 +21,7 @@ export const PDFTemplate = () => {
 
   //links
   doc.setFont("helvetica", "normal")
-  doc.setFontSize(14)
+  doc.setFontSize(12)
   doc.text("info@bpay.com.pk", 15, 41, null, null, "left");
   doc.text("www.bpay.com.pk", 15, 47, null, null, "left");
 
@@ -139,6 +139,8 @@ export const PDFTemplate = () => {
         //reactangle 
   doc.setFillColor("#DBF0FF")
   doc.roundedRect( 15, 240, 180, 35, 5, 5, "F");
+
+  doc.addImage(thankyou, "PNG", 38, 227, 30, 45);
 
   doc.setFont("helvetica", "bold")
   doc.setFontSize(18)
