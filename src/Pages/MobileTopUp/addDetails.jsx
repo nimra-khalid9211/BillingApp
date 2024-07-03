@@ -48,7 +48,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
         <p className="text-[#646464] font-semibold mt-5">
           Add your account details
         </p>
-        <div className="rounded-2xl p-7 mt-5 shadow-2xl">
+        <div className="rounded-2xl p-7 mt-5 shadow-lg shadow-[#8a918e]">
           <div className="border-b pb-2 font-semibold">Number Details</div>
           <div className="grid grid-cols-2 gap-4 mt-5">
             <TextField id="outlined-basic" label="Name" variant="outlined" />
@@ -80,7 +80,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
             </Box>
           </div>
         </div>
-        <div className="rounded-2xl p-7 mt-10 shadow-2xl">
+        <div className="rounded-2xl p-7 mt-10 shadow-lg shadow-[#8a918e]">
           <p className="font-bold">
             Please enter a 4 digit code sent to your mobile number for
             verification.
