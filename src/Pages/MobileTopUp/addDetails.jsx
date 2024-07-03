@@ -1,7 +1,6 @@
 import { Box, MenuItem, TextField } from "@mui/material";
 import { Button, Drawer } from "antd";
 import Cancel from "../../assets/icon/cancel.svg"
-import Buttons from "../../Components/SaveCancelButton/buttons";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 
 export default function AddDetails({ addNumber, setAddNumber }) {

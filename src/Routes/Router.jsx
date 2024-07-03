@@ -21,6 +21,7 @@ import AddPayment from "../Pages/PaymentMethod/addPayment";
 import BillPaymentMethod from "../Pages/BillManagement/BillPaymentMethod";
 import Settings from "../Pages/Settings";
 import Help from "../Pages/Help";
+import Reports from "../Pages/Reports";
 
 export default function Router() {
   return (
@@ -41,20 +42,13 @@ export default function Router() {
           <Route path="/mobile-top-up/changing-account" element={<ChangeAccount />} />
           <Route path="/mobile-top-up/changing-account/successfull" element={<Receipt />}/>
           <Route path="/payment-methods" element={<PaymentMethod />}/>
-          
-        
-
-          <Route path="/payment-methods" element={<PaymentMethod />}/>
-
           <Route path="/payment-methods/add-payment" element={<AddPayment />}/>
-
+          <Route path="/reports" element={<Reports/>}/>
           <Route path="/settings" element={<Settings/>} />
-          
           <Route path="/help" element={<Help/>} />
 
         </Route>
-
-
+        
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

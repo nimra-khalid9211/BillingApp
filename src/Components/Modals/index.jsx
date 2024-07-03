@@ -1,8 +1,6 @@
-import { Button, Input, Modal } from "antd";
+import { Button, Input, Modal, Select } from "antd";
 import React from "react";
 import { MyBillList } from "../../data/tables";
-import { bitmap, paymentSuccessfull } from "../../assets/image";
-import { useNavigate } from "react-router-dom";
 import PaymentReciept from "../CardsUI/PaymentReciept";
 
 export const ViewReceiptModal = ({ setOpenModal, openModal, id, from }) => {
@@ -47,12 +45,8 @@ export const PaymentSuccessfullModal = ({
   onButtonClick,
   debitTextOne,
   debitTextTwo,
-  cancelSecondHeading,
-  cancelFirstHeading,
   cancelTitle,
 }) => {
-  const navigate = useNavigate();
-
   const handleButtonClick = () => {
     onButtonClick();
     setReceiptModal(false);
@@ -103,8 +97,6 @@ export const PaymentSuccessfullModal = ({
 
           <Button
             className="bg-[#377CF6] text-white rounded-[2rem] px-10 py-1 font-medium mt-6 mb-10"
-            // onClick={() => navigate("/bill-management")}
-            // onClick={() => navigate(link)}
             onClick={handleButtonClick}
           >
             {buttonText}
@@ -112,26 +104,91 @@ export const PaymentSuccessfullModal = ({
         </div>
       )}
       {from === "debitAccountCancelled" && (
-  <>
-        <div className="py-8 px-[7rem] text-center">
-          <div className="text-[#F1416C] font-medium text-lg mt-2 ">
-            {cancelTitle}
+        <>
+          <div className="py-8 px-[7rem] text-center">
+            <div className="text-[#F1416C] font-medium text-lg mt-2 ">
+              {cancelTitle}
+            </div>
+            <div className="border-y border-r border-l-[0.5rem] border-[#DD2B37] bg-[#FDE1E3] text-start pl-4 py-4 mt-10 mb-5">
+              <p className="text-[#DD2B37] font-semibold">Warning</p>
+              <p className="font-semibold">You can not undo this action.</p>
+            </div>
           </div>
-          <div className="border-y border-r border-l-[0.5rem] border-[#DD2B37] bg-[#FDE1E3] text-start pl-4 py-4 mt-10 mb-5">
-            <p className="text-[#DD2B37] font-semibold">Warning</p>
-            <p className="font-semibold">You can not undo this action.</p>
+          <div className="bg-[#E8E7EC] py-4 text-center rounded-b-[2rem]">
+            <button
+              className="bg-[#DD2B37] text-white rounded-[2rem] px-[7rem] py-2 font-semibold ml-3 "
+              onClick={handleButtonClick}
+            >
+              Yes, Cancel it
+            </button>
           </div>
-        </div>
-        <div className="bg-[#E8E7EC] py-4 text-center rounded-b-[2rem]">
-           <button
-            className="bg-[#DD2B37] text-white rounded-[2rem] px-[7rem] py-2 font-semibold ml-3 "
-            onClick={handleButtonClick}
-          >
-            Yes, Cancel it
-          </button>
-        </div>
-  </>
+        </>
       )}
+    </Modal>
+  );
+};
+
+export const ReportModels = ({ report, setReport }) => {
+  const options = [
+    { label: "Jazz", value: "option1" },
+    { label: "Ufone", value: "option2" },
+    { label: "Telenor", value: "option3" },
+    { label: "Zong", value: "option4" },
+  ];
+
+  return (
+    <Modal
+      centered
+      open={report}
+      // onOk={() => setReport(false)}
+      // onCancel={() => setReport(false)}
+    >
+      <div className="p-10">
+        <div className="text-center text-xl font-semibold text-[#377CF6] border-b pb-2">
+          Title
+        </div>
+        <div className="mt-10">
+          <label htmlFor="" className="">
+            Select Operator
+          </label>
+          <Select
+            mode="multiple"
+            allowClear
+            className="custom-select"
+            style={{
+              width: "100%",
+              backgroundColor: "transparent",
+              outline: "none",
+            }}
+            placeholder="Please select"
+            defaultValue={["All"]}
+            // onChange={handleChange}
+            options={options}
+          />
+        </div>
+        <div className="mt-7">
+          <label htmlFor="" className="">
+            Select Number
+          </label>
+          <Select
+            mode="multiple"
+            allowClear
+            className="custom-select"
+            style={{
+              width: "100%",
+              backgroundColor: "transparent",
+            }}
+            placeholder="Please select"
+            defaultValue={["All"]}
+            // onChange={handleChange}
+            options={options}
+          />
+        </div>
+        <div className="text-[#0083FF] font-semibold">Select Date Range</div>
+        <div>
+          Calender
+        </div>
+      </div>
     </Modal>
   );
 };

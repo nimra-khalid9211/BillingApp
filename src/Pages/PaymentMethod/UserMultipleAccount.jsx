@@ -1,6 +1,5 @@
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { maskCardNumber } from "../../Hooks";
-import { TikCheck, smallArrow } from "../../assets/icon";
 import { accounts } from "../../data/tables";
 import { useState } from "react";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
@@ -10,9 +9,10 @@ import { PaymentSuccessfullModal } from "../../Components/Modals";
 
 export default function UserMultipleAccount() {
  const [verifyPopup, setVerifyPopup] = useState(false);
- const { setPaymentType , setCheckShown, checkShown} = _BillingCondition()
+ const { setPaymentType , setCheckShown} = _BillingCondition()
 
  const navigate = useNavigate()
+ 
  const handleVerifyPopup = () => {
   setVerifyPopup(true);
 };

@@ -1,54 +1,24 @@
 import { TextField } from "@mui/material";
 import { PaymentSuccessfullModal } from "../../../Components/Modals";
 import { useState } from "react";
-import { paymentPopup, verify, info } from "../../../assets/image";
-import Buttons from "../../../Components/SaveCancelButton/buttons";
+import {info } from "../../../assets/image";
 import { _BillingCondition } from "../../../actions/Context/BillingOverviewConditions";
 import { WhiteButton, BlueButton } from "../../../UI/Buttons";
 
 export default function DebitCard(type) {
   const [verified, setVerified] = useState(false);
   const { checkShown } = _BillingCondition();
-
-  // const [popUp, setPopup] = useState(false);
-  // const [showButtons, setShowButtons] = useState(false);
-  // const [verifyPopup, setVerifyPopup] = useState(false);
-  // const [showCheckbox, setShowCheckbox] = useState(false);
   const [cencelVerification, setCancelVerification] = useState(false);
 
   const handleVerfied = () => {
     setVerified(!verified);
   };
-
-  // const handlePopupClick = () => {
-  //   setPopup(true);
-  // };
-  // const handleVerifyPopup = () => {
-  //   setVerifyPopup(true);
-  // };
   const handleModalClose = () => {
     setCancelVerification(false);
-    // setPopup(false);
-    // setVerifyPopup(false);
-    // setCancelVerification(false)
   };
-  // const handleGotItClick = () => {
-  //   // setVerified(false);
-  //   setPopup(false);
-  //   setShowButtons(true);
-  // };
-  // const handleDefaultSet = () => {
-  //   setShowButtons(false);
-  //   setShowCheckbox(true);
-  //   setVerifyPopup(false);
-  //   setCancelVerification(false);
-  // };
   const handleCancelVerification = () => {
     setCancelVerification(true);
   };
-  // const handleCancelClick = () => {
-  //   setCancelVerification(false);
-  // };
 
   return (
     <div>
@@ -87,12 +57,6 @@ export default function DebitCard(type) {
               </label>
             </div>
           ) : (
-            // <Buttons
-            //   button1="Cancel Verification"
-            //   button2="Verify Now"
-            //   onButton1Click={handleCancelVerification}
-
-            // />
             <div className="mt-5">
               <WhiteButton
                 title="Cancel Verification"
@@ -127,34 +91,6 @@ export default function DebitCard(type) {
       />
       {/* 
       <PaymentSuccessfullModal
-        width={500}
-        receiptModal={popUp}
-        setReceiptModal={handleModalClose}
-        img={paymentPopup}
-        title="Verify My Account"
-        firstHeading="We will send you 2 small deposits (each between Rs 1.01 and Rs 1.50) to your Usman Fazal Bank Account for the verification."
-        secondHeading="Once you received the deposits (usually takes 4-6 days) please enter the amounts to verify you own the account."
-        buttonText="Got it"
-        from="payment"
-        onButtonClick={handleGotItClick}
-      />
-      {!verified && showButtons && (
-        <Buttons
-          button1="Cancel Verification"
-          button2="Verify Now"
-          onButton2Click={handleVerifyPopup}
-          onButton1Click={handleCancelVerification}
-        />
-      )}
-      {showCheckbox && (
-        <div className="mt-5">
-          <input type="checkbox" />
-          <label htmlFor="" className="ml-3">
-            Set as Default
-          </label>
-        </div>
-      )}
-      <PaymentSuccessfullModal
         receiptModal={verifyPopup}
         setReceiptModal={handleModalClose}
         title="Verify Your Bank Account"
@@ -164,7 +100,6 @@ export default function DebitCard(type) {
         from="debitAccountVerified"
         onButtonClick={handleDefaultSet}
       />
-
       */}
     </div>
   );
