@@ -21,11 +21,8 @@ import AddPayment from "../Pages/PaymentMethod/addPayment";
 import BillPaymentMethod from "../Pages/BillManagement/BillPaymentMethod";
 import Settings from "../Pages/Settings";
 import Help from "../Pages/Help";
-<<<<<<< HEAD
 import Profile from "../Pages/Profile";
-=======
 import Reports from "../Pages/Reports";
->>>>>>> origin/reports
 
 export default function Router() {
   return (

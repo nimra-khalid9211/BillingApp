@@ -47,13 +47,8 @@ export const PaymentSuccessfullModal = ({
   debitTextTwo,
   cancelTitle,
 }) => {
-<<<<<<< HEAD
-  const navigate = useNavigate();
 
-  // console.log(firstHeading)
 
-=======
->>>>>>> origin/reports
   const handleButtonClick = () => {
     onButtonClick();
     setReceiptModal(false);
