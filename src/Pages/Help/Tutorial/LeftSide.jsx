@@ -22,9 +22,9 @@ const LeftSide = () => {
           by the readable content of a page when looking at its layout.
         </span>
 
-        <div class="flex items-center justify-start mt-4 text-sm font-medium text-[#6C7293]">
+        <div className="flex items-center justify-start mt-4 text-sm font-medium text-[#6C7293]">
          <span>{Date().slice(0,15)}</span>
-         <span class="mx-2">•</span>
+         <span className="mx-2">•</span>
          <span>{Date().slice(16,21)}</span>
           </div>
 

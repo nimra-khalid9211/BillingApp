@@ -126,8 +126,10 @@ const BillPaymentMethod = () => {
 
     </div>
 
-    <PaymentSuccessfullModal receiptModal={receiptModal} img={paymentSuccessfull} title={"Payment Successful"}
-     setReceiptModal={setReceiptModal} bills={bills} width={450}
+    <PaymentSuccessfullModal
+     receiptModal={receiptModal}  setReceiptModal={setReceiptModal} from={"payment"}
+     img={paymentSuccessfull} title={"Payment Successful"}
+      bills={bills} width={450}
      firstHeading={`We are pleased to inform you that the payment for ${bills.length} bills have been successfully processed.`}
      buttonText={"Billing Overview"}
      onButtonClick={()=>navigate("/bill-management")}

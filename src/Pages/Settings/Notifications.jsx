@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CardLayout from '../../Components/CardLayout.jsx'
+import CardLayout from '../../Components/CardLayout'
 import { Radio } from 'antd'
 
 const Notifications = () => {

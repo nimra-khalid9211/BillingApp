@@ -2,7 +2,7 @@ import { Card } from 'antd'
 import React from 'react'
 import { BlueButton } from '../../UI/Buttons'
 
-const CardLayout = ({children, title}) => {
+const CardLayout = ({children, title, from}) => {
   return (
 
     <>
@@ -20,9 +20,9 @@ const CardLayout = ({children, title}) => {
    
   </Card>
 
-  <div className='text-end m-10'>
+  {from !=="nonEdit" && <div className='text-end m-10'>
     <BlueButton  title={"Save Changes"}/>
-  </div>
+  </div>}
 
   </>
   )

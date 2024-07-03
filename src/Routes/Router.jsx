@@ -21,6 +21,7 @@ import AddPayment from "../Pages/PaymentMethod/addPayment";
 import BillPaymentMethod from "../Pages/BillManagement/BillPaymentMethod";
 import Settings from "../Pages/Settings";
 import Help from "../Pages/Help";
+import Profile from "../Pages/Profile";
 
 export default function Router() {
   return (
@@ -51,6 +52,8 @@ export default function Router() {
           <Route path="/settings" element={<Settings/>} />
           
           <Route path="/help" element={<Help/>} />
+
+          <Route path="/settings/profile" element={<Profile/>} />
 
         </Route>
 

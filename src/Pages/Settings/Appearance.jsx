@@ -1,5 +1,5 @@
 import React from 'react'
-import CardLayout from '../../Components/CardLayout.jsx'
+import CardLayout from '../../Components/CardLayout'
 import { Select, Switch } from 'antd'
 
 const languages=[

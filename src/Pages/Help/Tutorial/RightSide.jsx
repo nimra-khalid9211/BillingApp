@@ -34,6 +34,7 @@ const blogs = [
 
 const RightSide = () => {
   return (
+
     <div className='ml-5'>
     <div className='text-lg font-medium mb-4'>Latest news and updates</div>
       <span className='text-sm text-[#6C7293]'>
@@ -41,8 +42,8 @@ const RightSide = () => {
       application with comprehensive user management features.
       </span>
 
-      {blogs.map((x)=>(
-        <div className='flex border-b-2 pb-3 mt-6'>
+      {blogs.map((x, index)=>(
+        <div key={index} className='flex border-b-2 pb-3 mt-6'>
              <img src={x.img} alt="" width={100} height={100} className='rounded-lg'/>
 
                <div className='flex flex-col justify-start ml-3 text-base'>
@@ -68,6 +69,7 @@ const RightSide = () => {
     ))}
 
     </div>
+    
   )
 }
 

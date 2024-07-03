@@ -53,6 +53,8 @@ export const PaymentSuccessfullModal = ({
 }) => {
   const navigate = useNavigate();
 
+  // console.log(firstHeading)
+
   const handleButtonClick = () => {
     onButtonClick();
     setReceiptModal(false);
