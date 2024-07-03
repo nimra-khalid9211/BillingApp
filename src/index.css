@@ -212,6 +212,7 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .ant-select-selection-item{
   font-weight: 600 !important;
 }
+<<<<<<< HEAD
 
 
 
@@ -220,3 +221,15 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   font-size: 13px !important;
   font-weight: 600 !important;
 }
+=======
+/* Custom styles for the Select component */
+.custom-select .ant-select-selector {
+  background-color: transparent !important;
+}
+
+.custom-select .ant-select-arrow {
+  color: #377CF6; /* Change this to your desired arrow color */
+}
+
+
+>>>>>>> origin/reports

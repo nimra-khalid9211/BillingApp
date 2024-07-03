@@ -9,18 +9,10 @@ export default function PaymentMethods() {
 
   return (
     <>
-      {/* <div className="flex justify-between"> */}
 
         <BreadCrumbs icon={<MdOutlinePayment />} menu={"Payment Method"} 
         btnTitle2={"Add Payment"} btnEvent2={()=>navigate("/payment-methods/add-payment")}
         />
-
-        {/* <Link to="add-payment"> */}
-        {/* <Button type="primary" shape="round"> */}
-         {/* + Add Payment */}
-        {/* </Button> */}
-        {/* </Link> */}
-      {/* </div> */}
       <UserMultipleAccount />
     </>
   );

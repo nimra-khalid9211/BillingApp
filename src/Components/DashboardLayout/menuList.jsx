@@ -1,4 +1,4 @@
-import { TbDeviceMobileUp } from "react-icons/tb";
+import { TbDeviceMobileUp,TbReportSearch } from "react-icons/tb";
 import { MdDashboardCustomize,MdOutlinePayment , MdContactSupport  } from "react-icons/md";
 import { FaMoneyBills } from "react-icons/fa6";
 import { RiGovernmentFill,RiLogoutBoxLine  } from "react-icons/ri";
@@ -38,6 +38,11 @@ const menuList = [
         title: "Transactions",
         icon: <GrTransaction />        ,
         link:"/transactions",
+      },
+      {
+        title: "Reports",
+        icon: <TbReportSearch />        ,
+        link:"/reports",
       },
     ],
   },

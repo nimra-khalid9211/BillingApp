@@ -34,8 +34,9 @@ import rightSideBar4 from './rightSidebar4.png'
 import Card1 from './Card1.png'
 import Card2 from './Card2.png'
 import Card3 from './Card3.png'
+import info from './info.png'
 
-export {verify,ArrowLeft,jazzc, paymentPopup, grey_image, thankyou, logo, arrowRight,
+export {info,verify,ArrowLeft,jazzc, paymentPopup, grey_image, thankyou, logo, arrowRight,
      paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, 
      brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa,
      faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash, rightSideBar1, rightSideBar2,

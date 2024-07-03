@@ -1,7 +1,5 @@
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { maskCardNumber } from "../../Hooks";
-import { TikCheck, smallArrow } from "../../assets/icon";
-import Card from "../../assets/image/Bitmap.svg";
 import { accounts } from "../../data/tables";
 import { useState } from "react";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
@@ -14,6 +12,7 @@ export default function UserMultipleAccount() {
  const { setPaymentType , setCheckShown} = _BillingCondition()
 
  const navigate = useNavigate()
+ 
  const handleVerifyPopup = () => {
   setVerifyPopup(true);
 };
@@ -31,14 +30,11 @@ const handleModalClose = () => {
             className="grid grid-cols-6 gap-4 rounded-lg mt-5 bg-white p-5"
           >
             <div className="flex items-center border-r-2">
-              <div>
-                <img src={TikCheck} alt="icon" />
-              </div>
-              <div className="flex items-center ml-7">
+              <div className="flex items-center ml-5">
                 <div className="border">
                   <img src={account.cardImg} alt="card icon" />
                 </div>
-                <div className="ml-5 font-semibold text-lg">
+                <div className="ml-3 font-semibold text-lg">
                   {account.userName}
                 </div>
               </div>
