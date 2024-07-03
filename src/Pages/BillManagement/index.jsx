@@ -3,8 +3,9 @@ import BreadCrumbs from "../../UI/BreadCrumbs";
 import { Button, Divider, Radio, Tabs } from "antd";
 import Bills from "./Bills";
 import BillingOverview from "./BillingOverview";
-import AddBillDrawer from "./AddBillDrawer";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
+import { AddBillDrawer } from "../../Components/Drawers";
+import { FaMoneyBills } from "react-icons/fa6";
 
 
 const items = [
@@ -23,23 +24,19 @@ const items = [
 
 
 const BillManagement = () => {
-  const [addBill, setAddBill] = useState(false);
+   const {addBill, setAddBill} = _BillingCondition();
+   const [from, setFrom] = useState(false);
 
 
   return (
     <>
-      <div className="flex justify-between items-center mt-20">
         <BreadCrumbs
           menu={"Dashboard"}
+          icon={<FaMoneyBills />}
           subMenu={"Bills"}
+          btnTitle2={"Add Bill"}
+          btnEvent2={()=>{setAddBill(true); setFrom("addBill")}}
         />
-
-        <Button type="primary" shape="round" onClick={() => setAddBill(true)}>
-         + Add Bill
-        </Button>
-      </div>
-
-      <Divider className="mt-3" />
 
       <Tabs
         defaultActiveKey="1"
@@ -47,7 +44,7 @@ const BillManagement = () => {
         items={items }
       />
       
-      <AddBillDrawer addBill={addBill} setAddBill={setAddBill} />
+      <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from}/>
 
     </>
   );

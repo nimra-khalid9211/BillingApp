@@ -19,12 +19,16 @@ import Transactions from "../Pages/Transactions";
 import PaymentMethod from "../Pages/PaymentMethod";
 import AddPayment from "../Pages/PaymentMethod/addPayment";
 import BillPaymentMethod from "../Pages/BillManagement/BillPaymentMethod";
+import Settings from "../Pages/Settings";
+import Help from "../Pages/Help";
 
 export default function Router() {
   return (
     <>
       <Routes>
+
         <Route element={<Maneger />}>
+
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/bill-management" element={<BillManagement />} />
           <Route path="/bill-management/selected-bills" element={<SelectedBills />}/>
@@ -37,9 +41,20 @@ export default function Router() {
           <Route path="/mobile-top-up/changing-account" element={<ChangeAccount />} />
           <Route path="/mobile-top-up/changing-account/successfull" element={<Receipt />}/>
           <Route path="/payment-methods" element={<PaymentMethod />}/>
+          
+        
+
+          <Route path="/payment-methods" element={<PaymentMethod />}/>
+
           <Route path="/payment-methods/add-payment" element={<AddPayment />}/>
 
+          <Route path="/settings" element={<Settings/>} />
+          
+          <Route path="/help" element={<Help/>} />
+
         </Route>
+
+
         <Route path="/sign-in" element={<SignInForm />} />
         <Route path="/sign-up" element={<SignUpForm />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

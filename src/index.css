@@ -24,20 +24,25 @@ input[type="number"] {
   -webkit-appearance: none;
   appearance: none;
 }
+
 .left-sidebar-shadow{
 box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
+
 .ant-drawer .ant-drawer-header{
   border-bottom: 0;
   padding: 0 24px;
 }
+
 .ant-divider-horizontal{
   margin: 10px 0;
   color: black;
 }
+
 .ant-drawer .ant-drawer-body{
   padding: 0 24px;
 }
+
 .auth-bg{
   background-size: cover; 
   background-position: center; 
@@ -49,6 +54,7 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   width: 100%;
   z-index: 1; 
 }
+
 .content {
   position: relative;
   z-index: 2;
@@ -56,20 +62,25 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   width: 40rem;
   margin-left: 10rem;
 }
+
 .sign-page{
   background-image: url('assets/image/bg3.png');
 }
+
 .verification-bg{
   background-image: url('assets/image/bg1.png');
 }
+
 .forgot-pg{
   background-image: url('assets//image/bg2.png');
 }
+
 /* paidreceipt modal ant design css overlapping */
 .ant-modal .ant-modal-header{
   background-color: #F7F8F9;
   border-radius: 3rem;
 }
+
 .ant-modal .ant-modal-content{
   background-color: #F7F8F9;
   padding: 0;
@@ -166,4 +177,38 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   opacity: 50%;
   pointer-events: none;
   border-radius: 1rem; 
+}
+
+
+
+.drawer-cards-shadow{
+  box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+  -webkit-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+  -moz-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+}
+
+
+
+.MuiMenu-paper{
+  margin-top: 10px;
+  border: 2px solid #1976d2;
+}
+
+
+/* button custom padding */
+.btn-custom-padding{
+  padding: 10px 25px !important;
+}
+
+
+/* faq card shadow */
+.faq-card-shadow{
+  box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+-webkit-box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+-moz-box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+}
+
+/* select font weight bold */
+.ant-select-selection-item{
+  font-weight: 600 !important;
 }

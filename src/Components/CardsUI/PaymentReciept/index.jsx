@@ -2,6 +2,7 @@ import { LuDownload } from "react-icons/lu";
 import { bitmap } from "../../../assets/image";
 import { maskCardNumber } from "../../../Hooks";
 import { Button } from "antd";
+import { PDFTemplate } from "../../PDFTemplate";
 
 export default function PaymentReciept({ bill, from }) {
   return (
@@ -96,6 +97,7 @@ export default function PaymentReciept({ bill, from }) {
             <Button shape="round"
               className="border-[#4371D1] text-[#4371D1]"
               icon={<LuDownload />}
+              onClick={PDFTemplate}
             >
               Download
             </Button>

@@ -24,5 +24,19 @@ import easypa from "./easypa.png"
 import jazzcash from "./jazzcash.png"
 import paymentPopup from "./paymentPopup.png"
 import verify from "./verify.png"
+import logo from './brandlogo.png'
+import thankyou from './thankyou.png'
+import grey_image from './grey_image.jpg'
+import rightSideBar1 from './rightSidebar1.png'
+import rightSideBar2 from './rightSidebar2.png'
+import rightSideBar3 from './rightSidebar3.png'
+import rightSideBar4 from './rightSidebar4.png'
+import Card1 from './Card1.png'
+import Card2 from './Card2.png'
+import Card3 from './Card3.png'
 
-export {verify,ArrowLeft,jazzc,paymentPopup, arrowRight, paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash}
+export {verify,ArrowLeft,jazzc, paymentPopup, grey_image, thankyou, logo, arrowRight,
+     paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, 
+     brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa,
+     faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash, rightSideBar1, rightSideBar2,
+     rightSideBar3, rightSideBar4, Card1, Card2, Card3}

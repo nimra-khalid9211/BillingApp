@@ -1,12 +1,14 @@
 import { Radio, Tabs } from 'antd'
 import React, { useState } from 'react'
 import TransactionRecord from '../../Components/Tables/TransactionRecord';
+import BreadCrumbs from '../../UI/BreadCrumbs';
+import { GrTransaction } from 'react-icons/gr';
 
 const items = [
     {
       key: '1',
       label: 'All Transactions',
-      children: <TransactionRecord type="all" from="transactions"/>,
+      children: <TransactionRecord type="all"/>,
     },
     {
       key: '2',
@@ -42,6 +44,9 @@ const Transactions = () => {
 
   return (
     <>
+
+    <BreadCrumbs icon={<GrTransaction />} menu={"Transactions"}/>
+
    <Tabs 
       // activeKey={activeTab}
       onChange={handleChange}

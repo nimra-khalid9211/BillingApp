@@ -3,11 +3,12 @@ import { maskCardNumber } from "../../Hooks";
 import { TikCheck, smallArrow } from "../../assets/icon";
 import Card from "../../assets/image/Bitmap.svg";
 import { accounts } from "../../data/tables";
+import { useState } from "react";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
+import { useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { PaymentSuccessfullModal } from "../../Components/Modals";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
+
 export default function UserMultipleAccount() {
  const [verifyPopup, setVerifyPopup] = useState(false);
  const { setPaymentType , setCheckShown} = _BillingCondition()
@@ -22,6 +23,7 @@ const handleModalClose = () => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
       <div className="bg-[#377CF6] text-white p-3">Payment Methods</div>
+
       <div className="pb-10 pt-5 px-5">
         {accounts.map((account, index) => (
           <div

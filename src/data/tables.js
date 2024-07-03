@@ -156,7 +156,7 @@ export const MobileTopUpReceipt=
 export const accounts = [
     {
       userName: 'User Name 1',
-      cardNumber: '7868767824134334',
+      cardNumber: '1234698694444444',
       expiry: '10/26',
       verify: 'verified',
       status: 'Default',

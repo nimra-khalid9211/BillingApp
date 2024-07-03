@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import react, {useEffect} from 'react';
 import RightArrow from "../../assets/image/arrow-right.png";
 import Challan from "../../assets/image/challan.png";
 import Authlogo from "../../assets/image/authlogo.png"
+import { BlueButton } from "../../UI/Buttons";
+import { IoChevronBack } from "react-icons/io5";
+import BreadCrumbs from "../../UI/BreadCrumbs";
+import { RiGovernmentFill } from "react-icons/ri";
 
 export default function GovtDepartments() {
   const navigate = useNavigate();
@@ -10,6 +15,7 @@ export default function GovtDepartments() {
     navigate(link, { state: { componentName: title , componentIcon : icon} });
   };
 
+ 
   const dataList = [
     { title: "Govt E-Challan", icon: Challan, link: "/add-no" },
     { title: "Another Service", icon: Authlogo , link: "/add-no" },
@@ -22,11 +28,20 @@ export default function GovtDepartments() {
     { title: "Govt E-Challan", icon: Challan, link: "/add-no" }
     // Add more items as needed
   ];
+
   return (
+    <>
+
+    <BreadCrumbs icon={<RiGovernmentFill />} menu={"Govt Payments"}/>
+
     <div className="rounded-[3rem] border">
-      <div className="bg-[#377CF6] text-white p-3 mb-10 rounded-t-lg">
-        Govt Payments
+
+      <div className="bg-[#377CF6] flex justify-between items-center text-white p-3 mb-10 rounded-t-lg">
+
+     <span>Govt Payments</span>
+
       </div>
+
       <div className="w-[60%] mx-auto">
         <div className="grid grid-cols-3 gap-4">
           {dataList.map((item, index) => (
@@ -57,5 +72,6 @@ export default function GovtDepartments() {
         </div>
       </div>
     </div>
+    </>
   );
 }

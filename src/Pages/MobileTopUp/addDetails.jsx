@@ -2,6 +2,7 @@ import { Box, MenuItem, TextField } from "@mui/material";
 import { Button, Drawer } from "antd";
 import Cancel from "../../assets/icon/cancel.svg"
 import Buttons from "../../Components/SaveCancelButton/buttons";
+import { BlueButton, WhiteButton } from "../../UI/Buttons";
 
 export default function AddDetails({ addNumber, setAddNumber }) {
   const currencies = [
@@ -102,7 +103,13 @@ export default function AddDetails({ addNumber, setAddNumber }) {
             <span className="text-[#377CF6]">Click to resend</span>
           </p>
         </div>
-        <Buttons button1="Cancel" button2="Save"/>
+
+       <div className="mt-7">
+            <WhiteButton title={"Cancel"} clickEvent={()=>setAddNumber(false)}/>
+
+            <BlueButton  title={"Save"}/>
+       </div>
+
       </div>
     </Drawer>
   );
