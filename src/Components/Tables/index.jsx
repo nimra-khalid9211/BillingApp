@@ -3,6 +3,8 @@ import { MyBillList } from "../../data/tables";
 import { Button, Switch } from "antd";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { dueBills } from "../../assets/image";
+import { LargeButtons } from "../../UI/Buttons";
 
 export const MyBillHeading = [
   { title: "Bill Name" },
@@ -24,10 +26,12 @@ export const MyBills = ({ from }) => {
     <>
       {/* {JSON.stringify(MyBillList)} */}
 
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
+      <div className="overflow-x-auto rounded-3xl mt-5 bg-white">
         <div className="bg-[#377CF6] text-white p-3">
           {from === "BMB" ? "My Bills" : "Due Bills List"}
         </div>
+
+        {MyBillList.length > 0 ?
         <table className="w-full text-sm">
           <thead className="text-xs bg-[#DBF0FF] text-[#377CF6]">
             <tr>
@@ -108,7 +112,15 @@ export const MyBills = ({ from }) => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> : 
+        <div className="flex flex-col justify-center h-96 pt-10">
+           <img src={dueBills} className="w-80 h-48"  />
+
+           <LargeButtons title={"Add New Bill"}/> 
+        </div>
+        
+        }
+
       </div>
     </>
   );

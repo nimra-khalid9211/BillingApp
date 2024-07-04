@@ -179,21 +179,16 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   border-radius: 1rem; 
 }
 
-
-
 .drawer-cards-shadow{
   box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
   -webkit-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
   -moz-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
 }
 
-
-
 .MuiMenu-paper{
   margin-top: 10px;
   border: 2px solid #1976d2;
 }
-
 
 /* button custom padding */
 .btn-custom-padding{
@@ -213,8 +208,6 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   font-weight: 600 !important;
 }
 
-
-
 /* steps font size */
 .ant-steps-item-title{
   font-size: 13px !important;
@@ -230,3 +223,27 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 }
 
 
+
+/* ant design image upload css */
+.ant-upload-drag-icon{
+  display: flex;
+  justify-content: center;
+}
+
+.ant-upload-text{
+  font-weight: 700;
+}
+
+.ant-upload-wrapper .ant-upload-drag{
+  border: 2px dashed #329DFF;
+}
+
+.ant-upload-wrapper .ant-upload-drag .ant-upload {
+  padding: 0;
+}
+
+
+.btn-custom-style{
+  padding: 1.3rem 6rem !important;
+  border-radius: 24px !important;
+}

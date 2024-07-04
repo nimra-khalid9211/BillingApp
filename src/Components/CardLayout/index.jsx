@@ -29,3 +29,16 @@ const CardLayout = ({children, title, from}) => {
 }
 
 export default CardLayout
+
+
+export const StepCard = ({children, title}) =>{
+
+  return (
+    <Card className='h-[524px]'>
+      <div className='m-5 pb-2 border-b-2 text-lg font-medium'>{title}</div>
+
+
+      {children}
+      </Card>
+  )
+}
