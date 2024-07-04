@@ -42,6 +42,8 @@ else if(cardNumberStr.length <= 16){
     return formatted + lastFourDigits;
 } 
     }
+
+
 export const isOverdue = (dueDate) => {
     const due = new Date(dueDate);
     const today = new Date();
@@ -53,6 +55,25 @@ export const isOverdue = (dueDate) => {
     return due < today;
 };
 
+
+export const CNICDashes = (value) =>{
+    // Remove all non-digit characters
+    value = value.replace(/\D/g, "");
+
+    // Truncate the value if it exceeds 13 digits
+  if (value.length > 13) {
+    value = value.slice(0, 13);
+  }
+
+    //format the input value with dashes
+    if(value.length <= 5){
+        return value;
+    } else if (value.length <= 12){
+        return `${value.slice(0,5)}-${value.slice(5,12)}`;
+    } else {
+        return `${value.slice(0,5)}-${value.slice(5,12)}-${value.slice(12)}`
+    }
+}
 
 
 

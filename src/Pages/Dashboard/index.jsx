@@ -15,11 +15,7 @@ import { AddBillDrawer } from "../../Components/Drawers";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import VerificationSteps from "./VerificationSteps";
 
-const checkVerfication = false;
-
-
-
-
+export const checkVerfication = true;
 
 const Dashboard = () => {
   const {addBill, setAddBill} = _BillingCondition();
@@ -32,12 +28,14 @@ const Dashboard = () => {
        btnTitle1={"Quick Pay"} btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
        btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 
-      <div className="grid grid-cols-6 gap-4">
-        <div className="col-span-4">
+      <div className="grid grid-cols-7 gap-4">
+        <div className="col-span-5">
           <div className="grid grid-cols-3 gap-4">
             <TotalBill/>
             <IssuedBill/>
+
             <div className="flex justify-around flex-col">
+
               <PaymentStatus
                 status="Paid(02)"
                 amount="26,000"
@@ -45,6 +43,7 @@ const Dashboard = () => {
                 borderColor="#24A959"
                 icon={Paid}
               />
+
               <div className="mt-3">
                 <PaymentStatus
                   status="Unpaid(01)"
@@ -54,6 +53,7 @@ const Dashboard = () => {
                   borderColor="#F1416C"
                 />
               </div>
+
             </div>
           </div>
           <div>
@@ -64,8 +64,11 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="col-span-2">
+
           <PaymentMethodCard />
+
           <TransactionsHistory />
+          
         </div>
       </div> </>}
 

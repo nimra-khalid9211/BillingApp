@@ -35,9 +35,16 @@ import Card1 from './Card1.png'
 import Card2 from './Card2.png'
 import Card3 from './Card3.png'
 import info from './info.png'
+import uploadIcon from "./uploadIcon.png"
+import dueBills from './dueBills.png'
+import emptyCard from './emptyCard.png'
+import chart from './chart.png'
+import transaction from './transaction.png'
 
-export {info,verify,ArrowLeft,jazzc, paymentPopup, grey_image, thankyou, logo, arrowRight,
-     paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, 
-     brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa,
-     faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash, rightSideBar1, rightSideBar2,
-     rightSideBar3, rightSideBar4, Card1, Card2, Card3}
+
+
+export { info, verify, ArrowLeft, jazzc, paymentPopup, grey_image, thankyou, logo, arrowRight,
+        paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, uploadIcon, dueBills, chart, 
+        brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, emptyCard, transaction,
+        faucet, fireBurner,jazz,master,visa,debit,easypa,jazzcash, rightSideBar1, rightSideBar2,
+        rightSideBar3, rightSideBar4, Card1, Card2, Card3}

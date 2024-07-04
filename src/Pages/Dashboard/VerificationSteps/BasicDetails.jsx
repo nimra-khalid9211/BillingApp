@@ -1,12 +1,12 @@
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
-import { Card, Image } from 'antd'
+import { Image } from 'antd'
 import React from 'react'
+import { StepCard } from '../../../Components/CardLayout'
 
 const BasicDetails = () => {
   
   return (
-    <Card>
-      <div className='m-5 pb-2 border-b-2 text-lg font-medium'>Basic Details</div>
+   <StepCard title={"Basic Details"}>
 
       <div className='flex justify-center items-center'>
 
@@ -107,7 +107,7 @@ const BasicDetails = () => {
 
       </div>
       
-    </Card>
+    </StepCard>
   )
 }
 

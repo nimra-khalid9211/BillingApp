@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Logo from "../../assets/image/brandlogo.png";
 import menuList from "./menuList";
 import { Link, useLocation } from "react-router-dom";
+import { checkVerfication } from "../../Pages/Dashboard";
 
 const LeftSideBar = () => {
   const path = useLocation().pathname;
-
   return (
     <div
       className="rounded-r-2xl left-sidebar-shadow"
@@ -27,11 +27,15 @@ const LeftSideBar = () => {
               </div>
 
               {item.lists?.map((x, index) => (
-                <Link to={x.link} key={index}>
+                <Link to={checkVerfication ? x.link : "/dashboard"} key={index} >
                   <div
                     className={`flex items-center gap-3 px-3 font-medium text-[#6C7293] py-2 mx-3 my-6 ${
                       x.classses && x.classses
-                    } hover:bg-[#588fed] hover:text-white rounded-lg ${
+                    }
+                    ${
+                    checkVerfication ? "" :  "opacity-50 pointer-events-none" // Disable styles
+                    }
+                     hover:bg-[#588fed] hover:text-white rounded-lg ${
                       path.includes(x.link) ? "bg-[#377CF6] text-white" : ""
                     }`}
                   >
@@ -40,6 +44,7 @@ const LeftSideBar = () => {
                   </div>
                 </Link>
               ))}
+
             </ul>
           </div>
         ))}
