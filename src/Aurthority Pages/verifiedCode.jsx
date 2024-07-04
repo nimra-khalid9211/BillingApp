@@ -1,4 +1,6 @@
+import { Input } from "antd";
 import AuthLogo from "../assets/image/authlogo.png";
+
 export default function VerifiedCode() {
   return (
     <section className="verification-bg auth-bg">
@@ -23,7 +25,7 @@ export default function VerifiedCode() {
               </div>
               <div>
                 <div className="flex justify-center space-x-2">
-                  {Array(4)
+                  {/* {Array(4)
                     .fill(0)
                     .map((_, index) => (
                       <input
@@ -33,8 +35,10 @@ export default function VerifiedCode() {
                         maxLength="1"
                         className="w-12 h-12 border border-[#176BA3] text-center text-2xl rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#176BA3]"
                       />
-                    ))}
+                    ))} */}
+                      <Input.OTP length={4}/>
                 </div>
+              
               </div>
               <p className="text-sm font-light text-center text-[#6C7293]">
                 Didn't get a code?

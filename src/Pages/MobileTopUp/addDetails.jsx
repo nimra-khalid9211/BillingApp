@@ -1,5 +1,5 @@
 import { Box, MenuItem, TextField } from "@mui/material";
-import { Button, Drawer } from "antd";
+import { Button, Drawer, Input } from "antd";
 import Cancel from "../../assets/icon/cancel.svg"
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 
@@ -85,7 +85,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
             verification.
           </p>
           <div className="flex items-center space-x-2 mt-5">
-            {Array(4)
+            {/* {Array(4)
               .fill(0)
               .map((_, index) => (
                 <input
@@ -95,7 +95,8 @@ export default function AddDetails({ addNumber, setAddNumber }) {
                   maxLength="1"
                   className="w-12 h-12 border border-[#176BA3] text-center text-2xl rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#176BA3]"
                 />
-              ))}
+              ))} */}
+              <Input.OTP length={4}/>
           </div>
           <p className="mt-5">
             Didn't get a code?{" "}
@@ -105,7 +106,6 @@ export default function AddDetails({ addNumber, setAddNumber }) {
 
        <div className="mt-7">
             <WhiteButton title={"Cancel"} clickEvent={()=>setAddNumber(false)}/>
-
             <BlueButton  title={"Save"}/>
        </div>
 

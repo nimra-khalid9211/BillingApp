@@ -23,6 +23,8 @@ import Settings from "../Pages/Settings";
 import Help from "../Pages/Help";
 import Profile from "../Pages/Profile";
 import Reports from "../Pages/Reports";
+import TransactionReportTable from "../Components/ReportsTables/transactionReportTable";
+import ReportTables from "../Components/ReportsTables/reportTables";
 
 export default function Router() {
   return (
@@ -47,7 +49,6 @@ export default function Router() {
           <Route path="/reports" element={<Reports/>}/>
           <Route path="/settings" element={<Settings/>} />
           <Route path="/help" element={<Help/>} />
-
           <Route path="/settings/profile" element={<Profile/>} />
 
         </Route>
@@ -58,6 +59,8 @@ export default function Router() {
         <Route path="/set-password" element={<SetPassword />} />
         <Route path="/changed-password" element={<ChangedPassword />} />
         <Route path="/verified-code" element={<VerifiedCode />} />
+        <Route path="/transaction-report" element={<TransactionReportTable/>}/>
+        <Route path="/report-tables" element={<ReportTables/>}/>
       </Routes>
     </>
   );

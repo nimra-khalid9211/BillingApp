@@ -2,9 +2,13 @@ import { Button, Input, Modal, Select } from "antd";
 import React from "react";
 import { MyBillList } from "../../data/tables";
 import PaymentReciept from "../CardsUI/PaymentReciept";
+import { TextField } from "@mui/material";
+import { BlueButton, WhiteButton } from "../../UI/Buttons";
+import { useNavigate } from "react-router-dom";
 
 export const ViewReceiptModal = ({ setOpenModal, openModal, id, from }) => {
   const bill = MyBillList.find((bill) => bill.id === id);
+ 
 
   // console.log(id)
 
@@ -47,8 +51,6 @@ export const PaymentSuccessfullModal = ({
   debitTextTwo,
   cancelTitle,
 }) => {
-
-
   const handleButtonClick = () => {
     onButtonClick();
     setReceiptModal(false);
@@ -130,7 +132,8 @@ export const PaymentSuccessfullModal = ({
   );
 };
 
-export const ReportModels = ({ report, setReport }) => {
+export const ReportModels = ({ report, setReport,title}) => {
+  const navigate = useNavigate()
   const options = [
     { label: "Jazz", value: "option1" },
     { label: "Ufone", value: "option2" },
@@ -138,16 +141,18 @@ export const ReportModels = ({ report, setReport }) => {
     { label: "Zong", value: "option4" },
   ];
 
+
   return (
     <Modal
       centered
       open={report}
+      footer={null}
       // onOk={() => setReport(false)}
-      // onCancel={() => setReport(false)}
+      onCancel={() => setReport(false)}
     >
       <div className="p-10">
         <div className="text-center text-xl font-semibold text-[#377CF6] border-b pb-2">
-          Title
+        {title}
         </div>
         <div className="mt-10">
           <label htmlFor="" className="">
@@ -186,9 +191,42 @@ export const ReportModels = ({ report, setReport }) => {
             options={options}
           />
         </div>
-        <div className="text-[#0083FF] font-semibold">Select Date Range</div>
-        <div>
-          Calender
+        <div className="text-[#0083FF] font-semibold mt-5">
+          Select Date Range
+        </div>
+        <div className="mt-5 grid grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="">From</label>
+            <TextField
+              type="date"
+              variant="outlined"
+              size="small"
+              fullWidth
+              InputLabelProps={{ shrink: true }}
+              InputProps={{
+                inputProps: { placeholder: "" },
+                style: { fontSize: "16px" },
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="">To</label>
+            <TextField
+              type="date"
+              variant="outlined"
+              size="small"
+              fullWidth
+              InputLabelProps={{ shrink: true }}
+              InputProps={{
+                inputProps: { placeholder: "" },
+                style: { fontSize: "16px" },
+              }}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mt-10">
+          <WhiteButton title="Cancel" clickEvent={() => setReport(false)}/>
+          <BlueButton title="Generate Report" clickEvent={()=>navigate('/transaction-report')}/>
         </div>
       </div>
     </Modal>

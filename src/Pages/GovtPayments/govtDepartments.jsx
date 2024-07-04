@@ -3,8 +3,6 @@ import react, {useEffect} from 'react';
 import RightArrow from "../../assets/image/arrow-right.png";
 import Challan from "../../assets/image/challan.png";
 import Authlogo from "../../assets/image/authlogo.png"
-import { BlueButton } from "../../UI/Buttons";
-import { IoChevronBack } from "react-icons/io5";
 import BreadCrumbs from "../../UI/BreadCrumbs";
 import { RiGovernmentFill } from "react-icons/ri";
 
