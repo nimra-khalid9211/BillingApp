@@ -1,90 +1,72 @@
-import Electric from "../../../assets/image/plug-cable.svg"
-import WaterBill from "../../../assets/image/waterbill.svg"
-import Gas from "../../../assets/image/fire-burner.svg"
+import Electric from "../../../assets/image/plug-cable.svg";
+import WaterBill from "../../../assets/image/waterbill.svg";
+import Gas from "../../../assets/image/fire-burner.svg";
+import { transaction } from "../../../assets/image";
+
+const data = [
+  // {
+  //   icon: <img src={Electric} />,
+  //   title: "Electricity Bill",
+  //   date: "29 APR,2024",
+  //   total: "33,548",
+  //   percent: "69",
+  // },
+  // {
+  //   icon: <img src={Gas} />,
+  //   title: "Electricity Bill",
+  //   date: "29 APR,2024",
+  //   total: "33,548",
+  //   percent: "69",
+  // },
+  // {
+  //   icon: <img src={WaterBill} />,
+  //   title: "Electricity Bill",
+  //   date: "29 APR,2024",
+  //   total: "33,548",
+  //   percent: "69%",
+  // },
+]
 
 export default function TransactionsHistory() {
   return (
     <div className="mt-5 mb-2 drop-shadow-xl bg-white p-8 rounded-[2rem]">
       <div className="flex justify-between items-center">
-        <div className="font-semibold">Recent Transactions</div>
-        <div className="underline text-[#377CF6]">View All</div>
+        <div className="font-semibold border-b pb-2 w-full">Recent Transactions</div>
+        {
+          data.length > 0 &&(
+            <div className="underline text-[#377CF6]">View All</div>
+          )
+        }
       </div>
-      <div className="flex items-center justify-between mt-5 border-b pb-5">
-        <div className="flex items-center">
-          <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
-            <img src={Electric} alt="" />
+      {
+        data.length > 0 ? 
+      
+      data.map((data) => (
+        <div className="flex items-center justify-between mt-5 border-b pb-5">
+          <div className="flex items-center">
+            <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
+              {data.icon}
+            </div>
+            <div className="ml-5">
+              <div className="font-semibold">{data.title}</div>
+              <div className="text-xs font-semibold mt-1">{data.date}</div>
+            </div>
           </div>
-          <div className="ml-5">
-            <div className="font-semibold">Electricity Bill</div>
-            <div className="text-xs font-semibold mt-1">29 APR,2024</div>
+          <div>
+            <div className="font-semibold">{data.total}</div>
+            <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">
+              {data.percent}
+            </div>
           </div>
         </div>
-        <div>
-          <div className="font-semibold">33,548</div>
-          <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">69%</div>
-        </div>
+      )): 
+    <>
+      <div className="flex items-center justify-center my-10">
+        <img src={transaction} alt="" className="w-36 h-52" />
       </div>
-      <div className="flex items-center justify-between mt-5 border-b pb-5">
-        <div className="flex items-center">
-          <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
-            <img src={Electric} alt="" />
-          </div>
-          <div className="ml-5">
-            <div className="font-semibold">School Bill Payment</div>
-            <div className="text-xs font-semibold mt-1">29 APR,2024</div>
-          </div>
-        </div>
-        <div>
-          <div className="font-semibold">33,548</div>
-          <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">69%</div>
-        </div>
-      </div>
-      <div className="flex items-center justify-between mt-5 border-b pb-5">
-        <div className="flex items-center">
-          <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
-            <img src={WaterBill} alt="" />
-          </div>
-          <div className="ml-5">
-            <div className="font-semibold">Water Bill  Payment</div>
-            <div className="text-xs font-semibold mt-1">29 APR,2024</div>
-          </div>
-        </div>
-        <div>
-          <div className="font-semibold">33,548</div>
-          <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">69%</div>
-        </div>
-      </div>
-      <div className="flex items-center justify-between mt-5 border-b pb-5">
-        <div className="flex items-center">
-          <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
-            <img src={Gas} alt="" />
-          </div>
-          <div className="ml-5">
-            <div className="font-semibold">Gas Bill Payment</div>
-            <div className="text-xs font-semibold mt-1">29 APR,2024</div>
-          </div>
-        </div>
-        <div>
-          <div className="font-semibold">33,548</div>
-          <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">69%</div>
-        </div>
-      </div>
-      <div className="flex items-center justify-between mt-5">
-        <div className="flex items-center">
-          <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
-            <img src={Electric} alt="" />
-          </div>
-          <div className="ml-5">
-            <div className="font-semibold">Electricity Bill Pyament</div>
-            <div className="text-xs font-semibold mt-1">29 APR,2024</div>
-          </div>
-        </div>
-        <div>
-          <div className="font-semibold">33,548</div>
-          <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">69%</div>
-        </div>
-      </div>
-     
+      <div className="font-bold text-center">No Record Found</div>
+    </>
+      }
     </div>
   );
 }

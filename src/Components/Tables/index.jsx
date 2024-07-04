@@ -113,10 +113,12 @@ export const MyBills = ({ from }) => {
             ))}
           </tbody>
         </table> : 
-        <div className="flex flex-col justify-center h-96 pt-10">
+        <div className="w-[50%] mx-auto flex justify-center items-center flex-col py-5">
            <img src={dueBills} className="w-80 h-48"  />
 
-           <LargeButtons title={"Add New Bill"}/> 
+          <div className="my-10">
+          <LargeButtons title={"Add New Bill"}/> 
+          </div>
         </div>
         
         }
