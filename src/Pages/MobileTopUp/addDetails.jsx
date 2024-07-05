@@ -40,7 +40,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
       className="rounded-tl-[80px] rounded-bl-[80px] py-8 px-5 relative"
     >
       <div className="">
-      <div onClick={() => setAddNumber(false)} className="absolute left-[-1rem] z-50 top-[10rem]"><img src={Cancel} alt="" /></div>
+      <div onClick={() => setAddNumber(false)} className="absolute left-[-1rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
         <div className="text-xl text-[#377CF6] border-b pb-2 font-semibold">
           Add Number
         </div>
@@ -50,11 +50,12 @@ export default function AddDetails({ addNumber, setAddNumber }) {
         <div className="rounded-2xl p-7 mt-5 shadow-lg shadow-[#8a918e]">
           <div className="border-b pb-2 font-semibold">Number Details</div>
           <div className="grid grid-cols-2 gap-4 mt-5">
-            <TextField id="outlined-basic" label="Name" variant="outlined" />
+            <TextField id="outlined-basic" label="Name" variant="outlined" size="small"/>
             <TextField
               id="outlined-basic"
               label="Mobile Operator"
               variant="outlined"
+              size="small"
             />
             <Box
               component="form"
@@ -69,6 +70,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
                 select
                 label="Mobile Operator"
                 defaultValue="EUR"
+                size="small"
               >
                 {currencies.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -96,7 +98,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
                   className="w-12 h-12 border border-[#176BA3] text-center text-2xl rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#176BA3]"
                 />
               ))} */}
-              <Input.OTP length={4}/>
+              <Input.OTP length={4} />
           </div>
           <p className="mt-5">
             Didn't get a code?{" "}

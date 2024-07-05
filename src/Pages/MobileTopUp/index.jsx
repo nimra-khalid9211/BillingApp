@@ -12,7 +12,7 @@ export default function MobileTopUp() {
   const [addNumber, setAddNumber] = useState(false);
 
   return (
-    <>
+    <div className="">
       <BreadCrumbs
         menu="Mobile Top UP"
         icon={<TbDeviceMobileUp />}
@@ -21,6 +21,6 @@ export default function MobileTopUp() {
       />
       <MobileTopUpTable />
       <AddDetails addNumber={addNumber} setAddNumber={setAddNumber} />
-    </>
+    </div>
   );
 }

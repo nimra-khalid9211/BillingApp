@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 import { PaymentSuccessfullModal } from "../../../Components/Modals";
 import { useState } from "react";
-import {info } from "../../../assets/image";
+import { info } from "../../../assets/image";
 import { _BillingCondition } from "../../../actions/Context/BillingOverviewConditions";
 import { WhiteButton, BlueButton } from "../../../UI/Buttons";
 
@@ -32,18 +32,26 @@ export default function DebitCard(type) {
               id="outlined-basic"
               label="Account Title"
               variant="outlined"
+              size="small"
             />
             <TextField
               id="outlined-basic"
               label="Bank Name "
               variant="outlined"
+              size="small"
             />
             <TextField
               id="outlined-basic"
               label="Branch Number"
               variant="outlined"
+              size="small"
             />
-            <TextField id="outlined-basic" label="IBAN#" variant="outlined" />
+            <TextField
+              id="outlined-basic"
+              label="IBAN#"
+              variant="outlined"
+              size="small"
+            />
           </div>
 
           {checkShown ? (

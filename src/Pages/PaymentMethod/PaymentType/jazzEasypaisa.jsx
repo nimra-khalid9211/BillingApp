@@ -1,13 +1,12 @@
-
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import { useState } from "react";
 
 export default function JazzEasypaisa() {
-    const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
-    const handleVerifyClick = () => {
-      setIsVerified(!isVerified);
-    };
+  const handleVerifyClick = () => {
+    setIsVerified(!isVerified);
+  };
   return (
     <div>
       <div className="border-b pb-2 font-bold mt-10">
@@ -19,13 +18,18 @@ export default function JazzEasypaisa() {
             id="outlined-basic"
             label="Account Holder Name"
             variant="outlined"
+            size="small"
           />
           <TextField
             id="outlined-basic"
             label="Mobile Numberr"
             variant="outlined"
+            size="small"
           />
-          <button className="text-[#329DFF] underline text-start ml-7" onClick={handleVerifyClick}>
+          <button
+            className="text-[#329DFF] underline text-start ml-7"
+            onClick={handleVerifyClick}
+          >
             Verify Account
           </button>
         </div>
@@ -50,19 +54,22 @@ export default function JazzEasypaisa() {
             </div>
             <p className="mt-5">
               Didn't get a code?
-              <span className="text-[#377CF6] font-semibold"> Click to resend</span>
+              <span className="text-[#377CF6] font-semibold">
+                {" "}
+                Click to resend
+              </span>
             </p>
             <button className="bg-[#24A959] text-white rounded-[2rem] px-10 py-3 font-semibold my-7">
               Verify Account
             </button>
           </div>
         )}
-         <div className="">
-            <input type="checkbox" />
-            <label htmlFor="" className="ml-3">
-              Set as Default
-            </label>
-          </div>
+        <div className="">
+          <input type="checkbox" />
+          <label htmlFor="" className="ml-3">
+            Set as Default
+          </label>
+        </div>
       </div>
     </div>
   );

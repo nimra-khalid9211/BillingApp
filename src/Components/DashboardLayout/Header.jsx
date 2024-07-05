@@ -30,7 +30,6 @@ const Header = () => {
   const [dropdown, setDropdown] = useState(false);
 
   const date = Date().slice(0,15);
-
   return (
 
     <div className='flex items-center justify-between  mt-5'>
