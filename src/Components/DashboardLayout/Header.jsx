@@ -46,16 +46,16 @@ const Header = () => {
   return (
 
     <div className='flex items-center justify-between  mt-5'>
-            <b className='text-2xl'>Good Morning, Shaun Abbott</b>
+            <b className='text-2xl'>Welcome, Shaun Abbott</b>
 
             <div className='flex justify-between items-center gap-3'>
 
-                <div className='bg-white p-2 rounded-full'>
+                {/* <div className='bg-white p-2 rounded-full'>
                 <IoSearchOutline size={20}/>
-                </div>
+                </div> */}
 
                 <div className='bg-white py-3 px-3 rounded-full flex gap-3'>
-                <LuCalendarDays size={20}/> <b className='text-sm'>{date}</b>
+                <LuCalendarDays size={20} color='#377CF6' /> <b className='text-sm border-l border-[#6C7293] pl-2'>{date}</b>
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full gap-3'>
@@ -80,7 +80,6 @@ const Header = () => {
 
             <div className='flex flex-col'>
               <b className='text-sm' style={{ lineHeight: "0.7rem" }}>Shaun Abbott</b>
-              <span className='text-[10px]'>shaunabbott@gmail.com</span>
             </div>
 
             {dropdown ? <FaAngleUp /> : <FaAngleDown />}
