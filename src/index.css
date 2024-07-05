@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+
+input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
+
+
+.fixedColumn {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.leftColumn {
+  left: 0;
+  width: 20%; /* Adjust as per md={4} */
+}
+
+.centerColumn {
+  padding: 10px;
+  margin-left: 16.6%;
+  /* Adjust as per left column width */
+  /* margin-right: 20%; Adjust as per right column width */
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .leftColumn,
+  .rightColumn {
+    display: none;
+  }
+  .centerColumn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
 :root {
   --primary-color: #377CF6;
 }
@@ -213,6 +252,16 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   font-size: 13px !important;
   font-weight: 600 !important;
 }
+
+/* step margin */
+.ant-steps{
+  margin: 0 10rem !important;
+}
+
+
+
+
+
 /* Custom styles for the Select component */
 .custom-select .ant-select-selector {
   background-color: transparent !important;
@@ -276,3 +325,29 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   color: #508ef7 !important;
   border-left: 4px solid #377cf6;
 }
+
+
+
+.complete-profile-shadow{
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+}
+
+
+
+.btn-custom-class{
+  padding: 20px 30px !important;
+}
+
+ /* mui input placeholder fontsize */
+
+ .css-1pysi21-MuiFormLabel-root-MuiInputLabel-root{
+  font-size: 14px !important;
+ }
+
+ .css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+  color: #1976d2 !important;
+ }
+
+

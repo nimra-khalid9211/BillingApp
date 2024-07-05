@@ -14,6 +14,7 @@ import { Button } from "antd";
 import { AddBillDrawer } from "../../Components/Drawers";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import VerificationSteps from "./VerificationSteps";
+import CompleteProfile from "./CompleteProfile";
 
 export const checkVerfication = true;
 
@@ -28,6 +29,10 @@ const Dashboard = () => {
     <> <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} 
        btnTitle1={"Quick Pay"} btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
        btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
+
+     <div>
+      <CompleteProfile />
+     </div>
 
       <div className="grid grid-cols-7 gap-4">
         <div className="col-span-5">

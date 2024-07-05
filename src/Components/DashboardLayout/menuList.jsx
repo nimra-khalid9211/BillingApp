@@ -7,7 +7,7 @@ import { CiSettings } from "react-icons/ci";
 
 const menuList = [
   {
-    name: "MAIN MENU",
+    name: "",
     lists: [
       {
         title: "Dashboard",
@@ -47,7 +47,7 @@ const menuList = [
     ],
   },
   {
-    name: "GENERAL",
+    name: "",
     lists: [
       {
         title: "Settings",

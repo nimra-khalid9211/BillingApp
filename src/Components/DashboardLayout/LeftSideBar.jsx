@@ -8,7 +8,7 @@ const LeftSideBar = () => {
   const path = useLocation().pathname;
   return (
     <div
-      className="rounded-r-2xl left-sidebar-shadow"
+      className="rounded-r-[50px] left-sidebar-shadow "
       style={{ height: "100vh" }}
     >
       <div className="p-5 flex justify-center items-center">

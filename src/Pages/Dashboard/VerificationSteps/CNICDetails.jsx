@@ -18,6 +18,22 @@ const CNICDetails = () => {
     setValue(formattedValue);
   }
 
+  const [values, setValues] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = (e) => {
+    setIsFocused(false);
+    setValus(e.target.value);
+  };
+
+  const handleChanges = (e) => {
+    setValue(e.target.value);
+  };
+
   return (
     <StepCard title={"CNIC Details"}>
 
@@ -26,18 +42,19 @@ const CNICDetails = () => {
       <div className='grid grid-cols-2 gap-3 w-1/2'>
 
       <div>
-          <TextField value={value} onChange={handleChange}  label="CNIC Number" 
+          <TextField type='number'  label="CNIC Number" 
           InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} 
           variant="outlined" size='small' fullWidth/>
 
       </div>
 
-      <div>
-  
-      <TextField label="Expiry Date" type='month' variant="outlined" size='small' fullWidth
-       InputLabelProps={{ shrink: true }} InputProps={{ style: { fontSize: '16px', fontWeight: "600" },
-        inputProps: { placeholder: 'MM/YYYY', } }}/> 
-      </div>
+      <div className='mb-4'>
+          <TextField label="Expiry Date" type='date' variant="outlined" size='small' fullWidth
+        value={value} onChange={handleChanges} onFocus={handleFocus} onBlur={handleBlur}
+        InputLabelProps={{  shrink: isFocused || Boolean(values), }}
+        InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
+      />
+            </div>
 
       <div className='mt-4'>
       <label className='text-base'>Upload Front Image</label>

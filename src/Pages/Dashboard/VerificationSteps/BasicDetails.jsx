@@ -1,9 +1,25 @@
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import { Image } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
 import { StepCard } from '../../../Components/CardLayout'
 
 const BasicDetails = () => {
+
+  const [value, setValue] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = (e) => {
+    setIsFocused(false);
+    setValue(e.target.value);
+  };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   
   return (
    <StepCard title={"Basic Details"}>
@@ -30,8 +46,11 @@ const BasicDetails = () => {
           </div>
 
           <div className='mb-4'>
-            <TextField  label="Date of Birth" type='date' variant="outlined" size='small' fullWidth
-             InputLabelProps={{ shrink: true, }} InputProps={{  inputProps: { placeholder: '',  }, style: { fontSize: '16px', fontWeight:"600" }, }}/>
+          <TextField label="Date of Birth" type='date' variant="outlined" size='small' fullWidth
+        value={value} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
+        InputLabelProps={{  shrink: isFocused || Boolean(value), }}
+        InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
+      />
             </div>
 
           <div className='mb-4'>
@@ -56,7 +75,7 @@ const BasicDetails = () => {
           <TextField  label="Address" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
           </div>
 
-          <div className='mb-4'>
+          {/* <div className='mb-4'>
         <FormControl size='small' fullWidth>
         <InputLabel id="demo-simple-select-label">City</InputLabel>
 
@@ -79,7 +98,7 @@ const BasicDetails = () => {
         </Select>
 
         </FormControl>
-         </div>
+         </div> */}
 
          <div className='mb-4'>
         <FormControl size='small' fullWidth>

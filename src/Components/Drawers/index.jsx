@@ -54,38 +54,9 @@ const cards = [
   },
 ]
 
-const options = [
-  {
-    label: 'China',
-    value: 'china',
-    emoji: '🇨🇳',
-    desc: 'China (中国)',
-  },
-  {
-    label: 'USA',
-    value: 'usa',
-    emoji: '🇺🇸',
-    desc: 'USA (美国)',
-  },
-  {
-    label: 'Japan',
-    value: 'japan',
-    emoji: '🇯🇵',
-    desc: 'Japan (日本)',
-  },
-  {
-    label: 'Korea',
-    value: 'korea',
-    emoji: '🇰🇷',
-    desc: 'Korea (韩国)',
-  },
-];
 
-// const options = [
-//   { value: 'option1', label: 'Option 1' },
-//   { value: 'option2', label: 'Option 2' },
-//   { value: 'option3', label: 'Option 3' },
-// ];
+
+
 
 export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
@@ -122,8 +93,8 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
                <div className="h-60 bg-white">
                <Search placeholder="Search.." className="p-4"/>
-               {billingCompanies.map((x)=>(
-                <div className="px-4 py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.title}</div>
+               {billingCompanies.map((x, index)=>(
+                <div key={index} className="px-4 py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.title}</div>
              
                ))}
               </div> 

@@ -25,7 +25,7 @@ export const MyBillList = [
         consumerID: "123456798",
         consumerName:"Usman Afzal",
         billCompany:"SNGPL",
-        dueDate: "05 May 2024",
+        dueDate: "04 July 2024",
         amount:"7,000",
         afterDueAmount: "7,630",
         autoDebit: false,
