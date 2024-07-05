@@ -1,10 +1,13 @@
-import { MenuItem, TextField } from "@mui/material";
-import { Card, Divider, Drawer, Switch } from "antd";
+import { Autocomplete, Chip, MenuItem, TextField } from "@mui/material";
+import { Card, Divider, Drawer, Input, Select, Switch } from "antd";
 import React, { useState } from "react";
 import DrawerCardLayout from "../../Components/DrawerCardLayout";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 import PayMethodCard from "../CardsUI/PayMethodCard";
+
+
+const {Search} = Input;
 
 const billingCompanies = [
   { title: "GEPCO" },
@@ -51,6 +54,39 @@ const cards = [
   },
 ]
 
+const options = [
+  {
+    label: 'China',
+    value: 'china',
+    emoji: '🇨🇳',
+    desc: 'China (中国)',
+  },
+  {
+    label: 'USA',
+    value: 'usa',
+    emoji: '🇺🇸',
+    desc: 'USA (美国)',
+  },
+  {
+    label: 'Japan',
+    value: 'japan',
+    emoji: '🇯🇵',
+    desc: 'Japan (日本)',
+  },
+  {
+    label: 'Korea',
+    value: 'korea',
+    emoji: '🇰🇷',
+    desc: 'Korea (韩国)',
+  },
+];
+
+// const options = [
+//   { value: 'option1', label: 'Option 1' },
+//   { value: 'option2', label: 'Option 2' },
+//   { value: 'option3', label: 'Option 3' },
+// ];
+
 export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
   return (
@@ -76,19 +112,21 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         <DrawerCardLayout heading={"Bill Details"}>
           <div className="grid grid-cols-5 gap-8 mb-10">
             
-            <TextField
+             <TextField
               className="col-span-4 border-black"
               select
               label = {from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""}
               size="small"
             >
-              <div className="h-60">
-                {billingCompanies.map((option, index) => (
-                  <MenuItem key={index} value={option.value}>
-                    {option.title}
-                  </MenuItem>
-                ))}
-              </div>
+              
+
+               <div className="h-60 bg-white">
+               <Search placeholder="Search.." className="p-4"/>
+               {billingCompanies.map((x)=>(
+                <div className="px-4 py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.title}</div>
+             
+               ))}
+              </div> 
             </TextField>
 
             {from === "addBill" && <TextField

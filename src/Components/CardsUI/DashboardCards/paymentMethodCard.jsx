@@ -3,10 +3,12 @@ import { CardData } from "../../../data/cardData"
 import { IoMdAdd } from "react-icons/io"
 import { emptyCard } from "../../../assets/image"
 import { LargeButtons, WhiteButton } from "../../../UI/Buttons"
+import { useNavigate } from "react-router-dom"
 
 
 
 export default function PaymentMethodCard(){
+    const navigate = useNavigate();
     return(
 
     <Card className="rounded-3xl h-96 border bg-[#d3e8f6] border-[#377CF6] ">
@@ -54,7 +56,7 @@ export default function PaymentMethodCard(){
 
                 
                 <div className="mt-7">
-                    <LargeButtons title={"Add Payment Method"}/>
+                    <LargeButtons title={"Add Payment Method"} clickEvent={()=>navigate("/payment-methods/add-payment")}/>
                 </div>
 
                    

@@ -24,7 +24,8 @@ const Dashboard = () => {
   return (
       <>
 
-    {!checkVerfication ? <VerificationSteps/>  : <> <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} 
+    {!checkVerfication ? <VerificationSteps/>  : 
+    <> <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} 
        btnTitle1={"Quick Pay"} btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
        btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 
