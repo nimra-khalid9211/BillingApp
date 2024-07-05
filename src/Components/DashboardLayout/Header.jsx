@@ -1,13 +1,14 @@
 import { Avatar, Badge, Dropdown, Menu } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { CiSettings } from 'react-icons/ci'
 import { FaAngleDown, FaAngleUp, FaRegBell, FaRegUser } from 'react-icons/fa'
 import { IoSearchOutline } from 'react-icons/io5'
 import { LuCalendarDays } from 'react-icons/lu'
 import { RiLogoutBoxLine, RiUserLine } from 'react-icons/ri'
 import { Link, useNavigate } from 'react-router-dom'
+import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions'
 
-const dropdownMenu = [
+const dropdownMenus = [
   {
     title: "Profile",
     icon: <RiUserLine size={20}/>,
@@ -24,10 +25,22 @@ const dropdownMenu = [
   },
 ]
 
+const dropdownMenu = (
+  <Menu>
+
+    {dropdownMenus.map((x, index)=>(
+    <Menu.Item key={index} icon={x.icon}>
+      <Link to={x.link}>{x.title}</Link>
+    </Menu.Item>
+    ))}
+   
+  </Menu>
+);
+
 const Header = () => {
   const navigate = useNavigate();
 
-  const [dropdown, setDropdown] = useState(false);
+  const {dropdown, setDropdown} = _BillingCondition();
 
   const date = Date().slice(0,15);
 
@@ -47,35 +60,34 @@ const Header = () => {
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full gap-3'>
-                 <CiSettings size={20}/>
+                 <CiSettings size={20} onClick={()=>navigate("/settings")} role='button'/>
                 </div>
 
                 <div className='bg-white py-3 px-3 flex items-center rounded-full gap-3'>
                 <Badge dot color='#377CF6'>  <FaRegBell size={18}/> </Badge>
                 </div>
 
-                <div role='button' onClick={()=>setDropdown(!dropdown)} 
-                className={`bg-white p-1 relative flex items-center justify-start rounded-full gap-3`}>
+          <Dropdown
+          overlay={dropdownMenu}
+          trigger={['click']}
+          // onVisibleChange={(visible) => setDropdown(visible)} 
+          >
 
-                <Avatar size={34} icon={<FaRegUser />} />
+          <div
+            role='button'
+            className={`bg-white p-1 relative flex items-center justify-start rounded-full gap-3`}>
 
-                <div className='flex flex-col '>
-                  <b className='text-sm' style={{lineHeight:"0.7rem"}}>Shaun Abbott</b>
-                  <span className='text-[10px]'>shaunabbott@gmail.com</span>
-                </div>
+            <Avatar size={34} icon={<FaRegUser />} />
 
-               {dropdown ? <FaAngleUp/> : <FaAngleDown />}
+            <div className='flex flex-col'>
+              <b className='text-sm' style={{ lineHeight: "0.7rem" }}>Shaun Abbott</b>
+              <span className='text-[10px]'>shaunabbott@gmail.com</span>
+            </div>
 
-               </div>
+            {dropdown ? <FaAngleUp /> : <FaAngleDown />}
+          </div>
+        </Dropdown>
 
-
-                {dropdown && <div className= 'bg-white absolute right-10 top-28 z-10 w-[193px] rounded-3xl flex flex-col items-start justify-start'>
-              
-              {dropdownMenu.map((x)=>( <div onClick={()=>{navigate(x.link); setDropdown(false)}} role='button' className='flex items-center font-semibold gap-3 px-5 py-3 border-b-2 w-[193px] hover:bg-[#dbf0ff] hover:text-[#508ef7] hover:border-l-4 hover:border-l-[#377cf6]'> {x.icon} <span>{x.title}</span> </div>))}
-
-                </div>}
-
-                
             </div>
 
     </div>
