@@ -7,7 +7,7 @@ import '../../assets/circularprogressbar.css'
 
 const CompleteProfile = () => {
   return (
-    <div className="bg-white rounded-3xl complete-profile-shadow my-4">
+    <div className="bg-white rounded-3xl drop-shadow-xl my-4">
     <div className="flex items-center justify-between p-8">
 
         <div className="flex flex-col justify-start ">

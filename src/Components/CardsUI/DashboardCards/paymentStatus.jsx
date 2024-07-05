@@ -10,9 +10,9 @@ export default function PaymentStatus({ bgColor, status, amount, borderColor,ico
           <img className="h-full w-full" src={icon} alt="" />
           </div>
           
-        <div>{status}</div>
+        <div className="text-lg">{status}</div>
       </div>
-      <div>{amount}</div>
+      <div className="text-lg">{amount}</div>
     </div>
   );
 }

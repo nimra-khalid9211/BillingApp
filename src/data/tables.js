@@ -8,7 +8,7 @@ export const MyBillList = [
         consumerID: "123456798",
         consumerName:"Usman Afzal",
         billCompany:"PTCL",
-        dueDate: "24 May 2024",
+        dueDate: "24 Dec 2024",
         amount:"10,000",
         afterDueAmount: "10,630",
         autoDebit:true,

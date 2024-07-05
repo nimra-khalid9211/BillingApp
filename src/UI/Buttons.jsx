@@ -2,14 +2,17 @@ import { Button } from 'antd'
 import React from 'react'
 import { IoMdAdd } from 'react-icons/io'
 
-export const WhiteButton = ({title, clickEvent}) => {
+export const WhiteButton = ({title,icon, clickEvent ,customClass}) => {
+  console.log(customClass)
   return (
-    <Button shape='round' className='btn-custom-padding mr-3 text-[#6C7293]' 
-    onClick={clickEvent}> 
-
-    {title} 
-
-    </Button>
+    <Button 
+    shape='round' 
+    className={`btn-custom-padding mr-3 text-[#6C7293] ${customClass}`} 
+    onClick={clickEvent}
+    icon={icon}
+  >
+    {title}
+  </Button>
   )
 }
 

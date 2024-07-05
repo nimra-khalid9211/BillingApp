@@ -15,6 +15,7 @@ import { AddBillDrawer } from "../../Components/Drawers";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import VerificationSteps from "./VerificationSteps";
 import CompleteProfile from "./CompleteProfile";
+import { SelectableBills } from "../../Components/Tables/SelectableBills";
 
 export const checkVerfication = true;
 
@@ -27,7 +28,7 @@ const Dashboard = () => {
 
     {!checkVerfication ? <VerificationSteps/>  : 
     <> <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} 
-       btnTitle1={"Quick Pay"} btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
+       btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
        btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 
      <div>
@@ -63,7 +64,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div>
-            <MyBills from="dashboard" />
+            <SelectableBills from="dashboard" type="all"/>
           </div>
           <div className="mt-10 drop-shadow-xl rounded-[2rem]">
             <GoogleChart />
