@@ -2,15 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
 input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
-.custom-placeholder-hidden::placeholder { 
-  opacity: 0 !important; 
+/* .custom-placeholder-hidden .MuiInputBase-input::placeholder {
+  color: transparent;
 }
+
+.custom-placeholder-visible .MuiInputBase-input::before {
+  content: 'Enter your date of birth';
+  color: rgba(0, 0, 0, 0.54);
+} */
 
 
 .fixedColumn {

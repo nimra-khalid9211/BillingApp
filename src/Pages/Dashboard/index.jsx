@@ -33,9 +33,9 @@ const Dashboard = () => {
        btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
        btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 
-     <div>
+     {/* <div>
       <CompleteProfile />
-     </div>
+     </div> */}
 
       <div className="grid grid-cols-7 gap-4">
         <div className="col-span-5">
