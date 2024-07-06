@@ -17,17 +17,19 @@ import VerificationSteps from "./VerificationSteps";
 import CompleteProfile from "./CompleteProfile";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 
-export const checkVerfication = true;
+
 
 const Dashboard = () => {
-  const {addBill, setAddBill} = _BillingCondition();
+  const {addBill, setAddBill, checkVerfication} = _BillingCondition();
   const [from, setFrom] = useState();
   
   return (
       <>
 
     {!checkVerfication ? <VerificationSteps/>  : 
-    <> <BreadCrumbs icon={<MdDashboardCustomize />} menu={"Dashboard"} 
+    <> <BreadCrumbs link={"/dashboard"} icon={<MdDashboardCustomize />}
+      menu={"Dashboard"} 
+      
        btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
        btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 

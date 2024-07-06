@@ -8,6 +8,10 @@ input[type="date"]:in-range::-webkit-datetime-edit-month-field,
 input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
+.custom-placeholder-hidden::placeholder { 
+  opacity: 0 !important; 
+}
+
 
 .fixedColumn {
   position: fixed;
@@ -357,3 +361,82 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
  }
 
 
+
+ /* ant steps customization */
+ .ant-steps.ant-steps-small .ant-steps-item-icon{
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-steps-item-tail{
+    padding: 5px 24px !important;
+}
+
+
+.ant-steps-icon{
+  font-size: 16px;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+  font-size: 14px !important;
+  line-height: 10px !important;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+  padding: 8.5px 14px !important;
+}
+
+/* date picker calender icon color change */
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root{
+  color: #006AB2 !important;
+  font-size: 18px !important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+/* MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd  */
+
+/* mui input datepicker or select */
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  border-radius: 10px !important;
+}
+
+
+/* mui select */
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+  border-radius: 24px !important;
+  padding: 10px !important;
+}
+
+.MuiMenu-paper{
+  border: 0;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  /* padding: 5px 10px !important; */
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+ background-color: #dbf0ff !important;
+ color: #508ef7 !important;
+ border-left: 4px solid #508ef7;
+ border-radius: 5px;
+}
+
+.css-8je8zh-MuiTouchRipple-root{
+  color: #508ef7 !important;
+}

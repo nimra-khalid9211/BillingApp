@@ -44,13 +44,14 @@ const items = [
   },
 ];
 
+
 const VerificationSteps = () => {
 
     const [current, setCurrent] = useState(0);
 
   return (
     <>
-    <BreadCrumbs icon={<MdDashboardCustomize/>} menu={"Dasboard"}/>
+    <BreadCrumbs icon={<MdDashboardCustomize/>} menu={"Dasboard"} subMenu={"Profile"}/>
 
     <CardLayout title={"Complete your Profile"} from={"nonEdit"}>
 

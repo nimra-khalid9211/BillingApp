@@ -1,7 +1,16 @@
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
-import { Image } from 'antd'
+import {  Image } from 'antd'
 import React, { useState } from 'react'
 import { StepCard } from '../../../Components/CardLayout'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { FaCalendarAlt } from 'react-icons/fa';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LuCalendarRange } from 'react-icons/lu';
+
+
+
 
 const BasicDetails = () => {
 
@@ -38,19 +47,28 @@ const BasicDetails = () => {
         <div className='grid grid-cols-2 gap-4 w-full my-10'>
           
           <div className='mb-4'>
-          <TextField  label="First Name" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
+          <TextField label="First Name" InputProps={{style: { fontSize: '16px', fontWeight:"600", borderRadius: "10px" },}} variant="outlined" size='small' fullWidth/>
           </div>
 
           <div className='mb-4'>
-          <TextField  label="Last Name" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
+          <TextField  label="Last Name" InputProps={{style: { fontSize: '16px', fontWeight:"600", borderRadius: "10px"},}} variant="outlined" size='small' fullWidth/>
           </div>
 
           <div className='mb-4'>
           <TextField label="Date of Birth" type='date' variant="outlined" size='small' fullWidth
         value={value} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
-        InputLabelProps={{  shrink: isFocused || Boolean(value), }}
+        InputLabelProps={{  shrink: isFocused || Boolean(value), }}   
         InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
       />
+
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DatePicker className='w-full custom-placeholder-hidden'
+          label="Date of Birth"
+          format="DD/MM/YYYY"
+          slots={{ openPickerIcon: LuCalendarRange  }}
+        />
+    </LocalizationProvider>
+
             </div>
 
           <div className='mb-4'>
@@ -62,9 +80,9 @@ const BasicDetails = () => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Gender">
-          <MenuItem>Male</MenuItem>
-          <MenuItem>Female</MenuItem>
-          <MenuItem>Other</MenuItem>
+          <MenuItem value="male">Male</MenuItem>
+          <MenuItem value="female">Female</MenuItem>
+          <MenuItem value="other">Other</MenuItem>
           </Select>
 
           </FormControl>
@@ -72,33 +90,12 @@ const BasicDetails = () => {
            </div>
 
           <div className='col-span-2 mb-4'>
-          <TextField  label="Address" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
+          <TextField  label="Address" InputProps={{style: { fontSize: '16px', fontWeight:"600", borderRadius: "10px" },}} variant="outlined" size='small' fullWidth/>
           </div>
 
-          {/* <div className='mb-4'>
-        <FormControl size='small' fullWidth>
-        <InputLabel id="demo-simple-select-label">City</InputLabel>
-
-        <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        label="City"
-        MenuProps={{ PaperProps: { style: { maxHeight: 200, },},}}>
-
-        <MenuItem>Sialkot</MenuItem>
-        <MenuItem>Lahore</MenuItem>
-        <MenuItem>Karachi</MenuItem>
-        <MenuItem>Islamabad</MenuItem>
-        <MenuItem>Rawalpindi</MenuItem>
-        <MenuItem>Hyderabad</MenuItem>
-        <MenuItem>Jhelum</MenuItem>
-        <MenuItem>Gujar Khan</MenuItem>
-        <MenuItem>Peshawar</MenuItem>
-
-        </Select>
-
-        </FormControl>
-         </div> */}
+          <div className='mb-4'>
+          <TextField  label="City" InputProps={{style: { fontSize: '16px', fontWeight:"600", borderRadius: "10px" },}} variant="outlined" size='small' fullWidth/>
+          </div>
 
          <div className='mb-4'>
         <FormControl size='small' fullWidth>
@@ -108,11 +105,11 @@ const BasicDetails = () => {
         labelId="demo-simple-select-label"
         id="demo-simple-select"
         label="State">
-        <MenuItem>Punjab</MenuItem>
-        <MenuItem>Sindh</MenuItem>
-        <MenuItem>Khyber Pakhtunkhawa</MenuItem>
-        <MenuItem>Balochistan</MenuItem>
-        <MenuItem>Gilgit Baltistan</MenuItem>
+        <MenuItem value="1">Punjab</MenuItem>
+        <MenuItem value="2">Sindh</MenuItem>
+        <MenuItem value="3">Khyber Pakhtunkhawa</MenuItem>
+        <MenuItem value="4">Balochistan</MenuItem>
+        <MenuItem value="5">Gilgit Baltistan</MenuItem>
         </Select>
 
         </FormControl>

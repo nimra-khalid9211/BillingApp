@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Logo from "../../assets/image/brandlogo.png";
 import menuList from "./menuList";
 import { Link, useLocation } from "react-router-dom";
-import { checkVerfication } from "../../Pages/Dashboard";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
 const LeftSideBar = () => {
+  
   const path = useLocation().pathname;
+  const{checkVerfication} = _BillingCondition();
+
   return (
     <div
       className="rounded-r-[50px] left-sidebar-shadow "

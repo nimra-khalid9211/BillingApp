@@ -28,9 +28,10 @@ const SelectedBills = () => {
     <>
 
         <BreadCrumbs
-          menu={"Dashboard"}
+        link={"/bill-management"}
+          menu={"Bill Management"}
           icon={<FaMoneyBills />}
-          subMenu={"Bills"}
+          subMenu={"Selected Bills"}
           btnIcon2={<IoChevronBack />}
           btnTitle2={"Back"}
           btnEvent2={()=>{navigate("/bill-management")}}

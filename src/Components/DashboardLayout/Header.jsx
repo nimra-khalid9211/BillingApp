@@ -40,7 +40,7 @@ const dropdownMenu = (
 const Header = () => {
   const navigate = useNavigate();
 
-  const {dropdown, setDropdown} = _BillingCondition();
+  const {dropdown, checkVerfication} = _BillingCondition();
 
   const date = Date().slice(0,15);
   return (
@@ -59,7 +59,7 @@ const Header = () => {
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full gap-3'>
-                 <CiSettings size={20} onClick={()=>navigate("/settings")} role='button'/>
+                 <CiSettings size={20} onClick={()=>navigate(checkVerfication ? "/settings" : "#")} role='button'/>
                 </div>
 
                 <div className='bg-white py-3 px-3 flex items-center rounded-full gap-3'>
@@ -67,7 +67,7 @@ const Header = () => {
                 </div>
 
           <Dropdown
-          overlay={dropdownMenu}
+          overlay={checkVerfication ? dropdownMenu : ""}
           trigger={['click']}
           // onVisibleChange={(visible) => setDropdown(visible)} 
           >

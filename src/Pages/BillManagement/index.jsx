@@ -6,6 +6,7 @@ import BillingOverview from "./BillingOverview";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { AddBillDrawer } from "../../Components/Drawers";
 import { FaMoneyBills } from "react-icons/fa6";
+import { useLocation } from "react-router-dom";
 
 
 const items = [
@@ -22,16 +23,15 @@ const items = [
 ];
 
 
-
 const BillManagement = () => {
    const {addBill, setAddBill} = _BillingCondition();
    const [from, setFrom] = useState(false);
-
-
+  
   return (
     <>
         <BreadCrumbs
-          menu={"Dashboard"}
+        link={"/bill-management"}
+          menu={"Bill Management"}
           icon={<FaMoneyBills />}
           subMenu={"Bills"}
           btnTitle2={"Add Bill"}
