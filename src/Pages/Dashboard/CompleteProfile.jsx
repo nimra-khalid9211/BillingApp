@@ -10,7 +10,7 @@ const CompleteProfile = () => {
     <div className="bg-white rounded-3xl drop-shadow-xl my-4">
     <div className="flex items-center justify-between p-8">
 
-        <div className="flex flex-col justify-start ">
+        <div className="flex flex-col justify-start   ">
 
             <span className='text-[#182A53] text-2xl font-medium'>Profile not Completed</span>
             <span className='text-base text-[#6C7293] pt-2'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</span>

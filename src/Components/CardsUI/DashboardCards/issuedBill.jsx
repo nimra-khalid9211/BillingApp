@@ -3,7 +3,7 @@ import Cheque from "../../../assets/image/Cheque.svg"; // Adjust the import path
 
 export default function IssuedBill() {
   // Example amount received from backend or wherever it's managed
-  const totalDueAmount = 4667.42;
+  const totalDueAmount = 46667.42;
 
   // Function to format the amount with decimal part aligned to top right
   const formatAmount = (amount) => {

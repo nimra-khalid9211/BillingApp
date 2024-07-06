@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import Logo from "../../assets/image/brandlogo.png";
 import menuList from "./menuList";
 import { Link, useLocation } from "react-router-dom";
-import { checkVerfication } from "../../Pages/Dashboard";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
 const LeftSideBar = () => {
+  
   const path = useLocation().pathname;
+  const{checkVerfication} = _BillingCondition();
+
   return (
     <div
       className="rounded-r-[50px] left-sidebar-shadow "
       style={{ height: "100vh" }}
     >
-      <div className="p-5 flex justify-center items-center">
-        <img src={Logo} className="w-[12rem] h-[6rem]" />
+      <div className="px-5 pt-5 flex justify-center items-center ">
+        <img src={Logo} className="w-[175px] h-[70px]" />
       </div>
 
       <section>

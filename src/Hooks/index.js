@@ -75,5 +75,16 @@ export const CNICDashes = (value) =>{
     }
 }
 
+// ***DIGITS FORMAT****
 
+export const formatAmount = (amount) => {
+    const formatter = new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'PKR',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  
+    return formatter.format(amount).replace('PKR', 'Rs');
+  };
 

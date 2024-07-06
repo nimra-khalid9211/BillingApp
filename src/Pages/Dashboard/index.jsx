@@ -17,37 +17,28 @@ import VerificationSteps from "./VerificationSteps";
 import CompleteProfile from "./CompleteProfile";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 
-export const checkVerfication = false;
+
+
+
 
 const Dashboard = () => {
-  const { addBill, setAddBill } = _BillingCondition();
+  const {addBill, setAddBill, checkVerfication} = _BillingCondition();
   const [from, setFrom] = useState();
 
   return (
+      <>
+
+    {!checkVerfication ? <VerificationSteps/>  : 
     <>
-      {!checkVerfication ? (
-        <VerificationSteps />
-      ) : (
-        <>
-          {" "}
-          <BreadCrumbs
-            icon={<MdDashboardCustomize />}
-            menu={"Dashboard"}
-            btnTitle1={"Quick Pay"}
-            customClass="first-btn"
-            btnEvent1={() => {
-              setAddBill(true);
-              setFrom("quickPay");
-            }}
-            btnTitle2={"Add Bill"}
-            btnEvent2={() => {
-              setAddBill(true);
-              setFrom("addBill");
-            }}
-          />
-          {/* <div>
+     <BreadCrumbs link={"/dashboard"} icon={<MdDashboardCustomize />}
+      menu={"Dashboard"} 
+      
+       btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
+       btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
+
+     <div>
       <CompleteProfile />
-     </div> */}
+     </div> 
           <div className="grid grid-cols-7 gap-4">
             <div className="col-span-5">
               <div className="grid grid-cols-3 gap-4">
@@ -57,7 +48,7 @@ const Dashboard = () => {
                 <div className="flex justify-around flex-col">
                   <PaymentStatus
                     status="Paid(02)"
-                    amount="26,000"
+                    amount= {2600}
                     bgColor="#D8EBE1"
                     borderColor="#24A959"
                     icon={Paid}
@@ -66,7 +57,7 @@ const Dashboard = () => {
                   <div className="mt-3">
                     <PaymentStatus
                       status="Unpaid(01)"
-                      amount="10,000"
+                      amount={1000}
                       bgColor="#FFD5DF"
                       icon={Unpaid}
                       borderColor="#F1416C"
@@ -92,7 +83,7 @@ const Dashboard = () => {
             </div>
           </div>
         </>
-      )}
+      }
 
       <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from} />
     </>

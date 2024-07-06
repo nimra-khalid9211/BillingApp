@@ -2,11 +2,13 @@ import { Button, Card, Collapse } from 'antd'
 import React, { useState } from 'react'
 import { CardData } from '../../data/cardData'
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions'
-import { IoChevronDownCircleOutline } from 'react-icons/io5'
+import { IoChevronBack, IoChevronDownCircleOutline } from 'react-icons/io5'
 import { isOverdue } from '../../Hooks'
 import { useNavigate } from 'react-router-dom'
 import { PaymentSuccessfullModal } from '../../Components/Modals'
 import { paymentSuccessfull } from '../../assets/image'
+import BreadCrumbs from '../../UI/BreadCrumbs'
+import { FaMoneyBills } from 'react-icons/fa6'
 
 const BillPaymentMethod = () => {
     const {bills} = _BillingCondition();
@@ -23,6 +25,19 @@ const BillPaymentMethod = () => {
     },0);
 
   return (
+
+    <>
+
+<BreadCrumbs
+        link={"/bill-management"}
+          menu={"Bill Management"}
+          icon={<FaMoneyBills />}
+          subMenu={"Selected Bills"}
+          thirdMenu={"Procced Payment"}
+          btnIcon2={<IoChevronBack />}
+          btnTitle2={"Back"}
+          btnEvent2={()=>{navigate("/bill-management/selected-bills")}}
+        />
 
     <Card className='mt-3 rounded-3xl' bordered={false}>
 
@@ -130,12 +145,14 @@ const BillPaymentMethod = () => {
      receiptModal={receiptModal}  setReceiptModal={setReceiptModal} from={"payment"}
      img={paymentSuccessfull} title={"Payment Successful"}
       bills={bills} width={450}
-     firstHeading={`We are pleased to inform you that the payment for ${bills.length} bills have been successfully processed.`}
+     firstHeading={`We are pleased to inform you that the payment for ${bills?.length} bills have been successfully processed.`}
      buttonText={"Billing Overview"}
      onButtonClick={()=>navigate("/bill-management")}
      />
 
     </Card>
+
+    </>
   )
 }
 

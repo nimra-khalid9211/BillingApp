@@ -1,5 +1,4 @@
 import { Avatar, Badge, Dropdown, Menu } from 'antd'
-import React, { useEffect, useRef, useState } from 'react'
 import { CiSettings } from 'react-icons/ci'
 import { FaAngleDown, FaAngleUp, FaRegBell, FaRegUser } from 'react-icons/fa'
 import { IoSearchOutline } from 'react-icons/io5'
@@ -40,9 +39,11 @@ const dropdownMenu = (
 const Header = () => {
   const navigate = useNavigate();
 
-  const {dropdown, setDropdown} = _BillingCondition();
+  const {dropdown, checkVerfication} = _BillingCondition();
 
   const date = Date().slice(0,15);
+
+
   return (
 
     <div className='flex items-center justify-between mx-3  mt-5'>
@@ -59,7 +60,7 @@ const Header = () => {
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full gap-3'>
-                 <CiSettings size={27} onClick={()=>navigate("/settings")} role='button'/>
+                 <CiSettings size={20} onClick={()=>navigate(checkVerfication ? "/settings" : "#")} role='button'/>
                 </div>
 
                 <div className='bg-white py-3 px-3 flex items-center rounded-full gap-3'>
@@ -67,7 +68,7 @@ const Header = () => {
                 </div>
 
           <Dropdown
-          overlay={dropdownMenu}
+          overlay={checkVerfication ? dropdownMenu : ""}
           trigger={['click']}
           // onVisibleChange={(visible) => setDropdown(visible)} 
           >

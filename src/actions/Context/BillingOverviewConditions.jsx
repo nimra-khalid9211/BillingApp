@@ -6,6 +6,8 @@ export const BillingCondition = createContext();
 export const _BillingCondition = () => useContext(BillingCondition) 
 
 export const BillingConditionProvider = ({children})=>{
+     const checkVerfication = true;
+
 
      const [tab,setTab] = useState(true);
      const [bills, setBills] = useState();
@@ -18,7 +20,7 @@ export const BillingConditionProvider = ({children})=>{
      // console.log(checkShown, "billling condition provider");
 
     return(
-        <BillingCondition.Provider value={{tab,setTab, dropdown, setDropdown, bills, setBills, addBill, setAddBill,paymentType,setPaymentType,checkShown,setCheckShown}}>
+        <BillingCondition.Provider value={{tab,setTab, dropdown, checkVerfication, setDropdown, bills, setBills, addBill, setAddBill,paymentType,setPaymentType,checkShown,setCheckShown}}>
             {children}
         </BillingCondition.Provider>
     )

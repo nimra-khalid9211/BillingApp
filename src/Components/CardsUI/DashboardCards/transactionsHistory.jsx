@@ -30,8 +30,8 @@ const data = [
 export default function TransactionsHistory() {
   return (
     <>
-      <div className="font-semibold w-full mt-5 drop-shadow-2xl bg-white p-4 rounded-t-[2rem]">Recent Transactions</div>
-      <div className="mt-1 mb-2 drop-shadow-lg bg-white px-8 pb-8 rounded-b-[2rem]">
+      <div className="mb-2 drop-shadow-lg bg-white rounded-[2rem]">
+      <div className="font-semibold w-full mt-10 w-full drop-shadow-xl bg-white p-4 rounded-t-[2rem]">Recent Transactions</div>
         <div className="flex justify-between items-center">
           {/* {
           data.length > 0 &&(
@@ -41,7 +41,7 @@ export default function TransactionsHistory() {
         </div>
         {data.length > 0 ? (
           data.map((data) => (
-            <div className="flex items-center justify-between mt-5">
+            <div className="flex items-center justify-between mt-5 px-5 pb-5">
               <div className="flex items-center">
                 <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
                   {data.icon}
