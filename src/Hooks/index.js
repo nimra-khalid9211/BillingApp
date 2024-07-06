@@ -87,4 +87,12 @@ export const formatAmount = (amount) => {
   
     return formatter.format(amount).replace('PKR', 'Rs');
   };
+// 5 days after due date bill not payable
+// const isOverdue = (dueDate) => {
+//     const due = new Date(dueDate);
+//     const today = new Date();
+//     const differenceInTime = today.getTime() - due.getTime();
+//     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
+//     return differenceInDays > 5;
+//   };

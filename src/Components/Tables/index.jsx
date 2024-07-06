@@ -27,14 +27,16 @@ export const  MyBills = ({ from }) => {
       {/* {JSON.stringify(MyBillList)} */}
 
       <div className="overflow-x-auto rounded-3xl mt-5 bg-white">
-        <div className="bg-[#377CF6] text-white p-3">
+        <div className="bg-[#377CF6] text-white p-3 mb-2">
           {from === "BMB" ? "My Bills" : "Due Bills List"}
         </div>
 
         {MyBillList.length > 0 ? (
-          <table className="w-full text-sm">
+
+          <table className="w-full text-sm rounded-3xl">
             <thead className="text-xs bg-[#DBF0FF] text-[#377CF6]">
               <tr>
+
                 {MyBillHeading.map((x, index) => {
                   // Conditionally render "Auto Debit" column only when from === 'BMB'
                   if (
@@ -49,12 +51,13 @@ export const  MyBills = ({ from }) => {
                     <th
                       key={index}
                       scope="col"
-                      className="px-6 py-3 text-center"
+                      className={`px-6 py-3 ${index === 0 ? "text-left" : "text-center"} ${index < MyBillHeading.length - 1 ? "border-r border-dashed border-[#4653D72B]" : ""}`}
                     >
                       {x.title}
                     </th>
                   );
                 })}
+
               </tr>
             </thead>
 
@@ -66,7 +69,7 @@ export const  MyBills = ({ from }) => {
                 >
                   <th
                     scope="row"
-                    className={`px-6 py-4 font-semibold text-[#329DFF] whitespace-nowrap dark:text-white ${dashedBorderRight}`}
+                    className={`px-6 py-4 text-left font-semibold text-[#329DFF] whitespace-nowrap dark:text-white ${dashedBorderRight}`}
                   >
                     {x.billname}
                   </th>
@@ -116,6 +119,7 @@ export const  MyBills = ({ from }) => {
                 </tr>
               ))}
             </tbody>
+
           </table>
         ) : (
           <div className="w-[50%] mx-auto flex justify-center items-center flex-col py-5">

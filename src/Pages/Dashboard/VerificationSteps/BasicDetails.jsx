@@ -1,19 +1,16 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
-import { Image } from "antd";
-import React, { useEffect, useState } from "react";
-import { StepCard } from "../../../Components/CardLayout";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { FaCalendarAlt } from "react-icons/fa";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { LuCalendarRange } from "react-icons/lu";
+import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import {  Image } from 'antd'
+import React, { useState } from 'react'
+import { StepCard } from '../../../Components/CardLayout'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { FaCalendarAlt } from 'react-icons/fa';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LuCalendarRange } from 'react-icons/lu';
+
+
+
 
 const BasicDetails = () => {
   const [value, setValue] = useState("");
@@ -31,9 +28,7 @@ const BasicDetails = () => {
   const handleChange = (e) => {
     setValue(e.target.value);
   };
-
-
-
+  
   return (
     <StepCard title={"Basic Details"}>
       <div className="flex justify-center items-center">
@@ -80,38 +75,39 @@ const BasicDetails = () => {
                 />
               </div>
 
-              <div className="mb-4">
-                {/* <TextField label="Date of Birth" type='date' variant="outlined" size='small' fullWidth
+          <div className='mb-4'>
+          <TextField label="Date of Birth" type='date' variant="outlined" size='small' fullWidth
         value={value} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
         InputLabelProps={{  shrink: isFocused || Boolean(value), }}   
         InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
-      /> */}
+      />
 
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                  id="date-input"
-                    className="w-full custom-placeholder-hidden"
-                    label="Date of Birth"
-                    format="DD/MM/YYYY"
-                    slots={{ openPickerIcon: LuCalendarRange }}
-                  />
-                </LocalizationProvider>
-              </div>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DatePicker className='w-full custom-placeholder-hidden'
+          label="Date of Birth"
+          format="DD/MM/YYYY"
+          slots={{ openPickerIcon: LuCalendarRange  }}
+        />
+    </LocalizationProvider>
+
+            </div>
 
               <div className="mb-4">
                 <FormControl size="small" fullWidth>
                   <InputLabel id="demo-simple-select-label">Gender</InputLabel>
 
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Gender"
-                  >
-                    <MenuItem>Male</MenuItem>
-                    <MenuItem>Female</MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
+          <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          label="Gender">
+          <MenuItem value="male">Male</MenuItem>
+          <MenuItem value="female">Female</MenuItem>
+          <MenuItem value="other">Other</MenuItem>
+          </Select>
+
+          </FormControl>
+
+           </div>
 
               <div className="col-span-2 mb-4">
                 <TextField

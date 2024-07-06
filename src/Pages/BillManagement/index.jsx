@@ -17,7 +17,7 @@ const items = [
   },
   {
     key: '1',
-    label: 'My Bills',
+    label: 'Bills Detail',
     children: <Bills from={"BMB"} />,
   }
 ];
@@ -35,6 +35,7 @@ const BillManagement = () => {
           icon={<FaMoneyBills />}
           subMenu={"Bills"}
           btnTitle2={"Add Bill"}
+          customClass={"w-20"}
           btnEvent2={()=>{setAddBill(true); setFrom("addBill")}}
         />
 
