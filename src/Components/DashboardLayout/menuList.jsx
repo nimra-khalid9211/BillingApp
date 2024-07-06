@@ -11,37 +11,37 @@ const menuList = [
     lists: [
       {
         title: "Dashboard",
-        icon: <MdDashboardCustomize />,
+        icon: <MdDashboardCustomize size={25} />,
         link:"/dashboard",
       },
       {
         title: "Bill Management",
-        icon: <FaMoneyBills />,
+        icon: <FaMoneyBills  size={25} />,
         link:"/bill-management",
       },
       {
         title: "Govt Payments",
-        icon: <RiGovernmentFill />,
+        icon: <RiGovernmentFill  size={25} />,
         link:"/govt-payments",
       },
       {
         title: "Mobile Top Up",
-        icon: <TbDeviceMobileUp/>,
+        icon: <TbDeviceMobileUp size={25} />,
         link:"/mobile-top-up",
       },
       {
         title: "Payment Methods",
-        icon: <MdOutlinePayment />        ,
+        icon: <MdOutlinePayment  size={25} />        ,
         link:"/payment-methods",
       },
       {
         title: "Transactions",
-        icon: <GrTransaction />        ,
+        icon: <GrTransaction size={25} />        ,
         link:"/transactions",
       },
       {
         title: "Reports",
-        icon: <TbReportSearch />        ,
+        icon: <TbReportSearch size={25} />        ,
         link:"/reports",
       },
     ],
@@ -51,20 +51,20 @@ const menuList = [
     lists: [
       {
         title: "Settings",
-        icon: <CiSettings />,
+        icon: <CiSettings size={25}/>,
         link: "/settings"
         ,
       },
       {
         title: "Help",
-        icon: <MdContactSupport />,
+        icon: <MdContactSupport size={25}/>,
         link: "/help"
         ,
       },
       {
         classses: "mt-16 border-solid border border-[#E8E7EC] rounded-lg",
         title: "Logout",
-        icon: <RiLogoutBoxLine />,
+        icon: <RiLogoutBoxLine size={25}/>,
       },
     ],
   },

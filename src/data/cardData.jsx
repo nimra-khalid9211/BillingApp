@@ -1,25 +1,31 @@
 import { Descriptions } from "antd";
-import { bitmap, visaCard, easyPaisa } from "../assets/image";
+import { bitmap, visaCard, easyPaisa, jazz, jazzc, jazzcash } from "../assets/image";
 
 export const CardData = [
-  // {
-  //   icon: <img src={bitmap} alt="" />,
-  //   title: "Mastercard", 
-  //   cardNumber: "5210",
-  //   default: true,
-  // },
-  // {
-  //   icon: <img src={visaCard} alt="" />,
-  //   title: "Visacard", 
-  //   cardNumber: "5210",
-  //   default: false,
-  // },
-  // {
-  //   icon: <img src={easyPaisa} alt="" />,
-  //   title: "Easypaisa", 
-  //   cardNumber: "5210",
-  //   default: false,
-  // },
+  {
+    icon: <img src={bitmap} alt="" />,
+    title: "Mastercard", 
+    cardNumber: "5210",
+    default: true,
+  },
+  {
+    icon: <img src={visaCard} alt="" />,
+    title: "Visacard", 
+    cardNumber: "5210",
+    default: false,
+  },
+  {
+    icon: <img src={easyPaisa} alt="" />,
+    title: "Easypaisa", 
+    cardNumber: "5210",
+    default: false,
+  },
+  {
+    icon: <img src={easyPaisa} alt="" />,
+    title: "JazzChash", 
+    cardNumber: "5210",
+    default: false,
+  },
 ];
 
 export const ReportsCard = [

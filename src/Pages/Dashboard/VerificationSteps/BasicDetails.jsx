@@ -1,11 +1,16 @@
-import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
-import { Image } from 'antd'
-import React, { useState } from 'react'
-import { StepCard } from '../../../Components/CardLayout'
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
+import { Image } from "antd";
+import React, { useState } from "react";
+import { StepCard } from "../../../Components/CardLayout";
 
 const BasicDetails = () => {
-
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -20,62 +25,93 @@ const BasicDetails = () => {
   const handleChange = (e) => {
     setValue(e.target.value);
   };
-  
+
   return (
-   <StepCard title={"Basic Details"}>
-
-      <div className='flex justify-center items-center'>
-
-      <div className='w-1/2'> 
-
-      <div  className='flex flex-col justify-center items-center'>
-
-        <div>
-        <Image className='rounded-full'
-        width={100} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
-        </div>
-
-        <div className='grid grid-cols-2 gap-4 w-full my-10'>
-          
-          <div className='mb-4'>
-          <TextField  label="First Name" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
-          </div>
-
-          <div className='mb-4'>
-          <TextField  label="Last Name" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
-          </div>
-
-          <div className='mb-4'>
-          <TextField label="Date of Birth" type='date' variant="outlined" size='small' fullWidth
-        value={value} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
-        InputLabelProps={{  shrink: isFocused || Boolean(value), }}
-        InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
-      />
+    <StepCard title={"Basic Details"}>
+      <div className="flex justify-center items-center">
+        <div className="w-1/2">
+          <div className="flex flex-col justify-center items-center">
+            <div>
+              <Image
+                className="rounded-full"
+                width={100}
+                src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+              />
             </div>
 
-          <div className='mb-4'>
+            <div className="grid grid-cols-2 gap-4 w-full my-10">
+              <div className="mb-4">
+                <TextField
+                  label="First Name"
+                  InputProps={{
+                    style: { fontSize: "16px", fontWeight: "600" },
+                  }}
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                />
+              </div>
 
-          <FormControl size='small' fullWidth>
-          <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+              <div className="mb-4">
+                <TextField
+                  label="Last Name"
+                  InputProps={{
+                    style: { fontSize: "16px", fontWeight: "600" },
+                  }}
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                />
+              </div>
 
-          <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          label="Gender">
-          <MenuItem>Male</MenuItem>
-          <MenuItem>Female</MenuItem>
-          <MenuItem>Other</MenuItem>
-          </Select>
+              <div className="mb-4">
+                <TextField
+                  label="Date of Birth"
+                  type="date"
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                  value={value}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  InputLabelProps={{ shrink: isFocused || Boolean(value) }}
+                  InputProps={{
+                    style: { fontSize: "16px", fontWeight: "600" },
+                    inputProps: { placeholder: "" },
+                  }}
+                />
+              </div>
 
-          </FormControl>
+              <div className="mb-4">
+                <FormControl size="small" fullWidth>
+                  <InputLabel id="demo-simple-select-label">Gender</InputLabel>
 
-           </div>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Gender"
+                  >
+                    <MenuItem>Male</MenuItem>
+                    <MenuItem>Female</MenuItem>
+                    <MenuItem>Other</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
 
-          <div className='col-span-2 mb-4'>
-          <TextField  label="Address" InputProps={{style: { fontSize: '16px', fontWeight:"600" },}} variant="outlined" size='small' fullWidth/>
-          </div>
+              <div className="col-span-2 mb-4">
+                <TextField
+                  label="Address"
+                  InputProps={{
+                    style: { fontSize: "16px", fontWeight: "600" },
+                  }}
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                />
+              </div>
 
-          {/* <div className='mb-4'>
+              {/* <div className='mb-4'>
         <FormControl size='small' fullWidth>
         <InputLabel id="demo-simple-select-label">City</InputLabel>
 
@@ -100,34 +136,29 @@ const BasicDetails = () => {
         </FormControl>
          </div> */}
 
-         <div className='mb-4'>
-        <FormControl size='small' fullWidth>
-        <InputLabel id="demo-simple-select-label">State</InputLabel>
+              <div className="mb-4">
+                <FormControl size="small" fullWidth>
+                  <InputLabel id="demo-simple-select-label">State</InputLabel>
 
-        <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        label="State">
-        <MenuItem>Punjab</MenuItem>
-        <MenuItem>Sindh</MenuItem>
-        <MenuItem>Khyber Pakhtunkhawa</MenuItem>
-        <MenuItem>Balochistan</MenuItem>
-        <MenuItem>Gilgit Baltistan</MenuItem>
-        </Select>
-
-        </FormControl>
-         </div>
-
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="State"
+                  >
+                    <MenuItem>Punjab</MenuItem>
+                    <MenuItem>Sindh</MenuItem>
+                    <MenuItem>Khyber Pakhtunkhawa</MenuItem>
+                    <MenuItem>Balochistan</MenuItem>
+                    <MenuItem>Gilgit Baltistan</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
-
-      </div>
-
-      </div>
-      
     </StepCard>
-  )
-}
+  );
+};
 
-export default BasicDetails
+export default BasicDetails;

@@ -1,4 +1,3 @@
-import { Button, Divider } from "antd";
 import React from "react";
 import { BlueButton, WhiteButton } from "./Buttons";
 
@@ -16,9 +15,9 @@ const BreadCrumbs = ({
   
 }) => {
   return (
-    <div className="my-8">
+    <div className="my-8 border-b pb-3">
       <div className="flex justify-between items-center">
-        <div className="flex items-center m">
+        <div className="flex items-center ml-5">
           <span className="text-[#009EF7]">{icon}</span> &nbsp;{" "}
           {/* static for now will dynamic it when icons for all menu items change */}
           <b className="text-[#009EF7]">{menu}</b> &nbsp;
@@ -45,8 +44,6 @@ const BreadCrumbs = ({
           )}
         </div>
       </div>
-
-      <Divider className="mt-0 w-full" />
     </div>
   );
 };

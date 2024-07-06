@@ -76,12 +76,12 @@ export const SelectableBills = ({ type, from }) => {
 
   return (
     <>
-      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-xl rounded-tr-xl mt-10">
+      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-t-[1.5rem] mt-10">
         <span>All Bills</span>
         <span className="text-sm">This Month</span>
       </div>
 
-      <table className="w-full text-sm rounded-bl-xl rounded-br-xl">
+      <table className="w-full text-sm">
         <thead className="text-xs text-[#377CF6] text-center bg-[#DBF0FF]">
           <tr>
             <th
@@ -101,32 +101,34 @@ export const SelectableBills = ({ type, from }) => {
                 </label>
               </div>
             </th>
-            {MyBillHeading.map((x, index) => {
-              if (
-                (x.title === "Auto Debit" && from !== "BMB") ||
-                (x.title === "Pay Preference" && from !== "BMB") ||
-                (x.title === "Amount Due" && from !== "dashboard") ||
-                (x.title === "Download Bill" && from !== "overview")
-              ) {
-                return null;
-              }
+            {MyBillList.length > 0
+             ? MyBillHeading.map((x, index) => {
+                  if (
+                    (x.title === "Auto Debit" && from !== "BMB") ||
+                    (x.title === "Pay Preference" && from !== "BMB") ||
+                    (x.title === "Amount Due" && from !== "dashboard") ||
+                    (x.title === "Download Bill" && from !== "overview")
+                  ) {
+                    return null;
+                  }
 
-              return (
-                <th
-                  scope="col"
-                  key={index}
-                  className={`px-6 py-3 border-dashed border-[#eff0fb] text-start ${
-                    index !== MyBillHeading.length - 1 ? "border-r" : ""
-                  }`}
-                >
-                  {x.title}
-                </th>
-              );
-            })}
+                  return (
+                    <th
+                      scope="col"
+                      key={index}
+                      className={`px-6 py-3 border-dashed border-[#eff0fb] text-start ${
+                        index !== MyBillHeading.length - 1 ? "border-r" : ""
+                      }`}
+                    >
+                      {x.title}
+                    </th>
+                  );
+                })
+              : "show nothing"}
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="rounded-b-[1.5rem]">
           {filteredBills.map((x, index) => (
             <tr
               key={index}
@@ -243,7 +245,7 @@ export const SelectableBills = ({ type, from }) => {
                       ) : (
                         <a
                           href="#"
-                          className="font-medium text-[#24A959] border border-[#24A959] rounded-lg py-1 px-2 text-xs"
+                          className="font-semibold text-[#24A959] border border-[#24A959] rounded-2xl py-1 px-4 text-xs"
                         >
                           Pay Now
                         </a>

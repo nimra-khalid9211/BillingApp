@@ -46,7 +46,7 @@ const Header = () => {
   return (
 
     <div className='flex items-center justify-between mx-3  mt-5'>
-            <b className='text-2xl'>Welcome, Shaun Abbott</b>
+            <b className='text-2xl'>Welcome, <span className='text-xl font-semibold'>Shaun Abbott</span></b>
 
             <div className='flex justify-between items-center gap-3'>
 
@@ -59,11 +59,11 @@ const Header = () => {
                 </div>
 
                 <div className='bg-white py-3 px-3 rounded-full gap-3'>
-                 <CiSettings size={20} onClick={()=>navigate("/settings")} role='button'/>
+                 <CiSettings size={27} onClick={()=>navigate("/settings")} role='button'/>
                 </div>
 
                 <div className='bg-white py-3 px-3 flex items-center rounded-full gap-3'>
-                <Badge dot color='#377CF6'>  <FaRegBell size={18}/> </Badge>
+                <Badge dot color='#377CF6'>  <FaRegBell size={22}/> </Badge>
                 </div>
 
           <Dropdown
@@ -79,7 +79,7 @@ const Header = () => {
             <Avatar size={34} icon={<FaRegUser />} />
 
             <div className='flex flex-col'>
-              <b className='text-sm' style={{ lineHeight: "0.7rem" }}>Shaun Abbott</b>
+              <b className='text-sm font-semibold' style={{ lineHeight: "0.7rem" }}>Shaun Abbott</b>
             </div>
 
             {dropdown ? <FaAngleUp /> : <FaAngleDown />}

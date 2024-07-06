@@ -14,14 +14,14 @@ export default function IssuedBill() {
   const { integerPart, decimalPart } = formatAmount(totalDueAmount);
 
   return (
-    <div className="p-5 border rounded-[25px] font-semibold bg-white drop-shadow-xl">
-      <div className="flex justify-center items-center bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem]">
-        <img src={Cheque} alt="Cheque" className="h-full" />
+    <div className="p-5 border rounded-[2rem] font-semibold bg-white drop-shadow-xl">
+      <div className="flex justify-center items-center bg-[#EDF1FF] rounded-full h-[4rem] w-[4rem]">
+        <img src={Cheque} alt="Cheque" className="" />
       </div>
-      <div className="text-lg mt-5">Total Due Amount</div>
+      <div className="text-lg mt-5 font-bold">Total Due Amount</div>
       <div className="mt-3 flex justify-end">
         <div className="text-2xl relative pr-4">
-          <span className="font-normal">Rs</span> {integerPart}
+          <span className="font-normal text-[#6C7293]">Rs</span> {integerPart}
           <span className="text-sm align-super absolute top-0 ml-1">.{decimalPart}</span>
         </div>
       </div>
