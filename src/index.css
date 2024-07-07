@@ -1,6 +1,12 @@
+@import 'assets/fonts/Excon_Complete/Fonts/WEB/css/excon.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body,* {
+    font-family: 'Excon-Regular', sans-serif !important;
+}
 
 input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-month-field, 

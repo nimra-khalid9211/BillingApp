@@ -149,6 +149,7 @@ export const ReportModels = ({ report, setReport,title}) => {
       footer={null}
       // onOk={() => setReport(false)}
       onCancel={() => setReport(false)}
+      className={'report-modal no-overfow-y'}
     >
       <div className="p-10">
         <div className="text-center text-xl font-semibold text-[#377CF6] border-b pb-2">
