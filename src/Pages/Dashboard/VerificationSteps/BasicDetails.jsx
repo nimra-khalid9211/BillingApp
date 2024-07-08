@@ -82,13 +82,13 @@ const BasicDetails = () => {
         InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
       />
 
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker className='w-full custom-placeholder-hidden'
           label="Date of Birth"
           format="DD/MM/YYYY"
           slots={{ openPickerIcon: LuCalendarRange  }}
         />
-    </LocalizationProvider>
+    </LocalizationProvider> */}
 
             </div>
 

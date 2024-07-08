@@ -79,7 +79,12 @@ const handleModalClose = () => {
         debitTextTwo="Please enter the amounts to verify you own the account."
         buttonText="Verify Account"
         from="debitAccountVerified"
-        onButtonClick={()=>{navigate("/payment-methods/add-payment");setPaymentType("button5");setCheckShown(false)}}
+        onButtonClick={()=>{
+            localStorage.setItem("paymentType", "button5");
+            navigate("/payment-methods/add-payment");
+            setPaymentType("button5");setCheckShown(false)
+        }
+        }
 
       />
     </div>

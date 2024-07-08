@@ -9,12 +9,21 @@ import { IoChevronBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import BreadCrumbs from "../../UI/BreadCrumbs";
 import { MdOutlinePayment } from "react-icons/md";
+import {useEffect, useState} from "react";
 
 export default function AddPayment() {
   const navigate = useNavigate();
-  const { checkShown } = _BillingCondition();
-  console.log(checkShown);
+  // const { checkShown } = _BillingCondition();
+  // console.log(checkShown);
+  const [checkShown, setCheckShown] = useState(true);
 
+  useEffect(() => {
+    if(localStorage.getItem("paymentType") === "button5"){
+      setCheckShown(false);
+    } else {
+      setCheckShown(true);
+    }
+  }, []);
   const { paymentType, setPaymentType } = _BillingCondition();
 
   const handlePaymentTypeClick = (type) => {

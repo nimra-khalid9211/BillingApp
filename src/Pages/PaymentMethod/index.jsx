@@ -11,7 +11,10 @@ export default function PaymentMethods() {
     <>
 
         <BreadCrumbs icon={<MdOutlinePayment />} menu={"Payment Method"} 
-        btnTitle2={"Add Payment"} btnEvent2={()=>navigate("/payment-methods/add-payment")}
+        btnTitle2={"Add Payment"} btnEvent2={()=> {
+            localStorage.removeItem('paymentType')
+            navigate("/payment-methods/add-payment")
+        }}
         />
       <UserMultipleAccount />
     </>

@@ -8,8 +8,13 @@ import { useNavigate } from "react-router-dom";
 export default function PaymentMethodCard() {
   const navigate = useNavigate();
   return (
+<<<<<<< HEAD
     <Card className="rounded-3xl h-[30rem] border bg-[#d3e8f6] border-[#377CF6]">
       <div className="flex items-center font-bold drop-shadow-xl rounded-tl-3xl rounded-tr-3xl bg-white py-4 px-6 justify-between">
+=======
+    <Card className="rounded-3xl h-[28rem] border bg-[#d3e8f6] border-[#377CF6] border">
+      <div className="flex items-center font-bold rounded-tl-3xl rounded-tr-3xl bg-white py-4 px-6 justify-between">
+>>>>>>> origin/recreate-updates
         <span>Payment Method</span>
 
         {CardData.length > 0 && (
@@ -20,18 +25,20 @@ export default function PaymentMethodCard() {
         )}
       </div>
 
-      <div className="pt-4 p-2  rounded-bl-3xl rounded-br-3xl bg-[#d3e8f6]">
+      <div className="pt-4 p-2  rounded-bl-3xl rounded-br-3xl bg-[#d3e8f6] ">
         {CardData.length > 0 ? (
           <>
             {CardData.map((x, index) => (
-              <Card key={index} className="rounded-2xl border-[#377CF6] mb-4">
-                <div className="px-5 py-3">
+              <Card key={index} className="rounded-2xl border-[#377CF6] border mb-4">
+                <div className="px-5 py-[0.5rem]">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center ">
-                      {x.icon}
-                      <span className="pl-4 font-bold"> {x.title} </span>
+                    <div className="flex items-center">
+                     <div className="mt-[10px]">
+                     {x.icon}
+                     </div>
+                      <span className="pl-4 font-bold mt-[10px]"> {x.title} </span>
                     </div>
-                    <span className="text-xs text-[#9095ae]">
+                    <span className="text-xs text-[#9095ae] mt-[10px]">
                       ending{" "}
                       <span className="text-base font-medium text-black">
                         {x.cardNumber}
@@ -39,7 +46,7 @@ export default function PaymentMethodCard() {
                     </span>
                   </div>
 
-                  <div className="flex justify-end mt-1">
+                  <div className="flex justify-end">
                     <span
                       className={`text-xs ${
                         x.default ? "text-[#3fb46e]" : "text-[#8bc8ff]"
@@ -55,7 +62,7 @@ export default function PaymentMethodCard() {
               <span className="underline text-[#377cf6] cursor-pointer">
                 View All
               </span>
-            </div>{" "}
+            </div>
           </>
         ) : (
           <div className="flex flex-col justify-center items-center m-5">

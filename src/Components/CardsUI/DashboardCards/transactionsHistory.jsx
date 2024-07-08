@@ -30,8 +30,13 @@ const data = [
 export default function TransactionsHistory() {
   return (
     <>
+<<<<<<< HEAD
+      <div className="drop-shadow-lg bg-white rounded-[2rem] h-[42rem]">
+      <div className="font-semibold w-full mt-10 w-full drop-shadow-xl bg-white p-4 rounded-t-[2rem]">Recent Transactions</div>
+=======
       <div className="mb-2 drop-shadow-lg bg-white rounded-[2rem]">
       <div className="font-semibold mt-10 w-full drop-shadow-xl bg-white p-4 rounded-t-[2rem]">Recent Transactions</div>
+>>>>>>> origin/tableChanges
         <div className="flex justify-between items-center">
           {/* {
           data.length > 0 &&(

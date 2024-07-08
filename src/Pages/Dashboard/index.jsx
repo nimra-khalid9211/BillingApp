@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { MyBills } from "../../Components/Tables";
 import TotalBill from "../../Components/CardsUI/DashboardCards/totalBill";
 import IssuedBill from "../../Components/CardsUI/DashboardCards/issuedBill";
 import PaymentStatus from "../../Components/CardsUI/DashboardCards/paymentStatus";
-import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
 import PaymentMethodCard from "../../Components/CardsUI/DashboardCards/paymentMethodCard";
 import TransactionsHistory from "../../Components/CardsUI/DashboardCards/transactionsHistory";
 import Paid from "../../assets/image/paid.png";
 import Unpaid from "../../assets/image/unpaid.png";
 import BreadCrumbs from "../../UI/BreadCrumbs";
 import { MdDashboardCustomize } from "react-icons/md";
-import { Button } from "antd";
 import { AddBillDrawer } from "../../Components/Drawers";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import VerificationSteps from "./VerificationSteps";
 import CompleteProfile from "./CompleteProfile";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
+import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
 
 
 
@@ -69,8 +67,12 @@ const Dashboard = () => {
                 <SelectableBills from="dashboard" type="all" />
               </div>
               <div className="mt-10 drop-shadow-xl rounded-[2rem]">
+<<<<<<< HEAD
+              <GoogleChart/>
+=======
        
                 <GoogleChart />
+>>>>>>> origin/tableChanges
               </div>
             </div>
             <div className="col-span-2">
@@ -78,7 +80,7 @@ const Dashboard = () => {
                 <PaymentMethodCard />
               </div>
 
-              <div>
+              <div className="">
                 <TransactionsHistory />
               </div>
             </div>

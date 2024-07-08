@@ -1,15 +1,23 @@
 import { TextField } from "@mui/material";
 import { PaymentSuccessfullModal } from "../../../Components/Modals";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { info } from "../../../assets/image";
 import { _BillingCondition } from "../../../actions/Context/BillingOverviewConditions";
 import { WhiteButton, BlueButton } from "../../../UI/Buttons";
 
 export default function DebitCard(type) {
   const [verified, setVerified] = useState(false);
-  const { checkShown } = _BillingCondition();
+  // const { checkShown } = _BillingCondition();
   const [cencelVerification, setCancelVerification] = useState(false);
+  const [checkShown, setCheckShown] = useState(true);
 
+  useEffect(() => {
+    if(localStorage.getItem("paymentType") === "button5"){
+      setCheckShown(false);
+    } else {
+        setCheckShown(true);
+    }
+  }, []);
   const handleVerfied = () => {
     setVerified(!verified);
   };
@@ -53,6 +61,7 @@ export default function DebitCard(type) {
               size="small"
             />
           </div>
+
 
           {checkShown ? (
             <div className="my-5">

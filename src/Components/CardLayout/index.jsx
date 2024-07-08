@@ -2,9 +2,6 @@ import { Card } from 'antd'
 import React from 'react'
 import { BlueButton } from '../../UI/Buttons'
 
-// import '../.././assets/fonts/Excon_Complete/Fonts/WEB/css/excon.css'
-import '../../assets/fonts/Excon_Complete/Fonts/WEB/css/excon.css'
-
 
 
 const CardLayout = ({children, title, from}) => {
