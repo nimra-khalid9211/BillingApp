@@ -1,56 +1,70 @@
-import { AiOutlineAppstore } from "react-icons/ai";
+import { TbDeviceMobileUp,TbReportSearch } from "react-icons/tb";
+import { MdDashboardCustomize,MdOutlinePayment , MdContactSupport  } from "react-icons/md";
+import { FaMoneyBills } from "react-icons/fa6";
+import { RiGovernmentFill,RiLogoutBoxLine  } from "react-icons/ri";
+import { GrTransaction } from "react-icons/gr";
+import { CiSettings } from "react-icons/ci";
 
 const menuList = [
   {
-    name: "MAIN MENU",
+    name: "",
     lists: [
       {
         title: "Dashboard",
-        icon: <AiOutlineAppstore size={18}/>,
-        link:"/",
+        icon: <MdDashboardCustomize size={25} />,
+        link:"/dashboard",
       },
       {
         title: "Bill Management",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <FaMoneyBills  size={25} />,
         link:"/bill-management",
       },
       {
         title: "Govt Payments",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <RiGovernmentFill  size={25} />,
         link:"/govt-payments",
       },
       {
         title: "Mobile Top Up",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <TbDeviceMobileUp size={25} />,
         link:"/mobile-top-up",
       },
       {
         title: "Payment Methods",
-        icon: <AiOutlineAppstore size={18} />,
+        icon: <MdOutlinePayment  size={25} />        ,
         link:"/payment-methods",
       },
       {
         title: "Transactions",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <GrTransaction size={25} />        ,
         link:"/transactions",
+      },
+      {
+        title: "Reports",
+        icon: <TbReportSearch size={25} />        ,
+        link:"/reports",
       },
     ],
   },
   {
-    name: "GENERAL",
+    name: "",
     lists: [
       {
         title: "Settings",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <CiSettings size={25}/>,
+        link: "/settings"
+        ,
       },
       {
-        title: "Help & Support",
-        icon: <AiOutlineAppstore size={18} />,
+        title: "Help",
+        icon: <MdContactSupport size={25}/>,
+        link: "/help"
+        ,
       },
       {
         classses: "mt-16 border-solid border border-[#E8E7EC] rounded-lg",
         title: "Logout",
-        icon: <AiOutlineAppstore  size={18}/>,
+        icon: <RiLogoutBoxLine size={25}/>,
       },
     ],
   },

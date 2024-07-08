@@ -2,86 +2,452 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Exo', sans-serif;
+input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
+
+/* .custom-placeholder-hidden .MuiInputBase-input::placeholder {
+  color: transparent;
 }
 
+.custom-placeholder-visible .MuiInputBase-input::before {
+  content: 'Enter your date of birth';
+  color: rgba(0, 0, 0, 0.54);
+} */
+
+
+.fixedColumn {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.leftColumn {
+  left: 0;
+  width: 20%; /* Adjust as per md={4} */
+}
+
+.centerColumn {
+  padding: 10px;
+  margin-left: 16.6%;
+  /* Adjust as per left column width */
+  /* margin-right: 20%; Adjust as per right column width */
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .leftColumn,
+  .rightColumn {
+    display: none;
+  }
+  .centerColumn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+:root {
+  --primary-color: #377CF6;
+}
+.primary-bg {
+  background-color: var(--primary-color);
+}
+.primary-text {
+  color: var(--primary-color);
+}
+
+/* FOR THE REMOVAL OF ARROW INPUT TYPE "NUMBER" */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
 .left-sidebar-shadow{
 box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
-
-
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.ant-drawer .ant-drawer-header{
+  border-bottom: 0;
+  padding: 0 24px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.ant-divider-horizontal{
+  margin: 10px 0;
+  color: black;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.ant-drawer .ant-drawer-body{
+  padding: 0 24px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.auth-bg{
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh; 
+  width: 100%; 
+  display: flex; 
+  position: absolute;
+  width: 100%;
+  z-index: 1; 
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.content {
+  position: relative;
+  z-index: 2;
+  height: 0;
+  width: 40rem;
+  margin-left: 10rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.sign-page{
+  background-image: url('assets/image/bg3.png');
+}
+
+.verification-bg{
+  background-image: url('assets/image/bg1.png');
+}
+
+.forgot-pg{
+  background-image: url('assets//image/bg2.png');
+}
+
+/* paidreceipt modal ant design css overlapping */
+.ant-modal .ant-modal-header{
+  background-color: #F7F8F9;
+  border-radius: 3rem;
+}
+
+.ant-modal .ant-modal-content{
+  background-color: #F7F8F9;
+  padding: 0;
+  border-radius: 3rem;
+}
+
+
+/* payment method of bill management changing the css of ant design card */
+.ant-card .ant-card-body{
+  padding: 0;
+}
+
+/* ant design collapse css overlapping */
+.ant-collapse .ant-collapse-content>.ant-collapse-content-box{
+  padding: 0;
+}
+
+
+.ant-collapse-expand-icon{
+ color: #377CF6;
+ background-color: #E8E7EC;
+ padding-inline-end: 0px;
+ margin-right: 10px;
+ padding: 10px;
+ border-radius: 100%;
+ font-size: 20px;
+}
+
+
+.ant-collapse-header-text{
+  color: #192440;
+  font-size: 16px;
+}
+
+/* .ant-tabs-tab .ant-tabs-tab-active{
+  background-color: #377CF6 !important;
+  color: white !important;
 } */
- 
+
+.ant-tabs-card.ant-tabs-top >.ant-tabs-nav .ant-tabs-tab-active{
+  background-color: #377CF6 !important;
+  color: white !important; 
+}
+
+
+.custom-tab-background .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+  /* border: 1px solid #d9d9d9; */
+  background-color: #E8E7EC;
+}
+
+/* .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab:hover {
+  color: white;
+} */
+
+.ant-tabs-tab-btn{
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000  ;
+}
+
+ .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+  color: white;
+}
+
+.active-color{
+  color: green
+}
+
+.custom-menu .ant-menu-item:hover {
+  color: #377CF6 !important;
+}
+.custom-menu .ant-menu-item-active {
+  color: #377CF6 !important;
+}
+
+.ant-menu-light{
+  background: none;
+}
+
+.ant-menu-horizontal{
+  border-bottom: 0;
+}
+/* PAYMENT TYPE TABS STYLING */
+
+.active-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DBF0FF;
+  border: 2px solid #377CF6;
+  opacity: 50%;
+  pointer-events: none;
+  border-radius: 1rem; 
+}
+
+.drawer-cards-shadow{
+  box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+  -webkit-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+  -moz-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+}
+
+.MuiMenu-paper{
+  margin-top: 10px;
+  border: 2px solid #1976d2;
+}
+
+/* button custom padding */
+.btn-custom-padding{
+  padding: 10px 25px !important;
+  font-weight: 600;
+  width: 8rem;
+}
+.first-btn{
+  background-color: transparent !important;
+  border: 2px solid #377CF6;
+  color: #377CF6;
+  
+}
+
+
+/* faq card shadow */
+.faq-card-shadow{
+  box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+-webkit-box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+-moz-box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+}
+
+/* select font weight bold */
+.ant-select-selection-item{
+  font-weight: 600 !important;
+}
+
+/* steps font size */
+.ant-steps-item-title{
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+/* step margin */
+.ant-steps{
+  margin: 0 10rem !important;
+}
 
 
 
+
+
+/* Custom styles for the Select component */
+.custom-select .ant-select-selector {
+  background-color: transparent !important;
+}
+
+.custom-select .ant-select-arrow {
+  color: #377CF6; /* Change this to your desired arrow color */
+}
+
+/* OTP INPUT STYLING */
+
+.ant-otp-input{
+  width: 3rem; 
+  height: 3rem;
+  border: 1px solid #176BA3;
+  border-radius: 0.375rem;
+  color: #176BA3;
+}
+
+/* ant design image upload css */
+.ant-upload-drag-icon{
+  display: flex;
+  justify-content: center;
+}
+
+.ant-upload-text{
+  font-weight: 700;
+}
+
+.ant-upload-wrapper .ant-upload-drag{
+  border: 2px dashed #329DFF;
+}
+
+.ant-upload-wrapper .ant-upload-drag .ant-upload {
+  padding: 0;
+}
+
+
+.btn-custom-style{
+  padding: 1.3rem 6rem !important;
+  border-radius: 24px !important;
+}
+
+
+/* ant dropdown  menu */
+
+.ant-dropdown .ant-dropdown-menu{
+  border-radius: 16px !important;
+  padding: 5px !important;
+}
+
+
+.ant-dropdown-menu-item{
+  padding: 10px 12px !important;
+  font-weight: 600 !important;
+  /* border-radius: 16px !important; */
+}
+
+.ant-dropdown-menu-item:hover{
+  background-color: #dbf0ff !important;
+  color: #508ef7 !important;
+  border-left: 4px solid #377cf6;
+}
+
+
+
+.complete-profile-shadow{
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+}
+
+
+
+.btn-custom-class{
+  padding: 20px 30px !important;
+}
+
+ /* mui input placeholder fontsize */
+
+ .css-1pysi21-MuiFormLabel-root-MuiInputLabel-root{
+  font-size: 14px !important;
+ }
+
+ .css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+  color: #1976d2 !important;
+ }
+
+
+
+ /* ant steps customization */
+ .ant-steps.ant-steps-small .ant-steps-item-icon{
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-steps-item-tail{
+    padding: 5px 24px !important;
+}
+
+
+.ant-steps-icon{
+  font-size: 16px;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+  font-size: 14px !important;
+  line-height: 10px !important;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+  padding: 8.5px 14px !important;
+}
+
+/* date picker calender icon color change */
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root{
+  color: #006AB2 !important;
+  font-size: 18px !important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+/* MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd  */
+
+/* mui input datepicker or select */
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  border-radius: 10px !important;
+}
+
+
+/* mui select */
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+  border-radius: 24px !important;
+  padding: 10px !important;
+}
+
+.MuiMenu-paper{
+  border: 0;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  /* padding: 5px 10px !important; */
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+ background-color: #dbf0ff !important;
+ color: #508ef7 !important;
+ border-left: 4px solid #508ef7;
+ border-radius: 5px;
+}
+
+.css-8je8zh-MuiTouchRipple-root{
+  color: #508ef7 !important;
+}
+
+/* styles.css */
+.custom-placeholder-hidden::placeholder {
+  color: transparent !important;
+}
