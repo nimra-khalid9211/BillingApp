@@ -149,21 +149,12 @@ const GoogleChart = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div className=" rounded-3xl drop-shadow-xl bg-white">
       <div className="font-semibold w-full my-10 w-full drop-shadow-xl bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
         <div>Bills Statistics</div>
         <Dropdown menu={menuProps}>
           <div className="border-2 py-1 px-5 rounded-full flex">
             <div className="font-medium">This Year</div>
-=======
-    <div className=" rounded-[3rem] drop-shadow-xl bg-white">
-      <div className="font-semibold my-10 w-full drop-shadow-xl bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
-        <div>Bills Statistics</div>
-        <Dropdown menu={menuProps}>
-          <div className="border-2 py-1 px-5 rounded-full flex">
-            <div className="font-medium"> This Year</div>
->>>>>>> origin/newBranch
             <div className="ml-5">
               <DownOutlined />
             </div>
