@@ -27,9 +27,16 @@ export const  MyBills = ({ from }) => {
       {/* {JSON.stringify(MyBillList)} */}
 
       <div className="overflow-x-auto rounded-3xl mt-5 bg-white">
-        <div className="bg-[#377CF6] text-white p-3 mb-2">
-          {from === "BMB" ? "My Bills" : "Due Bills List"}
+
+      <div className="font-semibold w-full text-lg drop-shadow-xl text-[#377CF6] bg-white p-4 rounded-t-[2rem]">
+       {from === "BMB" ? "My Bills" : "Due Bills List"}
         </div>
+      
+
+
+        {/* <div className="bg-[#377CF6] text-white p-3 mb-2">
+          {from === "BMB" ? "My Bills" : "Due Bills List"}
+        </div> */}
 
         {MyBillList.length > 0 ? (
 
@@ -65,11 +72,11 @@ export const  MyBills = ({ from }) => {
               {MyBillList.map((x, index) => (
                 <tr
                   key={index}
-                  className="bg-white text-black font-bold  text-center border-b border-dashed border-[#4653D72B]"
+                  className="bg-white text-black font-bold hover:bg-[#F7F8F9]  text-center border-b border-dashed border-[#4653D72B]"
                 >
                   <th
                     scope="row"
-                    className={`px-6 py-4 text-left font-semibold text-[#329DFF] whitespace-nowrap dark:text-white ${dashedBorderRight}`}
+                    className={`px-6 py-4 text-left font-semibold  whitespace-nowrap dark:text-white ${dashedBorderRight}`}
                   >
                     {x.billname}
                   </th>

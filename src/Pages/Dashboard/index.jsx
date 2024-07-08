@@ -67,12 +67,7 @@ const Dashboard = () => {
                 <SelectableBills from="dashboard" type="all" />
               </div>
               <div className="mt-10 drop-shadow-xl rounded-[2rem]">
-<<<<<<< HEAD
               <GoogleChart/>
-=======
-       
-                <GoogleChart />
->>>>>>> origin/tableChanges
               </div>
             </div>
             <div className="col-span-2">

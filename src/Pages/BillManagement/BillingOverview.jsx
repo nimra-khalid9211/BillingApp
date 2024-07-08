@@ -60,7 +60,7 @@ const renderContent = () => {
   return (
     <>
 
-<div>
+<div className='mt-10'>
       <Menu onClick={onClick} selectedKeys={[current]}
        className='custom-menu text-base font-medium my-4'
        mode="horizontal" 

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/tableChanges
 import { Avatar, Badge, Dropdown, Menu } from "antd";
 import { CiSettings } from "react-icons/ci";
 import { FaAngleDown, FaAngleUp, FaRegBell, FaRegUser } from "react-icons/fa";
@@ -10,15 +6,12 @@ import { RiLogoutBoxLine, RiUserLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { LuCalendarDays } from "react-icons/lu";
-<<<<<<< HEAD
-=======
 import { formatDate } from "../../Hooks";
 
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { useState } from "react";
->>>>>>> origin/tableChanges
 
 const dropdownMenus = [
   {
@@ -51,14 +44,9 @@ const Header = () => {
   const navigate = useNavigate();
 
   const { dropdown, checkVerfication } = _BillingCondition();
-<<<<<<< HEAD
-
-  const date = Date().slice(0, 15);
-=======
   const [showDate, setShowDate] = useState(false);
 
   const formattedDate = formatDate(new Date());
->>>>>>> origin/tableChanges
 
   return (
     <div className="flex items-center justify-between mx-3  mt-5">
@@ -66,16 +54,6 @@ const Header = () => {
         Welcome, <span className="text-xl font-semibold">Shaun Abbott</span>
       </b>
       <div className="flex justify-between items-center gap-3">
-<<<<<<< HEAD
-        {/* <div className='bg-white p-2 rounded-full'>
-                <IoSearchOutline size={20}/>
-                </div> */}
-
-        <div className='bg-white py-3 px-3 rounded-full flex gap-3'>
-                <LuCalendarDays size={20} color='#377CF6' /> <b className='text-sm border-l border-[#6C7293] pl-2'>{date}</b>
-                </div>
-
-=======
        
 
         <div className='bg-white relative py-3 px-3 rounded-full flex gap-3'>
@@ -92,7 +70,6 @@ const Header = () => {
 
                 </div>}
 
->>>>>>> origin/tableChanges
         <div className="bg-white py-3 px-3 rounded-full gap-3">
           <CiSettings
             size={27}
