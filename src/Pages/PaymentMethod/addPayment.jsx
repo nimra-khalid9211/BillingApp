@@ -28,7 +28,7 @@ export default function AddPayment() {
 
   const handlePaymentTypeClick = (type) => {
     setPaymentType(type);
-    console.log(type,"type")
+    // console.log(type,"type")
   };
 
   return (

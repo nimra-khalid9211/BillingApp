@@ -9,22 +9,10 @@ import { FaMoneyBills } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
 
 
-const items = [
-  {
-    key: '2',
-    label: 'Billing Overview',
-    children: <BillingOverview />,
-  },
-  {
-    key: '1',
-    label: 'Bills Detail',
-    children: <Bills from={"BMB"} />,
-  }
-];
 
 
 const BillManagement = () => {
-   const {addBill, setAddBill} = _BillingCondition();
+   const {addBill, setAddBill, billingMenu, setBillingMenu} = _BillingCondition();
    const [from, setFrom] = useState(false);
   
   return (
@@ -39,11 +27,30 @@ const BillManagement = () => {
           btnEvent2={()=>{setAddBill(true); setFrom("addBill")}}
         />
 
-      <Tabs
+      {/* <Tabs
         defaultActiveKey="1"
         type="card"
         items={items }
-      />
+      /> */}
+
+      <div>
+        <Button className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2
+        ${billingMenu === 2 ? "active-tab-button" : ""} `}
+        style={{borderRadius: "12px 0 0 12px"}} onClick={()=>setBillingMenu(2)}>
+          Billing Overview
+        </Button>
+
+
+        <Button className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2
+        ${billingMenu === 1 ? "active-tab-button" : ""}`} 
+        style={{borderRadius: "0 12px 12px 0"}}n onClick={()=>setBillingMenu(1)}>
+
+            Bills Detail
+
+            </Button>
+      </div>
+
+      {billingMenu === 2 ? <BillingOverview />  :  <Bills from={"BMB"} />}
       
       <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from}/>
 

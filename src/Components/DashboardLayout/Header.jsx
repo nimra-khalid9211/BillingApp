@@ -54,6 +54,7 @@ const Header = () => {
         Welcome, <span className="text-xl font-semibold">Shaun Abbott</span>
       </b>
       <div className="flex justify-between items-center gap-3">
+<<<<<<< HEAD
         <div className="bg-white relative py-3 px-3 rounded-full flex gap-3">
           <LuCalendarDays
             size={20}
@@ -75,6 +76,24 @@ const Header = () => {
           </div>
         )}
 
+=======
+       
+
+        <div className='bg-white relative py-3 px-3 rounded-full flex gap-3'>
+                <LuCalendarDays size={20} color='#377CF6' role="button" onClick={()=>setShowDate(!showDate)}/> 
+
+                <b className='text-sm border-l border-[#6C7293] pl-2'>{formattedDate}</b>
+                </div>
+
+               {showDate && <div className="absolute bg-white z-10 top-24 rounded-3xl right-60">
+
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DateCalendar readOnly/>
+                </LocalizationProvider>
+
+                </div>}
+
+>>>>>>> origin/newBranch
         <div className="bg-white py-3 px-3 rounded-full gap-3">
           <CiSettings
             size={27}

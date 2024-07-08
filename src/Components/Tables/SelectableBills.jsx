@@ -81,7 +81,7 @@ export const SelectableBills = ({ type, from }) => {
     <>
 
        
-      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-3xl rounded-tr-3xl  mt-10">
+      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-3xl rounded-tr-3xl mt-5">
         <span>{from === "dashboard" ? "Due Bills" : "All Bills"}</span>
       { from === "dashboard" ? <Link to={"/bill-management"} className="text-sm underline">View All</Link> : <span className="text-sm">This Month</span>}
       </div>
@@ -139,10 +139,10 @@ export const SelectableBills = ({ type, from }) => {
         <tbody>
           {unpaidBills.map((x, index) =>{
           const {payable, overdue} = isOverdue(x.dueDate);
-
+            // console.log(payable)
            return (
             <tr key={index}
-              className="bg-white border-dashed border-b border-[#4653D72B] text-center h-16 text-black font-medium">
+              className="bg-white border-dashed hover:bg-[#F7F8F9] border-b border-[#4653D72B] text-center h-16 text-black font-medium">
 
               <td className="w-4 p-4 border-dashed border-r border-[#4653D72B]">
 
@@ -151,7 +151,7 @@ export const SelectableBills = ({ type, from }) => {
                     id="checkbox-table-search-1"
                     type="checkbox"
                     onChange={() => handleCheckboxChange(x)}
-                    disabled={x.status === "paid" ? true : false}
+                    disabled={ !payable || x.status === "paid"  ? true : false}
                     checked={selectedBills.includes(x)}
                     className="w-4 h-4 text-blue-600 rounded "
                   />
@@ -254,7 +254,7 @@ export const SelectableBills = ({ type, from }) => {
         <div className="bg-[#E8E7EC] border-2 border-[#377CF6] mt-10 h-[58px] px-10 rounded-[18px] flex justify-between items-center">
           <div>
             <span className="text-[#377CF6] font-medium text-lg ">
-              {selectedBills.length} Bills Selected
+              {selectedBills.length} Bill{selectedBills.length >=2 ? "s" : ""} Selected
             </span>
 
             <span className="ml-20 text-base font-medium">

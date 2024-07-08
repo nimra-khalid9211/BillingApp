@@ -36,8 +36,13 @@ const CompleteProfile = () => {
         </div>
 
           <div className='relative flex items-center justify-center'>
+<<<<<<< HEAD
             <CircularProgressbar value={50} text='50%'/>
             <div className='font-semibold text-base absolute top-[7rem] text-[#182a53]'>Completed</div>
+=======
+            <CircularProgressbar value={90} text='90%'/>
+            <div className='font-semibold text-base absolute top-[7rem] text-[#182A53]'>Completed</div>
+>>>>>>> origin/newBranch
 
           </div>
 
