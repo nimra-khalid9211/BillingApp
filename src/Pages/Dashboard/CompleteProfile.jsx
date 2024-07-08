@@ -37,7 +37,7 @@ const CompleteProfile = () => {
 
           <div className='relative flex items-center justify-center'>
             <CircularProgressbar value={90} text='90%'/>
-            <div className='font-semibold text-base absolute top-[7rem]'>Completed</div>
+            <div className='font-semibold text-base absolute top-[7rem] text-[#182A53]'>Completed</div>
           </div>
 
 

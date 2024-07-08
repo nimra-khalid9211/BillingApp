@@ -15,7 +15,7 @@ const LeftSideBar = () => {
       style={{ height: "100vh" }}
     >
       <div className="px-5 pt-5 flex justify-center items-center ">
-        <img src={Logo} className="w-[175px] h-[70px]" />
+        <img src={Logo} className="w-44 h-[74px]" />
       </div>
 
       <section>
