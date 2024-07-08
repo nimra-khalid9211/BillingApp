@@ -14,11 +14,11 @@ export default function TotalBill() {
       </div>
       <div className="bg-[#DBF0FF] font-medium rounded-r-[2rem]">
         <div className="p-5 grid justify-items-stretch border-b-[1px] border-[#0000001A]">
-          <div className="text-sm font-bold">Issued Bill</div>
+          <div className="text-sm font-bold">Issued Bills</div>
           <div className="text-2xl justify-self-end font-bold">01</div>
         </div>
         <div className="p-5 grid justify-items-stretch">
-          <div className="text-sm font-bold">Waiting Bill</div>
+          <div className="text-sm font-bold">Waiting Bills</div>
           <div className="text-2xl justify-self-end font-bold">07</div>
         </div>
       </div>

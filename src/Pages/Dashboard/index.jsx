@@ -46,7 +46,7 @@ const Dashboard = () => {
                 <div className="flex justify-around flex-col">
                   <PaymentStatus
                     status="Paid(02)"
-                    amount= {2600}
+                    amount= {2600.98}
                     bgColor="#D8EBE1"
                     borderColor="#24A959"
                     icon={Paid}
@@ -55,7 +55,7 @@ const Dashboard = () => {
                   <div className="mt-3">
                     <PaymentStatus
                       status="Unpaid(01)"
-                      amount={1000}
+                      amount={1000.34}
                       bgColor="#FFD5DF"
                       icon={Unpaid}
                       borderColor="#F1416C"
@@ -67,12 +67,7 @@ const Dashboard = () => {
                 <SelectableBills from="dashboard" type="all" />
               </div>
               <div className="mt-10 drop-shadow-xl rounded-[2rem]">
-<<<<<<< HEAD
               <GoogleChart/>
-=======
-       
-                <GoogleChart />
->>>>>>> origin/tableChanges
               </div>
             </div>
             <div className="col-span-2">

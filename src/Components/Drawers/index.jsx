@@ -5,6 +5,7 @@ import DrawerCardLayout from "../../Components/DrawerCardLayout";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 import PayMethodCard from "../CardsUI/PayMethodCard";
+import { Cancel } from "../../assets/icon";
 
 
 const {Search} = Input;
@@ -77,11 +78,15 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       open={addBill}
       key="right"
       width={1200}
-      className="rounded-tl-[80px] rounded-bl-[80px] p-8"
+      className="rounded-tl-[80px] rounded-bl-[80px] p-8 relative"
+      style={{overflow:'unset'}}
     >
-      
+     <div onClick={() => setAddBill(false)} className="absolute left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
+
         <DrawerCardLayout heading={"Bill Details"}>
+
           <div className="grid grid-cols-5 gap-8 mb-10">
+
             
              <TextField
               className="col-span-4 border-black"

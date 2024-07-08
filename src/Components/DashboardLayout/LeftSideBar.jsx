@@ -32,7 +32,7 @@ const LeftSideBar = () => {
               {item.lists?.map((x, index) => (
                 <Link to={checkVerfication ? x.link : "/dashboard"} key={index} >
                   <div
-                    className={`flex items-center gap-3 px-3 font-medium text-[#6C7293] py-2 mx-3 my-6 ${
+                    className={`flex items-center gap-3 px-3  text-[#6C7293] py-2 mx-3 my-6 ${
                       x.classses && x.classses
                     }
                     ${

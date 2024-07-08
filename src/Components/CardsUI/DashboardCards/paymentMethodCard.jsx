@@ -42,13 +42,13 @@ export default function PaymentMethodCard() {
                   </div>
 
                   <div className="flex justify-end">
-                    <span
+                    <a
                       className={`text-xs ${
                         x.default ? "text-[#3fb46e]" : "text-[#8bc8ff]"
                       }`}
                     >
                       {x.default ? "Default" : "Set as Default"}
-                    </span>
+                    </a>
                   </div>
                 </div>
               </Card>

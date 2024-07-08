@@ -43,6 +43,7 @@ import transaction from './transaction.png'
 
 
 
+
 export { info, verify, ArrowLeft, jazzc, paymentPopup, grey_image, thankyou, logo, arrowRight,
         paymentSuccessfull, authLogo, visaCard, bg1, bg2, bg3, bitmap, uploadIcon, dueBills, chart, 
         brandLogo, challan, cheque, creditCard, dashboardPanel,easyPaisa, emptyCard, transaction,
