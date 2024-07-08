@@ -142,6 +142,7 @@ export const MobileTopUpList = [
     mobileNumber: "0302 110 0478",
   },
 ];
+
 export const MobileTopUpReceipt = {
   transactionID: "135781236578-ALYR",
   topUpName: "Nimra Khalid",

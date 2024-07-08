@@ -6,7 +6,7 @@ import { FiDownload } from "react-icons/fi";
 import { IoMdEye } from "react-icons/io";
 import { FaShareNodes } from "react-icons/fa6";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ViewReceiptModal } from "../Modals";
 import { PDFTemplate } from "../PDFTemplate";
 import { isOverdue } from "../../Hooks";
@@ -34,9 +34,14 @@ export const SelectableBills = ({ type, from }) => {
 
   const handleSelectAllChange = (e) => {
     if (e.target.checked) {
-      const unpaidBills = filteredBills.filter((x) => x.status !== "paid");
+      const unpaidBills = filteredBills.filter((x) => 
+      {
+          const {payable} = isOverdue(x.dueDate);
+          return x.status === "unpaid" && payable
+      })
 
       setSelectedBills(unpaidBills);
+
     } else {
       setSelectedBills([]);
     }
@@ -54,8 +59,6 @@ export const SelectableBills = ({ type, from }) => {
     });
   };
 
-
-
   const totalAmount = selectedBills.reduce((total, bill) => {
     const amountString =
       bill.status === "unpaid" && isOverdue(bill.dueDate)
@@ -70,15 +73,22 @@ export const SelectableBills = ({ type, from }) => {
     setOpenModal(true);
   };
 
+  const unpaidBills = from === "dashboard" ? filteredBills.filter((x)=>x.status === "unpaid").slice(0,6).map((x,index)=>x) : filteredBills;
+
+  // console.log(unpaidBills);
+
   return (
     <>
 
-      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-xl rounded-tr-xl mt-10">
-        <span>All Bills</span>
-        <span className="text-sm">This Month</span>
+       
+      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-3xl rounded-tr-3xl  mt-10">
+        <span>{from === "dashboard" ? "Due Bills" : "All Bills"}</span>
+      { from === "dashboard" ? <Link to={"/bill-management"} className="text-sm underline">View All</Link> : <span className="text-sm">This Month</span>}
       </div>
 
-      <table className="w-full text-sm rounded-bl-xl rounded-br-xl mt-2">
+      <div className={`overflow-x-auto bg-white rounded-bl-3xl rounded-br-3xl mt-2 ${from === "dashboard" && 'h-[433px]'}`}>
+
+      <table className="w-full text-sm">
         <thead className="text-xs text-[#377CF6] text-center bg-[#DBF0FF]">
           <tr>
             <th
@@ -103,8 +113,8 @@ export const SelectableBills = ({ type, from }) => {
             
             {MyBillHeading.map((x, index) => {
               if (
-                // (x.title === "Auto Debit" && from !== "BMB") 
-                // (x.title === "Pay Preference" && from !== "BMB") 
+                (x.title === "Auto Debit" && from === "dashboard") ||
+                (x.title === "Pay Preference" && from === "dashboard") ||
                 // (x.title === "Amount Due" && from !== "dashboard")
                 (x.title === "Download Bill" && from !== "overview")
               ) {
@@ -115,8 +125,8 @@ export const SelectableBills = ({ type, from }) => {
                 <th
                   scope="col"
                   key={index}
-                  className={`px-6 py-2 border-dashed border-[#eff0fb]  ${
-                    index !== MyBillHeading.length - 1 ? "border-r border-[#1925a52b]" : ""
+                  className={`px-6 py-2 border-dashed  ${
+                    index < MyBillHeading.length - 1 ? "border-r border-[#4653D72B]" : ""
                   } ${index === 0 ? "text-left" : "text-center"}`}
                 >
                   {x.title}
@@ -126,12 +136,13 @@ export const SelectableBills = ({ type, from }) => {
           </tr>
         </thead>
 
-        <tbody className="rounded-b-[1.5rem]">
-          {filteredBills.map((x, index) => (
-            <tr
-              key={index}
-              className="bg-white border-dashed border-b border-[#4653D72B] text-center h-16 text-black font-medium"
-            >
+        <tbody>
+          {unpaidBills.map((x, index) =>{
+          const {payable, overdue} = isOverdue(x.dueDate);
+
+           return (
+            <tr key={index}
+              className="bg-white border-dashed border-b border-[#4653D72B] text-center h-16 text-black font-medium">
 
               <td className="w-4 p-4 border-dashed border-r border-[#4653D72B]">
 
@@ -174,18 +185,18 @@ export const SelectableBills = ({ type, from }) => {
               <td className={`px-6 py-2 ${dashedBorderRight}`}>{x.dueDate}</td>
 
               <td className={`px-6 py-2 ${dashedBorderRight}`}>
-                {isOverdue(x.dueDate) && x.status === "unpaid"
+                {overdue && x.status === "unpaid"
                   ? x.afterDueAmount
                   : x.amount}
               </td>
            
-                  <td className={`px-6 py-2 ${dashedBorderRight}`}>
+                 {from !== "dashboard" && <td className={`px-6 py-2 ${dashedBorderRight}`}>
                     <Switch defaultChecked={x.autoDebit} />
-                  </td>
+                  </td>}
 
-                  <td className={`px-6 py-2 ${dashedBorderRight}`}>
+              { from !== "dashboard" &&  <td className={`px-6 py-2 ${dashedBorderRight}`}>
                     {x.payPreference}
-                  </td>
+                  </td>}
 
                   {/* <td className={`px-6 py-2 ${dashedBorderRight}`}>
                     <Button className="px-1">
@@ -194,9 +205,11 @@ export const SelectableBills = ({ type, from }) => {
                     </Button>
                   </td> */}
                 
-                <td className={`px-6 py-2 `}>
-                  {x.status === "unpaid" ? (
-                    <div className="flex flex-col justify-center items-center">
+                <td className={`px-6 py-2`}>
+              {x.status === "unpaid" ? (
+                <div className="flex flex-col justify-center items-center">
+                  {payable ? (
+                    <>
                       <div>
                         <a
                           href="#"
@@ -205,35 +218,37 @@ export const SelectableBills = ({ type, from }) => {
                           Pay Now
                         </a>
                       </div>
-
-                      {isOverdue(x.dueDate) ? (
+                      {overdue ? (
                         <span className="text-[#F1416C] pt-1 text-xs">
                           Overdue
                         </span>
-                      ) : (
-                        ""
-                      )}
-                    </div>
+                      ) : null}
+                    </>
                   ) : (
-                    <div className="flex items-center justify-evenly px-6 py-2 ">
-                      <Button className="p-2 bg-[#DBF0FF] rounded-lg">
-                        <IoMdEye
-                          size={20}
-                          onClick={() => SetModalAndID(x.id)}
-                        />
-                      </Button>
-
-                      <Button className="p-2 bg-[#DBF0FF] rounded-lg">
-                        <FiDownload size={20} onClick={PDFTemplate} />
-                      </Button>
-                    </div>
+                    <span className="text-[#F1416C] pt-1 text-xs">
+                      Not Payable
+                    </span>
                   )}
-                </td>
+                </div>
+              ) : (
+                <div className="flex items-center justify-evenly px-6 py-2">
+                  <Button className="p-2 bg-[#DBF0FF] rounded-lg">
+                    <IoMdEye size={20} onClick={() => SetModalAndID(x.id)} />
+                  </Button>
+                  <Button className="p-2 bg-[#DBF0FF] rounded-lg">
+                    <FiDownload size={20} onClick={PDFTemplate} />
+                  </Button>
+                </div>
+              )}
+            </td>
              
             </tr>
-          ))}
+          )})}
         </tbody>
       </table>
+
+     </div>
+
 
       {selectedBills.length > 0 && (
         <div className="bg-[#E8E7EC] border-2 border-[#377CF6] mt-10 h-[58px] px-10 rounded-[18px] flex justify-between items-center">
