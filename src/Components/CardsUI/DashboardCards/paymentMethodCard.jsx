@@ -9,7 +9,7 @@ export default function PaymentMethodCard() {
   const navigate = useNavigate();
   return (
     <Card className="rounded-3xl h-[30rem] border bg-[#d3e8f6] border-[#377CF6]">
-      <div className="flex items-center font-bold rounded-tl-3xl rounded-tr-3xl bg-white py-4 px-6 justify-between">
+      <div className="flex items-center font-bold drop-shadow-xl rounded-tl-3xl rounded-tr-3xl bg-white py-4 px-6 justify-between">
         <span>Payment Method</span>
 
         {CardData.length > 0 && (

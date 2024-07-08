@@ -35,14 +35,10 @@ const CompleteProfile = () => {
 
         </div>
 
-          <div>
+          <div className='relative'>
             <CircularProgressbar value={90} text='90%'/>
-<<<<<<< Updated upstream
-=======
-            <div className='font-semibold text-base absolute top-[7rem] text-[#182a53]'>Completed</div>
->>>>>>> Stashed changes
+            <div className='font-semibold text-lg absolute right-[10rem] top-[7rem] text-[#182a53]'>Completed</div>
           </div>
-
 
     </div>
    </div>
