@@ -1,8 +1,11 @@
-import { Radio, Tabs } from 'antd'
+import { Input, Radio, Tabs } from 'antd'
 import React, { useState } from 'react'
 import TransactionRecord from '../../Components/Tables/TransactionRecord';
 import BreadCrumbs from '../../UI/BreadCrumbs';
 import { GrTransaction } from 'react-icons/gr';
+import { IoSearchOutline } from 'react-icons/io5';
+
+const {Search} = Input;
 
 const items = [
     {
@@ -35,6 +38,7 @@ const items = [
 const Transactions = () => {
   
   const [activeTab, setActiveTab] = useState("1");
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleChange = (key) => {
     setActiveTab(key);
@@ -47,12 +51,38 @@ const Transactions = () => {
 
     <BreadCrumbs icon={<GrTransaction />} menu={"Transactions"}/>
 
-   <Tabs 
+    <div className='relative'>
+
+    <div className='absolute right-0 z-10 flex justify-end items-center'>
+
+
+{showSearch && <Input  placeholder="Search"  className='rounded-full p-2 mr-3 transition-all duration-300'
+          // style={{ transform: 'translateX(0)' }}
+           suffix={<IoSearchOutline size={15}/>}/>}
+               
+
+
+
+               <div className='p-3 rounded-full bg-white font-4xl'>
+               <IoSearchOutline size={20} color='#6C7293' onClick={()=>setShowSearch(!showSearch)}/>
+                </div>
+
+             
+
+                </div>
+
+
+ 
+  <Tabs 
       // activeKey={activeTab}
       onChange={handleChange}
       type="card"
       items={items}
   />
+
+               
+
+  </div>
     </>
   )
 }

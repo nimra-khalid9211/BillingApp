@@ -451,3 +451,41 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 .custom-placeholder-hidden::placeholder {
   color: transparent !important;
 }
+
+
+
+/* ant input search icon color change */
+/* .ant-input-affix-wrapper-focused{
+  color: #377CF6 !important;
+} */
+
+/* animations */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.3s forwards;
+}

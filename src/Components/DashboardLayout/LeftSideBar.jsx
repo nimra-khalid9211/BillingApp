@@ -20,7 +20,7 @@ const LeftSideBar = () => {
 
       <section>
         {menuList.map((item, index) => (
-          <div key={index} className="px-4 pt-5 text-lg">
+          <div key={index} className="px-4 pt-5 text-lg ">
             <ul>
               <div>
                 {/* className='flex items-center gap-4' */}

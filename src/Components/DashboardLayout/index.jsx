@@ -7,7 +7,7 @@ const DashboardLayout = ({children}) => {
 return (
 
     <Row style={{ minHeight: "100vh" }} className='bg-[#F6F6F8]'>
-    <Col md={4} xs={0} className="fixedColumn leftColumn rounded-r-[50px] z-10 left-sidebar-shadow">
+    <Col md={4} xs={0} className="fixedColumn leftColumn rounded-r-[50px] bg-white z-10 left-sidebar-shadow">
       <LeftSideBar />
     </Col>
     <Col md={20} xs={24} className="centerColumn">
