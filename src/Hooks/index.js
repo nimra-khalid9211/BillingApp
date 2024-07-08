@@ -110,7 +110,30 @@ export const formatAmount = (amount) => {
   };
 
 
+// export const formatDate = (date) => {
+//   const options = { 
+//     weekday: 'short', 
+//     day: '2-digit', 
+//     month: 'short', 
+//     year: 'numeric' 
+//   };
+//   return date.toLocaleDateString('en-US', options);
+// }
 
+export const formatDate = (inputDate) => {
+  const date = new Date(inputDate); // Create a Date object from inputDate
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  const dayIndex = date.getDay();
+  const day = days[dayIndex];
+  const currentDate = date.getDate();
+  const monthIndex = date.getMonth();
+  const month = months[monthIndex];
+  const year = date.getFullYear();
+
+  return `${day}, ${currentDate} ${month} ${year}`;
+};
 
 // 5 days after due date bill not payable
 // const isOverdue = (dueDate) => {
