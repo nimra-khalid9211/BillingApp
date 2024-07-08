@@ -44,6 +44,17 @@ else if(cardNumberStr.length <= 16){
     }
 
 
+// export const isOverdue = (dueDate) => {
+//     const due = new Date(dueDate);
+//     const today = new Date();
+    
+//     // Set time to midnight for both dates
+//     due.setHours(0, 0, 0, 0);
+//     today.setHours(0, 0, 0, 0);
+
+//     return due < today;
+// };
+
 export const isOverdue = (dueDate) => {
     const due = new Date(dueDate);
     const today = new Date();
@@ -51,9 +62,19 @@ export const isOverdue = (dueDate) => {
     // Set time to midnight for both dates
     due.setHours(0, 0, 0, 0);
     today.setHours(0, 0, 0, 0);
-
-    return due < today;
-};
+  
+    // Calculate the difference in days
+    const diffTime = today - due;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+    if (diffDays > 5) {
+      return { overdue: true, payable: false };
+    } else if (diffDays > 0) {
+      return { overdue: true, payable: true };
+    } else {
+      return { overdue: false, payable: true };
+    }
+  };
 
 
 export const CNICDashes = (value) =>{
@@ -87,6 +108,10 @@ export const formatAmount = (amount) => {
   
     return formatter.format(amount).replace('PKR', 'Rs');
   };
+
+
+
+
 // 5 days after due date bill not payable
 // const isOverdue = (dueDate) => {
 //     const due = new Date(dueDate);

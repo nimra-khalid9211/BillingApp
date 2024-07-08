@@ -40,8 +40,8 @@ export default function TransactionsHistory() {
         } */}
         </div>
         {data.length > 0 ? (
-          data.map((data) => (
-            <div className="flex items-center justify-between mt-5 px-5 pb-5">
+          data.map((data, index) => (
+            <div key={index} className="flex items-center justify-between mt-5 px-5 pb-5">
               <div className="flex items-center">
                 <div className="bg-[#EDF1FF] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
                   {data.icon}
