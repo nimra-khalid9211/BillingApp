@@ -41,7 +41,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
       style={{overflow:'unset'}}
     >
       <div className="">
-      <div onClick={() => setAddNumber(false)} className="absolute left-[-1rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
+      <div onClick={() => setAddNumber(false)} className="absolute left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
         <div className="text-xl text-[#377CF6] border-b pb-2 font-semibold">
           Add Number
         </div>
