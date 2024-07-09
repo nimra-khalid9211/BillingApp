@@ -37,11 +37,11 @@ export default function Router() {
           <Route path="/bill-management" element={<BillManagement />} />
           <Route path="/bill-management/selected-bills" element={<SelectedBills />}/>
           <Route path="/bill-management/payment-method" element={<BillPaymentMethod />}/>
-          <Route path="/govt-payments" element={<GovtPayments />} />
+          {/* <Route path="/govt-payments" element={<GovtPayments />} /> */}
           <Route path="/mobile-top-up" element={<MobileTopUp />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/add-no" element={<DepartmentNumber />} />
-          <Route path="/add-no/search-no" element={<GovtPaymentTable />} />
+          {/* <Route path="/add-no/search-no" element={<GovtPaymentTable />} /> */}
           <Route path="/mobile-top-up/changing-account" element={<ChangeAccount />} />
           <Route path="/mobile-top-up/changing-account/successfull" element={<Receipt />}/>
           <Route path="/payment-methods" element={<PaymentMethod />}/>

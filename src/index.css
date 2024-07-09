@@ -496,7 +496,9 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   animation: slideOutRight 0.3s forwards;
 }
 .CircularProgressbar .CircularProgressbar-text {
-  font-size: 18px !important;
+  font-size: 14px !important;
+  position: absolute;
+  top: 2rem;
 }
 
 
@@ -514,3 +516,43 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   background-color: #377CF6 !important;
   color: white !important;
 }
+
+
+
+
+.custom-menu .ant-menu-item {
+  position: relative; /* Ensure the pseudo-elements are positioned correctly */
+}
+
+/* Dot below the active menu item */
+.custom-menu .ant-menu-item-selected::after {
+  content: '•';
+  display: block;
+  color: blue; /* Dot color */
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1.5rem; /* Adjust based on your needs */
+}
+
+/* Arrow above the active menu item */
+.custom-menu .ant-menu-item-selected::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid blue; /* Arrow color */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -0.5rem; /* Adjust based on your needs */
+}
+
+/* Remove the bottom border from the active menu item */
+.custom-menu .ant-menu-item-selected {
+  border-bottom: none !important;
+}
+

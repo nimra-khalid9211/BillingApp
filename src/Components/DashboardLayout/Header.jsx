@@ -49,7 +49,7 @@ const Header = () => {
   const formattedDate = formatDate(new Date());
 
   return (
-    <div className="flex items-center justify-between mx-3  mt-5">
+    <div className="flex items-center justify-between mx-3  mt-7">
       <b className="text-2xl">
         Welcome, <span className="text-xl font-semibold">Shaun Abbott</span>
       </b>

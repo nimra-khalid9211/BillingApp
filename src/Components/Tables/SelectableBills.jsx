@@ -89,7 +89,7 @@ export const SelectableBills = ({ type, from }) => {
       <div className={`overflow-x-auto bg-white rounded-bl-3xl rounded-br-3xl mt-2 ${from === "dashboard" && 'h-[433px]'}`}>
 
       <table className="w-full text-sm">
-        <thead className="text-xs text-[#377CF6] text-center bg-[#DBF0FF]">
+        <thead className="text-[11px] text-[#377CF6] text-center bg-[#DBF0FF]">
           <tr>
             <th
               scope="col"
@@ -142,7 +142,7 @@ export const SelectableBills = ({ type, from }) => {
             // console.log(payable)
            return (
             <tr key={index}
-              className="bg-white border-dashed hover:bg-[#F7F8F9] border-b border-[#4653D72B] text-center h-16 text-black font-medium">
+              className="bg-white border-dashed hover:bg-[#F7F8F9] border-b border-[#4653D72B] text-center h-16 text-black font-semibold">
 
               <td className="w-4 p-4 border-dashed border-r border-[#4653D72B]">
 
@@ -213,7 +213,7 @@ export const SelectableBills = ({ type, from }) => {
                       <div>
                         <a
                           href="#"
-                          className="font-medium text-[#24A959] border border-[#24A959] rounded-lg py-1 px-2 text-xs"
+                          className="font-medium text-[#24A959] border border-[#24A959] rounded-xl py-1 px-3 text-xs"
                         >
                           Pay Now
                         </a>

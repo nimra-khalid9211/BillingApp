@@ -8,17 +8,17 @@ import { FaEdit } from "react-icons/fa";
 import { PaymentSuccessfullModal } from "../../Components/Modals";
 
 export default function UserMultipleAccount() {
- const [verifyPopup, setVerifyPopup] = useState(false);
- const { setPaymentType , setCheckShown} = _BillingCondition()
+  const [verifyPopup, setVerifyPopup] = useState(false);
+  const { setPaymentType, setCheckShown } = _BillingCondition();
 
- const navigate = useNavigate()
- 
- const handleVerifyPopup = () => {
-  setVerifyPopup(true);
-};
-const handleModalClose = () => {
-  setVerifyPopup(false);
-};
+  const navigate = useNavigate();
+
+  const handleVerifyPopup = () => {
+    setVerifyPopup(true);
+  };
+  const handleModalClose = () => {
+    setVerifyPopup(false);
+  };
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
       <div className="bg-[#377CF6] text-white p-3">Payment Methods</div>
@@ -48,7 +48,8 @@ const handleModalClose = () => {
             <button
               className={`border-r-2 text-center ${
                 account.verify === "verified" ? "text-[#24A959]" : "text-black"
-              }`} onClick={handleVerifyPopup}
+              }`}
+              onClick={handleVerifyPopup}
             >
               {account.verify}
             </button>
@@ -60,12 +61,12 @@ const handleModalClose = () => {
               {account.status}
             </div>
             <div className="flex justify-center items-center gap-3">
-              <div className="p-2 rounded-lg bg-[#DBF0FF] text-center">
-                <FaEdit size={20} color="#006AB2" />
+              <div className="p-2 rounded-lg bg-[#DBF0FF]">
+                <FaEdit size={15} color="#377CF6" />
               </div>
 
-              <div className="p-2 rounded-lg bg-[#FFD5DF] text-center">
-                <RiDeleteBin5Line size={20} color="#F1416C" />
+              <div className="p-2 rounded-lg bg-[#FFD5DF]">
+                <RiDeleteBin5Line size={15} color="#F1416C" />
               </div>
             </div>
           </div>
@@ -79,13 +80,12 @@ const handleModalClose = () => {
         debitTextTwo="Please enter the amounts to verify you own the account."
         buttonText="Verify Account"
         from="debitAccountVerified"
-        onButtonClick={()=>{
-            localStorage.setItem("paymentType", "button5");
-            navigate("/payment-methods/add-payment");
-            setPaymentType("button5");setCheckShown(false)
-        }
-        }
-
+        onButtonClick={() => {
+          localStorage.setItem("paymentType", "button5");
+          navigate("/payment-methods/add-payment");
+          setPaymentType("button5");
+          setCheckShown(false);
+        }}
       />
     </div>
   );

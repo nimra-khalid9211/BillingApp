@@ -66,7 +66,7 @@ const Dashboard = () => {
               <div>
                 <SelectableBills from="dashboard" type="all" />
               </div>
-              <div className="mt-10 drop-shadow-xl rounded-[2rem]">
+              <div className="drop-shadow-xl">
               <GoogleChart/>
               </div>
             </div>

@@ -1,70 +1,92 @@
-import { TbDeviceMobileUp,TbReportSearch } from "react-icons/tb";
-import { MdDashboardCustomize,MdOutlinePayment , MdContactSupport  } from "react-icons/md";
+import { TbDeviceMobileUp, TbReportSearch } from "react-icons/tb";
+import {
+  MdDashboardCustomize,
+  MdOutlinePayment,
+  MdContactSupport,
+} from "react-icons/md";
 import { FaMoneyBills } from "react-icons/fa6";
-import { RiGovernmentFill,RiLogoutBoxLine  } from "react-icons/ri";
+import { RiGovernmentFill, RiLogoutBoxLine } from "react-icons/ri";
 import { GrTransaction } from "react-icons/gr";
 import { CiSettings } from "react-icons/ci";
+import { debit, easypa } from "../../assets/image/index";
 
 const menuList = [
   {
     name: "",
     lists: [
       {
+        id: 1,
         title: "Dashboard",
-        icon: <MdDashboardCustomize size={25} />,
-        link:"/dashboard",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/dashboard",
       },
       {
-        title: "Bill Management",
-        icon: <FaMoneyBills  size={25} />,
-        link:"/bill-management",
+        id: 2,
+        title: "Bill Manager",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/bill-management",
       },
       {
-        title: "Govt Payments",
-        icon: <RiGovernmentFill  size={25} />,
-        link:"/govt-payments",
-      },
-      {
-        title: "Mobile Top Up",
-        icon: <TbDeviceMobileUp size={25} />,
-        link:"/mobile-top-up",
-      },
-      {
-        title: "Payment Methods",
-        icon: <MdOutlinePayment  size={25} />        ,
-        link:"/payment-methods",
-      },
-      {
+        id: 3,
         title: "Transactions",
-        icon: <GrTransaction size={25} />        ,
-        link:"/transactions",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/transactions",
       },
       {
-        title: "Reports",
-        icon: <TbReportSearch size={25} />        ,
-        link:"/reports",
+        id: 4,
+        title: "Mobile Top Up",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/mobile-top-up",
       },
+      {
+        id: 5,
+        title: "Payment Methods",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/payment-methods",
+      },
+      // {
+      //   id: 6,
+      //   title: "Govt Payments",
+      //   icon: <img src={easypa} alt="" className="w-12" />,
+      //   icon1: <img src={debit} alt="" className="w-12" />,
+      //   link: "/govt-payments",
+      // },
     ],
   },
   {
     name: "",
     lists: [
       {
-        title: "Settings",
-        icon: <CiSettings size={25}/>,
-        link: "/settings"
-        ,
-      },
-      {
+        id: 7,
         title: "Help",
-        icon: <MdContactSupport size={25}/>,
-        link: "/help"
-        ,
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/help",
       },
       {
-        classses: "mt-16 border-solid border border-[#E8E7EC] rounded-lg",
+        id: 8,
+        title: "Reports",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/reports",
+      },
+      {
+        id: 9,
+        title: "Settings",
+        icon: <img src={easypa} alt="" className="w-12" />,
+        icon1: <img src={debit} alt="" className="w-12" />,
+        link: "/settings",
+      },
+      {
+        id: 10,
+        classses: "mt-16 border-solid border border-[#E8E7EC] rounded-xl",
         title: "Logout",
-        icon: <RiLogoutBoxLine size={25}/>,
+        icon: <img src={easypa} alt="" className="w-12" />,
       },
     ],
   },

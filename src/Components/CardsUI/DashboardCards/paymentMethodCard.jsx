@@ -20,7 +20,7 @@ export default function PaymentMethodCard() {
         )}
       </div>
 
-      <div className="pt-4 p-2  rounded-bl-3xl rounded-br-3xl bg-[#d3e8f6] ">
+      <div className="pt-4 py-2 px-3 rounded-bl-3xl rounded-br-3xl bg-[#d3e8f6] ">
         {CardData.length > 0 ? (
           <>
             {CardData.map((x, index) => (
@@ -44,7 +44,7 @@ export default function PaymentMethodCard() {
                   <div className="flex justify-end">
                     <a
                       className={`text-xs ${
-                        x.default ? "text-[#3fb46e]" : "text-[#8bc8ff]"
+                        x.default ? "text-[#3fb46e]" : "text-[#1677ff]"
                       }`}
                     >
                       {x.default ? "Default" : "Set as Default"}

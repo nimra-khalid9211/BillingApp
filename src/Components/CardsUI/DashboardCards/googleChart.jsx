@@ -126,17 +126,14 @@ const GoogleChart = () => {
     {
       label: "2024",
       key: "1",
-      // icon: <UserOutlined />,
     },
     {
       label: "2023",
       key: "2",
-      // icon: <UserOutlined />,
     },
     {
       label: "2022",
       key: "3",
-      // icon: <UserOutlined />,
     },
   ];
   const handleMenuClick = (e) => {
@@ -149,8 +146,8 @@ const GoogleChart = () => {
   };
 
   return (
-    <div className=" rounded-3xl drop-shadow-xl bg-white">
-      <div className="font-semibold w-full my-10 w-full drop-shadow-xl bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
+    <div className="mt-5">
+     <div className="font-semibold w-full w-full drop-shadow-lg bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
         <div>Bills Statistics</div>
         <Dropdown menu={menuProps}>
           <div className="border-2 py-1 px-5 rounded-full flex">
@@ -161,6 +158,18 @@ const GoogleChart = () => {
           </div>
         </Dropdown>
       </div>
+    <div className=" rounded-b-3xl bg-white">
+      {/* <div className="font-semibold w-full w-full drop-shadow-lg bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
+        <div>Bills Statistics</div>
+        <Dropdown menu={menuProps}>
+          <div className="border-2 py-1 px-5 rounded-full flex">
+            <div className="font-medium">This Year</div>
+            <div className="ml-5">
+              <DownOutlined />
+            </div>
+          </div>
+        </Dropdown>
+      </div> */}
       <div className="p-5">
         {renderChart("preserveEnd")}
         {/* {renderChart('preserveStart')}
@@ -168,6 +177,7 @@ const GoogleChart = () => {
       {renderChart('equidistantPreserveStart')}
       {renderChart(1)} */}
       </div>
+    </div>
     </div>
   );
 };
