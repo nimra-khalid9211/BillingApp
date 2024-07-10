@@ -15,10 +15,6 @@ import CompleteProfile from "./CompleteProfile";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
 
-
-
-
-
 const Dashboard = () => {
   const {addBill, setAddBill, checkVerfication} = _BillingCondition();
   const [from, setFrom] = useState();

@@ -81,7 +81,7 @@ export const SelectableBills = ({ type, from }) => {
     <>
 
        
-      <div className="bg-[#377CF6] text-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-3xl rounded-tr-3xl mt-5">
+      <div className="drop-shadow-xl text-[#377CF6] bg-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-3xl rounded-tr-3xl mt-5">
         <span>{from === "dashboard" ? "Due Bills" : "All Bills"}</span>
       { from === "dashboard" ? <Link to={"/bill-management"} className="text-sm underline">View All</Link> : <span className="text-sm">This Month</span>}
       </div>

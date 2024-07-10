@@ -55,10 +55,6 @@ const cards = [
   },
 ]
 
-
-
-
-
 export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
   return (
@@ -86,8 +82,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         <DrawerCardLayout heading={"Bill Details"}>
 
           <div className="grid grid-cols-5 gap-8 mb-10">
-
-            
+           
              <TextField
               className="col-span-4 border-black"
               select
@@ -96,7 +91,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
             >
               
 
-               <div className="h-60 bg-white">
+               <div className="h-60 ">
                <Search placeholder="Search.." className="p-4"/>
                {billingCompanies.map((x, index)=>(
                 <div key={index} className="px-4 py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.title}</div>
@@ -121,6 +116,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
             />}
 
           </div>
+
         </DrawerCardLayout>
 
         <DrawerCardLayout heading={"Payment Preference"}>
@@ -169,13 +165,14 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
                 )) }   
 
           </div>
+
           </div>}
 
           {from === "quickPay" && <PayMethodCard from={from}/>}
 
         </DrawerCardLayout>
 
-        <div className="ml-[14rem]">
+        <div className="ml-[7rem] fixed bottom-24">
 
           <WhiteButton title={"Cancel"} clickEvent={()=>setAddBill(false)}/>
 
