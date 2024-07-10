@@ -23,8 +23,8 @@ const menuList = [
       {
         id: 3,
         title: "Transactions",
-        icon: <img src={grayTransaction} alt="" className="w-5 h-5" />,
-        icon1: <img src={whiteTransaction} alt="" className="w-5 h-5" />,
+        icon: <img src={grayTransaction} alt="" className="w-4 h-4" />,
+        icon1: <img src={whiteTransaction} alt="" className="w-4 h-4" />,
         link: "/transactions",
       },
       {
@@ -37,8 +37,8 @@ const menuList = [
       {
         id: 5,
         title: "Payment Methods",
-        icon: <img src={grayPayment} alt="" className="w-5 h-5" />,
-        icon1: <img src={whitePayment} alt="" className="w-5 h-5" />,
+        icon: <img src={grayPayment} alt="" className="w-3 h-5" />,
+        icon1: <img src={whitePayment} alt="" className="w-3 h-5" />,
         link: "/payment-methods",
       },
       // {

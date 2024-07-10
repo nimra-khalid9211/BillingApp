@@ -110,12 +110,8 @@ input[type="number"] {
 }
 
 .content {
-  position: relative;
-  z-index: 2;
-  height: 0;
-  width: 40rem;
-  margin-top: 6rem;
-  height: 80vh;
+  width: 42rem;
+  height: 90%;
   margin-left: 3rem;
   background-color: white;
   border-radius: 32px;
@@ -494,18 +490,34 @@ input[type="number"] {
 /* bill management tab button */
 .custom-tab-button {
   padding: 20px !important;
+  /* border: 1px solid #e8e7ec !important; */
 }
 
 .custom-tab-button:hover {
-  background-color: #377cf6 !important;
-  color: white !important;
+  background-color: #e8e7ec !important;
+  color: #176ba3 !important;
+  border: 1px solid #d9d9d9 !important;
 }
+
+.no-hover:hover {
+  background-color: #176ba3 !important;
+  color: white !important; /* or specify the default color you want */
+  border: 1px solid #e8e7ec !important; /* or specify the default border you want */
+}
+
+
 
 .active-tab-button {
-  background-color: #377cf6 !important;
+  background-color: #176ba3 !important;
   color: white !important;
 }
 
+
+.tab-button-shadow{
+  -webkit-box-shadow: 0px 0px 20px -8px rgba(3,119,207,1);
+  -moz-box-shadow: 0px 0px 20px -8px rgba(3,119,207,1);
+   box-shadow: 0px 0px 20px -8px rgba(3,119,207,1);
+}
 
 
 

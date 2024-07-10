@@ -54,13 +54,13 @@ const Transactions = () => {
       },
       {
         id:2,
-        title: "Master Card",
+        title: "Mastercard",
         clickEvent: ()=>setTransactions(2),
         style: "0"
       },
       {
         id:3,
-        title: "Visa Card",
+        title: "Visa",
         clickEvent: ()=>setTransactions(3),
         style: "0"
       },
@@ -72,7 +72,7 @@ const Transactions = () => {
       },
       {
         id:5,
-        title: "EasyPaisa",
+        title: "Easypaisa",
         clickEvent: ()=>setTransactions(5),
         style: "0 12px 12px 0"
       },
@@ -90,7 +90,7 @@ const Transactions = () => {
     {btnTitle.map((x)=>(
 
         <Button key={x.id}
-          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${transactions === x.id ? "active-tab-button" : ""}`}
+          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${transactions === x.id ? "active-tab-button tab-button-shadow no-hover" : ""}`}
           style={{ borderRadius: x.style }}
           onClick={x.clickEvent}
           >

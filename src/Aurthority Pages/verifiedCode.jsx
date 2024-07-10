@@ -1,64 +1,76 @@
-import { Input } from "antd";
-import AuthLogo from "../assets/image/authlogo.png";
+import { Button, Input } from "antd";
+import { logo } from "../assets/image";
+import { IoArrowBack } from "react-icons/io5";
+import { Link } from "react-router-dom";
+
+
 
 export default function VerifiedCode() {
-  return (
-    <section className="verification-bg auth-bg">
-      <div className="content">
-        <div className="flex flex-col w-full  justify-center mx-auto h-screen">
-          <div className="w-full bg-white rounded-[3rem] py-20 px-10">
-            <div className="flex items-center justify-center mt-5">
-              <img className="w-44 h-16" src={AuthLogo} />
-            </div>
-            <div className="text-[#176BA3] text-center underline text-sm font-semibold">
-              Simplify Your Bills with BPay
-            </div>
 
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <div className="text-center">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-[#176BA3]">
-                  Enter Verification Code{" "}
-                </h1>
-                <p className="text-[#6C7293] my-5">
-                  We've sent a code to imranali09@gmail.com
-                </p>
-              </div>
-              <div>
-                <div className="flex justify-center space-x-2">
-                  {/* {Array(4)
-                    .fill(0)
-                    .map((_, index) => (
-                      <input
-                        key={index}
-                        id={`input-${index}`}
-                        type="number"
-                        maxLength="1"
-                        className="w-12 h-12 border border-[#176BA3] text-center text-2xl rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#176BA3]"
-                      />
-                    ))} */}
-                      <Input.OTP length={4}/>
-                </div>
-              
-              </div>
-              <p className="text-sm font-light text-center text-[#6C7293]">
-                Didn't get a code?
-                <a
-                  href="#"
-                  className="font-medium text-primary-600 hover:underline text-[#329DFF]"
-                >
-                  Click to resend{" "}
-                </a>
-              </p>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#176BA3] text-white p-3 text-sm font-semibold"
-              >
-                Verify
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  return (
+
+    <section className="verification-bg auth-bg">
+
+    <div className="flex justify-center items-center">
+
+    <section className="content">      
+     
+     <div className="mt-16 rounded-[3rem] px-16" >
+       
+       <div className="flex justify-center">
+         <img
+           className="w-44 h-20"
+           src={logo}
+         />
+       </div>
+
+       <div className="p-8">
+
+         <div className="text-center mt-7 mb-8">
+         
+           <h1 className="text-2xl font-medium leading-tight tracking-tight text-[#176BA3] mb-2">
+           Enter Verification Code
+           </h1>
+
+           <p className="text-[#6C7293] text-base">
+           We've sent a code to xyz@gmail.com
+           </p>
+           
+         </div>
+
+         <div className="mx-4">
+          <div className="flex justify-center">
+         <Input.OTP length={4} size="small"/>
+         </div>
+
+         <div className="text-lg mt-5 font-medium text-center text-[#6C7293] pt-5">
+         Didn't get a code?
+
+                 <span
+                   className="font-medium text-primary-600 hover:underline text-[#329DFF]" >
+                  Click to resend
+                 </span>
+                 </div>
+
+           <div className="mt-8">
+           <Button type="submit" size="large"
+             className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
+           >
+            Verify
+           </Button>
+
+          
+           </div>
+         </div>
+
+       </div>
+
+   </div>
+
+      </section>
+
+</div>
+
+  </section>
   );
 }
