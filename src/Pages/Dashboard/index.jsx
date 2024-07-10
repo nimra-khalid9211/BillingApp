@@ -16,10 +16,6 @@ import { SelectableBills } from "../../Components/Tables/SelectableBills";
 import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
 import { blueDashboard} from '../../assets/image/index'
 
-
-
-
-
 const Dashboard = () => {
   const {addBill, setAddBill, checkVerfication} = _BillingCondition();
   const [from, setFrom] = useState();

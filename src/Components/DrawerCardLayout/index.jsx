@@ -5,7 +5,7 @@ const DrawerCardLayout = ({heading, children}) => {
   return (
     <div className="flex justify-center my-10">
 
-    <Card className="w-4/5 drawer-cards-shadow"
+    <Card className="w-4/5 drop-shadow-xl"
     style={{ borderRadius: '30px' }}>
 
       <div className="mx-5 my-5">

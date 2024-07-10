@@ -9,12 +9,10 @@ body,
   font-family: "Excon-Regular", sans-serif !important;
 }
 
-input[type="date"]:in-range::-webkit-datetime-edit-year-field,
-input[type="date"]:in-range::-webkit-datetime-edit-month-field,
-input[type="date"]:in-range::-webkit-datetime-edit-day-field,
-input[type="date"]:in-range::-webkit-datetime-edit-text {
-  color: transparent;
-}
+input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
 /* .custom-placeholder-hidden .MuiInputBase-input::placeholder {
   color: transparent;
@@ -116,7 +114,11 @@ input[type="number"] {
   z-index: 2;
   height: 0;
   width: 40rem;
-  margin-left: 10rem;
+  margin-top: 6rem;
+  height: 80vh;
+  margin-left: 3rem;
+  background-color: white;
+  border-radius: 32px;
 }
 
 .sign-page {
@@ -403,6 +405,13 @@ input[type="number"] {
   font-size: 16px !important;
   font-weight: 600 !important;
 }
+
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root{
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
 /* MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd  */
 
 /* mui input datepicker or select */
@@ -496,6 +505,10 @@ input[type="number"] {
   background-color: #377cf6 !important;
   color: white !important;
 }
+
+
+
+
 .custom-menu .ant-menu-item {
   position: relative; /* Ensure the pseudo-elements are positioned correctly */
 }
@@ -536,9 +549,4 @@ input[type="number"] {
 .flex.items-center:hover .normal-icon {
   display: none !important;
 }
-.flex.items-center:hover .hover-icon {
-  display: block !important;
-}
-.icon-active {
-  display: block !important;
-}
+

@@ -2,43 +2,44 @@ import Electric from "../../../assets/image/plug-cable.svg";
 import WaterBill from "../../../assets/image/waterbill.svg";
 import Gas from "../../../assets/image/fire-burner.svg";
 import { transaction } from "../../../assets/image";
+import { formatAmount } from "../../../Hooks";
 
 const data = [
   {
     icon: <img src={Electric} />,
     title: "Electricity Bill",
     date: "29 APR,2024",
-    total: "3354.28",
+    total: 3354.28,
   },
   {
     icon: <img src={Gas} />,
     title: "Electricity Bill",
     date: "29 APR,2024",
-    total: "335.48",
+    total: 335.48,
   },
   {
     icon: <img src={WaterBill} />,
     title: "Electricity Bill",
     date: "29 APR,2024",
-    total: "335.48",
+    total: 335.48,
   },
   {
     icon: <img src={WaterBill} />,
     title: "Electricity Bill",
     date: "29 APR,2024",
-    total: "3354.08",
+    total: 3354.08,
   },
   {
     icon: <img src={WaterBill} />,
     title: "Electricity Bill",
     date: "29 APR,2024",
-    total: "3354.18",
+    total: 3354.18,
   },
   {
     icon: <img src={WaterBill} />,
     title: "Electricity Bill",
     date: "29 APR,2024",
-    total: "335.77",
+    total: 335.77,
   },
 ];
 
@@ -48,7 +49,7 @@ export default function TransactionsHistory() {
   return (
     <>
       <div className="drop-shadow-lg bg-white rounded-[2rem] mt-5">
-        <div className="font-semibold w-full w-full drop-shadow-lg bg-white p-4 rounded-t-[2rem]">
+        <div className="font-semibold w-full drop-shadow-lg bg-white p-4 rounded-t-[2rem]">
           Recent Transactions
         </div>
 
@@ -60,7 +61,10 @@ export default function TransactionsHistory() {
         } */}
         </div>
         {data.length > 0 ? (
-          data.map((data, index) => (
+          data.map((data, index) => {
+            const { integerPart, decimalPart } = formatAmount(data.total)
+               
+          return  (
             <div
               key={index}
               className="flex items-center justify-between mt-5 px-5 pb-3 border-b"
@@ -75,14 +79,17 @@ export default function TransactionsHistory() {
                 </div>
               </div>
               <div>
-                <div className="font-semibold text-sm">{data.total}</div>
+                <div className="relative font-semibold px-2">
+                <span className='text-lg'>{integerPart}</span>
+                <span className="absolute text-xs">.{decimalPart}</span> 
+                  </div>
                 {/* <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">
                   {data.percent}
                 </div> */}
                   
               </div>
             </div>
-          ))
+          )})
         ) : (
           <>
             <div className="flex items-center justify-center my-10">

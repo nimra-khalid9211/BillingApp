@@ -102,7 +102,6 @@ const BasicDetails = () => {
           label="Gender">
           <MenuItem value="male">Male</MenuItem>
           <MenuItem value="female">Female</MenuItem>
-          <MenuItem value="other">Other</MenuItem>
           </Select>
 
           </FormControl>
