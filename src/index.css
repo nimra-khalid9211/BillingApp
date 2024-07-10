@@ -547,6 +547,8 @@ input[type="number"] {
 }
 
 .flex.items-center:hover .normal-icon {
-  display: none !important;
+  display: none;
 }
-
+.flex.items-center:hover .hover-icon {
+  display: block !important;
+}
