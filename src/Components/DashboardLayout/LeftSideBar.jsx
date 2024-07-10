@@ -7,10 +7,12 @@ import { _BillingCondition } from "../../actions/Context/BillingOverviewConditio
 const LeftSideBar = () => {
   const path = useLocation().pathname;
   const { checkVerfication } = _BillingCondition();
+  
 
 
   return (
     
+   <>
     <div className="rounded-r-[50px] left-sidebar-shadow" style={{ height: "100vh" }}>
       <div className="px-5 pt-5 flex justify-center items-center">
         <img src={Logo} className="w-44 h-[74px]" />
@@ -66,6 +68,7 @@ const LeftSideBar = () => {
 </section>
 
     </div>
+   </>
   );
 };
 
