@@ -6,7 +6,7 @@ export const BillingCondition = createContext();
 export const _BillingCondition = () => useContext(BillingCondition) 
 
 export const BillingConditionProvider = ({children})=>{
-     const checkVerfication = true;
+     const checkVerfication = false;
 
 
      const [tab,setTab] = useState(true);

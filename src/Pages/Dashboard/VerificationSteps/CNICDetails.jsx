@@ -11,6 +11,7 @@ const { Dragger } = Upload;
 
 const CNICDetails = () => {
   const [value, setValue] = useState();
+  const [date, setDate] = useState();
 
   const handleChange = (e) =>{
     const inputValue = e.target.value;
@@ -34,6 +35,14 @@ const CNICDetails = () => {
     setValue(e.target.value);
   };
 
+  // const handleDateChanges = (event) => {
+  //   const date = new Date(event.target.value);
+  //   const formattedDate = `${date.getMonth() + 1}/${String(date.getFullYear()).slice(-2)}`;
+  //   setDate(formattedDate);
+  // };
+
+  // console.log(date)
+
   return (
     <StepCard title={"CNIC Details"}>
 
@@ -49,8 +58,8 @@ const CNICDetails = () => {
       </div>
 
       <div className='mb-4'>
-          <TextField label="Expiry Date" type='date' variant="outlined" size='small' fullWidth
-        value={value} onChange={handleChanges} onFocus={handleFocus} onBlur={handleBlur}
+          <TextField label="Expiry Date" type='month' variant="outlined" size='small' fullWidth
+        value={value} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
         InputLabelProps={{  shrink: isFocused || Boolean(values), }}
         InputProps={{ style: { fontSize: '16px', fontWeight: '600' },  inputProps: { placeholder: '',},}}
       />
