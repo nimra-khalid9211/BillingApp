@@ -30,8 +30,8 @@ const BillManagement = () => {
         menu={"Bill Management"}
         icon={blueBill}
         subMenu={getSubMenu()}
-        btnTitle2={"Add Bill"}
-        customClass={"w-20"}
+        btnTitle2={"+ Add Bill"}
+        customClass="other-tabs-fontW"
         btnEvent2={() => { setAddBill(true); setFrom("addBill"); }}
       />
 

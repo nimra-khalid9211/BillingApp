@@ -38,7 +38,7 @@ const LeftSideBar = () => {
                         x.classses && x.classses
                       } ${
                         checkVerfication ? "" : "opacity-50 pointer-events-none"
-                      } hover:bg-[#588fed] hover:text-white rounded-lg ${
+                      } hover:bg-[var(--primary-color)] hover:text-white rounded-lg ${
                         path.includes(x.link) ? "bg-[#377CF6] text-white" : ""
                       }`}
                     >

@@ -27,7 +27,7 @@ export default function UserMultipleAccount() {
         {accounts.map((account, index) => (
           <div
             key={index}
-            className="grid grid-cols-6 gap-4 rounded-lg mt-5 bg-white p-5"
+            className="grid grid-cols-6 gap-4 rounded-xl mt-5 bg-white py-7 px-4 drop-shadow-lg"
           >
             <div className="flex items-center border-r-2">
               <div className="flex items-center ml-5">

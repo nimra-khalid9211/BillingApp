@@ -1,6 +1,6 @@
 export default function MobileTopUpBeneficiary(){
     return(
-        <div className="bg-white w-[30%] p-5 rounded-2xl mt-10 drop-shadow-xl">
+        <div className="bg-white w-[30%] p-5 rounded-2xl mt-10 drop-shadow-lg">
             <div className="border-b pb-2 font-semibold">Beneficiary</div>
             <div className="font-semibold my-2">
                 <label htmlFor="">Name</label>

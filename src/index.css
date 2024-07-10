@@ -1,8 +1,16 @@
 @import "assets/fonts/WEB/css/excon.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #DBF0FF;
+  --grayish-color: #6C7293;
+  --white-color: white;
+  --black-color: #000;
+}
+
 
 body,
 * {
@@ -13,15 +21,6 @@ input[type="date"]:in-range::-webkit-datetime-edit-year-field,
 input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
-
-/* .custom-placeholder-hidden .MuiInputBase-input::placeholder {
-  color: transparent;
-}
-
-.custom-placeholder-visible .MuiInputBase-input::before {
-  content: 'Enter your date of birth';
-  color: rgba(0, 0, 0, 0.54);
-} */
 
 .fixedColumn {
   position: fixed;
@@ -258,6 +257,15 @@ input[type="number"] {
   border: 2px solid #377cf6;
   color: #377cf6;
 }
+.other-tabs-fontW{
+  font-weight: 500;
+  width: 100%;
+  padding: 1rem 1.5rem !important;
+}
+.debit-btn{
+  padding: 1.2rem 5rem !important;
+  font-weight: 500;
+}
 
 /* faq card shadow */
 .faq-card-shadow {
@@ -450,11 +458,6 @@ input[type="number"] {
   display: none !important;
 }
 
-/* ant input search icon color change */
-/* .ant-input-affix-wrapper-focused{
-  color: #377CF6 !important;
-} */
-
 /* animations */
 @keyframes slideInRight {
   0% {
@@ -551,4 +554,8 @@ input[type="number"] {
 }
 .flex.items-center:hover .hover-icon {
   display: block !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-light.ant-menu-horizontal >.ant-menu-item:hover::after, :where(.css-dev-only-do-not-override-m4timi).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item:hover::after {
+  border-bottom-width: 0;
+  border-bottom-color: transparent;
 }

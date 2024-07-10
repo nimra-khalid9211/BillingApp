@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function MobileTopUpAmountRecharge() {
   return (
-    <div className="bg-white w-[30%] p-5 rounded-2xl mt-10 drop-shadow-xl ml-10">
+    <div className="bg-white w-[30%] p-5 rounded-2xl mt-10 ml-10 drop-shadow-lg">
       <div className="border-b pb-2 font-semibold">Amount Recharge</div>
       <div className="text-center">
         <div className="mt-5 font-semibold">

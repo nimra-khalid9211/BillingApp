@@ -7,7 +7,7 @@ export default function Receipt() {
     <div className="grid grid-cols-2">
       <div className="bg-white p-5 ltr rounded-s-[3rem]">
         <div className="border-b-2 p-2 font-semibold text-lg mb-10">
-          MObile Top Up Successful
+          Mobile Top Up Successful
         </div>
         <div className=" flex flex-col justify-center items-center">
           <div className="mt-20">

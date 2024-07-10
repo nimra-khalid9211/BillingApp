@@ -52,7 +52,7 @@ export default function MobileTopUpTable() {
               <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">
               <Link to= "changing-account"
                       href="#"
-                      className="font-medium text-[#377CF6] border-2 border-[##6C7293] rounded-lg py-1 px-3 text-xs"
+                      className="font-medium text-[#377CF6] border border-[#0000001A] rounded-lg py-1 px-3 text-xs"
                     >
                       Recharge Now
                     </Link>

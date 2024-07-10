@@ -17,7 +17,8 @@ export default function MobileTopUp() {
       <BreadCrumbs
         menu="Mobile Top UP"
         icon={blueMobile}
-        btnTitle2={"Add Number"}
+        btnTitle2={"+ Add Number"}
+        customClass="other-tabs-fontW"
         btnEvent2={() => setAddNumber(true)}
       />
       <MobileTopUpTable />
