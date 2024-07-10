@@ -1,23 +1,18 @@
-@import 'assets/fonts/WEB/css/excon.css';
+@import "assets/fonts/WEB/css/excon.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body,* {
-    font-family: 'Excon-Regular', sans-serif !important;
+body,
+* {
+  font-family: "Excon-Regular", sans-serif !important;
 }
 
 input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
-input[type="date"]:in-range::-webkit-datetime-edit-text { background-color: white;	color: white; }
-
-input[type="month"]:in-range::-webkit-datetime-edit-year-field, 
-input[type="month"]:in-range::-webkit-datetime-edit-month-field, 
-input[type="month"]:in-range::-webkit-datetime-edit-day-field, 
-input[type="month"]:in-range::-webkit-datetime-edit-text { background-color: white;	color: white; }
+input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
 /* .custom-placeholder-hidden .MuiInputBase-input::placeholder {
   color: transparent;
@@ -27,7 +22,6 @@ input[type="month"]:in-range::-webkit-datetime-edit-text { background-color: whi
   content: 'Enter your date of birth';
   color: rgba(0, 0, 0, 0.54);
 } */
-
 
 .fixedColumn {
   position: fixed;
@@ -60,9 +54,8 @@ input[type="month"]:in-range::-webkit-datetime-edit-text { background-color: whi
   }
 }
 
-
 :root {
-  --primary-color: #377CF6;
+  --primary-color: #377cf6;
 }
 .primary-bg {
   background-color: var(--primary-color);
@@ -84,34 +77,36 @@ input[type="number"] {
   appearance: none;
 }
 
-.left-sidebar-shadow{
-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+.left-sidebar-shadow {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
-.ant-drawer .ant-drawer-header{
+.ant-drawer .ant-drawer-header {
   border-bottom: 0;
   padding: 0 24px;
 }
 
-.ant-divider-horizontal{
+.ant-divider-horizontal {
   margin: 10px 0;
   color: black;
 }
 
-.ant-drawer .ant-drawer-body{
+.ant-drawer .ant-drawer-body {
   padding: 0 24px;
 }
 
-.auth-bg{
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 100vh; 
-  width: 100%; 
-  display: flex; 
+.auth-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
   position: absolute;
   width: 100%;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .content {
@@ -126,54 +121,51 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   border-radius: 32px;
 }
 
-.sign-page{
-  background-image: url('assets/image/bg3.png');
+.sign-page {
+  background-image: url("assets/image/bg3.png");
 }
 
-.verification-bg{
-  background-image: url('assets/image/bg1.png');
+.verification-bg {
+  background-image: url("assets/image/bg1.png");
 }
 
-.forgot-pg{
-  background-image: url('assets//image/bg2.png');
+.forgot-pg {
+  background-image: url("assets//image/bg2.png");
 }
 
 /* paidreceipt modal ant design css overlapping */
-.ant-modal .ant-modal-header{
-  background-color: #F7F8F9;
+.ant-modal .ant-modal-header {
+  background-color: #f7f8f9;
   border-radius: 3rem;
 }
 
-.ant-modal .ant-modal-content{
-  background-color: #F7F8F9;
+.ant-modal .ant-modal-content {
+  background-color: #f7f8f9;
   padding: 0;
   border-radius: 3rem;
 }
 
-
 /* payment method of bill management changing the css of ant design card */
-.ant-card .ant-card-body{
+.ant-card .ant-card-body {
   padding: 0;
 }
 
 /* ant design collapse css overlapping */
-.ant-collapse .ant-collapse-content>.ant-collapse-content-box{
+.ant-collapse .ant-collapse-content > .ant-collapse-content-box {
   padding: 0;
 }
 
-
-.ant-collapse-expand-icon{
- color: #377CF6;
- background-color: #E8E7EC;
- padding-inline-end: 0px;
- margin-right: 10px;
- padding: 10px;
- border-radius: 100%;
- font-size: 20px;
+.ant-collapse-expand-icon {
+  color: #377cf6;
+  background-color: #e8e7ec;
+  padding-inline-end: 0px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 100%;
+  font-size: 20px;
 }
 
-
-.ant-collapse-header-text{
+.ant-collapse-header-text {
   color: #192440;
   font-size: 16px;
 }
@@ -183,47 +175,49 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   color: white !important;
 } */
 
-.ant-tabs-card.ant-tabs-top >.ant-tabs-nav .ant-tabs-tab-active{
-  background-color: #377CF6 !important;
-  color: white !important; 
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab-active {
+  background-color: #377cf6 !important;
+  color: white !important;
 }
 
-
-.custom-tab-background .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+.custom-tab-background
+  .ant-tabs-card.ant-tabs-top
+  > .ant-tabs-nav
+  .ant-tabs-tab {
   /* border: 1px solid #d9d9d9; */
-  background-color: #E8E7EC;
+  background-color: #e8e7ec;
 }
 
 /* .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab:hover {
   color: white;
 } */
 
-.ant-tabs-tab-btn{
+.ant-tabs-tab-btn {
   font-size: 16px;
   font-weight: 600;
-  color: #000000  ;
+  color: #000000;
 }
 
- .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: white;
 }
 
-.active-color{
-  color: green
+.active-color {
+  color: green;
 }
 
 .custom-menu .ant-menu-item:hover {
-  color: #377CF6 !important;
+  color: #377cf6 !important;
 }
 .custom-menu .ant-menu-item-active {
-  color: #377CF6 !important;
+  color: #377cf6 !important;
 }
 
-.ant-menu-light{
+.ant-menu-light {
   background: none;
 }
 
-.ant-menu-horizontal{
+.ant-menu-horizontal {
   border-bottom: 0;
 }
 /* PAYMENT TYPE TABS STYLING */
@@ -235,64 +229,58 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #DBF0FF;
-  border: 2px solid #377CF6;
+  background-color: #dbf0ff;
+  border: 2px solid #377cf6;
   opacity: 50%;
   pointer-events: none;
-  border-radius: 1rem; 
+  border-radius: 1rem;
 }
 
-.drawer-cards-shadow{
-  box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
-  -webkit-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
-  -moz-box-shadow: 3px 3px 20px 0px rgba(43,43,43,1);
+.drawer-cards-shadow {
+  box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+  -webkit-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
+  -moz-box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 1);
 }
 
-.MuiMenu-paper{
+.MuiMenu-paper {
   margin-top: 10px;
   border: 2px solid #1976d2;
 }
 
 /* button custom padding */
-.btn-custom-padding{
+.btn-custom-padding {
   padding: 10px 25px !important;
   font-weight: 600;
   width: 8rem;
 }
-.first-btn{
+.first-btn {
   background-color: transparent !important;
-  border: 2px solid #377CF6;
-  color: #377CF6;
-  
+  border: 2px solid #377cf6;
+  color: #377cf6;
 }
 
-
 /* faq card shadow */
-.faq-card-shadow{
-  box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
--webkit-box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
--moz-box-shadow: 0px 0px 20px 0px rgba(115,115,115,1);
+.faq-card-shadow {
+  box-shadow: 0px 0px 20px 0px rgba(115, 115, 115, 1);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(115, 115, 115, 1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(115, 115, 115, 1);
 }
 
 /* select font weight bold */
-.ant-select-selection-item{
+.ant-select-selection-item {
   font-weight: 600 !important;
 }
 
 /* steps font size */
-.ant-steps-item-title{
+.ant-steps-item-title {
   font-size: 13px !important;
   font-weight: 600 !important;
 }
 
 /* step margin */
-.ant-steps{
+.ant-steps {
   margin: 0 10rem !important;
 }
-
-
-
-
 
 /* Custom styles for the Select component */
 .custom-select .ant-select-selector {
@@ -300,92 +288,83 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 }
 
 .custom-select .ant-select-arrow {
-  color: #377CF6; /* Change this to your desired arrow color */
+  color: #377cf6; /* Change this to your desired arrow color */
 }
 
 /* OTP INPUT STYLING */
 
-.ant-otp-input{
-  width: 3rem; 
+.ant-otp-input {
+  width: 3rem;
   height: 3rem;
-  border: 1px solid #176BA3;
+  border: 1px solid #176ba3;
   border-radius: 0.375rem;
-  color: #176BA3;
+  color: #176ba3;
 }
 
 /* ant design image upload css */
-.ant-upload-drag-icon{
+.ant-upload-drag-icon {
   display: flex;
   justify-content: center;
 }
 
-.ant-upload-text{
+.ant-upload-text {
   font-weight: 700;
 }
 
-.ant-upload-wrapper .ant-upload-drag{
-  border: 2px dashed #329DFF;
+.ant-upload-wrapper .ant-upload-drag {
+  border: 2px dashed #329dff;
 }
 
 .ant-upload-wrapper .ant-upload-drag .ant-upload {
   padding: 0;
 }
 
-
-.btn-custom-style{
+.btn-custom-style {
   padding: 1.3rem 6rem !important;
   border-radius: 24px !important;
 }
 
-
 /* ant dropdown  menu */
 
-.ant-dropdown .ant-dropdown-menu{
+.ant-dropdown .ant-dropdown-menu {
   border-radius: 16px !important;
   padding: 5px !important;
 }
 
-
-.ant-dropdown-menu-item{
+.ant-dropdown-menu-item {
   padding: 10px 12px !important;
   font-weight: 600 !important;
   /* border-radius: 16px !important; */
 }
 
-.ant-dropdown-menu-item:hover{
+.ant-dropdown-menu-item:hover {
   background-color: #dbf0ff !important;
   color: #508ef7 !important;
   border-left: 4px solid #377cf6;
 }
 
-
-
-.complete-profile-shadow{
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
--webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
--moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+.complete-profile-shadow {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
 }
 
-
-
-.btn-custom-class{
+.btn-custom-class {
   padding: 20px 30px !important;
 }
 
- /* mui input placeholder fontsize */
+/* mui input placeholder fontsize */
 
- .css-1pysi21-MuiFormLabel-root-MuiInputLabel-root{
+.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root {
   font-size: 14px !important;
- }
+}
 
- .css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+.css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
   color: #1976d2 !important;
- }
+}
 
-
-
- /* ant steps customization */
- .ant-steps.ant-steps-small .ant-steps-item-icon{
+/* ant steps customization */
+.ant-steps.ant-steps-small .ant-steps-item-icon {
   height: 30px;
   width: 30px;
   display: flex;
@@ -393,37 +372,35 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   align-items: center;
 }
 
-.ant-steps-item-tail{
-    padding: 5px 24px !important;
+.ant-steps-item-tail {
+  padding: 5px 24px !important;
 }
 
-
-.ant-steps-icon{
+.ant-steps-icon {
   font-size: 16px;
 }
 
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   font-size: 14px !important;
   line-height: 10px !important;
 }
 
-.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
   padding: 8.5px 14px !important;
 }
 
 /* date picker calender icon color change */
-.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root{
-  color: #006AB2 !important;
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root {
+  color: #006ab2 !important;
   font-size: 18px !important;
 }
 
-.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
   font-weight: 600 !important;
   font-size: 16px !important;
 }
 
-
-.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
   border-radius: 10px !important;
   font-size: 16px !important;
   font-weight: 600 !important;
@@ -438,43 +415,40 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
 /* MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd  */
 
 /* mui input datepicker or select */
-.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
   border-radius: 10px !important;
 }
 
-
 /* mui select */
-.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
   border-radius: 24px !important;
   padding: 10px !important;
 }
 
-.MuiMenu-paper{
+.MuiMenu-paper {
   border: 0;
 }
 
-.css-6hp17o-MuiList-root-MuiMenu-list{
+.css-6hp17o-MuiList-root-MuiMenu-list {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   /* padding: 5px 10px !important; */
 }
 
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
- background-color: #dbf0ff !important;
- color: #508ef7 !important;
- border-left: 4px solid #508ef7;
- border-radius: 5px;
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover {
+  background-color: #dbf0ff !important;
+  color: #508ef7 !important;
+  border-left: 4px solid #508ef7;
+  border-radius: 5px;
 }
 
-.css-8je8zh-MuiTouchRipple-root{
+.css-8je8zh-MuiTouchRipple-root {
   color: #508ef7 !important;
 }
 
-.css-1laqsz7-MuiInputAdornment-root{
+.css-1laqsz7-MuiInputAdornment-root {
   display: none !important;
 }
-
-
 
 /* ant input search icon color change */
 /* .ant-input-affix-wrapper-focused{
@@ -517,72 +491,62 @@ box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rg
   top: 2rem;
 }
 
-
 /* bill management tab button */
-.custom-tab-button{
+.custom-tab-button {
   padding: 20px !important;
 }
 
-.custom-tab-button:hover{
-    background-color: #377CF6 !important;
-    color: white !important;
-}
-
-.active-tab-button{
-  background-color: #377CF6 !important;
+.custom-tab-button:hover {
+  background-color: #377cf6 !important;
   color: white !important;
 }
 
-/* transactions tab button */
-.transaction-tab-button{
-  padding: 20px !important;
+.active-tab-button {
+  background-color: #377cf6 !important;
+  color: white !important;
 }
 
-.transaction-tab-button:hover{
-    background-color: #377CF6 !important;
-    color: white !important;
-}
+
 
 
 .custom-menu .ant-menu-item {
   position: relative; /* Ensure the pseudo-elements are positioned correctly */
 }
 
-/* Dot below the active menu item */
+/* ADDING STYLE IN BILLS TABS (DOT && ARROW) */
 .custom-menu .ant-menu-item-selected::after {
-  content: '•';
+  content: "•" !important;
   display: block;
-  color: blue; /* Dot color */
-  font-size: 1.5rem;
+  color: #377cf6;
+  font-size: 2rem;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -1.5rem; /* Adjust based on your needs */
+  left: 44% !important;
+  transform: translateX(-50%) !important;
+  top: 55%;
+  bottom: -3rem;
+  width: 0;
 }
 
 /* Arrow above the active menu item */
 .custom-menu .ant-menu-item-selected::before {
-  content: '';
+  content: "";
   display: block;
-  width: 0;
-  height: 0;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-bottom: 0.5rem solid blue; /* Arrow color */
+  width: 1rem; /* Adjust the width as needed */
+  height: 1rem; /* Adjust the height as needed */
+  background: url('assets/image/bill-icon.png') no-repeat center center;
+  background-size: contain; /* Ensure the image scales correctly */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: -0.5rem; /* Adjust based on your needs */
+  top: -1rem; /* Adjust this to position the arrow correctly */
 }
 
-/* Remove the bottom border from the active menu item */
-.custom-menu .ant-menu-item-selected {
-  border-bottom: none !important;
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after {
+  border-bottom-width: 0;
+  border-bottom-color: transparent;
 }
 
-/* drawer border left top and bottom border */
-
-.ant-drawer-content-wrapper{
-  border-top-left-radius: 80px !important;
-  border-bottom-left-radius: 80px !important;
+.flex.items-center:hover .normal-icon {
+  display: none !important;
 }
+

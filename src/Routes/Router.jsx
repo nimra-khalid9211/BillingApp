@@ -34,9 +34,9 @@ export default function Router() {
         <Route element={<Maneger />}>
 
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/bill-management" element={<BillManagement />} />
-          <Route path="/bill-management/selected-bills" element={<SelectedBills />}/>
-          <Route path="/bill-management/payment-method" element={<BillPaymentMethod />}/>
+          <Route path="/bill-manager" element={<BillManagement />} />
+          <Route path="/bill-manager/selected-bills" element={<SelectedBills />}/>
+          <Route path="/bill-manager/payment-method" element={<BillPaymentMethod />}/>
           {/* <Route path="/govt-payments" element={<GovtPayments />} /> */}
           <Route path="/mobile-top-up" element={<MobileTopUp />} />
           <Route path="/transactions" element={<Transactions />} />

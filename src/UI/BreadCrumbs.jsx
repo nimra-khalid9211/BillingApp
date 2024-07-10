@@ -24,9 +24,9 @@ const BreadCrumbs = ({
   return (
     <div className="my-8 border-b pb-3">
       <div className="flex justify-between items-center">
-        <div className="flex items-center text-lg font-bold">
-          <span className={checkVerfication ? "text-[#009EF7]" : 'text-[#6C7293]'}>{icon}</span> &nbsp;{" "}
-          {/* static for now will dynamic it when icons for all menu items change */}
+        <div className="flex items-center text-base font-bold">
+          <img className={`w-5 ${checkVerfication ? "text-[#009EF7]" : 'text-[#6C7293]'}`} src={icon} alt="" />
+          &nbsp;
         
           <Link to={link}>
           <b className={checkVerfication ? "text-[#009EF7]" : 'text-[#6C7293]'}>{menu}</b> &nbsp;

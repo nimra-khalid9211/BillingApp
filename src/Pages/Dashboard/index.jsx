@@ -14,6 +14,7 @@ import VerificationSteps from "./VerificationSteps";
 import CompleteProfile from "./CompleteProfile";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
+import { blueDashboard} from '../../assets/image/index'
 
 const Dashboard = () => {
   const {addBill, setAddBill, checkVerfication} = _BillingCondition();
@@ -24,7 +25,7 @@ const Dashboard = () => {
 
     {!checkVerfication ? <VerificationSteps/>  : 
     <>
-     <BreadCrumbs link={"/dashboard"} icon={<MdDashboardCustomize />}
+     <BreadCrumbs link={"/dashboard"} icon={blueDashboard}
       menu={"Dashboard"} 
       
        btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}

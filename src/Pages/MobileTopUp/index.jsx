@@ -5,6 +5,7 @@ import AddDetails from "./addDetails";
 import { useState } from "react";
 import { TbDeviceMobileUp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import {blueMobile} from '../../assets/image/index'
 
 export default function MobileTopUp() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function MobileTopUp() {
     <div className="">
       <BreadCrumbs
         menu="Mobile Top UP"
-        icon={<TbDeviceMobileUp />}
+        icon={blueMobile}
         btnTitle2={"Add Number"}
         btnEvent2={() => setAddNumber(true)}
       />

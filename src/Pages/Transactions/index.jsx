@@ -4,7 +4,11 @@ import TransactionRecord from '../../Components/Tables/TransactionRecord';
 import BreadCrumbs from '../../UI/BreadCrumbs';
 import { GrTransaction } from 'react-icons/gr';
 import { IoSearchOutline } from 'react-icons/io5';
+<<<<<<< HEAD
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
+=======
+import {blueTransaction} from '../../assets/image/index'
+>>>>>>> origin/recreate-updates
 
 const {Search} = Input;
 
@@ -80,7 +84,7 @@ const Transactions = () => {
   return (
     <>
 
-    <BreadCrumbs icon={<GrTransaction />} menu={"Transactions"}/>
+    <BreadCrumbs icon={blueTransaction} menu={"Transactions"}/>
 
 <div className='flex justify-between items-cent'>
 
