@@ -1,53 +1,103 @@
-import LeftArrow from '../assets/image/arrow-left.png'
-import AuthLogo from "../assets/image/authlogo.png";
-export default function ForgotPassword() {
-  return (
-    <section className="verification-bg auth-bg">
-    <div className="content">
-      <div className="flex flex-col w-full  justify-center mx-auto h-screen">
-        <div className="w-full bg-white rounded-[3rem] py-20 px-10">
-          <div className="flex items-center justify-center mt-5">
-            <img className="w-44 h-16" src={AuthLogo} />
-          </div>
-          <div className="text-[#176BA3] text-center underline text-sm font-semibold">
-            Simplify Your Bills with BPay
-          </div>
+import { Link } from 'react-router-dom';
+import { Button } from 'antd';
+import { InputAdornment, TextField } from '@mui/material';
+import { MdOutlineEmail } from 'react-icons/md';
+import { logo } from '../assets/image';
+import { IoArrowBack } from 'react-icons/io5';
 
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <div className="text-center">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-[#176BA3]">
-               Forgot Password?
-              </h1>
-              <p className="text-[#6C7293] mt-2">
-                No worries, We'll send you resety instruction.
-              </p>
-            </div>
-            <form className="space-y-4 md:space-y-6 mt-5" action="#">
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Email
-                </label>
-                <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#176BA3] text-white p-3 text-sm font-semibold"
-              >
-                Reset Password
-              </button>
-              <div className='text-[#6C7293] flex items-center justify-center'>
-                <div><img src={LeftArrow} className='h-5 w-6' /></div>
-                <button className='ml-2'>Back to Login</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+export default function ForgotPassword() {
+
+  return (
+
+    <section className="verification-bg auth-bg">
+
+    <div className="flex justify-center items-center">
+
+    <section className="content">      
+     
+     <div className="mt-16 rounded-[3rem] px-16" >
+       
+       <div className="flex justify-center">
+         <img
+           className="w-44 h-20"
+           src={logo}
+         />
+       </div>
+
+       <div className="p-8">
+
+         <div className="text-center mt-7 mb-16">
+         
+           <h1 className="text-2xl font-medium leading-tight tracking-tight text-[#176BA3] mb-2">
+           Forgot Password?
+           </h1>
+
+           <p className="text-[#6C7293] text-base">
+           No worries, we'll send you reset instructions. 
+           </p>
+           
+         </div>
+
+         <div className="mx-4">
+
+          <div className="mb-7">
+         <TextField
+           type="email"
+           label="Email"
+             InputProps={{
+               style: {
+                 fontSize: "16px",
+                 fontWeight: "600",
+                 borderRadius: "10px",
+               },
+               endAdornment: (
+                 <InputAdornment position="center">
+                   {/* <IconButton> */}
+                     <MdOutlineEmail size={20}/> {/* Replace with your icon component */}
+                   {/* </IconButton> */}
+                 </InputAdornment>
+               ),
+             }}
+             variant="outlined"
+             size="small"
+             fullWidth
+           />
+           </div>
+
+           
+
+          
+
+           <div className="mt-16">
+           <Button type="submit" size="large"
+             className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
+           >
+             Reset Password
+           </Button>
+
+           <div className="text-lg font-medium flex justify-center hover:underline items-center text-[#6C7293] pt-8">
+
+            <IoArrowBack size={20}/>
+
+            <Link to={"/sign-in"} className=''>
+              Back to Log in
+            </Link>
+
+             </div>
+
+           </div>
+         </div>
+
+       </div>
+
+   </div>
+
+      </section>
+
+</div>
+
   </section>
   );
 }

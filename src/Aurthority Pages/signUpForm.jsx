@@ -1,111 +1,178 @@
-import React from "react";
-import AuthLogo from "../assets/image/authlogo.png"
+import React, { useState } from "react";
+import { logo } from "../assets/image";
+import { InputAdornment, TextField } from "@mui/material";
+import { MdOutlineEmail } from "react-icons/md";
+import { Button } from "antd";
+import { IoEyeOutline } from "react-icons/io5";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function SignUpForm() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [type, setType] = useState("password");
+
   return (
-   <div className="auth-bg sign-page">
-     <section className="content">
-      <div className="flex flex-col w-full  justify-center mx-auto h-screen">
-        <div className="w-full bg-white py-10 px-10 rounded-[3rem]">
-          <div className="flex items-center justify-center mt-5">
-          <img
-                className="w-44 h-16"
-                src={AuthLogo}
-              />
-          </div>
-          <div className="text-[#176BA3] text-center underline text-sm font-semibold">Simplify Your Bills with BPay</div>
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <div className="text-center">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-[#176BA3]">
-                Sign up to your account
-              </h1>
-              <p className="text-[#6C7293]">
-              Create your free account today
-              </p>
-            </div>
-            <form className="space-y-4 md:space-y-6" action="#">
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Name
-                </label>
-                <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor=""
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Mobile Number
-                </label>
-                <input
-                  name=""
-                  placeholder="Enter your number"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Email
-                </label>
-                <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Password
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
-                />
-              </div>
-              <div className="r h-5">
-                <input
-                  id="terms"
-                  aria-describedby="terms"
-                  type="checkbox"
-                  className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                  required
-                />
-                <label htmlFor="terms" className="font-semibold ml-2">
-                  I Accept the <span className="text-[#329DFF]">Terms & Conditions</span>
-                </label>
-              </div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#176BA3] text-white p-3 text-sm font-semibold"
-              >
-                Sign up
-              </button>
-              <p className="text-sm font-light text-center text-[#6C7293]">
-                Already have an account?
-                <a
-                  href="#"
-                  className="font-medium text-primary-600 hover:underline text-[#329DFF]"
-                >
-                  Sign in
-                </a>
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-   </div>
+
+    <div className="auth-bg sign-page">
+
+    <div className="flex justify-center items-center">
+
+    <section className="content">      
+         
+         <div className="mt-16 rounded-[3rem] px-16" >
+           
+           <div className="flex justify-center">
+             <img
+               className="w-44 h-20"
+               src={logo}
+             />
+           </div>
+
+           <div className="p-8">
+
+             <div className="text-center mt-7 mb-10">
+             
+               <h1 className="text-2xl font-medium leading-tight tracking-tight text-[#176BA3] mb-2">
+                 Sign up for an Account
+               </h1>
+
+               <p className="text-[#6C7293] text-base">
+                 Create your free account today
+               </p>
+               
+             </div>
+
+             <div className="mx-4">
+
+             <div className="mb-7">
+             <TextField
+               type="text"
+               label="Full Name"
+                 InputProps={{
+                   style: {
+                     fontSize: "16px",
+                     fontWeight: "600",
+                     borderRadius: "10px",
+                   },
+                 }}
+                 variant="outlined"
+                 size="small"
+                 fullWidth
+               />
+               </div>
+
+               <div className="mb-7">
+             <TextField
+               type="number"
+               label="Mobile Number"
+                 InputProps={{
+                   style: {
+                     fontSize: "16px",
+                     fontWeight: "600",
+                     borderRadius: "10px",
+                   },
+                 }}
+                 variant="outlined"
+                 size="small"
+                 fullWidth
+               />
+               </div>
+
+              <div className="mb-7">
+             <TextField
+               type="email"
+               label="Email"
+                 InputProps={{
+                   style: {
+                     fontSize: "16px",
+                     fontWeight: "600",
+                     borderRadius: "10px",
+                   },
+                   endAdornment: (
+                     <InputAdornment position="center">
+                       {/* <IconButton> */}
+                         <MdOutlineEmail size={20}/> {/* Replace with your icon component */}
+                       {/* </IconButton> */}
+                     </InputAdornment>
+                   ),
+                 }}
+                 variant="outlined"
+                 size="small"
+                 fullWidth
+               />
+               </div>
+
+               <div className="mb-7">
+             <TextField
+               type={type}
+               label="Password"
+                 InputProps={{
+                   style: {
+                     fontSize: "16px",
+                     fontWeight: "600",
+                     borderRadius: "10px",
+                   },
+                   endAdornment: (
+                     <InputAdornment position="center">
+                       {/* <IconButton> */}
+                       {!showPassword && <IoEyeOutline size={20} role="button" onClick={()=>{setShowPassword(true); setType("text")}}/>} 
+                       {showPassword && <FaRegEyeSlash size={20} role="button" onClick={()=>{setShowPassword(false); setType("password")}}/>} 
+                       {/* </IconButton> */}
+                     </InputAdornment>
+                   ),
+                 }}
+                 variant="outlined"
+                 size="small"
+                 fullWidth
+               />
+               </div>
+
+               <div className="flex items-center justify-between">
+
+                 <div className="flex items-center">
+                   <input
+                     id="terms"
+                     aria-describedby="terms"
+                     type="checkbox"
+                     className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                     required
+                   />
+                   <label htmlFor="terms" className="font-medium text-base ml-2">
+                   I Accept the <span className="text-[#329DFF]">Terms & Conditions</span>
+                   </label>
+                 </div>
+
+               </div>
+
+               <div className="mt-5">
+               <Button type="submit" size="large"
+                 className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
+               >
+                 Sign up
+               </Button>
+
+               <div className="text-lg font-medium text-center text-[#6C7293] pt-5">
+                 Already have an account?
+
+                 <Link to={"/sign-in"}
+                   className="font-medium text-primary-600 hover:underline text-[#329DFF]" >
+                   Sign in
+                 </Link>
+                 </div>
+
+               </div>
+
+             </div>
+
+           </div>
+
+       </div>
+
+     </section>
+
+    </div>
+
+    </div>
+
   );
 }
