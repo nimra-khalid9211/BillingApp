@@ -4,6 +4,7 @@ import TransactionRecord from '../../Components/Tables/TransactionRecord';
 import BreadCrumbs from '../../UI/BreadCrumbs';
 import { GrTransaction } from 'react-icons/gr';
 import { IoSearchOutline } from 'react-icons/io5';
+import {blueTransaction} from '../../assets/image/index'
 
 const {Search} = Input;
 
@@ -49,7 +50,7 @@ const Transactions = () => {
   return (
     <>
 
-    <BreadCrumbs icon={<GrTransaction />} menu={"Transactions"}/>
+    <BreadCrumbs icon={blueTransaction} menu={"Transactions"}/>
 
     <div className='relative'>
 

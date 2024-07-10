@@ -6,6 +6,7 @@ import BillingOverview from "./BillingOverview";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { AddBillDrawer } from "../../Components/Drawers";
 import { FaMoneyBills } from "react-icons/fa6";
+import {blueBill} from '../../assets/image/index'
 
 const BillManagement = () => {
   const { addBill, setAddBill, billingMenu, setBillingMenu } = _BillingCondition();
@@ -27,7 +28,7 @@ const BillManagement = () => {
       <BreadCrumbs
         link={"/bill-management"}
         menu={"Bill Management"}
-        icon={<FaMoneyBills />}
+        icon={blueBill}
         subMenu={getSubMenu()}
         btnTitle2={"Add Bill"}
         customClass={"w-20"}

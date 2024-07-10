@@ -5,6 +5,7 @@ import Notifications from './Notifications';
 import { CiSettings } from 'react-icons/ci';
 import { Tabs } from 'antd';
 import BreadCrumbs from '../../UI/BreadCrumbs';
+import {blueSetting} from '../../assets/image/index'
 
 const Settings = () => {
   const items = [
@@ -28,7 +29,7 @@ const Settings = () => {
  return (
         <>
 
-        <BreadCrumbs icon = {<CiSettings /> } menu={"Settings"}/>
+        <BreadCrumbs icon = {blueSetting } menu={"Settings"}/>
 
       <Tabs type='card' defaultActiveKey="1" items={items} />
 
