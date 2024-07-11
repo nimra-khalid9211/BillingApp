@@ -14,10 +14,10 @@ const BillManagement = () => {
 
   const getSubMenu = () => {
     switch (billingMenu) {
-      case 2:
-        return "Billing Overview";
       case 1:
-        return "Bills Detail";
+        return "Overview";
+      case 2:
+        return "Added Bills";
       default:
         return "Bills";
     }
@@ -25,35 +25,41 @@ const BillManagement = () => {
 
   return (
     <>
+           {/* <BreadCrumbs link={"/dashboard"} menu={"Dashboard"} 
+      
+       btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
+       btnTitle2={"Add Bill"} customClass2="hover-color"  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} /> */}
+
+
+
       <BreadCrumbs
-        link={"/bill-management"}
-        menu={"Bill Management"}
-        icon={blueBill}
+        link={"/bill-manager"}
+        menu={"Bill Manager"}
         subMenu={getSubMenu()}
-        btnTitle2={"+ Add Bill"}
-        customClass2="other-tabs-fontW"
+        btnTitle2={"Add Bill"}
+        customClass2="hover-color"
         btnEvent2={() => { setAddBill(true); setFrom("addBill"); }}
       />
 
       <div>
         <Button
-          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 2 ? "active-tab-button no-hover" : ""}`}
+          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 1 ? "active-tab-button no-hover" : ""}`}
           style={{ borderRadius: "12px 0 0 12px" }}
-          onClick={() => setBillingMenu(2)}
+          onClick={() => setBillingMenu(1)}
         >
-          Billing Overview
+          Overview
         </Button>
 
         <Button
-          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 1 ? "active-tab-button no-hover" : ""}`}
+          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 2 ? "active-tab-button no-hover" : ""}`}
           style={{ borderRadius: "0 12px 12px 0" }}
-          onClick={() => setBillingMenu(1)}
+          onClick={() => setBillingMenu(2)}
         >
-          Bills Detail
+         Added Bills
         </Button>
       </div>
 
-      {billingMenu === 2 ? <BillingOverview /> : <Bills from={"BMB"} />}
+      {billingMenu === 1 ? <BillingOverview /> : <Bills from={"BMB"} />}
 
       <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from} />
     </>

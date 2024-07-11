@@ -22,11 +22,10 @@ const LeftSideBar = () => {
           {menuList.map((item, index) => (
             <div key={index} className="px-5 pt-8 text-base">
               <ul>
-                <div>
-                  {/* className='flex items-center gap-4' */}
+                {/* <div>
                   {item.icon && item.icon}
                   <span> {item.name} </span>
-                </div>
+                </div> */}
 
                 {item.lists?.map((x, index) => (
                   <Link
@@ -34,17 +33,19 @@ const LeftSideBar = () => {
                     key={index}
                   >
                     <div
-                      className={`flex items-center gap-3 px-3 text-[#6C7293] py-[12px] mx-3 my-2 w-[15rem] ${
-                        x.classses && x.classses
-                      } ${
-                        checkVerfication ? "" : "opacity-50 pointer-events-none"
-                      } hover:bg-[var(--primary-color)] hover:text-white rounded-lg ${
-                        path.includes(x.link) ? "bg-[#377CF6] text-white" : ""
-                      }`}
-                    >
-                      <div className="">
+                      className={`flex items-center gap-3 px-3 text-[#6C7293] py-[12px] mx-3 my-2 w-[13rem] 
+                        ${x.classses && x.classses} 
+
+                        ${ checkVerfication ? "" : "opacity-50 pointer-events-none"} 
+                        hover:bg-[var(--primary-color)] hover:text-white rounded-lg 
+
+                        ${ path.includes(x.link) ? "bg-[#377CF6] text-white" : "" }`}>
+
+                      <div>
                         {path.includes(x.link) ? (
-                          <div className="icon-active">{x.icon1}</div>
+                          <div className="icon-active">
+                            {x.icon1}
+                          </div>
                         ) : (
                           <>
                             <div className="normal-icon">{x.icon}</div>

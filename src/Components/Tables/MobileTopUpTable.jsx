@@ -15,7 +15,12 @@ export default function MobileTopUpTable() {
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-3xl mt-5">
-      <div className="drop-shadow-xl text-[#377CF6] rounded-t-3xl p-4 text-lg font-medium bg-white ">Mobile Top Up</div>
+     
+      <div className="drop-shadow-xl text-[#377CF6] rounded-t-3xl p-4 text-lg font-medium bg-white">
+        Mobile Top Up
+        </div>
+      
+      
       <table className="w-full text-sm mt-2">
         <thead className="text-xs bg-[#DBF0FF] text-[#377CF6]">
           <tr className="">

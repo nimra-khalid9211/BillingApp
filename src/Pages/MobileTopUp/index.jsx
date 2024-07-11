@@ -13,16 +13,21 @@ export default function MobileTopUp() {
   const [addNumber, setAddNumber] = useState(false);
 
   return (
-    <div className="">
+    <>
+
+      
+
+
       <BreadCrumbs
         menu="Mobile Top UP"
-        icon={blueMobile}
-        btnTitle2={"+ Add Number"}
-        customClass2="other-tabs-fontW"
+        btnTitle2={"Add Number"}
+        customClass2="hover-color"
+        customStyle={"9rem"}
         btnEvent2={() => setAddNumber(true)}
       />
       <MobileTopUpTable />
       <AddDetails addNumber={addNumber} setAddNumber={setAddNumber} />
-    </div>
+
+    </>
   );
 }

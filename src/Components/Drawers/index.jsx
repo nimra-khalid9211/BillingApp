@@ -75,9 +75,9 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       key="right"
       width={1200}
       className="rounded-tl-[80px] rounded-bl-[80px] p-8 relative"
-      style={{overflow:'unset'}}
+      style={{overflow:'unset', borderTopLeftRadius: "80px", borderBottomLeftRadius: "80px"}}
     >
-     <div onClick={() => setAddBill(false)} className="absolute left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
+     <div onClick={() => setAddBill(false)} className="absolute cursor-pointer left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
 
         <DrawerCardLayout heading={"Bill Details"}>
 

@@ -48,11 +48,11 @@ const TransactionRecord = ({type, from}) => {
     
           <>
       
-            <div className="overflow-x-auto rounded-[25px] mt-5">
+            <div className="overflow-x-auto rounded-[25px] mt-5 bg-[#ffffff]">
 
             {(from === "billingOverview" || type === "all") && 
 
-             <div className="bg-[#377CF6] font-medium text-lg text-white p-3">
+             <div className="drop-shadow-xl text-[#377CF6] bg-white font-medium text-lg p-3">
 
                {type === "all" ? "All Transactions" : 
                type === "electricity" ? "Electricity" : 
