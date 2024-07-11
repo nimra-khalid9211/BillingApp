@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import { info } from "../../../assets/image";
 import { _BillingCondition } from "../../../actions/Context/BillingOverviewConditions";
 import { WhiteButton, BlueButton } from "../../../UI/Buttons";
+import { InputCustom } from "../../../UI/Inputs";
 
 export default function DebitCard(type) {
   const [verified, setVerified] = useState(false);
@@ -36,30 +37,42 @@ export default function DebitCard(type) {
       <div className="grid grid-cols-2 gap-4 place-content-between mt-5">
         <div className="">
           <div className="grid grid-cols-2 gap-4">
-            <TextField
+
+          <InputCustom label={"Account Title"} />
+
+            {/* <TextField
               id="outlined-basic"
               label="Account Title"
               variant="outlined"
               size="small"
-            />
-            <TextField
+            /> */}
+
+            <InputCustom label={"Bank Name"} />
+
+            {/* <TextField
               id="outlined-basic"
               label="Bank Name "
               variant="outlined"
               size="small"
-            />
-            <TextField
+            /> */}
+
+            <InputCustom label={"Branch Number"} />
+
+            {/* <TextField
               id="outlined-basic"
               label="Branch Number"
               variant="outlined"
               size="small"
-            />
-            <TextField
+            /> */}
+
+            <InputCustom label={"IBAN #"} />
+
+            {/* <TextField
               id="outlined-basic"
               label="IBAN#"
               variant="outlined"
               size="small"
-            />
+            /> */}
           </div>
 
 

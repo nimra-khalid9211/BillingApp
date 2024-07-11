@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ViewReceiptModal } from "../Modals";
 import { PDFTemplate } from "../PDFTemplate";
 import { isOverdue } from "../../Hooks";
+import { BlueButton } from "../../UI/Buttons";
 
 
 const dashedBorderRight = "border-r border-dashed border-[#4653D72B]";
@@ -265,17 +266,22 @@ export const SelectableBills = ({ type, from }) => {
           </div>
 
           <div>
-            <Button
+
+            <BlueButton title={"Pay All"} clickEvent={() => {
+              navigate("/bill-manager/selected-bills");setBills(selectedBills);}}/>
+
+            {/* <Button
               type="primary"
               style={{ padding: "0 30px" }}
               shape="round"
               onClick={() => {
-                navigate("/bill-management/selected-bills");
+                navigate("/bill-manager/selected-bills");
                 setBills(selectedBills);
               }}
             >
               Pay All
-            </Button>
+            </Button> */}
+
           </div>
         </div>
       )}

@@ -4,6 +4,7 @@ import { smallArrow, TikCheck } from "../../assets/icon/index";
 import Card from "../../assets/image/Bitmap.svg";
 import { useNavigate } from "react-router-dom";
 import { SiTicktick } from "react-icons/si";
+import BreadCrumbs from "../../UI/BreadCrumbs";
 
 
 export default function RechangeAccount() {
@@ -11,15 +12,25 @@ export default function RechangeAccount() {
 
 
   return (
+    <>
+        <BreadCrumbs
+        link={"/mobile-top-up"}
+        menu={"Mobile-top-up"} 
+        btnIcon2={<IoChevronBack size={18} />}
+        subMenu={'Recharge'}
+        btnTitle2={"Back"}
+        customClass2="hover-color"
+        btnEvent2={() => { navigate("/mobile-top-up")}}
+      />
+
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
-      <div className="bg-[#377CF6] flex justify-between items-center text-white p-3">
+      
+      <div className="bg-[#377CF6] text-white p-3">
 
         <span>Mobile Top Up</span>
 
-        <BlueButton clickEvent={()=>navigate("/mobile-top-up")} title={"Back"} icon={<IoChevronBack size={18} />}/>
-
-        
         </div>
+
       <div className="py-10 px-5">
         <div className="font-medium text-base text-[#F58021]">Default Payment</div>
         <div className="grid grid-cols-5 gap-4 rounded-2xl mt-5 bg-white p-5 drop-shadow-lg">
@@ -48,5 +59,6 @@ export default function RechangeAccount() {
         </div>
       </div>
     </div>
+    </>
   );
 }

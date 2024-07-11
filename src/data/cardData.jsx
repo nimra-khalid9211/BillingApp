@@ -4,7 +4,7 @@ import { bitmap, visaCard, easyPaisa, jazz, jazzc, jazzcash } from "../assets/im
 export const CardData = [
   {
     icon: <img src={bitmap} alt="" />,
-    title: "MasterCard", 
+    title: "Mastercard", 
     cardNumber: "5210",
     default: true,
   },

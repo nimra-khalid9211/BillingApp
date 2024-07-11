@@ -11,7 +11,7 @@ import { formatDate } from "../../Hooks";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const dropdownMenus = [
   {
@@ -45,8 +45,27 @@ const Header = () => {
 
   const { dropdown, checkVerfication } = _BillingCondition();
   const [showDate, setShowDate] = useState(false);
+  const calenderRef = useRef(null);
 
   const formattedDate = formatDate(new Date());
+
+  useEffect(()=>{
+    const handleClickOutside = (event) => {
+      if(calenderRef.current && !calenderRef.current.contains(event.target)){
+        setShowDate(false);
+      }
+    };
+
+    if(showDate){
+      document.addEventListener('mousedown', handleClickOutside)
+    }else{
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+
+    return () =>{
+        document.removeEventListener('mousedown', handleClickOutside)
+    };
+  },[showDate])
 
   return (
     <div className="flex items-center justify-between mx-3  mt-7">
@@ -62,7 +81,7 @@ const Header = () => {
                 <b className='text-sm border-l border-[#6C7293] pl-2'>{formattedDate}</b>
                 </div>
 
-               {showDate && <div className="absolute bg-white z-10 top-24 rounded-3xl right-60">
+               {showDate && <div ref={calenderRef} className="absolute bg-white z-10 top-14 rounded-3xl right-60">
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateCalendar readOnly/>

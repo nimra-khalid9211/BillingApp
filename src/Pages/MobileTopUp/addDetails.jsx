@@ -2,6 +2,8 @@ import { Box, MenuItem, TextField } from "@mui/material";
 import { Button, Drawer, Input } from "antd";
 import Cancel from "../../assets/icon/cancel.svg"
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
+import { InputCustom } from "../../UI/Inputs";
+import Search from "antd/es/transfer/search";
 
 export default function AddDetails({ addNumber, setAddNumber }) {
   const currencies = [
@@ -23,6 +25,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
     },
   ];
   return (
+
     <Drawer
       title={
     <div></div>
@@ -49,15 +52,22 @@ export default function AddDetails({ addNumber, setAddNumber }) {
 
         <div className="rounded-[30px] p-7 mt-5 shadow-lg shadow-[#8a918e] bg-white">
           <div className="border-b pb-2 font-semibold">Number Details</div>
+
           <div className="grid grid-cols-2 gap-4 mt-5">
-            <TextField id="outlined-basic" label="Nick Name" variant="outlined" size="small"/>
+
+              <InputCustom label={"Name"} />
+              
+              <InputCustom label={"Mobile Operator"} />
+
+{/* 
             <TextField
               id="outlined-basic"
               label="Mobile Number"
               variant="outlined"
               size="small"
-            />
-            <Box
+            /> */}
+
+            {/* <Box
               component="form"
               sx={{
                 "& .MuiTextField-root": { mt: 2, width: "100%" },
@@ -78,7 +88,27 @@ export default function AddDetails({ addNumber, setAddNumber }) {
                   </MenuItem>
                 ))}
               </TextField>
-            </Box>
+            </Box> */}
+
+            <TextField
+              className="col-span-1 border-black"
+              select
+              label = {"Mobile Operator"}
+              size="small" InputProps={{style: { fontSize: "16px", fontWeight: "600", borderRadius: "10px", }, }}   >
+
+               <div>
+               {/* <Search placeholder="Search.." className="p-4"/> */}
+               {currencies.map((x, index)=>(
+                <div key={index} className="px-2 cursor-pointer py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.label}</div>
+             
+               ))}
+              </div> 
+            </TextField>
+
+            <div className="mt-2">
+            <BlueButton title={"Procceed"}/>
+            </div>
+
           </div>
         </div>
         <div className="rounded-[30px] p-7 mt-10 shadow-lg shadow-[#8a918e] bg-white">
