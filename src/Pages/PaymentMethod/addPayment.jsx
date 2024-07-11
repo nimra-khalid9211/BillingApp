@@ -43,11 +43,11 @@ export default function AddPayment() {
       />
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
         <div className="bg-[#377CF6] flex justify-between items-center text-white p-3">
-          Add Payment Methods
+          Add Payment Method
         </div>
         <div className="px-10 py-7 bg-white">
-          <div className="font-semibold text-lg mb-5">
-            Select your payment method:
+          <div className="font-semibold text-lg mb-5 text-[#176ba3]">
+            Select Payment Method:
           </div>
           <div className="flex items-center">
             <div
@@ -121,7 +121,7 @@ export default function AddPayment() {
         </div>
       </div>
       {checkShown && (
-        <div className="mt-10">
+        <div className="fixed bottom-20">
           <WhiteButton
             title={"Cancel"}
             clickEvent={() => navigate("/payment-methods")}

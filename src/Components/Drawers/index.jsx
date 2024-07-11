@@ -75,13 +75,13 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       key="right"
       width={1200}
       className="rounded-tl-[80px] rounded-bl-[80px] p-8 relative"
-      style={{overflow:'unset', borderTopLeftRadius: "80px", borderBottomLeftRadius: "80px"}}
+      style={{overflow:'unset', borderTopLeftRadius: "80px", borderBottomLeftRadius: "80px", background:'#f6f6f8'}}
     >
      <div onClick={() => setAddBill(false)} className="absolute cursor-pointer left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
 
         <DrawerCardLayout heading={"Bill Details"}>
 
-          <div className="grid grid-cols-5 gap-8 mb-10">
+          <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
            
              <TextField
               className="col-span-4 border-black"
@@ -122,7 +122,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         <DrawerCardLayout heading={"Payment Preference"}>
 
             {from === "addBill" && <div>
-          <div className="flex justify-between items-center w-60 mt-6">
+          <div className="flex justify-between items-center w-60 mt-6 bg-white">
 
             <span className="text-base font-medium">Auto Direct Debit</span>
 

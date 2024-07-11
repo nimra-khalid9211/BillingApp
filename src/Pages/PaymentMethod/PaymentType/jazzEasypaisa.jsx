@@ -59,12 +59,12 @@ export default function JazzEasypaisa() {
                 Click to resend
               </span>
             </p>
-            <button className="bg-[#24A959] text-white rounded-[2rem] px-10 py-3 font-semibold my-7">
+            {/* <button className="bg-[#24A959] text-white rounded-[2rem] px-10 py-3 font-semibold my-7">
               Verify Account
-            </button>
+            </button> */}
           </div>
         )}
-        <div className="">
+        <div className="mt-5">
           <input type="checkbox" />
           <label htmlFor="" className="ml-3">
             Set as Default

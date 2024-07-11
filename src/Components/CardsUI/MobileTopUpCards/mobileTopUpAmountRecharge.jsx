@@ -10,10 +10,12 @@ export default function MobileTopUpAmountRecharge() {
         </div>
         <div className="flex justify-center items-center my-4">
           <div className="text-lg mr-2">Rs.</div>
-          <input
-            type="text"
-            className="p-1 outline-none text-3xl font-semibold w-[50%]"
-          />
+          <div className="my-2">
+            <input
+              type="number"
+              className="outline-none bg-[#E8E7EC] p-2 w-full rounded-lg border border-[#6C7293]"
+            />
+          </div>
         </div>
         <div className="mt-2 text-white bg-[#377CF6] p-2 rounded-2xl w-full">
           <Link to="successfull">

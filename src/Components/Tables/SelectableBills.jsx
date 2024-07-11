@@ -114,7 +114,7 @@ export const SelectableBills = ({ type, from }) => {
             {MyBillHeading.map((x, index) => {
               if (
                 (x.title === "Auto Debit" && from === "dashboard") ||
-                (x.title === "Pay Preference" && from === "dashboard") ||
+                (x.title === "Payment Method" && from === "dashboard") ||
                 // (x.title === "Amount Due" && from !== "dashboard")
                 (x.title === "Download Bill" && from !== "overview")
               ) {

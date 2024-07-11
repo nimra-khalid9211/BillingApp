@@ -25,10 +25,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
   return (
     <Drawer
       title={
-        <div>
-
-          {/* <span className="text-xl text-[#377CF6] border-b pb-2">Add Number</span> */}
-        </div>
+    <div></div>
       }
       closeIcon={null}
       placement="right"
@@ -36,25 +33,27 @@ export default function AddDetails({ addNumber, setAddNumber }) {
       onClose={() => setAddNumber(false)}
       open={addNumber}
       key="right"
-      size="large"
-      className="rounded-tl-[80px] rounded-bl-[80px] py-8 px-5 relative"
-      style={{overflow:'unset'}}
+      width={1200}
+      className="rounded-lb-[80px] relative padding-none"
+      style={{overflow:'unset', borderTopLeftRadius: "80px", borderBottomLeftRadius: "80px", background:'#f6f6f8'}}
     >
       <div className="">
-      <div onClick={() => setAddNumber(false)} className="absolute left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
-        <div className="text-xl text-[#377CF6] border-b pb-2 font-semibold">
-          Add Number
-        </div>
-        <p className="text-[#646464] font-semibold mt-5">
+      <div onClick={() => setAddNumber(false)} className="absolute left-[-1.5rem] z-50 top-[8rem] cursor-pointer"><img src={Cancel} alt="" /></div>
+        {/* <p className="text-[#646464] font-semibold mt-5">
           Add your account details
-        </p>
-        <div className="rounded-2xl p-7 mt-5 shadow-lg shadow-[#8a918e]">
+        </p> */}
+       <div className="w-full bg-white py-5 px-5 rounded-tl-[80px] border-b">
+          <div className="text-xl text-[#176ba3] font-semibold pl-5">Add Number</div>
+        </div>
+        <div className="w-4/5 mx-auto mt-10 ">
+
+        <div className="rounded-[30px] p-7 mt-5 shadow-lg shadow-[#8a918e] bg-white">
           <div className="border-b pb-2 font-semibold">Number Details</div>
           <div className="grid grid-cols-2 gap-4 mt-5">
-            <TextField id="outlined-basic" label="Name" variant="outlined" size="small"/>
+            <TextField id="outlined-basic" label="Nick Name" variant="outlined" size="small"/>
             <TextField
               id="outlined-basic"
-              label="Mobile Operator"
+              label="Mobile Number"
               variant="outlined"
               size="small"
             />
@@ -82,10 +81,9 @@ export default function AddDetails({ addNumber, setAddNumber }) {
             </Box>
           </div>
         </div>
-        <div className="rounded-2xl p-7 mt-10 shadow-lg shadow-[#8a918e]">
+        <div className="rounded-[30px] p-7 mt-10 shadow-lg shadow-[#8a918e] bg-white">
           <p className="font-bold">
-            Please enter a 4 digit code sent to your mobile number for
-            verification.
+            Please enter a 4 digit code.
           </p>
           <div className="flex items-center space-x-2 mt-5">
             {/* {Array(4)
@@ -107,10 +105,11 @@ export default function AddDetails({ addNumber, setAddNumber }) {
           </p>
         </div>
 
-       <div className="mt-7">
+       <div className="fixed bottom-24">
             <WhiteButton title={"Cancel"} clickEvent={()=>setAddNumber(false)}/>
             <BlueButton  title={"Save"}/>
        </div>
+        </div>
 
       </div>
     </Drawer>

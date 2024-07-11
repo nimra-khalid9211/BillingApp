@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #000;
+  --primary-color: #176ba3;
   --secondary-color: #DBF0FF;
   --grayish-color: #6C7293;
   --white-color: white;
@@ -579,4 +579,10 @@ input[type="number"] {
 :where(.css-dev-only-do-not-override-m4timi).ant-menu-light.ant-menu-horizontal >.ant-menu-item:hover::after, :where(.css-dev-only-do-not-override-m4timi).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item:hover::after {
   border-bottom-width: 0;
   border-bottom-color: transparent;
+}
+.ant-drawer .ant-drawer-body {
+   padding: 0 !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-drawer .ant-drawer-body {
+ padding: 0 !important; 
 }

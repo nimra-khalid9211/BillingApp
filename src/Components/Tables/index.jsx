@@ -14,7 +14,7 @@ export const MyBillHeading = [
   { title: "Due Date" },
   { title: "Amount Due" },
   { title: "Auto Debit" },
-  { title: "Pay Preference" },
+  { title: "Payment Method" },
   { title: "Download Bill" },
   { title: "Actions" },
 ];
@@ -48,7 +48,7 @@ export const  MyBills = ({ from }) => {
                   // Conditionally render "Auto Debit" column only when from === 'BMB'
                   if (
                     (x.title === "Auto Debit" && from !== "BMB") ||
-                    (x.title === "Pay Preference" && from !== "BMB") ||
+                    (x.title === "Payment Method" && from !== "BMB") ||
                     (x.title === "Amount Due" && from !== "dashboard") ||
                     (x.title === "Download Bill" && from !== "overview")
                   ) {

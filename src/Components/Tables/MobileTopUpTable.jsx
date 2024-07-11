@@ -2,8 +2,16 @@ import { MobileTopUpList } from "../../data/tables";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function MobileTopUpTable() {
+  const navigate = useNavigate();
+
+  const handleClick = (name, mobileOperator, mobileNumber) => {
+    navigate('/mobile-top-up/changing-account', { state: { componentName: name, componentOperator: mobileOperator, componentNumber: mobileNumber } });
+    console.log(name)
+  };
+
 
   const MobileTopUpTitles = [
     { title: "Name" },
@@ -45,6 +53,7 @@ export default function MobileTopUpTable() {
               className={`${
                 index % 2 === 0 ? 'bg-white' : 'bg-gray-100'
               } text-black font-bold border-b border-dashed border-[#4653D72B]`}
+              onClick={() => handleClick(x.name, x.mobileOperator, x.mobileNumber)}
             >
               <th
                 scope="row"

@@ -102,8 +102,8 @@ const GoogleChart = () => {
           <div className="flex items-center space-x-2">
           <div
               className={`flex items-center space-x-1 ${
-                selectedUtility === "All" ? "bg-gray-100" : ""
-              } text-gray-700 rounded-full px-3 py-1 cursor-pointer`}
+                selectedUtility === "All" ? "bg-gray-100 border-gray-500" : ""
+              } text-gray-700 rounded-full px-3 py-1 cursor-pointer border`}
               onClick={() => setSelectedUtility("All")}
             >
               <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
@@ -111,8 +111,8 @@ const GoogleChart = () => {
             </div>
             <div
               className={`flex items-center space-x-1 ${
-                selectedUtility === "Electricity" ? "bg-blue-100" : ""
-              } text-blue-700 rounded-full px-3 py-1 cursor-pointer`}
+                selectedUtility === "Electricity" ? "bg-blue-100 border-[#377CF6]" : ""
+              } text-blue-700 rounded-full px-3 py-1 cursor-pointer border`}
               onClick={() => setSelectedUtility("Electricity")}
             >
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
@@ -120,8 +120,8 @@ const GoogleChart = () => {
             </div>
             <div
               className={`flex items-center space-x-1 ${
-                selectedUtility === "Gas" ? "bg-green-100" : ""
-              } text-green-700 rounded-full px-3 py-1 cursor-pointer`}
+                selectedUtility === "Gas" ? "bg-green-100 border-[#24A959]" : ""
+              } text-green-700 rounded-full px-3 py-1 cursor-pointer border`}
               onClick={() => setSelectedUtility("Gas")}
             >
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -129,7 +129,7 @@ const GoogleChart = () => {
             </div>
             <div
               className={`flex items-center space-x-1 ${
-                selectedUtility === "PTCL" ? "border-red-500" : ""
+                selectedUtility === "PTCL" ? "border-red-500 bg-[#F9D2D4]" : ""
               } text-red-700 rounded-full px-3 py-1 cursor-pointer border`}
               onClick={() => setSelectedUtility("PTCL")}
             >
@@ -138,7 +138,7 @@ const GoogleChart = () => {
             </div>
             <div
               className={`flex items-center space-x-1 ${
-                selectedUtility === "Water" ? "border-blue-500" : ""
+                selectedUtility === "Water" ? "border-blue-500 bg-[#DBF0FF]" : ""
               } text-blue-700 rounded-full px-3 py-1 cursor-pointer border`}
               onClick={() => setSelectedUtility("Water")}
             >
