@@ -9,11 +9,7 @@ export const CardData = [
     default: true,
   },
   {
-<<<<<<< HEAD
     icon: <img src={visaCard} alt=""/>,
-=======
-    icon: <img src={visaCard} alt="" />,
->>>>>>> origin/authUpdates
     title: "Visa", 
     cardNumber: "5210",
     default: false,
@@ -25,11 +21,7 @@ export const CardData = [
     default: false,
   },
   {
-<<<<<<< HEAD
     icon: <img src={jazzcash} alt="" />,
-=======
-    icon: <img src={easyPaisa} alt="" />,
->>>>>>> origin/authUpdates
     title: "JazzCash", 
     cardNumber: "5210",
     default: false,
