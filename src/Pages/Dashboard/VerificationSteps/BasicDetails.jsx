@@ -57,6 +57,7 @@ const BasicDetails = () => {
                   size="small"
                   fullWidth
                 />
+               
               </div>
 
               <div className="mb-4">

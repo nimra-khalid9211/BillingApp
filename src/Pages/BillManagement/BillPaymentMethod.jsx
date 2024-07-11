@@ -9,6 +9,7 @@ import { PaymentSuccessfullModal } from '../../Components/Modals'
 import { paymentSuccessfull } from '../../assets/image'
 import BreadCrumbs from '../../UI/BreadCrumbs'
 import { FaMoneyBills } from 'react-icons/fa6'
+import { BlueButton, WhiteButton } from '../../UI/Buttons'
 
 const BillPaymentMethod = () => {
     const {bills} = _BillingCondition();
@@ -29,14 +30,14 @@ const BillPaymentMethod = () => {
     <>
 
 <BreadCrumbs
-        link={"/bill-management"}
+        link={"/bill-manager"}
           menu={"Bill Management"}
           icon={<FaMoneyBills />}
           subMenu={"Selected Bills"}
           thirdMenu={"Procced Payment"}
           btnIcon2={<IoChevronBack />}
           btnTitle2={"Back"}
-          btnEvent2={()=>{navigate("/bill-management/selected-bills")}}
+          btnEvent2={()=>{navigate("/bill-manager/selected-bills")}}
         />
 
     <Card className='mt-3 rounded-3xl' bordered={false}>
@@ -82,15 +83,19 @@ const BillPaymentMethod = () => {
       <div className='mt-10 gap-3'>
 
 
-        <Button className='mr-2 border-[#6C7293] text-[#6C7293]'
+          <WhiteButton title={"Cancel"} clickEvent={()=>{navigate("/bill-manager/selected-bills")}}/>
+
+            <BlueButton title={`Pay Rs. ${totalAmount ? totalAmount?.toLocaleString() :""}`} clickEvent={()=>setReceiptModal(true)}/>
+       
+        {/* <Button className='mr-2 border-[#6C7293] text-[#6C7293]'
      style={{background: "transparent", padding:"5px 30px"}} shape='round'
-     onClick={()=>{navigate("/bill-management/selected-bills")}}>
+     onClick={()=>{navigate("/bill-manager/selected-bills")}}>
       Cancel
       </Button>
 
       <Button className='bg-[#377CF6] text-white ml-2' style={{ padding:"5px 20px"}} shape='round' onClick={()=>setReceiptModal(true)}>
         {`Pay Rs. ${totalAmount ? totalAmount?.toLocaleString() :""}`}
-        </Button>
+        </Button> */}
   
 
         </div>
@@ -147,7 +152,7 @@ const BillPaymentMethod = () => {
       bills={bills} width={450}
      firstHeading={`We are pleased to inform you that the payment for ${bills?.length} bills have been successfully processed.`}
      buttonText={"Billing Overview"}
-     onButtonClick={()=>navigate("/bill-management")}
+     onButtonClick={()=>navigate("/bill-manager")}
      />
 
     </Card>

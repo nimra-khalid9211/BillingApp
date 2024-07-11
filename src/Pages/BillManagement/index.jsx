@@ -25,14 +25,7 @@ const BillManagement = () => {
 
   return (
     <>
-           {/* <BreadCrumbs link={"/dashboard"} menu={"Dashboard"} 
-      
-       btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
-       btnTitle2={"Add Bill"} customClass2="hover-color"  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} /> */}
-
-
-
-      <BreadCrumbs
+        <BreadCrumbs
         link={"/bill-manager"}
         menu={"Bill Manager"}
         subMenu={getSubMenu()}
@@ -57,6 +50,7 @@ const BillManagement = () => {
         >
          Added Bills
         </Button>
+        
       </div>
 
       {billingMenu === 1 ? <BillingOverview /> : <Bills from={"BMB"} />}

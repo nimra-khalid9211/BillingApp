@@ -1,5 +1,6 @@
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
+import { InputCustom } from "../../../UI/Inputs";
 
 export default function JazzEasypaisa() {
   const [isVerified, setIsVerified] = useState(false);
@@ -14,18 +15,26 @@ export default function JazzEasypaisa() {
       </div>
       <div className="w-4/5">
         <div className="grid grid-cols-3 gap-4 my-5">
-          <TextField
+
+        <InputCustom label={"Account Holder Name"} />
+        
+          {/* <TextField
             id="outlined-basic"
             label="Account Holder Name"
             variant="outlined"
             size="small"
-          />
-          <TextField
+          /> */}
+
+          <InputCustom label={"Mobile Number"} />
+
+          {/* <TextField
             id="outlined-basic"
             label="Mobile Numberr"
             variant="outlined"
             size="small"
-          />
+          /> */}
+
+          
           <button
             className="text-[#329DFF] underline text-start ml-7"
             onClick={handleVerifyClick}

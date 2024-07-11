@@ -47,7 +47,7 @@ const Faq = () => {
           <div className='grid grid-cols-2 gap-5 mt-10'>
 
          {items.map((x, index)=> 
-         <Card key={index} className={`p-4 mt-6 faq-card-shadow ${openIndex === index ? "h-auto" : "h-14"}`}>
+         <Card key={index} className={`p-4 mt-6 drop-shadow-lg ${openIndex === index ? "h-auto" : "h-14"}`}>
 
             <div key={index} className='flex flex-col'>
 

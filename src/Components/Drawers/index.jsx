@@ -6,6 +6,7 @@ import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 import PayMethodCard from "../CardsUI/PayMethodCard";
 import { Cancel } from "../../assets/icon";
+import { InputCustom } from "../../UI/Inputs";
 
 
 const {Search} = Input;
@@ -87,9 +88,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
               className="col-span-4 border-black"
               select
               label = {from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""}
-              size="small"
-            >
-              
+              size="small" InputProps={{style: { fontSize: "16px", fontWeight: "600", borderRadius: "10px", }, }}   >
 
                <div className="h-60 ">
                <Search placeholder="Search.." className="p-4"/>
@@ -100,20 +99,13 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
               </div> 
             </TextField>
 
-            {from === "addBill" && <TextField
-              className="col-span-2 mt-3"
-              label="Consumer ID"
-              id="outlined-size-small"
-              size="small"
-            />}
+            {from === "addBill" && 
+            <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"}/>
+            }
 
-           {from === "addBill" &&  <TextField
-              className="col-span-2 mt-3"
-              label="Bill Nick Name"
-              // id="outlined-size-small"
-              // defaultValue="Small"
-              size="small"
-            />}
+           {from === "addBill" && 
+           <InputCustom className={"col-span-2 mt-3"} label={"Bill Nick Name"}/>
+            }
 
           </div>
 

@@ -49,7 +49,7 @@ const Tutorial = () => {
             <div className='mx-10 flex justify-between items-center gap-4 mt-7'>
 
            {card.map((x)=>( 
-            <Card className='faq-card-shadow'
+            <Card className='shadow-lg'
             cover={
             <img alt="example" src={x.img} /> }>
 

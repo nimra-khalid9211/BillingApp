@@ -4,7 +4,7 @@ import { _BillingCondition } from '../../actions/Context/BillingOverviewConditio
 import { Button } from 'antd';
 import { isOverdue } from '../../Hooks';
 import { useNavigate } from 'react-router-dom';
-import { BlueButton } from '../../UI/Buttons';
+import { BlueButton, WhiteButton } from '../../UI/Buttons';
 import { IoChevronBack } from 'react-icons/io5';
 import BreadCrumbs from '../../UI/BreadCrumbs';
 import { FaMoneyBills } from 'react-icons/fa6';
@@ -28,13 +28,13 @@ const SelectedBills = () => {
     <>
 
         <BreadCrumbs
-        link={"/bill-management"}
-          menu={"Bill Management"}
+        link={"/bill-manager"}
+          menu={"Bill Manager"}
           icon={<FaMoneyBills />}
           subMenu={"Selected Bills"}
           btnIcon2={<IoChevronBack />}
           btnTitle2={"Back"}
-          btnEvent2={()=>{navigate("/bill-management")}}
+          btnEvent2={()=>{navigate("/bill-manager")}}
         />
 
     <div className='w-100 bg-white p-6 rounded-3xl'>
@@ -120,11 +120,17 @@ const SelectedBills = () => {
 
    
 
-    <div className='flex justify-start items-center gap-4 py-3'>
+    <div className='flex justify-start items-center py-4'>
 
-        <Button shape='round' className='border-[#6C7293] text-sm p-0 text-[#6C7293]' onClick={()=>{navigate("/bill-management"); setBills("")}}>Cancel</Button>
+        <WhiteButton clickEvent={()=>{navigate("/bill-manager"); setBills("")}} title={"Cancel"}/>
+
+        <BlueButton clickEvent={()=>navigate("/bill-manager/payment-method")} customStyle={"11rem"} title={"Proceed to Payment"}/>
         
-        <Button shape='round' className='bg-[#377CF6] text-white text-sm' onClick={()=>navigate("/bill-management/payment-method")}>Proceed to Payment</Button>
+
+
+        {/* <Button shape='round' className='border-[#6C7293] text-sm p-0 text-[#6C7293]' onClick={()=>{navigate("/bill-management"); setBills("")}}>Cancel</Button> */}
+        
+        {/* <Button shape='round' className='bg-[#377CF6] text-white text-sm' onClick={()=>navigate("/bill-manager/payment-method")}>Proceed to Payment</Button> */}
                
     </div>
 
