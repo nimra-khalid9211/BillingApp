@@ -31,13 +31,13 @@ const BillManagement = () => {
         icon={blueBill}
         subMenu={getSubMenu()}
         btnTitle2={"+ Add Bill"}
-        customClass="other-tabs-fontW"
+        customClass2="other-tabs-fontW"
         btnEvent2={() => { setAddBill(true); setFrom("addBill"); }}
       />
 
       <div>
         <Button
-          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 2 ? "active-tab-button" : ""}`}
+          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 2 ? "active-tab-button no-hover" : ""}`}
           style={{ borderRadius: "12px 0 0 12px" }}
           onClick={() => setBillingMenu(2)}
         >
@@ -45,7 +45,7 @@ const BillManagement = () => {
         </Button>
 
         <Button
-          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 1 ? "active-tab-button" : ""}`}
+          className={`bg-[#E8E7EC] custom-tab-button text-sm font-medium py-2 ${billingMenu === 1 ? "active-tab-button no-hover" : ""}`}
           style={{ borderRadius: "0 12px 12px 0" }}
           onClick={() => setBillingMenu(1)}
         >

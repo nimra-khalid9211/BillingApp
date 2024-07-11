@@ -262,6 +262,9 @@ input[type="number"] {
   padding: 1.2rem 5rem !important;
   font-weight: 500;
 }
+.hover-color:hover{
+  background-color: #377cf6;
+}
 
 /* faq card shadow */
 .faq-card-shadow {

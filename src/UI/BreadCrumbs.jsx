@@ -15,8 +15,8 @@ const BreadCrumbs = ({
   btnTitle2,
   btnEvent1,
   btnEvent2,
-  customClass
-  
+  customClass,
+  customClass2
 }) => {
 
   const {checkVerfication} = _BillingCondition()
@@ -54,7 +54,7 @@ const BreadCrumbs = ({
               title={btnTitle2}
               icon={btnIcon2}
               clickEvent={btnEvent2}
-              customClass={customClass}
+              customClass={customClass2}
             />
           )}
         </div>

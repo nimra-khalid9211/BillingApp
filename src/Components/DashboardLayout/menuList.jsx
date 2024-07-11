@@ -77,7 +77,7 @@ const menuList = [
       },
       {
         id: 10,
-        classses: "mt-40 border-solid border border-[#E8E7EC] rounded-xl",
+        classses: "fixed bottom-10 border-solid border border-[#E8E7EC] rounded-xl",
         title: "Logout",
         icon: <img src={grayLogout} alt="" className="w-5 h-5" />,
         icon1: <img src={whiteLogout} alt="" className="w-5 h-5" />,

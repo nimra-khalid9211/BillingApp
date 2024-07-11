@@ -29,7 +29,7 @@ const Dashboard = () => {
       menu={"Dashboard"} 
       
        btnTitle1={"Quick Pay"} customClass="first-btn" btnEvent1={()=>{setAddBill(true); setFrom("quickPay")}}
-       btnTitle2={"Add Bill"}  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
+       btnTitle2={"Add Bill"} customClass2="hover-color"  btnEvent2={()=>{setAddBill(true); setFrom("addBill")}} />
 
      <div>
       <CompleteProfile />

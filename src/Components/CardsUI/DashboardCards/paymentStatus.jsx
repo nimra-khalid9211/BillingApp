@@ -20,7 +20,7 @@ export default function PaymentStatus({ bgColor, status, amount, borderColor,ico
         <div className="text-lg font-bold">{status}</div>
       </div>
       <div className="relative pr-4">
-          <span className="text-[#6C7293] text-2xl mr-1">Rs</span> <span className='text-xl'>{integerPart}</span>
+          <span className="text-[#6C7293] text-sm mr-1">Rs</span> <span className='text-xl'>{integerPart}</span>
           <span className="text-sm align-super absolute top-0 ml-1">.{decimalPart}</span>
         </div>
     </div>

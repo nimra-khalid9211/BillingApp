@@ -18,7 +18,7 @@ export default function MobileTopUp() {
         menu="Mobile Top UP"
         icon={blueMobile}
         btnTitle2={"+ Add Number"}
-        customClass="other-tabs-fontW"
+        customClass2="other-tabs-fontW"
         btnEvent2={() => setAddNumber(true)}
       />
       <MobileTopUpTable />
