@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 export default function PaymentMethodCard() {
   const navigate = useNavigate();
   return (
-    <Card className="rounded-3xl h-[28rem] border bg-[#d3e8f6] border-[#377CF6] border">
-      <div className="flex items-center font-bold rounded-tl-3xl rounded-tr-3xl bg-white py-4 px-6 justify-between">
+    <Card className="rounded-3xl h-[28rem]  bg-[#d3e8f6] border-[#377CF6] border">
+      <div className="flex items-center font-bold rounded-tl-3xl drop-shadow-lg rounded-tr-3xl bg-white py-4 px-6 justify-between">
         <span>Payment Method</span>
 
         {CardData.length > 0 && (

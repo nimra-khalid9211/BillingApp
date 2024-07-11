@@ -7,7 +7,7 @@ import { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { Button } from "antd";
 import { logo } from "../assets/image";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -15,6 +15,7 @@ export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [type, setType] = useState("password");
 
+  const navigate = useNavigate();
 
   return (
 
@@ -124,7 +125,7 @@ export default function SignInForm() {
                <div className="mt-5">
                <Button type="submit" size="large"
                  className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
-               >
+               onClick={()=>navigate("/dashboard")}>
                  Sign in
                </Button>
 

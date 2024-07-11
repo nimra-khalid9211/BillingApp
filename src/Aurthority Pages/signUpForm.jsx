@@ -5,11 +5,13 @@ import { MdOutlineEmail } from "react-icons/md";
 import { Button } from "antd";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [type, setType] = useState("password");
+
+  const navigate = useNavigate();
 
   return (
 
@@ -147,7 +149,7 @@ export default function SignUpForm() {
                <div className="mt-5">
                <Button type="submit" size="large"
                  className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
-               >
+               onClick={()=>navigate("/sign-in")}>
                  Sign up
                </Button>
 

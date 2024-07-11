@@ -1,11 +1,12 @@
 import { Button, Input } from "antd";
 import { logo } from "../assets/image";
 import { IoArrowBack } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 export default function VerifiedCode() {
+  const navigate = useNavigate();
 
   return (
 
@@ -55,7 +56,7 @@ export default function VerifiedCode() {
            <div className="mt-8">
            <Button type="submit" size="large"
              className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
-           >
+              onClick={()=>navigate("/set-password")}  >
             Verify
            </Button>
 

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 import { InputAdornment, TextField } from '@mui/material';
 import { MdOutlineEmail } from 'react-icons/md';
@@ -8,6 +8,7 @@ import { IoArrowBack } from 'react-icons/io5';
 
 
 export default function ForgotPassword() {
+  const navigate = useNavigate()
 
   return (
 
@@ -66,14 +67,10 @@ export default function ForgotPassword() {
            />
            </div>
 
-           
-
-          
-
            <div className="mt-16">
            <Button type="submit" size="large"
              className="flex w-full drop-shadow-xl justify-center p-6 rounded-xl bg-[#176BA3] text-white text-lg font-medium"
-           >
+            onClick={()=>navigate("/verified-code")} >
              Reset Password
            </Button>
 
@@ -99,5 +96,6 @@ export default function ForgotPassword() {
 </div>
 
   </section>
+  
   );
 }
