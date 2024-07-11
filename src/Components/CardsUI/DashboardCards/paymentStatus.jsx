@@ -8,7 +8,7 @@ export default function PaymentStatus({ bgColor, status, amount, borderColor,ico
   
   return (
     <div
-      className="flex justify-between items-center rounded-[2rem] py-6 px-5 font-semibold text-sm drop-shadow-xl"
+      className="flex justify-between items-center rounded-[1.2rem] py-6 px-5 font-semibold text-sm drop-shadow-xl"
       style={{ backgroundColor: bgColor, borderColor: borderColor, borderWidth: '1px', borderStyle: 'solid' }}
     >
       <div className="flex items-center">
@@ -20,7 +20,7 @@ export default function PaymentStatus({ bgColor, status, amount, borderColor,ico
         <div className="text-lg font-bold">{status}</div>
       </div>
       <div className="relative pr-4">
-          <span className="text-[#6C7293] text-sm mr-1">Rs</span> <span className='text-xl'>{integerPart}</span>
+          <span className="text-[#6C7293] text-sm mr-1">Rs</span> <span className='text-lg'>{integerPart}</span>
           <span className="text-sm align-super absolute top-0 ml-1">.{decimalPart}</span>
         </div>
     </div>

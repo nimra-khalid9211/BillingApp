@@ -7,7 +7,7 @@ import Progress from "react-circle-progress-bar";
 
 const CompleteProfile = () => {
   return (
-    <div className="bg-white rounded-3xl drop-shadow-xl my-4">
+    <div className="bg-white rounded-3xl drop-shadow-xl mb-5">
       <div className="flex items-center justify-between p-8">
         <div className="flex flex-col justify-start">
           <span className="text-[#182A53] text-2xl font-medium">

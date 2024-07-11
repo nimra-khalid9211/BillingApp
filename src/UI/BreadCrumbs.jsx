@@ -22,7 +22,7 @@ const BreadCrumbs = ({
   const {checkVerfication} = _BillingCondition()
 
   return (
-    <div className="my-8 border-b pb-3">
+    <div className="my-5 border-b pb-3">
       <div className="flex justify-between items-center">
         <div className="flex items-center text-sm">
           <img className={`w-5 ${checkVerfication ? "text-[#009EF7]" : 'text-[#6C7293]'}`} src={icon} alt="" />

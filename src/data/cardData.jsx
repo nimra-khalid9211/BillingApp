@@ -4,13 +4,13 @@ import { bitmap, visaCard, easyPaisa, jazz, jazzc, jazzcash } from "../assets/im
 export const CardData = [
   {
     icon: <img src={bitmap} alt="" />,
-    title: "Mastercard", 
+    title: "MasterCard", 
     cardNumber: "5210",
     default: true,
   },
   {
-    icon: <img src={visaCard} alt="" />,
-    title: "Visacard", 
+    icon: <img src={visaCard} alt=""/>,
+    title: "Visa", 
     cardNumber: "5210",
     default: false,
   },
@@ -21,8 +21,8 @@ export const CardData = [
     default: false,
   },
   {
-    icon: <img src={easyPaisa} alt="" />,
-    title: "JazzChash", 
+    icon: <img src={jazzcash} alt="" />,
+    title: "JazzCash", 
     cardNumber: "5210",
     default: false,
   },

@@ -15,7 +15,7 @@ export default function IssuedBill() {
       <div className="text-lg mt-5 font-bold">Due Amount</div>
       <div className="mt-3 flex justify-end">
         <div className="relative pr-4">
-          <span className="text-[#6C7293] text-2xl mr-1">Rs</span> <span className='text-xl'>{integerPart}</span>
+          <span className="text-[#6C7293] text-sm mr-1">Rs</span> <span className='text-lg'>{integerPart}</span>
           <span className="text-sm align-super absolute top-0 ml-1">.{decimalPart}</span>
         </div>
       </div>

@@ -1,85 +1,6 @@
-// import React, { useEffect } from "react";
-
-// export default function GoogleChart() {
-//   useEffect(() => {
-//     // Load the Google Charts library
-//     console.log("google chart scripting");
-//     const script = document.createElement("script");
-//     script.src = "https://www.gstatic.com/charts/loader.js";
-//     script.onload = () => {
-//       // Load the line chart package
-//       window.google.charts.load("current", { packages: ["line"] });
-//       window.google.charts.setOnLoadCallback(drawChart);
-//     };
-//     document.body.appendChild(script);
-
-//     function drawChart() {
-//       console.log("drawChart function called");
-//       const data = new window.google.visualization.DataTable();
-//       data.addColumn("string", "Month");
-//       data.addColumn("number", "Sales");
-//       data.addColumn("number", "Expenses");
-
-//       data.addRows([
-//         ["Jan", 37.8, 80.8],
-//         ["Feb", 30.9, 69.5],
-//         ["Mar", 25.4, 57],
-//         ["Apr", 11.7, 18.8],
-//         ["May", 11.9, 17.6],
-//         ["Jun", 8.8, 13.6],
-//         ["Jul", 7.6, 12.3],
-//         ["Aug", 12.3, 29.2],
-//         ["Sep", 16.9, 42.9],
-//         ["Oct", 12.8, 30.9],
-//         ["Nov", 5.3, 7.9],
-//         ["Dec", 6.6, 8.4],
-//       ]);
-
-//       const options = {
-//         chart: {
-//           // Title and subtitle are removed
-//           // title: 'Box Office Earnings in First Two Weeks of Opening',
-//           // subtitle: 'in millions of dollars (USD)'
-//         },
-//         height: 400,
-//         colors: ["#377CF6", "#24A959"], // Blue and Orange
-//         axes: {
-//           x: {
-//             0: { label: "Month" },
-//           },
-//           y: {
-//             0: { label: "Earnings (in 1000s)", format: "short" },
-//           },
-//         },
-//         hAxis: {
-//           format: "short",
-//           title: "Month",
-//         },
-//         vAxis: {
-//           format: "short",
-//           title: "Earnings (in 1000s)",
-//           ticks: [10000, 20000, 30000], // Set the vertical axis labels
-//           //   viewWindow: {
-//           //     min: 10000, // Minimum value on the axis
-//           //     max: 50000 // Maximum value on the axis
-//           //   }
-//         },
-//         legend: { position: "none" }, // Remove text on the chart
-//       };
-
-//       const chart = new window.google.charts.Line(
-//         document.getElementById("line_top_x")
-//       );
-//       chart.draw(data, window.google.charts.Line.convertOptions(options));
-//     }
-//   }, []);
-
-//   return <div id="line_top_x" className=" rounded-[25px] drop-shadow-xl"></div>;
-// }
-
-import { Button, Dropdown, Space } from "antd";
+import React, { useEffect, useState } from "react";
+import { Button, Dropdown, message, Space } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
-import React from "react";
 import {
   LineChart,
   Line,
@@ -91,37 +12,52 @@ import {
 
 // Sample data
 const data = [
-  { name: "Jan", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Feb", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Mar", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Apr", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "May", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Jun", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Jul", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Aug", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Sep", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Oct", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Nov", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Dec", uv: 3490, pv: 4300, amt: 2100 },
+  { name: "Jan", Electricity: 4000, Gas: 2400, PTCL: 2400, Water: 2878 },
+  { name: "Feb", Electricity: 3000, Gas: 1398, PTCL: 2210, Water: 2878 },
+  { name: "Mar", Electricity: 2000, Gas: 9800, PTCL: 2290, Water: 2738 },
+  { name: "Apr", Electricity: 2780, Gas: 3908, PTCL: 2000, Water: 3878 },
+  { name: "May", Electricity: 1890, Gas: 4800, PTCL: 2181, Water: 4878 },
+  { name: "Jun", Electricity: 2390, Gas: 3800, PTCL: 2500, Water: 5878 },
+  { name: "Jul", Electricity: 3490, Gas: 4300, PTCL: 2100, Water: 2878 },
+  { name: "Aug", Electricity: 3490, Gas: 4300, PTCL: 2100, Water: 2878 },
+  { name: "Sep", Electricity: 3490, Gas: 4300, PTCL: 2100, Water: 2078 },
+  { name: "Oct", Electricity: 3490, Gas: 4300, PTCL: 2100, Water: 2878 },
+  { name: "Nov", Electricity: 3490, Gas: 4300, PTCL: 2100, Water: 2878 },
+  { name: "Dec", Electricity: 3490, Gas: 4300, PTCL: 2100, Water: 2878 },
 ];
 
 const GoogleChart = () => {
+  const [selectedUtility, setSelectedUtility] = useState("All");
+
   const renderChart = (interval) => (
     <ResponsiveContainer height={250} width="100%">
       <LineChart data={data} margin={{ right: 25, top: 10 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" interval={interval} />
-        <YAxis interval={interval} />
-        <Line
-          type="monotone"
-          dataKey="pv"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        <YAxis interval={interval} tickFormatter={formatYAxis} />
+        {(selectedUtility === "All" || selectedUtility === "Electricity") && (
+          <Line type="linear" dataKey="Electricity" stroke="#8884d8" activeDot={{ r: 8 }} />
+        )}
+        {(selectedUtility === "All" || selectedUtility === "Gas") && (
+          <Line type="linear" dataKey="Gas" stroke="#82ca9d" />
+        )}
+        {(selectedUtility === "All" || selectedUtility === "PTCL") && (
+          <Line type="linear" dataKey="PTCL" stroke="#ef4444" />
+        )}
+        {(selectedUtility === "All" || selectedUtility === "Water") && (
+          <Line type="linear" dataKey="Water" stroke="#77c4ff" />
+        )}
       </LineChart>
     </ResponsiveContainer>
   );
+  const formatYAxis = (tickItem) => {
+    if (tickItem >= 1000) {
+      return `${tickItem / 1000}k`;
+    }
+    return tickItem;
+  };
+  
+
   const items = [
     {
       label: "2024",
@@ -136,10 +72,12 @@ const GoogleChart = () => {
       key: "3",
     },
   ];
+
   const handleMenuClick = (e) => {
     message.info("Click on menu item.");
     console.log("click", e);
   };
+
   const menuProps = {
     items,
     onClick: handleMenuClick,
@@ -147,8 +85,8 @@ const GoogleChart = () => {
 
   return (
     <div className="mt-5">
-     <div className="font-semibold w-full w-full drop-shadow-lg bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
-        <div>Bills Statistics</div>
+      <div className="font-semibold w-full drop-shadow-lg bg-white py-4 px-10 rounded-t-3xl flex items-center justify-between">
+        <div className="text-[#176ba3]">Bills Statistics</div>
         <Dropdown menu={menuProps}>
           <div className="border-2 py-1 px-5 rounded-full flex">
             <div className="font-medium">This Year</div>
@@ -158,26 +96,58 @@ const GoogleChart = () => {
           </div>
         </Dropdown>
       </div>
-    <div className=" rounded-b-3xl bg-white">
-      {/* <div className="font-semibold w-full w-full drop-shadow-lg bg-white py-4 px-10 rounded-t-[3rem] flex items-center justify-between">
-        <div>Bills Statistics</div>
-        <Dropdown menu={menuProps}>
-          <div className="border-2 py-1 px-5 rounded-full flex">
-            <div className="font-medium">This Year</div>
-            <div className="ml-5">
-              <DownOutlined />
+      <div className="rounded-b-3xl bg-white">
+        <div className="p-5">{renderChart("preserveEnd")}</div>
+        <div className="flex space-x-4 items-center justify-center pb-10">
+          <div className="flex items-center space-x-2">
+          <div
+              className={`flex items-center space-x-1 ${
+                selectedUtility === "All" ? "bg-gray-100" : ""
+              } text-gray-700 rounded-full px-3 py-1 cursor-pointer`}
+              onClick={() => setSelectedUtility("All")}
+            >
+              <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+              <span>All</span>
+            </div>
+            <div
+              className={`flex items-center space-x-1 ${
+                selectedUtility === "Electricity" ? "bg-blue-100" : ""
+              } text-blue-700 rounded-full px-3 py-1 cursor-pointer`}
+              onClick={() => setSelectedUtility("Electricity")}
+            >
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>Electricity</span>
+            </div>
+            <div
+              className={`flex items-center space-x-1 ${
+                selectedUtility === "Gas" ? "bg-green-100" : ""
+              } text-green-700 rounded-full px-3 py-1 cursor-pointer`}
+              onClick={() => setSelectedUtility("Gas")}
+            >
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>Gas</span>
+            </div>
+            <div
+              className={`flex items-center space-x-1 ${
+                selectedUtility === "PTCL" ? "border-red-500" : ""
+              } text-red-700 rounded-full px-3 py-1 cursor-pointer border`}
+              onClick={() => setSelectedUtility("PTCL")}
+            >
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>PTCL</span>
+            </div>
+            <div
+              className={`flex items-center space-x-1 ${
+                selectedUtility === "Water" ? "border-blue-500" : ""
+              } text-blue-700 rounded-full px-3 py-1 cursor-pointer border`}
+              onClick={() => setSelectedUtility("Water")}
+            >
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>Water</span>
             </div>
           </div>
-        </Dropdown>
-      </div> */}
-      <div className="p-5">
-        {renderChart("preserveEnd")}
-        {/* {renderChart('preserveStart')}
-      {renderChart('preserveStartEnd')}
-      {renderChart('equidistantPreserveStart')}
-      {renderChart(1)} */}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
