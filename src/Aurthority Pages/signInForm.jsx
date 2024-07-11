@@ -87,8 +87,8 @@ export default function SignInForm() {
                    endAdornment: (
                      <InputAdornment position="center">
                        {/* <IconButton> */}
-                       {!showPassword && <IoEyeOutline size={20} role="button" onClick={()=>{setShowPassword(true); setType("text")}}/>} 
-                       {showPassword && <FaRegEyeSlash size={20} role="button" onClick={()=>{setShowPassword(false); setType("password")}}/>} 
+                       {!showPassword && <FaRegEyeSlash size={20} role="button" onClick={()=>{setShowPassword(true); setType("text")}}/>} 
+                       {showPassword && <IoEyeOutline size={20} role="button" onClick={()=>{setShowPassword(false); setType("password")}}/>} 
                        {/* </IconButton> */}
                      </InputAdornment>
                    ),

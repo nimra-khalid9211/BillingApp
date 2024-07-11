@@ -23,8 +23,8 @@ const menuList = [
       {
         id: 3,
         title: "Transactions",
-        icon: <img src={grayTransaction} alt="" className="w-4 h-4" />,
-        icon1: <img src={whiteTransaction} alt="" className="w-4 h-4" />,
+        icon: <img src={grayTransaction} alt="" className="w-5 h-5" />,
+        icon1: <img src={whiteTransaction} alt="" className="w-5 h-5" />,
         link: "/transactions",
       },
       {

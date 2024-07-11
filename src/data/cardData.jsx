@@ -10,7 +10,7 @@ export const CardData = [
   },
   {
     icon: <img src={visaCard} alt="" />,
-    title: "Visacard", 
+    title: "Visa", 
     cardNumber: "5210",
     default: false,
   },
@@ -22,7 +22,7 @@ export const CardData = [
   },
   {
     icon: <img src={easyPaisa} alt="" />,
-    title: "JazzChash", 
+    title: "JazzCash", 
     cardNumber: "5210",
     default: false,
   },

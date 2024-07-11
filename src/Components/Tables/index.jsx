@@ -26,7 +26,7 @@ export const  MyBills = ({ from }) => {
     <>
       {/* {JSON.stringify(MyBillList)} */}
 
-      <div className="overflow-x-auto rounded-3xl mt-5 bg-white">
+      <div className="overflow-x-auto rounded-3xl mt-5 bg-[#ffffff]">
 
       <div className="font-semibold w-full text-lg drop-shadow-xl text-[#377CF6] bg-white p-4 rounded-t-3xl">
        {from === "BMB" ? "My Bills" : "Due Bills List"}
@@ -40,7 +40,7 @@ export const  MyBills = ({ from }) => {
 
         {MyBillList.length > 0 ? (
 
-          <table className="w-full text-sm rounded-3xl">
+          <table className="w-full text-sm rounded-3xl mt-2">
             <thead className="text-xs bg-[#DBF0FF] text-[#377CF6]">
               <tr>
 

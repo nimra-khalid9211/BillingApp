@@ -11,8 +11,8 @@ export default function PaymentMethods() {
   return (
     <>
 
-        <BreadCrumbs icon={bluePayment} menu={"Payment Method"} 
-        btnTitle2={"+ Add Payment Method"} customClass2="other-tabs-fontW" btnEvent2={()=> {
+        <BreadCrumbs menu={"Payment Method"} 
+        btnTitle2={"Add Payment Method"} customClass2="hover-color" customStyle={"13rem"} btnEvent2={()=> {
             localStorage.removeItem('paymentType')
             navigate("/payment-methods/add-payment")
         }}

@@ -6,7 +6,9 @@ import { LargeButtons, WhiteButton } from "../../../UI/Buttons";
 import { useNavigate } from "react-router-dom";
 
 export default function PaymentMethodCard() {
+
   const navigate = useNavigate();
+
   return (
     <Card className="rounded-3xl h-[28rem]  bg-[#d3e8f6] border-[#377CF6] border">
       <div className="flex items-center font-bold rounded-tl-3xl drop-shadow-lg rounded-tr-3xl bg-white py-4 px-6 justify-between">
@@ -24,17 +26,19 @@ export default function PaymentMethodCard() {
         {CardData.length > 0 ? (
           <>
             {CardData.map((x, index) => (
-              <Card key={index} className="rounded-2xl border-[#377CF6] border mb-4">
+              <Card key={index} className="rounded-2xl border-[#377CF6] h-16 border mb-4">
                 <div className="px-5 py-[0.5rem]">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
+
                      <div className="mt-[10px]">
                      {x.icon}
                      </div>
+                     
                       <span className="pl-4 font-bold mt-[10px]"> {x.title} </span>
                     </div>
                     <span className="text-xs text-[#9095ae] mt-[10px]">
-                      ending{" "}
+                      ending
                       <span className="text-base font-medium text-black">
                         {x.cardNumber}
                       </span>

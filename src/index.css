@@ -22,21 +22,22 @@ input[type="date"]:in-range::-webkit-datetime-edit-month-field,
 input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
 input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
+
 .fixedColumn {
   position: fixed;
   top: 0;
+  left: 0;
   height: 100vh;
   overflow-y: auto;
 }
 
 .leftColumn {
-  left: 0;
-  width: 20%; /* Adjust as per md={4} */
+    /*width: 20%;    /* Adjust as per md={4} */
 }
 
 .centerColumn {
   padding: 10px;
-  margin-left: 16.6%;
+  margin-left: 16%;
   /* Adjust as per left column width */
   /* margin-right: 20%; Adjust as per right column width */
 }
@@ -85,6 +86,11 @@ input[type="number"] {
 .ant-drawer .ant-drawer-header {
   border-bottom: 0;
   padding: 0 24px;
+}
+
+.ant-drawer .ant-drawer-content-wrapper{
+  border-top-left-radius: 80px !important;
+  border-bottom-left-radius: 80px !important;
 }
 
 .ant-divider-horizontal {

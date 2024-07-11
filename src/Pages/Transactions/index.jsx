@@ -18,12 +18,8 @@ const Transactions = () => {
 
   const {transactions, setTransactions} =_BillingCondition();
   
-  const [activeTab, setActiveTab] = useState("1");
   const [showSearch, setShowSearch] = useState(false);
 
-  const handleChange = (key) => {
-    setActiveTab(key);
-  };
 
   const items = () => {
     switch(transactions) { 
@@ -81,7 +77,7 @@ const Transactions = () => {
   return (
     <>
 
-    <BreadCrumbs icon={blueTransaction} menu={"Transactions"}/>
+    <BreadCrumbs menu={"Transactions"}/>
 
 <div className='flex justify-between items-cent'>
 
