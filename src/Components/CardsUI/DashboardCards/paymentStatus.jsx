@@ -8,7 +8,7 @@ export default function PaymentStatus({ bgColor, status, amount, borderColor,ico
   
   return (
     <div
-      className="flex justify-between items-center rounded-[1.2rem] py-6 px-5 font-semibold text-sm drop-shadow-xl"
+      className="flex justify-between border-[#377CF6] items-center rounded-3xl py-[21px] px-5 font-semibold text-sm drop-shadow-xl"
       style={{ backgroundColor: bgColor, borderColor: borderColor, borderWidth: '1px', borderStyle: 'solid' }}
     >
       <div className="flex items-center">

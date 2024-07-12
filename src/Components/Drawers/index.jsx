@@ -1,6 +1,6 @@
-import { Autocomplete, Chip, MenuItem, TextField } from "@mui/material";
-import { Card, Divider, Drawer, Input, Select, Switch } from "antd";
-import React, { useState } from "react";
+import { Autocomplete, Chip, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { Card, Divider, Drawer, Input,  Switch } from "antd";
+import React, { useEffect, useState } from "react";
 import DrawerCardLayout from "../../Components/DrawerCardLayout";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
@@ -16,17 +16,27 @@ const billingCompanies = [
   { title: "LESCO" },
   { title: "K-Electric" },
   { title: "PESCO" },
-  { title: "MEPCO" },
+  { title: "MEPCO" }, 
   { title: "GEPCO" },
   { title: "LESCO" },
   { title: "K-Electric" },
   { title: "PESCO" },
-  { title: "MEPCO" },
+  { title: "MEPCO" }, 
   { title: "GEPCO" },
   { title: "LESCO" },
   { title: "K-Electric" },
   { title: "PESCO" },
-  { title: "MEPCO" },
+  { title: "MEPCO" }, 
+  { title: "GEPCO" },
+  { title: "LESCO" },
+  { title: "K-Electric" },
+  { title: "PESCO" },
+  { title: "MEPCO" }, 
+  { title: "GEPCO" },
+  { title: "LESCO" },
+  { title: "K-Electric" },
+  { title: "PESCO" },
+  { title: "MEPCO" }, 
 ];
 
 const cards = [
@@ -57,6 +67,23 @@ const cards = [
 ]
 
 export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
+    const [searchedCompany, setSearchedCompany] = useState(); 
+
+    // const searchHandler = (e) => {
+    //   const value = e.target.value.trim().toLocaleLowerCase(); 
+
+    //   // console.log(value, "value");
+
+    //   const selectedCompany = billingCompanies.filter((x)=> x.title.toLocaleLowerCase().includes(value));
+
+    //     console.log(selectedCompany, "selected company")
+
+    //   setSearchedCompany(selectedCompany);
+    // }
+    
+  const handleChange = (event) => {
+    setSearchedCompany(event.target.value);
+  };
 
   return (
     <Drawer
@@ -84,20 +111,44 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
            
-             <TextField
+             {/* <TextField
               className="col-span-4 border-black"
               select
+              value={selectedCompany ? selectedCompany.title : ''}
               label = {from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""}
               size="small" InputProps={{style: { fontSize: "16px", fontWeight: "600", borderRadius: "10px", }, }}   >
 
                <div className="h-60 ">
-               <Search placeholder="Search.." className="p-4"/>
-               {billingCompanies.map((x, index)=>(
-                <div key={index} className="px-4 py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.title}</div>
+               <Input placeholder="Search.." size="small" className="p-2" onChange={searchHandler} onClick={(e) => e.stopPropagation()}/>
+               {searchedCompany.map((x, index)=>(
+                <div key={index} onClick={()=>handleSelectCompany(x)} className="px-4 py-2 border-b font-medium hover:bg-[#dbf0ff]">{x.title}</div>
              
                ))}
               </div> 
-            </TextField>
+            </TextField> */}
+
+          <div className="col-span-4">
+
+        <FormControl fullWidth size="small">
+
+        <InputLabel>  {from === 'addBill' ? 'Company' : from === 'quickPay' ? 'Select Bill' : ''}</InputLabel>
+
+        <Select
+           value={searchedCompany} // Display selected company's title
+           onChange={handleChange} 
+          label=  {from === 'addBill' ? 'Company' : from === 'quickPay' ? 'Select Bill' : ''}
+          
+        >
+              <div className="h-60">
+          {billingCompanies.map((x)=>(
+          <MenuItem  value={x.title}>{x.title}</MenuItem>))}
+          </div>
+
+        </Select>
+        </FormControl>
+        
+        </div>
+
 
             {from === "addBill" && 
             <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"}/>
@@ -166,11 +217,11 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         <div className="ml-[7rem] fixed bottom-24">
 
-          <WhiteButton title={"Cancel"} clickEvent={()=>setAddBill(false)}/>
+          <WhiteButton customClass={"cancel-btn"} title={"Cancel"} clickEvent={()=>setAddBill(false)}/>
 
-          <BlueButton  title={from === "addBill" ? "Add Bill" : from === "quickPay" ? "Quick Pay" : ""}/>
+          <BlueButton customClass={"hover-color"} title={from === "addBill" ? "Add Bill" : from === "quickPay" ? "Quick Pay" : ""}/>
 
-        </div>
+        </div> 
       
     </Drawer>
   );

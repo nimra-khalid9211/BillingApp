@@ -9,6 +9,9 @@
   --grayish-color: #6C7293;
   --white-color: white;
   --black-color: #000;
+
+    --orange: #F58021;
+    --blue: #176BA3
 }
 
 
@@ -37,7 +40,7 @@ input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
 .centerColumn {
   padding: 10px;
-  margin-left: 16%;
+  margin-left: 15%;
   /* Adjust as per left column width */
   /* margin-right: 20%; Adjust as per right column width */
 }
@@ -53,6 +56,13 @@ input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
     margin-right: 0;
   }
 }
+
+
+.sidebar-nohover:hover{
+  background-color: var(--blue);
+  color: white;
+}
+
 
 :root {
   --primary-color: #377cf6;
@@ -208,7 +218,7 @@ input[type="number"] {
 }
 
 .custom-menu .ant-menu-item:hover {
-  color: #377cf6 !important;
+  color: var(--blue) !important;
 }
 .custom-menu .ant-menu-item-active {
   color: #377cf6 !important;
@@ -256,9 +266,26 @@ input[type="number"] {
 }
 .first-btn {
   background-color: transparent !important;
-  border: 2px solid #377cf6;
-  color: #377cf6;
+  border: 2px solid #176BA3;
+  color: #176BA3 !important;
 }
+
+.first-btn:hover{
+  border: 2px solid #F58021 !important;
+  color: #F58021 !important;
+}
+
+.cancel-btn{
+  background-color: transparent !important;
+  border: 2px solid #176BA3;
+  color: #176BA3 !important;
+}
+
+.cancel-btn:hover{
+  border: 2px solid #F1416C !important;
+  color: #F1416C !important;
+}
+
 .other-tabs-fontW{
   font-weight: 500;
   width: 100%;
@@ -268,8 +295,16 @@ input[type="number"] {
   padding: 1.2rem 5rem !important;
   font-weight: 500;
 }
+
+.hover-color{
+  background-color: #176BA3 !important;
+}
+
 .hover-color:hover{
-  background-color: #377cf6;
+  background-color: transparent !important;
+  /* color: white !important; */
+  color:#F58021 !important;
+  border: 2px solid #F58021 !important;
 }
 
 /* faq card shadow */
@@ -347,13 +382,17 @@ input[type="number"] {
 .ant-dropdown-menu-item {
   padding: 10px 12px !important;
   font-weight: 600 !important;
+  border-left: 4px solid white;
   /* border-radius: 16px !important; */
 }
 
 .ant-dropdown-menu-item:hover {
   background-color: #dbf0ff !important;
-  color: #508ef7 !important;
-  border-left: 4px solid #377cf6;
+  /*  color: #508ef7 !important;
+  border-left: 4px solid #377cf6; */
+  
+  color: var(--blue) !important;
+  border-left: 4px solid var(--blue);
 }
 
 .complete-profile-shadow {
@@ -541,7 +580,7 @@ input[type="number"] {
 .custom-menu .ant-menu-item-selected::after {
   content: "•" !important;
   display: block;
-  color: #377cf6;
+  color: var(--blue);
   font-size: 2rem;
   position: absolute;
   left: 44% !important;
@@ -565,6 +604,10 @@ input[type="number"] {
   top: -1rem; /* Adjust this to position the arrow correctly */
 }
 
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected{
+  color: var(--blue);
+}
+
 :where(.css-dev-only-do-not-override-m4timi).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after {
   border-bottom-width: 0;
   border-bottom-color: transparent;
@@ -585,4 +628,9 @@ input[type="number"] {
 }
 :where(.css-dev-only-do-not-override-m4timi).ant-drawer .ant-drawer-body {
  padding: 0 !important; 
+}
+
+/* ant design switch background color */
+.ant-switch.ant-switch-checked{
+  background-color: #00A3AC !important;
 }

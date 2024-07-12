@@ -8,11 +8,11 @@ const CardLayout = ({children, title, from}) => {
   return (
 
     <>
-    <Card className='rounded-3xl mt-3 min-h-72'>
-    <div className='bg-[#377CF6] rounded-tl-3xl rounded-tr-3xl py-2 pl-6
-     text-lg font-medium text-[#FFFFFF]'>
+    <Card className='rounded-3xl mt-3 h-[36rem]'>
+
+    <div className='drop-shadow-xl text-[var(--blue)] bg-white rounded-t-3xl py-2 px-6 text-lg font-medium'>
         {title}
-        </div>
+    </div>
 
         <div className='mx-7 my-10'>
             
@@ -23,7 +23,7 @@ const CardLayout = ({children, title, from}) => {
   </Card>
 
   {from !=="nonEdit" && <div className='text-end m-10'>
-    <BlueButton  title={"Save Changes"}/>
+    <BlueButton customClass={"hover-color"}  title={"Save Changes"}/>
   </div>}
 
   </>

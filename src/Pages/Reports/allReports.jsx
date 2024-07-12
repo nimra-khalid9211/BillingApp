@@ -9,8 +9,8 @@ export default function AllReports() {
         setReport(true)
     }
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
-      <div className="bg-[#377CF6] text-white p-3">Payment Methods</div>
+    <div className="relative overflow-x-auto shadow-md bg-white rounded-3xl mt-5">
+      <div className="drop-shadow-xl text-[var(--blue)] rounded-t-3xl bg-white p-3">Payment Methods</div>
       <div className="w-9/12 mx-auto">
         <div className="grid grid-cols-3 gap-4 place-items-center py-20">
         {ReportsCard.map((report,idex) => (

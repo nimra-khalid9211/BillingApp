@@ -32,8 +32,7 @@ const Faq = () => {
 
   return (
     <Card className='rounded-3xl mt-3'>
-    <div className='bg-[#377CF6] rounded-tl-3xl rounded-tr-3xl py-2 pl-6
-     text-lg font-medium text-[#FFFFFF]'>
+    <div className='drop-shadow-xl text-[var(--blue)] bg-white rounded-t-3xl py-2 px-5 text-lg font-medium'>
         FAQ's
         </div>
 

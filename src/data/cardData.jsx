@@ -1,32 +1,50 @@
-import { Descriptions } from "antd";
+
 import { bitmap, visaCard, easyPaisa, jazz, jazzc, jazzcash } from "../assets/image";
 
 export const CardData = [
+
   {
     icon: <img src={bitmap} alt="" />,
     title: "Mastercard", 
     cardNumber: "5210",
+    userName: "Usman Fazal",
     default: true,
+    expiry: "9/23",
+    verify: true,
   },
+
   {
     icon: <img src={visaCard} alt=""/>,
     title: "Visa", 
     cardNumber: "5210",
     default: false,
+    userName: "Usman Fazal",
+    expiry: "9/23",
+    verify: true,
   },
+
   {
     icon: <img src={easyPaisa} alt="" />,
     title: "Easypaisa", 
     cardNumber: "5210",
+    userName: "Usman Fazal",
     default: false,
+    expiry: "9/23",
+    verify: true,
   },
+
   {
     icon: <img src={jazzcash} alt="" />,
     title: "JazzCash", 
     cardNumber: "5210",
+    userName: "Usman Fazal",
     default: false,
+    expiry: "9/23",
+    verify: false,
   },
+
 ];
+
 
 export const ReportsCard = [
   {

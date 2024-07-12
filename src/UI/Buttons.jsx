@@ -8,7 +8,7 @@ export const WhiteButton = ({title,icon, clickEvent ,customClass, customStyle}) 
   return (
     <Button 
     shape='round' 
-    className={`btn-custom-padding mr-3 text-[#6C7293] ${customClass}`} 
+    className={`btn-custom-padding mr-3 border-[#F58021] text-[#6C7293] ${customClass}`} 
     onClick={clickEvent} style={{width:customStyle}} >
     {icon}
     {title}
@@ -18,7 +18,7 @@ export const WhiteButton = ({title,icon, clickEvent ,customClass, customStyle}) 
 
 export const BlueButton = ({title, clickEvent, icon, customClass, customStyle}) => {
     return (
-      <Button shape='round'className={`btn-custom-padding bg-[#377CF6] text-white ${customClass}`} 
+      <Button shape='round'className={`btn-custom-padding text-white ${customClass}`} 
       onClick={clickEvent} style={{width:customStyle}} >
         {icon}
          {title} 

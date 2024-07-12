@@ -12,7 +12,7 @@ export default function PaymentMethods() {
     <>
 
         <BreadCrumbs menu={"Payment Method"} 
-        btnTitle2={"Add Payment Method"} customClass2="hover-color" customStyle={"13rem"} btnEvent2={()=> {
+        btnTitle2={"Add Payment Method"} customClass2={"hover-color"} customStyle={"13rem"} btnEvent2={()=> {
             localStorage.removeItem('paymentType')
             navigate("/payment-methods/add-payment")
         }}

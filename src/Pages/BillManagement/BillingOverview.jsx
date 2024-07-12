@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Menu, Tabs } from 'antd';
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
-import SelectedBills from './SelectedBills';
 import { SelectableBills } from '../../Components/Tables/SelectableBills';
-import BillsList from '../../Components/Tables/BillsList';
 import TransactionRecord from '../../Components/Tables/TransactionRecord';
 
 const items = [
@@ -28,7 +26,6 @@ const items = [
     key: 'internet',
   },
 ];
-
 
 
 const BillingOverview = () => {

@@ -22,22 +22,22 @@ export default function MobileTopUpTable() {
   ];
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-3xl mt-5">
+    <div className="relative overflow-x-auto  rounded-t-3xl shadow-md  mt-5">
      
-      <div className="drop-shadow-xl text-[#377CF6] rounded-t-3xl p-4 text-lg font-medium bg-white">
+     <div className="drop-shadow-xl rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3">
         Mobile Top Up
         </div>
       
       
       <table className="w-full text-sm mt-2">
-        <thead className="text-xs bg-[#DBF0FF] text-[#377CF6]">
+        <thead className="text-xs bg-[#DBF0FF] text-[var(--blue)]">
           <tr className="">
             {MobileTopUpTitles.map((x, index) => {
               return (
                 <th 
                   key={index} 
                   scope="col" 
-                  className={`px-10 py-3 ${index > 0 && index < 4 || index === 4 ? 'text-center' : 'text-start'}`}
+                  className={`px-10 border-r-2 border-dashed py-3 ${index > 0 && index < 4 || index === 4 ? 'text-center' : 'text-start'}`}
                 >
                   {x.title}
                 </th>
@@ -50,14 +50,14 @@ export default function MobileTopUpTable() {
           {MobileTopUpList.map((x, index) => (
             <tr
               key={index}
-              className={`${
-                index % 2 === 0 ? 'bg-white' : 'bg-gray-100'
-              } text-black font-bold border-b border-dashed border-[#4653D72B]`}
+              className={`
+                
+               text-black font-medium border-b border-dashed border-[#4653D72B]`}
               onClick={() => handleClick(x.name, x.mobileOperator, x.mobileNumber)}
             >
               <th
                 scope="row"
-                className="px-10 py-4 font-semibold text-[#329DFF] whitespace-nowrap dark:text-white text-start border-r border-dashed border-[#4653D72B]"
+                className="px-10 py-4 font-medium  whitespace-nowrap  text-start border-r border-dashed border-[#4653D72B]"
               >
                 {x.name}
               </th>

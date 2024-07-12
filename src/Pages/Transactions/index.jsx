@@ -5,13 +5,6 @@ import BreadCrumbs from '../../UI/BreadCrumbs';
 import { GrTransaction } from 'react-icons/gr';
 import { IoSearchOutline } from 'react-icons/io5';
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
-import {blueTransaction} from '../../assets/image/index'
-
-const {Search} = Input;
-
-
-
-
 
 
 const Transactions = () => {
@@ -79,7 +72,7 @@ const Transactions = () => {
 
     <BreadCrumbs menu={"Transactions"}/>
 
-<div className='flex justify-between items-cent'>
+  <div className='flex justify-between items-cent'>
 
 
   <div>

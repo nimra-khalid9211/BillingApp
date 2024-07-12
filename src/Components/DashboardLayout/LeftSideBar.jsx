@@ -35,9 +35,9 @@ const LeftSideBar = () => {
                         ${x.classses && x.classses} 
 
                         ${ checkVerfication ? "" : "opacity-50 pointer-events-none"} 
-                        hover:bg-[var(--primary-color)] hover:text-white rounded-lg 
+                         rounded-lg 
 
-                        ${ path.includes(x.link) ? "bg-[#377CF6] text-white" : "" }`}>
+                        ${ path.includes(x.link) ? "bg-[var(--blue)] sidebar-nohover text-white" : "hover:text-[var(--orange)]" }`}>
 
                       {/* <div> */}
                         {/* {path.includes(x.link) ? (

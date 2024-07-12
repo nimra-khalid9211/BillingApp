@@ -136,8 +136,8 @@ export default function AddDetails({ addNumber, setAddNumber }) {
         </div>
 
        <div className="fixed bottom-24">
-            <WhiteButton title={"Cancel"} clickEvent={()=>setAddNumber(false)}/>
-            <BlueButton  title={"Save"}/>
+            <WhiteButton customClass={"cancel-btn"} title={"Cancel"} clickEvent={()=>setAddNumber(false)}/>
+            <BlueButton customClass={"hover-color"} title={"Save"}/>
        </div>
         </div>
 

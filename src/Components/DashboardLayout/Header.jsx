@@ -70,13 +70,15 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between mx-3  mt-7">
       <b className="text-2xl">
-        Welcome, <span className="text-xl font-semibold">Shaun Abbott</span>
+        <span className="text-[#6C7293] font-medium text-lg">Hello! </span> 
+
+         <span className="text-xl text-[var(--blue)] font-medium">Shaun</span>
       </b>
       <div className="flex justify-between items-center gap-3">
        
 
         <div className='bg-white relative py-3 px-3 rounded-full flex gap-3'>
-                <LuCalendarDays size={20} color='#377CF6' role="button" onClick={()=>setShowDate(!showDate)}/> 
+                <LuCalendarDays size={20} color='var(--blue)' role="button" onClick={()=>setShowDate(!showDate)}/> 
 
                 <b className='text-sm border-l border-[#6C7293] pl-2'>{formattedDate}</b>
                 </div>
@@ -98,9 +100,9 @@ const Header = () => {
         </div>
 
         <div className="bg-white py-3 px-3 flex items-center rounded-full gap-3">
-          <Badge dot color="#377CF6">
-            {" "}
-            <FaRegBell size={22} />{" "}
+          <Badge dot color="var(--blue)">
+           
+            <FaRegBell size={22} />
           </Badge>
         </div>
 
@@ -127,6 +129,7 @@ const Header = () => {
             {dropdown ? <FaAngleUp /> : <FaAngleDown />}
           </div>
         </Dropdown>
+        
       </div>
     </div>
   );

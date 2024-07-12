@@ -8,7 +8,7 @@ export default function IssuedBill() {
   const { integerPart, decimalPart } = formatAmount(totalDueAmount);
 
   return (
-    <div className="py-5 px-7 border rounded-[2rem] font-semibold bg-white drop-shadow-xl">
+    <div className="py-5 px-7 border rounded-3xl border-[var(--blue)] font-semibold bg-white drop-shadow-xl">
       <div className="flex justify-center items-center bg-[#EDF1FF] rounded-full h-[4rem] w-[4rem]">
         <img src={Cheque} alt="Cheque" className="" />
       </div>

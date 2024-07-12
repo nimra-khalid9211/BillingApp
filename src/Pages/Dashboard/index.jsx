@@ -33,13 +33,17 @@ const Dashboard = () => {
      <div>
       <CompleteProfile />
      </div> 
+     
           <div className="grid grid-cols-7 gap-4">
+
             <div className="col-span-5">
+             
               <div className="grid grid-cols-3 gap-4">
                 <TotalBill />
                 <IssuedBill />
 
                 <div className="flex justify-around flex-col">
+
                   <PaymentStatus
                     status="Paid(02)"
                     amount= {2600.98}
@@ -57,16 +61,23 @@ const Dashboard = () => {
                       borderColor="#F1416C"
                     />
                   </div>
+
                 </div>
+
               </div>
+
               <div>
                 <SelectableBills from="dashboard" type="all" />
               </div>
+
               <div className="drop-shadow-xl">
               <GoogleChart/>
               </div>
+
             </div>
+
             <div className="col-span-2">
+
               <div>
                 <PaymentMethodCard />
               </div>
@@ -74,7 +85,9 @@ const Dashboard = () => {
               <div className="">
                 <TransactionsHistory />
               </div>
+
             </div>
+
           </div>
         </>
       }

@@ -48,11 +48,11 @@ const TransactionRecord = ({type, from}) => {
     
           <>
       
-            <div className="overflow-x-auto rounded-[25px] mt-5 bg-[#ffffff]">
+            <div className="overflow-x-auto rounded-3xl mt-5 drop-shadow-lg bg-[#ffffff]">
 
             {(from === "billingOverview" || type === "all") && 
 
-             <div className="drop-shadow-xl text-[#377CF6] bg-white font-medium text-lg p-3">
+             <div className="drop-shadow-xl text-[var(--blue)] bg-white font-medium text-lg p-3">
 
                {type === "all" ? "All Transactions" : 
                type === "electricity" ? "Electricity" : 
@@ -64,7 +64,7 @@ const TransactionRecord = ({type, from}) => {
               </div> 
               } 
                     
-              <div className={`grid ${from === "transactions" ? 'grid-cols-6 rounded-tl-lg rounded-tr-lg' : 'grid-cols-8'} mt-2 bg-[#DBF0FF]`}>              
+              <div className={`grid ${(from === "billingOverview" || type === "all") && "mt-2"} ${from === "transactions" ? 'grid-cols-6 rounded-tl-lg rounded-tr-lg' : 'grid-cols-8'} bg-[#DBF0FF]`}>              
 
                 {billHeading.map((x, index)=>{
                   if (
@@ -79,7 +79,7 @@ const TransactionRecord = ({type, from}) => {
                   return (
                   
                     <div key={index} className={`${x.title === "Account" && "col-span-2"} text-center px-5 w-full py-3 border-r border-[#eff0fb] border-dashed
-                      justify-self-center text-sm font-semibold text-[#377CF6]`}>
+                      justify-self-center text-sm font-semibold text-[var(--blue)]`}>
 
                         {x.title}
 
@@ -90,12 +90,12 @@ const TransactionRecord = ({type, from}) => {
 
                 <Collapse accordion activeKey={activeKey} onChange={handleAccordionChange}
 
-                style={{backgroundColor:"white"}}>
+                style={{backgroundColor:"white", border: "0"}}>
                     {filteredBills.map((x, index)=>(
-                        <Panel key={index} header={x.title} className={`text-base font-bold text-green`}>
+                        <Panel key={index} header={x.title} className={`text-base font-semibold text-green`}>
                             
                                 {x.transaction.map((x, index)=>(
-                                    <div key={index} className={`grid ${from === "transactions" ? 'grid-cols-6' : 'grid-cols-8'} h-16 border-b odd:bg-white even:bg-[#F7F8F9] border-dashed text-xs font-semibold`}>
+                                    <div key={index} className={`grid ${from === "transactions" ? 'grid-cols-6' : 'grid-cols-8'} h-16 border-b border-dashed text-xs font-medium`}>
 
                                     <div className={`${center}`}>{x.billName}</div> 
 

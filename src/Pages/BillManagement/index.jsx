@@ -31,8 +31,7 @@ const BillManagement = () => {
         subMenu={getSubMenu()}
         btnTitle2={"Add Bill"}
         customClass2="hover-color"
-        btnEvent2={() => { setAddBill(true); setFrom("addBill"); }}
-      />
+        btnEvent2={() => { setAddBill(true); setFrom("addBill"); }} />
 
       <div>
         <Button

@@ -28,7 +28,7 @@ export const  MyBills = ({ from }) => {
 
       <div className="overflow-x-auto rounded-3xl mt-5 bg-[#ffffff]">
 
-      <div className="font-semibold w-full text-lg drop-shadow-xl text-[#377CF6] bg-white p-4 rounded-t-3xl">
+      <div className="font-semibold w-full text-lg drop-shadow-xl text-[var(--blue)] bg-white p-4 rounded-t-3xl">
        {from === "BMB" ? "My Bills" : "Due Bills List"}
         </div>
       
@@ -41,7 +41,7 @@ export const  MyBills = ({ from }) => {
         {MyBillList.length > 0 ? (
 
           <table className="w-full text-sm rounded-3xl mt-2">
-            <thead className="text-xs bg-[#DBF0FF] text-[#377CF6]">
+            <thead className="text-xs bg-[#DBF0FF] text-[var(--blue)]">
               <tr>
 
                 {MyBillHeading.map((x, index) => {
@@ -72,11 +72,11 @@ export const  MyBills = ({ from }) => {
               {MyBillList.map((x, index) => (
                 <tr
                   key={index}
-                  className="bg-white text-black font-bold hover:bg-[#F7F8F9]  text-center border-b border-dashed border-[#4653D72B]"
+                  className="bg-white text-black font-medium hover:bg-[#F7F8F9]  text-center border-b border-dashed border-[#4653D72B]"
                 >
                   <th
                     scope="row"
-                    className={`px-6 py-4 text-left font-semibold  whitespace-nowrap dark:text-white ${dashedBorderRight}`}
+                    className={`px-6 py-4 text-left font-medium whitespace-nowrap  ${dashedBorderRight}`}
                   >
                     {x.billname}
                   </th>

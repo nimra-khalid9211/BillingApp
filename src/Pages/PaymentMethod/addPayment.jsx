@@ -35,7 +35,8 @@ export default function AddPayment() {
     <>
       <BreadCrumbs
         icon={<MdOutlinePayment />}
-        menu={"Payment Method"}
+        menu={"Payment Method"} 
+        customClass2={"hover-color"}
         subMenu={"Add Payment"}
         btnTitle2={"Back"}
         btnIcon2={<IoChevronBack />}
@@ -122,12 +123,12 @@ export default function AddPayment() {
       </div>
       {checkShown && (
         <div className="fixed bottom-20">
-          <WhiteButton
+          <WhiteButton customClass={"cancel-btn"}
             title={"Cancel"}
             clickEvent={() => navigate("/payment-methods")}
           />
 
-          <BlueButton title={"Save"} />
+          <BlueButton customClass={"hover-color"} title={"Save"} />
         </div>
       )}
     </>
