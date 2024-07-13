@@ -40,7 +40,7 @@ export const  MyBills = ({ from }) => {
 
         {MyBillList.length > 0 ? (
 
-          <table className="w-full text-sm rounded-3xl mt-2">
+          <table className="w-full table-fixed text-sm rounded-3xl mt-2">
             <thead className="text-xs bg-[#DBF0FF] text-[var(--blue)]">
               <tr>
 
@@ -76,13 +76,13 @@ export const  MyBills = ({ from }) => {
                 >
                   <th
                     scope="row"
-                    className={`px-6 py-4 text-left font-medium whitespace-nowrap  ${dashedBorderRight}`}
+                    className={`w-12 truncate px-6 py-4 text-left font-medium whitespace-nowrap  ${dashedBorderRight}`}
                   >
                     {x.billname}
                   </th>
-                  <td className={`px-6 py-4 text-center ${dashedBorderRight}`}>{x.consumerID}</td>
-                  <td className={`px-6 py-4 text-center ${dashedBorderRight}`}>{x.consumerName}</td>
-                  <td className={`px-6 py-4 text-center ${dashedBorderRight}`}>{x.billCompany}</td>
+                  <td className={`w-12 truncate px-6 py-4 text-center ${dashedBorderRight}`}>{x.consumerID}</td>
+                  <td className={`w-12 truncate px-6 py-4 text-center ${dashedBorderRight}`}>{x.consumerName}</td>
+                  <td className={`w-12 truncate px-6 py-4 text-center ${dashedBorderRight}`}>{x.billCompany}</td>
                   <td className={`px-6 py-4 text-center ${dashedBorderRight}`}>{x.dueDate}</td>
 
                   {from === "BMB" && (

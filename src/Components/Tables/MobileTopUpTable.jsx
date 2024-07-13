@@ -3,6 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { WhiteButton } from "../../UI/Buttons";
 
 export default function MobileTopUpTable() {
   const navigate = useNavigate();
@@ -17,6 +18,8 @@ export default function MobileTopUpTable() {
     });
     console.log(name);
   };
+
+
 
   const MobileTopUpTitles = [
     { title: "Name" },
@@ -55,38 +58,30 @@ export default function MobileTopUpTable() {
 
         <tbody>
           {MobileTopUpList.map((x, index) => (
-            <tr
+           
+           <tr
               key={index}
-              className={`
-                
-               text-black font-medium border-b border-dashed border-[#4653D72B]`}
-              onClick={() =>
-                handleClick(x.name, x.mobileOperator, x.mobileNumber)
-              }
-            >
+              className={`text-black font-medium border-b border-dashed border-[#4653D72B]`} >
+
               <th
                 scope="row"
                 className="px-10 py-4 font-medium  whitespace-nowrap  text-start border-r border-dashed border-[#4653D72B]"
               >
                 {x.name}
               </th>
+
+              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">{x.mobileOperator}</td>
+              
+              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B text-center">{x.mobileNumber}</td>
+             
               <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">
-                {x.mobileOperator}
-              </td>
-              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B text-center">
-                {x.mobileNumber}
-              </td>
-              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">
-                <Link
-                  to="changing-account"
-                  href="#"
-                  className="font-medium text-[#377CF6] border border-[#0000001A] rounded-lg py-1 px-3 text-xs"
-                >
-                  Recharge Now
-                </Link>
-              </td>
-              <td className="px-10 py-4 flex justify-center">
-                <div className="flex justify-start items-center gap-3">
+
+              <WhiteButton customClass={"first-btn"} title={"Recharge Now"} clickEvent={() => navigate('/mobile-top-up/changing-account', { state: { x } })}/> 
+              
+               </td>
+
+              <td className="px-10 py-4 flex justify-center items-center gap-3">
+
                   <div className="p-2 rounded-lg bg-[#DBF0FF]">
                     <FaEdit size={15} color="#377CF6" />
                   </div>
@@ -94,9 +89,11 @@ export default function MobileTopUpTable() {
                   <div className="p-2 rounded-lg bg-[#FFD5DF]">
                     <RiDeleteBin5Line size={15} color="#F1416C" />
                   </div>
-                </div>
+
               </td>
+
             </tr>
+
           ))}
         </tbody>
       </table>
