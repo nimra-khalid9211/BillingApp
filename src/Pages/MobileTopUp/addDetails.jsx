@@ -106,7 +106,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
             </TextField>
 
             <div className="mt-2">
-            <BlueButton title={"Procceed"}/>
+            <BlueButton title={"Procceed"} customClass='hover-color' />
             </div>
 
           </div>

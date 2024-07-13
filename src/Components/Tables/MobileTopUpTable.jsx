@@ -8,36 +8,43 @@ export default function MobileTopUpTable() {
   const navigate = useNavigate();
 
   const handleClick = (name, mobileOperator, mobileNumber) => {
-    navigate('/mobile-top-up/changing-account', { state: { componentName: name, componentOperator: mobileOperator, componentNumber: mobileNumber } });
-    console.log(name)
+    navigate("/mobile-top-up/changing-account", {
+      state: {
+        componentName: name,
+        componentOperator: mobileOperator,
+        componentNumber: mobileNumber,
+      },
+    });
+    console.log(name);
   };
-
 
   const MobileTopUpTitles = [
     { title: "Name" },
     { title: "Mobile Operator" },
     { title: "Mobile Nmuber" },
     { title: "" },
-    { title: "Actions" }
+    { title: "Actions" },
   ];
 
   return (
-    <div className="relative overflow-x-auto  rounded-t-3xl shadow-md  mt-5">
-     
-     <div className="drop-shadow-xl rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3">
+    <div className="relative overflow-x-auto  rounded-3xl shadow-md  mt-5 bg-white">
+      <div className="drop-shadow-xl rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3">
         Mobile Top Up
-        </div>
-      
-      
-      <table className="w-full text-sm mt-2">
+      </div>
+
+      <table className="w-full text-sm mt-2 bg-white rounded-b-3xl">
         <thead className="text-xs bg-[#DBF0FF] text-[var(--blue)]">
           <tr className="">
             {MobileTopUpTitles.map((x, index) => {
               return (
-                <th 
-                  key={index} 
-                  scope="col" 
-                  className={`px-10 border-r-2 border-dashed py-3 ${index > 0 && index < 4 || index === 4 ? 'text-center' : 'text-start'}`}
+                <th
+                  key={index}
+                  scope="col"
+                  className={`px-10 border-r-2 border-dashed py-3 ${
+                    (index > 0 && index < 4) || index === 4
+                      ? "text-center"
+                      : "text-start"
+                  }`}
                 >
                   {x.title}
                 </th>
@@ -53,7 +60,9 @@ export default function MobileTopUpTable() {
               className={`
                 
                text-black font-medium border-b border-dashed border-[#4653D72B]`}
-              onClick={() => handleClick(x.name, x.mobileOperator, x.mobileNumber)}
+              onClick={() =>
+                handleClick(x.name, x.mobileOperator, x.mobileNumber)
+              }
             >
               <th
                 scope="row"
@@ -61,15 +70,20 @@ export default function MobileTopUpTable() {
               >
                 {x.name}
               </th>
-              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">{x.mobileOperator}</td>
-              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B text-center">{x.mobileNumber}</td>
               <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">
-              <Link to= "changing-account"
-                      href="#"
-                      className="font-medium text-[#377CF6] border border-[#0000001A] rounded-lg py-1 px-3 text-xs"
-                    >
-                      Recharge Now
-                    </Link>
+                {x.mobileOperator}
+              </td>
+              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B text-center">
+                {x.mobileNumber}
+              </td>
+              <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">
+                <Link
+                  to="changing-account"
+                  href="#"
+                  className="font-medium text-[#377CF6] border border-[#0000001A] rounded-lg py-1 px-3 text-xs"
+                >
+                  Recharge Now
+                </Link>
               </td>
               <td className="px-10 py-4 flex justify-center">
                 <div className="flex justify-start items-center gap-3">
