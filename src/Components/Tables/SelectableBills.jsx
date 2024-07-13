@@ -89,12 +89,12 @@ export const SelectableBills = ({ type, from }) => {
 
       <div className={`overflow-x-auto bg-white rounded-bl-3xl rounded-br-3xl mt-2 ${from === "dashboard" && 'h-[433px]'}`}>
 
-      <table className="w-full text-sm">
+      <table className="w-full table-fixed text-sm">
         <thead className="text-[11px] text-[var(--blue)] text-center bg-[#DBF0FF]">
           <tr>
             <th
               scope="col"
-              className="w-4 p-4 border-dashed border-r border-[#4653D72B]"
+              className="w-10 p-4 border-dashed border-r border-[#4653D72B]"
             >
 
               <div className="flex items-center ">
@@ -145,9 +145,9 @@ export const SelectableBills = ({ type, from }) => {
             <tr key={index}
               className={`bg-white border-dashed hover:${payable ? "bg-[#F7F8F9]" : ""} border-b border-[#4653D72B] text-center h-16 text-black font-medium`}>
 
-              <td className="w-4 p-4 border-dashed border-r border-[#4653D72B]">
+              <td className="w-5 p-4 border-dashed border-r border-[#4653D72B]">
 
-                <div className="flex items-center">
+                <div className="flex items-center mr-2">
                   <input
                     id="checkbox-table-search-1"
                     type="checkbox"
@@ -166,20 +166,20 @@ export const SelectableBills = ({ type, from }) => {
 
               <td
                 scope="row"
-                className={`px-6 py-2 text-left ${dashedBorderRight}`}
+                className={`w-12 truncate px-6 py-2 text-left ${dashedBorderRight}`}
               >
                 {x.billname}
               </td>
 
-              <td className={`px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`w-12 truncate px-6 py-2 ${dashedBorderRight}`}>
                 {x.consumerID}
               </td>
 
-              <td className={`px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`w-12 truncate px-6 py-2 ${dashedBorderRight}`}>
                 {x.consumerName}
               </td>
 
-              <td className={`px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`w-12 truncate px-6 py-2 ${dashedBorderRight}`}>
                 {x.billCompany}
               </td>
 
@@ -198,13 +198,6 @@ export const SelectableBills = ({ type, from }) => {
               { from !== "dashboard" &&  <td className={`px-6 py-2 ${dashedBorderRight}`}>
                     {x.payPreference}
                   </td>}
-
-                  {/* <td className={`px-6 py-2 ${dashedBorderRight}`}>
-                    <Button className="px-1">
-                      {" "}
-                      <FiDownload size={20} color="#329DFF" />{" "}
-                    </Button>
-                  </td> */}
                 
                 <td className={`px-6 py-2`}>
               {x.status === "unpaid" ? (
