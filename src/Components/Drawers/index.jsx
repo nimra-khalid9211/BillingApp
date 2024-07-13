@@ -9,34 +9,17 @@ import { Cancel } from "../../assets/icon";
 import { InputCustom } from "../../UI/Inputs";
 
 
-const {Search} = Input;
-
 const billingCompanies = [
   { title: "GEPCO" },
   { title: "LESCO" },
   { title: "K-Electric" },
   { title: "PESCO" },
-  { title: "MEPCO" }, 
+  { title: "MEPCO" },
   { title: "GEPCO" },
   { title: "LESCO" },
   { title: "K-Electric" },
   { title: "PESCO" },
-  { title: "MEPCO" }, 
-  { title: "GEPCO" },
-  { title: "LESCO" },
-  { title: "K-Electric" },
-  { title: "PESCO" },
-  { title: "MEPCO" }, 
-  { title: "GEPCO" },
-  { title: "LESCO" },
-  { title: "K-Electric" },
-  { title: "PESCO" },
-  { title: "MEPCO" }, 
-  { title: "GEPCO" },
-  { title: "LESCO" },
-  { title: "K-Electric" },
-  { title: "PESCO" },
-  { title: "MEPCO" }, 
+  { title: "MEPCO" },
 ];
 
 const cards = [
@@ -67,23 +50,24 @@ const cards = [
 ]
 
 export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
-    const [searchedCompany, setSearchedCompany] = useState(); 
+    const [bill, setBill] = useState(''); 
+    const [list, setList] = useState(false);
 
-    // const searchHandler = (e) => {
-    //   const value = e.target.value.trim().toLocaleLowerCase(); 
+    const filterSearch = (e) => {
+      const value = e.target.value;
+      value.length > 0 ? setList(true) : setList(false);
+      setBill(value); // Update the input field value
+    };
 
-    //   // console.log(value, "value");
+    const handleSelectBill = (selectedCompany) => {
+      setBill(selectedCompany); // Set the selected bill title
+      setList(false);
+    };
 
-    //   const selectedCompany = billingCompanies.filter((x)=> x.title.toLocaleLowerCase().includes(value));
-
-    //     console.log(selectedCompany, "selected company")
-
-    //   setSearchedCompany(selectedCompany);
-    // }
-    
-  const handleChange = (event) => {
-    setSearchedCompany(event.target.value);
-  };
+    const filteredCompanies = billingCompanies.filter(company =>
+      company.title.toLowerCase().includes(bill.toLowerCase())
+    );
+  
 
   return (
     <Drawer
@@ -102,11 +86,12 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       open={addBill}
       key="right"
       width={1200}
-      className="rounded-tl-[80px] rounded-bl-[80px] p-8 relative"
-      style={{overflow:'unset', borderTopLeftRadius: "80px", borderBottomLeftRadius: "80px", background:'#f6f6f8'}}
+      className="p-8 relative"
+      style={{overflow:'unset', borderTopLeftRadius: "36px", borderBottomLeftRadius: "36px", background:'#f6f6f8'}}
     >
      <div onClick={() => setAddBill(false)} className="absolute cursor-pointer left-[-1.5rem] z-50 top-[8rem]"><img src={Cancel} alt="" /></div>
 
+        <div className="">
         <DrawerCardLayout heading={"Bill Details"}>
 
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
@@ -127,9 +112,9 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
               </div> 
             </TextField> */}
 
-          <div className="col-span-4">
+     
 
-        <FormControl fullWidth size="small">
+        {/* <FormControl fullWidth size="small">
 
         <InputLabel>  {from === 'addBill' ? 'Company' : from === 'quickPay' ? 'Select Bill' : ''}</InputLabel>
 
@@ -145,10 +130,23 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
           </div>
 
         </Select>
-        </FormControl>
+        </FormControl> */}
+
+             <div className="col-span-4 relative">
+
+        <TextField label={from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""} 
+        value={bill} onChange={filterSearch} variant="outlined" size="small" fullWidth />
+  
+        {list && 
+
+        <div className="absolute overflow-y-auto drop-shadow-2xl z-50 bg-white mt-2 rounded-2xl w-full h-36">
+           {filteredCompanies.map((x, index)=>(
+            <div key={index} onClick={()=>handleSelectBill(x.title)} className="mx-3 p-2 px-4 border-l-white border-b border-l-2 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]">{x.title}</div>
+           ))}
+        </div>
+        }
         
         </div>
-
 
             {from === "addBill" && 
             <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"}/>
@@ -161,6 +159,8 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
           </div>
 
         </DrawerCardLayout>
+
+        </div>
 
         <DrawerCardLayout heading={"Payment Preference"}>
 
@@ -215,13 +215,16 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         </DrawerCardLayout>
 
+    
         <div className="ml-[7rem] fixed bottom-24">
 
           <WhiteButton customClass={"cancel-btn"} title={"Cancel"} clickEvent={()=>setAddBill(false)}/>
 
           <BlueButton customClass={"hover-color"} title={from === "addBill" ? "Add Bill" : from === "quickPay" ? "Quick Pay" : ""}/>
 
-        </div> 
+        </div>
+
+
       
     </Drawer>
   );

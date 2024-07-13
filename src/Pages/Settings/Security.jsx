@@ -9,14 +9,14 @@ const security =[
     subHeading: "The email address associated with your account",
     email: "saadhassan09@gmail.com",
     verfied: true,
-    action: <WhiteButton title={"Edit"}/> 
+    action: <WhiteButton customClass={"cancel-btn"} title={"Edit"}/> 
   },
   {
     heading: "Mobile Number",
     subHeading: "The mobile number associated with your account",
     phone: "0331-6725012",
     verfied: true,
-    action: <WhiteButton title={"Edit"}/> 
+    action: <WhiteButton customClass={"cancel-btn"} title={"Edit"}/> 
   },
   {
     heading: "Password",
@@ -26,6 +26,11 @@ const security =[
   {
     heading: "2 Step Verification",
     subHeading: "Making your account extra secure. Along with your password, you'll need to enter a code.",
+    action: <Switch/> 
+  },
+  {
+    heading: "Show Calendar in Navigation Bar",
+    subHeading: "Enable / Disable Calendar in Navigation Bar.",
     action: <Switch/> 
   },
 ]

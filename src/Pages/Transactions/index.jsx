@@ -1,18 +1,13 @@
 import { Button, Input, Radio, Tabs } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
 import TransactionRecord from '../../Components/Tables/TransactionRecord';
 import BreadCrumbs from '../../UI/BreadCrumbs';
-import { GrTransaction } from 'react-icons/gr';
-import { IoSearchOutline } from 'react-icons/io5';
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
 
 
 const Transactions = () => {
 
   const {transactions, setTransactions} =_BillingCondition();
-  
-  const [showSearch, setShowSearch] = useState(false);
-
 
   const items = () => {
     switch(transactions) { 
@@ -72,9 +67,6 @@ const Transactions = () => {
 
     <BreadCrumbs menu={"Transactions"}/>
 
-  <div className='flex justify-between items-cent'>
-
-
   <div>
     {btnTitle.map((x)=>(
 
@@ -90,27 +82,11 @@ const Transactions = () => {
 
   </div>
 
-  <div className='flex justify-end items-center bg-white  rounded-full'>
-      {showSearch && <Input  placeholder="Search"   className='rounded-full p-2 border-none  mx-1 transition-all duration-300'
-          style={{ boxShadow: 'none' }}
-          //  suffix={<IoSearchOutline size={15}/>}
-           />}
-
-              <div className='p-3 mx-1 font-lg'>
-              <IoSearchOutline size={20} color='#6C7293' onClick={()=>setShowSearch(!showSearch)}/>
-              </div>
-
-    </div>
-
-  </div>
-
   <div>
     {
       items()
     }
   </div>
-
-               
 
     </>
   )

@@ -12,8 +12,8 @@ export const MyBillList = [
     amount: "10,000",
     afterDueAmount: "10,630",
     autoDebit: true,
-    payPreference: "Debit Card-5215",
-    status: "paid",
+    payPreference: "Mastercard-5215",
+    status: "Paid",
     transactionID: "1713875280652-ALFA",
     payDate: "23 May 2024",
     payTime: "10:04 PM",
@@ -29,8 +29,8 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: false,
-    payPreference: "Jazz Cash-5215",
-    status: "unpaid",
+    payPreference: "JazzCash-5215",
+    status: "Unpaid",
     // actions:""
   },
   {
@@ -44,8 +44,8 @@ export const MyBillList = [
     amount: "5,040",
     afterDueAmount: "5,630",
     autoDebit: false,
-    payPreference: "Jazz Cash-5215",
-    status: "paid",
+    payPreference: "JazzCash-5215",
+    status: "Paid",
     transactionID: "1713875280857-BETA",
     payDate: "15 May 2024",
     payTime: "07:04 PM",
@@ -61,8 +61,8 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: true,
-    payPreference: "Jazz Cash-5215",
-    status: "unpaid",
+    payPreference: "Easypaisa-5215",
+    status: "Unpaid",
     // actions:""
   },
   {
@@ -76,8 +76,8 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: false,
-    payPreference: "Jazz Cash-5215",
-    status: "unpaid",
+    payPreference: "Visa-5215",
+    status: "Unpaid",
     // actions:""
   },
   {
@@ -91,8 +91,8 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: false,
-    payPreference: "Jazz Cash-5215",
-    status: "unpaid",
+    payPreference: "JazzCash-5215",
+    status: "Unpaid",
     // actions:""
   },
   {
@@ -106,8 +106,8 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: false,
-    payPreference: "Jazz Cash-5215",
-    status: "unpaid",
+    payPreference: "JazzCash-5215",
+    status: "Unpaid",
     // actions:""
   },
   {
@@ -121,8 +121,8 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: false,
-    payPreference: "Jazz Cash-5215",
-    status: "unpaid",
+    payPreference: "JazzCash-5215",
+    status: "Unpaid",
     // actions:""
   },
 ];

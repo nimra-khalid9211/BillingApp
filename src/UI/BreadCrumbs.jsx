@@ -2,11 +2,13 @@ import React from "react";
 import { BlueButton, WhiteButton } from "./Buttons";
 import { _BillingCondition } from "../actions/Context/BillingOverviewConditions";
 import { Link } from "react-router-dom";
+import menuList from "../Components/DashboardLayout/menuList";
 
 const BreadCrumbs = ({
   icon,
   menu,
   link,
+  link2,
   subMenu,
   thirdMenu,
   btnTitle1,
@@ -22,19 +24,34 @@ const BreadCrumbs = ({
 
   const {checkVerfication} = _BillingCondition()
 
+  // const linkCheck = menuList.map((x)=>x.lists.map((y)=>(y.link === link )))
+
+  console.log(link)
+  console.log(link2)
+
   return (
+
     <div className="my-5 border-b pb-3">
+
       <div className="flex justify-between items-center">
+
         <div className="flex items-center text-sm">
           {/* <img className={`w-5 ${checkVerfication ? "text-[#009EF7]" : 'text-[#6C7293]'}`} src={icon} alt="" />
           &nbsp; */}
         
+        {/* {checkVerfication ? "text-[#009EF7] pl-1" : 'text-[#6C7293] pl-1'} */}
+
           <Link to={link}>
-          <b className={checkVerfication ? "text-[#009EF7] pl-1" : 'text-[#6C7293] pl-1'}>{menu}</b> &nbsp;
+          <b className={`${ !checkVerfication || link  ?  "text-[#009EF7] pl-1": "text-[#6C7293] pl-1"}`}>{menu}</b> &nbsp;
           </Link>
 
-          {subMenu && <span className="text-[#6C7293]">/</span>} &nbsp;
-          <b className="text-[#6C7293]">{subMenu}</b> &nbsp;
+          {subMenu &&  <>
+           <span className={"text-[#6C7293]"}>/</span> &nbsp;
+
+           <Link to={link2}> 
+           <b className={`${link2 ? "text-[#009EF7] pl-1 " : "text-[#6C7293] pl-1"}`}>{subMenu}</b>  &nbsp; 
+
+          </Link> </>}
 
           {thirdMenu && <span className="text-[#6C7293]">/</span>} &nbsp;
           <b className="text-[#6C7293]">{thirdMenu}</b>
@@ -60,8 +77,11 @@ const BreadCrumbs = ({
             />
           )}
         </div>
+
       </div>
+
     </div>
+
   );
 };
 

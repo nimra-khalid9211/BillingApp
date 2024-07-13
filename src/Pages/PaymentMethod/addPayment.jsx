@@ -35,8 +35,9 @@ export default function AddPayment() {
     <>
       <BreadCrumbs
         icon={<MdOutlinePayment />}
+        link={"/payment-methods/add-payment"}
         menu={"Payment Method"} 
-        customClass2={"hover-color"}
+        customClass2={"back-btn"}
         subMenu={"Add Payment"}
         btnTitle2={"Back"}
         btnIcon2={<IoChevronBack />}

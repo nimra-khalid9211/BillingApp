@@ -33,7 +33,9 @@ const BillPaymentMethod = () => {
         link={"/bill-manager"}
           menu={"Bill Management"}
           icon={<FaMoneyBills />}
+          link2={"/bill-manager/selected-bills"}
           subMenu={"Selected Bills"}
+          customClass2={"back-btn"}
           thirdMenu={"Procced Payment"}
           btnIcon2={<IoChevronBack />}
           btnTitle2={"Back"}
@@ -55,7 +57,7 @@ const BillPaymentMethod = () => {
      <div className='grid grid-cols-5 gap-2 mt-5'>
      { CardData.map((x, index)=>( 
 
-         <div key={index} className={`col-span-2 flex justify-between mt-1 items-start py-2 px-4 rounded-3xl border ${x.default ? "border-[#377CF6] bg-white" :"border-[#E8E7EC] bg-[#F8F8F8]"}`}>
+         <div key={index} className={`col-span-2 flex justify-between mt-1 items-start py-2 px-4 rounded-2xl border ${x.default ? "border-[#377CF6] bg-white" :"border-[#E8E7EC] bg-[#F8F8F8]"}`}>
 
             <div className='flex'>
                 {x.icon}
@@ -80,25 +82,7 @@ const BillPaymentMethod = () => {
 
       </div>
 
-      <div className='mt-10 gap-3'>
-
-
-          <WhiteButton title={"Cancel"} clickEvent={()=>{navigate("/bill-manager/selected-bills")}}/>
-
-            <BlueButton title={`Pay Rs. ${totalAmount ? totalAmount?.toLocaleString() :""}`} clickEvent={()=>setReceiptModal(true)}/>
-       
-        {/* <Button className='mr-2 border-[#6C7293] text-[#6C7293]'
-     style={{background: "transparent", padding:"5px 30px"}} shape='round'
-     onClick={()=>{navigate("/bill-manager/selected-bills")}}>
-      Cancel
-      </Button>
-
-      <Button className='bg-[#377CF6] text-white ml-2' style={{ padding:"5px 20px"}} shape='round' onClick={()=>setReceiptModal(true)}>
-        {`Pay Rs. ${totalAmount ? totalAmount?.toLocaleString() :""}`}
-        </Button> */}
-  
-
-        </div>
+ 
 
     </div>
 
@@ -156,6 +140,14 @@ const BillPaymentMethod = () => {
      />
 
     </Card>
+
+    <div className='fixed bottom-16 mt-10 gap-3'>
+
+<WhiteButton title={"Cancel"} customClass={"cancel-btn"} clickEvent={()=>{navigate("/bill-manager/selected-bills")}}/>
+
+  <BlueButton title={`Pay Now`} customClass={"hover-color"} clickEvent={()=>setReceiptModal(true)}/>
+
+</div>
 
     </>
   )

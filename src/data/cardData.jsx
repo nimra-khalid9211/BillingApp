@@ -10,7 +10,7 @@ export const CardData = [
     userName: "Usman Fazal",
     default: true,
     expiry: "9/23",
-    verify: true,
+    verify: false,
   },
 
   {
@@ -40,7 +40,7 @@ export const CardData = [
     userName: "Usman Fazal",
     default: false,
     expiry: "9/23",
-    verify: false,
+    verify: true,
   },
 
 ];

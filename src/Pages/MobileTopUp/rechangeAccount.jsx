@@ -18,8 +18,9 @@ export default function RechangeAccount() {
         menu={"Mobile-top-up"} 
         btnIcon2={<IoChevronBack size={18} />}
         subMenu={'Recharge'}
+        
         btnTitle2={"Back"}
-        customClass2="hover-color"
+        customClass2="back-btn"
         btnEvent2={() => { navigate("/mobile-top-up")}}
       />
 
