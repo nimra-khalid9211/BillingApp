@@ -66,7 +66,7 @@ export default function RechangeAccount() {
       </div>
       {changeAccount &&
         <div className="grid grid-cols-4 px-5 pb-5 gap-4 bg-white">
-        <ChangeAccount/>
+        <ChangeAccount from="mobileTopup"/>
       </div>}
     
       

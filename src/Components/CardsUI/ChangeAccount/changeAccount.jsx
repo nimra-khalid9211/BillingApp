@@ -2,7 +2,7 @@ import { Card } from "antd";
 import { useState } from "react";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../../assets/image";
 
-export default function ChangeAccount(){
+export default function ChangeAccount({from}){
     const cards = [
         {
           cardIcon: <img src={bitmap} />,
@@ -59,19 +59,31 @@ export default function ChangeAccount(){
                   </div>
                 </div>
               </div>
+          {
+            !from === "mobileTopup" &&(
               <div className="flex flex-col mt-5">
-                <span className="text-base font-medium">
-                  <span className="text-xs text-[#6C7293]">ending</span>{" "}
-                  {x.cardNumber}
-                </span>
-                <span
-                  className={`text-end text-xs ${
-                    x.default ? " text-[#24A959]" : "text-[#329DFF]"
-                  }`}
-                >
-                  {x.default ? "Default" : "Set as Default"}
-                </span>
-              </div>
+              <span className="text-base font-medium">
+                <span className="text-xs text-[#6C7293]">ending</span>{" "}
+                {x.cardNumber}
+              </span>
+              <span
+                className={`text-end text-xs ${
+                  x.default ? " text-[#24A959]" : "text-[#329DFF]"
+                }`}
+              >
+                {x.default ? "Default" : "Set as Default"}
+              </span>
+            </div>
+            )
+          }
+          {
+            from === "mobileTopup" && (
+              <span className="text-base font-medium">
+              <span className="text-xs text-[#6C7293]">ending</span>{" "}
+              {x.cardNumber}
+            </span>
+            )
+          }
             </div>
           </Card>
         ))}

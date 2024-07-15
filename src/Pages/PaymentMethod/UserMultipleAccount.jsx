@@ -82,42 +82,30 @@ export default function UserMultipleAccount() {
       </div>
 
       <div className="pb-10 pt-5 px-5">
-
         {cardData.map((x, index) => (
-          
           <div
             key={index}
-            className="grid grid-cols-6 gap-4 rounded-xl mt-5 bg-white py-7 px-4 shadow-xl" >
-
+            className={`grid grid-cols-6 gap-4 rounded-xl mt-5 py-7 px-4 shadow-xl ${isCardExpired(x.expiry) ? 'border border-[#E92F39]' : 'bg-white'}`} // Conditional class application
+          >
             <div className="flex items-center border-r-2">
-
               <div className="flex items-center ml-5">
-
                 <div className="w-8 h-6 flex items-center justify-center">
                   {x.icon}
                 </div>
-
                 <div className="ml-3 font-medium text-lg">
                   {x.userName}
                 </div>
-
               </div>
-
             </div>
-
             <div className="border-r-2 text-center font-medium text-lg">
-
               <span className="text-xs text-[#9095ae]">
                 ending
                 <span className="text-base font-medium text-black">
                   {x.cardNumber}
                 </span>
               </span>
-
             </div>
-
             <div className="border-r-2 text-center">
-
               {["JazzCash", "Easypaisa", "Bank"].includes(x.expiry) ? (
                 <div className="">{x.expiry}</div>
               ) : (
@@ -128,7 +116,6 @@ export default function UserMultipleAccount() {
                       <span className="text-[#6C7293]">Expiry: </span>
                       {x.expiry}
                     </div>
-
                   ) : (
                     <>
 
@@ -146,8 +133,7 @@ export default function UserMultipleAccount() {
                 </>
               )}
             </div>
-
-            <button className={`border-r-2 text-center`}>
+            <button className={`border-r-2 text-center cursor-default`}>
               {x.verify ? (
                 <div className="text-[#24A959]">Verified</div>
               ) : (
@@ -155,13 +141,12 @@ export default function UserMultipleAccount() {
                   className="flex justify-center"
                   onClick={() => handleVerifyPopup()}
                 >
-                  <span className="px-4 py-1 border-2 bg-[var(--blue)] text-white opacity-80 rounded-full border-[var(--blue)]">
+                  <span className="px-4 py-1 border-2 bg-[var(--blue)] text-white opacity-80 rounded-full border-[var(--blue)] cursor-pointer">
                     Verify Now
                   </span>
                 </div>
               )}
             </button>
-
             <div
               className={`border-r-2 flex items-center justify-center cursor-pointer ${
                 x.default ? "text-black" : !x.verify ? "text-gray-400 cursor-default" : "text-[var(--blue)]"
@@ -170,32 +155,22 @@ export default function UserMultipleAccount() {
             >
               {x.default ? "Default" : "Set as Default"}
             </div>
-
             {isCardExpired(x.expiry) ? (
               
               <span className="text-[#329DFF] underline flex items-center justify-center cursor-pointer" 
               onClick={() => handleNavigate(x)}>
                 Update Now
-                </span>
-
+              </span>
             ) : (
               <div className="flex justify-center items-center gap-3">
-                <div className="p-2 rounded-lg bg-[#DBF0FF]">
-                  <FaEdit size={15} color="#377CF6" />
-                </div>
                 <div className="p-2 rounded-lg bg-[#FFD5DF]">
                   <RiDeleteBin5Line size={15} color="#F1416C" />
                 </div>
               </div>
             )}
           </div>
-
         ))}
-
-
       </div>
-
-
       <PaymentSuccessfullModal
         receiptModal={verifyPopup}
         setReceiptModal={handleModalClose}
@@ -206,8 +181,8 @@ export default function UserMultipleAccount() {
         from="debitAccountVerified"
         onButtonClick={() => {
           // localStorage.setItem("paymentType", "button5");
-          navigate("/payment-methods/add-payment");
-          setPaymentType("button5");
+          navigate("/payment-methods");
+          // setPaymentType("button5");
           setCheckShown(false);
         }}
       />
