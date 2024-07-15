@@ -113,9 +113,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         <DrawerCardLayout heading={"Bill Details"}>
 
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
-           
-            
-
+          
              <div className="col-span-4 relative">
 
         <TextField label={from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""} 
@@ -140,68 +138,13 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
            <InputCustom className={"col-span-2 mt-3"} label={"Bill Nick Name"}/>
             }
 
+            {from === "addBill" && <BlueButton title={"Fetch"} customClass={"hover-color"}/>}
+
           </div>
 
         </DrawerCardLayout>
 
         </div>
-
-        {/* <DrawerCardLayout heading={"Payment Preference"}>
-
-            {from === "addBill" && <div>
-          <div className="flex justify-between items-center w-60 mt-6 bg-white">
-
-            <span className="text-base font-medium">Auto Direct Debit</span>
-
-            <span>
-              <Switch defaultChecked size="small"/>
-              </span>
-
-          </div>
-
-          <div className="grid grid-cols-6 gap-8 my-5">
-                
-                {cards.map((x, index)=>(
-                   <Card key={index} className={`col-span-3 px-2 ${x.default ? "border-[#377CF6]" : "bg-[#F8F8F8]"}`}>
-
-                    <div className="flex items-center justify-between h-20">
-
-                      <div className="flex items-center gap-2">
-
-                   <input type="radio" defaultChecked={x.default && true}/>
-
-                  <div className="bg-[#DBF0FF] px-1 rounded-md"> 
-                    {x.cardIcon}
-                  </div>
-
-                 <div className="text-base font-medium">  {x.cardName}
-                 </div>
-
-                   </div>
-
-                   <div className="flex flex-col mt-5">
-
-                   <span className="text-base font-medium"><span className="text-xs text-[#6C7293]">ending</span> {x.cardNumber}</span>
-
-                   <span className={`text-end text-xs ${x.default ? " text-[#24A959]" : "text-[#329DFF]"}`}>{x.default ? "Default" : "Set as Default"}</span>
-
-                </div>
-              </Select>
-            </FormControl>
-          </div>
-
-          {from === "addBill" && (
-            <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"} />
-          )}
-
-          {from === "addBill" && (
-            <InputCustom
-              className={"col-span-2 mt-3"}
-              label={"Bill Nick Name"}
-            />
-          )}
-        </div>}
-      </DrawerCardLayout> */}
 
       <DrawerCardLayout heading={"Payment Preference"}>
         {from === "addBill" || from === "quickPay" ? (

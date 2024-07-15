@@ -85,8 +85,8 @@ export const SelectableBills = ({ type, from }) => {
     <>
       <div className="bg-white rounded-3xl">
        
-      <div className="drop-shadow-xl text-[#377CF6] bg-white p-3 px-8 text-xl flex justify-between items-center rounded-tl-3xl rounded-tr-3xl mt-5">
-        <div className="text-[#176ba3] text-base font-semibold">{from === "dashboard" ? "Due Bills" : "All Bills"}</div>
+      <div className="drop-shadow-xl text-[#377CF6] bg-white p-3 px-7 text-xl flex justify-between items-center rounded-t-3xl mt-5">
+        <div className="text-[var(--blue)] text-lg font-medium">{from === "dashboard" ? "Due Bills" : "All Bills"}</div>
       { from === "dashboard" ? <Link to={"/bill-manager"} className="text-sm text-[var(--blue)] underline">View All</Link> : <span className="text-sm text-[var(--blue)]">This Month</span>}
       </div>
 
@@ -267,9 +267,11 @@ export const SelectableBills = ({ type, from }) => {
               {selectedBills.length} Bill{selectedBills.length >=2 ? "s" : ""} Selected
             </span>
 
-            <span className="ml-20 text-base font-medium">
+            <span className="ml-20 text-base text-black font-medium">
               Total Amount =
-              <span className="font-bold"> {totalAmount.toLocaleString()}{" "}</span>
+              <span className="text-[#6c7293] text-sm mx-2">Rs</span> 
+              <span className="font-bold">
+                 {totalAmount.toLocaleString()}</span>
             </span>
           </div>
 

@@ -45,7 +45,7 @@ export default function UserMultipleAccount() {
 
   return (
     <div className="relative bg-white shadow-md rounded-3xl mt-5">
-      <div className="drop-shadow-xl text-[var(--blue)] rounded-t-3xl bg-white p-3">
+      <div className="drop-shadow-xl text-[var(--blue)] rounded-t-3xl text-lg pl-7 bg-white p-3">
         Payment Methods
       </div>
       <div className="pb-10 pt-5 px-5">

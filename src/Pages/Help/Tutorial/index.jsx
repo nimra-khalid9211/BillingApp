@@ -31,9 +31,10 @@ const card = [
 const Tutorial = () => {
   return (
     <Card className='rounded-3xl mt-3'>
-    <div className='drop-shadow-xl text-[var(--blue)] bg-white rounded-t-3xl py-2 px-6 text-lg font-medium'>
-        Tutorial
-        </div>
+        
+    <div className="drop-shadow-xl pl-7 rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3">
+       Tutorial
+      </div>
 
         <div className='mx-7 my-10'>
             

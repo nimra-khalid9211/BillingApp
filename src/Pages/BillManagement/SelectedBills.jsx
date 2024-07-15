@@ -2,7 +2,7 @@
 import React from 'react'
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions'
 import { Button } from 'antd';
-import { isOverdue } from '../../Hooks';
+import { formatAmount, isOverdue } from '../../Hooks';
 import { useNavigate } from 'react-router-dom';
 import { BlueButton, WhiteButton } from '../../UI/Buttons';
 import { IoChevronBack } from 'react-icons/io5';
@@ -17,12 +17,16 @@ const SelectedBills = () => {
     // console.log(bills)
 
     const totalAmount = bills?.reduce((total, bill) => {
-        const amountString = isOverdue(bill.dueDate)  ? bill.afterDueAmount : bill.amount;
+        const amountString = isOverdue(bill.dueDate)  ? bill.amount : bill.afterDueAmount;
 
         const amount = parseFloat(amountString.replace(/,/g, ''));
-     
+    //  console.log(amount)
         return Math.round((total + amount) * 100) / 100;
     },0);
+
+    const formattedAmount = formatAmount(totalAmount);
+
+
   return (
 
     <>
@@ -108,11 +112,15 @@ const SelectedBills = () => {
                   <span className='text-base text-semibold'>{bills?.length} Bills Selected</span>
               </div>
 
-              <div className='ml-[8rem] col-span-2'>
-                <span className='text-base'>Total Amount</span>
+              <div className='ml-24 text-base text-black font-medium col-span-2'>
+              Total Amount =
+              <span className="text-[#6c7293] text-sm mx-2">Rs</span>
 
-                <span className='rounded-xl ml-6 text-white text-lg py-2 px-4 bg-[#377CF6]'>{totalAmount?.toLocaleString()}</span>
+              <span className="rounded-xl ml-2 text-white text-lg py-2 px-4 bg-[#377CF6]">
 
+                 {formattedAmount.integerPart}
+                </span>
+        
               </div>
 
             </div>
