@@ -43,7 +43,8 @@ input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
   top: 0;
   left: 0;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
+
 }
 
 
