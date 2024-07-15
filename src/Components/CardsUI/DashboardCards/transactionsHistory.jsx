@@ -89,10 +89,10 @@ export default function TransactionsHistory() {
                   </div>
                 </div>
                 <div>
-                  <div className="relative font-semibold pr-7">
+                  <div className="relative font-medium pr-7">
                     <div>
                       <span className="text-[#6C7293] text-sm mr-1">Rs</span>
-                      <span className="text-lg">{integerPart}</span>
+                      <span className="text-base">{integerPart}</span>
                       <span className="absolute text-sm">.{decimalPart}</span>
                     </div>
                   </div>

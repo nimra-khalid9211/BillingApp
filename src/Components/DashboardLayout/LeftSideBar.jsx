@@ -10,10 +10,9 @@ const LeftSideBar = () => {
 
   return (
     <>
-      <div
-        className="rounded-r-[50px] drop-shadow-lg"
-        style={{ height: "100vh" }}
-      >
+
+      <div className=" drop-shadow-lg" style={{ height: "100vh" }}>
+
         <div className="px-5 pt-5 flex justify-center items-center">
           <img src={Logo} className="w-36 h-[74px]" />
         </div>
@@ -21,14 +20,14 @@ const LeftSideBar = () => {
         <section>
           {menuList.map((item, index) => (
             <div key={index} className="px-5 pt-8 text-base">
+              
               <ul>
 
                 {item.lists?.map((x, index) => (
 
                   <Link
                     to={checkVerfication ? x.link : "/dashboard"}
-                    key={index}
-                  >
+                    key={index}>
 
                     <div
                       className={`flex items-center gap-3 px-3 text-[#6C7293] py-[12px] mx-3 my-2 w-[14rem] 
@@ -67,6 +66,7 @@ const LeftSideBar = () => {
 
                 ))}
               </ul>
+
             </div>
           ))}
         </section>

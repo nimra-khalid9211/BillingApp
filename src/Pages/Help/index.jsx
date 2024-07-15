@@ -22,7 +22,7 @@ const Help = () => {
           style={{ borderRadius: "12px 0 0 12px" }}
           onClick={() => setHelpMenu(1)}
         >
-          Overview
+          Faq's
         </Button>
 
         <Button
@@ -30,7 +30,7 @@ const Help = () => {
           style={{ borderRadius: "0 12px 12px 0" }}
           onClick={() => setHelpMenu(2)}
         >
-         Added Bills
+         Tutorial
         </Button>
         
       </div>

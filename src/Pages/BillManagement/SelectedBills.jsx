@@ -34,6 +34,7 @@ const SelectedBills = () => {
           subMenu={"Selected Bills"}
           btnIcon2={<IoChevronBack />}
           btnTitle2={"Back"}
+          customClass2={"back-btn"}
           btnEvent2={()=>{navigate("/bill-manager")}}
         />
 
@@ -120,11 +121,11 @@ const SelectedBills = () => {
 
    
 
-    <div className='fixed bottom-20'>
+    <div className='fixed bottom-16 flex justify-start items-center py-4'>
 
-        <WhiteButton clickEvent={()=>{navigate("/bill-manager"); setBills("")}} title={"Cancel"} />
+        <WhiteButton customClass={"cancel-btn"} clickEvent={()=>{navigate("/bill-manager"); setBills("")}} title={"Cancel"}/>
 
-        <BlueButton clickEvent={()=>navigate("/bill-manager/payment-method")} customStyle={"11rem"} title={"Proceed to Payment"} customClass='hover-color'/>
+        <BlueButton customClass={"hover-color"} clickEvent={()=>navigate("/bill-manager/payment-method")} customStyle={"11rem"} title={"Proceed to Payment"}/>
         
 
 

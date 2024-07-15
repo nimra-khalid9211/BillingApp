@@ -15,7 +15,7 @@ export const MyBillHeading = [
   { title: "Amount Due" },
   { title: "Auto Debit" },
   { title: "Payment Method" },
-  { title: "Download Bill" },
+  { title: "Status" },
   { title: "Actions" },
 ];
 
@@ -40,7 +40,7 @@ export const  MyBills = ({ from }) => {
 
         {MyBillList.length > 0 ? (
 
-          <table className="w-full table-fixed text-sm rounded-3xl mt-2">
+          <table className="w-full table-fixed text-xs rounded-3xl mt-2">
             <thead className="text-xs bg-[#DBF0FF] text-[var(--blue)]">
               <tr>
 
@@ -50,7 +50,7 @@ export const  MyBills = ({ from }) => {
                     (x.title === "Auto Debit" && from !== "BMB") ||
                     (x.title === "Payment Method" && from !== "BMB") ||
                     (x.title === "Amount Due" && from !== "dashboard") ||
-                    (x.title === "Download Bill" && from !== "overview")
+                    (x.title === "Status" && from === "BMB")
                   ) {
                     return null; // Skip rendering this column
                   }

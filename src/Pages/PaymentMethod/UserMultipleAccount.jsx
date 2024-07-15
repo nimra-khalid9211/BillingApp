@@ -101,13 +101,11 @@ export default function UserMultipleAccount() {
 
 
             <button
-              className={`border-r-2 text-center`}
-              onClick={() => handleVerifyPopup()}
-            >
+              className={`border-r-2 text-center`} >
               {account.verify ? (
                 <div className="text-[#24A959]">Verified</div>
               ) : (
-                <div className="flex justify-center">
+                <div className="flex justify-center" onClick={() => handleVerifyPopup()}>
                   <span className="px-4 py-1 border-2 bg-[var(--blue)] text-white opacity-80 rounded-full border-[var(--blue)]">
                     Verify Now
                   </span>

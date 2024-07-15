@@ -91,10 +91,10 @@ export default function DebitCard(type) {
               <WhiteButton
                 title="Cancel Verification"
                 clickEvent={handleCancelVerification}
-                customClass='debit-btn'
+                customClass='cancel-btn' customStyle={"11rem"}
               />
               <BlueButton title="Verify Now"
-              customClass='debit-btn' />
+              customClass='hover-color' customStyle={"11rem"} />
             </div>
           )}
         </div>

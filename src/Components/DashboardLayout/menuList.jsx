@@ -97,7 +97,8 @@ const menuList = [
         title: "Logout",
         // icon: <img src={grayLogout} alt="" className="w-5 h-4" />,
         // icon1: <img src={whiteLogout} alt="" className="w-5 h-4" />,
-        icon: <BiLogOutCircle size={20}/>
+        icon: <BiLogOutCircle size={20}/>,
+        link: "/sign-in",
       },
     ],
   },

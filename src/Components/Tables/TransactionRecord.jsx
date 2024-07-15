@@ -78,7 +78,7 @@ const TransactionRecord = ({type, from}) => {
                   }
                   return (
                   
-                    <div key={index} className={`${x.title === "Account" && "col-span-2"} text-center px-5 w-full py-3 border-r border-[#eff0fb] border-dashed
+                    <div key={index} className={`${x.title === "Account" && "col-span-2"} ${index === 0 ? "text-left": "text-center"} px-5 w-full py-3 border-r border-[#cacde9] border-dashed
                       justify-self-center text-sm font-semibold text-[var(--blue)]`}>
 
                         {x.title}
@@ -97,7 +97,8 @@ const TransactionRecord = ({type, from}) => {
                                 {x.transaction.map((x, index)=>(
                                     <div key={index} className={`grid ${from === "transactions" ? 'grid-cols-6' : 'grid-cols-8'} h-16 border-b border-dashed text-xs font-medium`}>
 
-                                    <div className={`${center}`}>{x.billName}</div> 
+                                    <div className={`flex px-5 justify-start items-center text-center border-r py-3 border-dashed`}>{x.billName}</div> 
+                                    {/* ${center} */}
 
                                    <div className={`${center}`}>{x.cosumerID}</div> 
 
@@ -133,11 +134,11 @@ const TransactionRecord = ({type, from}) => {
 
                                    <div className='flex items-center justify-center gap-2'>
                                     
-                                    <div className='p-2 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-xl'>
+                                    <div className='p-2 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-lg'>
                                     <IoMdEye size={20} color='#377CF6' role='button' onClick={()=>setOpenModal(true)}/>
                                     </div>
 
-                                    <div className='p-2 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-xl'>
+                                    <div className='p-2 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-lg'>
                                     <MdOutlineFileDownload size={20} role='button' color='#377CF6'  onClick={PDFTemplate}/>
                                     </div>
 

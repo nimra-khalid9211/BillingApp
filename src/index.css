@@ -39,8 +39,8 @@ input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 }
 
 .centerColumn {
-  padding: 10px;
-  margin-left: 15%;
+  /* padding: 10px; */
+  margin-left: 15.5%;
   /* Adjust as per left column width */
   /* margin-right: 20%; Adjust as per right column width */
 }
@@ -275,10 +275,22 @@ input[type="number"] {
   color: #F58021 !important;
 }
 
+.back-btn{
+  color: var(--blue);
+  background-color: transparent;
+  border: 0;
+}
+
+.back-btn:hover{
+  color: var(--orange) !important;
+  background-color: transparent !important;
+}
+
+
 .cancel-btn{
   background-color: transparent !important;
-  border: 2px solid #176BA3;
-  color: #176BA3 !important;
+  border: 2px solid #6C7293;
+  color: #6C7293 !important;
 }
 
 .cancel-btn:hover{
@@ -632,8 +644,12 @@ input[type="number"] {
 
 /* ant design switch background color */
 .ant-switch.ant-switch-checked{
-  background-color: #00A3AC !important;
+  background-color: #1e9f1f !important;
 }
 .activeRadio {
   border: 2px solid #377cf6; /* Border color for active radio button */
+}
+
+.ant-switch.ant-switch-small .ant-switch-inner .ant-switch-inner-unchecked{
+  margin-top: -15px !important;
 }

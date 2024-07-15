@@ -26,8 +26,8 @@ const BillManagement = () => {
   return (
     <>
         <BreadCrumbs
-        link={"/bill-manager"}
         menu={"Bill Manager"}
+        link={"/bill-manager"}
         subMenu={getSubMenu()}
         btnTitle2={"Add Bill"}
         customClass2="hover-color"
