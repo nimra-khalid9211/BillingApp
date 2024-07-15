@@ -22,7 +22,7 @@ export default function PaymentMethodCard() {
   };
 
   return (
-    <Card className="rounded-3xl h-[28rem] bg-[#d3e8f6] border-[var(--blue)] border">
+    <Card className="rounded-3xl overflow-y-scroll h-[28rem] bg-[#d3e8f6] border-[var(--blue)] border">
       <div className="flex items-center font-bold rounded-tl-3xl drop-shadow-lg rounded-tr-3xl bg-white py-4 px-6 justify-between">
         <span>Payment Method</span>
 
