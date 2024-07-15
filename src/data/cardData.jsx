@@ -2,25 +2,26 @@
 import { bitmap, visaCard, easyPaisa,  jazzcash, bank } from "../assets/image";
 
 export const CardData = [
-  {
-    icon: <img src={bank} alt="" className="w-10" />,
-    title: "Bank", 
-    cardNumber: "5210",
-    userName: "Usman Fazal",
-    default: true,
-    expiry: "Bank",
-    verify: false,
-  },
-
+  
   {
     icon: <img src={bitmap} alt="" className="w-10" />,
     title: "Mastercard", 
     cardNumber: "5210",
     userName: "Nimra Khalid",
-    default: false,
+    default: true,
     expiry: "9/22",
     verify: true,
     cvv: 757
+  },
+  
+  {
+    icon: <img src={bank} alt="" className="w-10" />,
+    title: "Bank", 
+    cardNumber: "5210",
+    userName: "Usman Fazal",
+    default: false,
+    expiry: "Bank",
+    verify: false,
   },
 
   {

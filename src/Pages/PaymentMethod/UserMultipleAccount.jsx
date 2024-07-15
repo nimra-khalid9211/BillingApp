@@ -1,6 +1,6 @@
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { CardData as initialCardData } from "../../data/cardData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
@@ -28,7 +28,7 @@ export default function UserMultipleAccount() {
     updatedCards.unshift(selectedCard);
     setCardData(updatedCards);
   };
-
+    
   const isCardExpired = (expiry) => {
     const keywords = ["JazzCash", "Easypaisa", "Bank"];
     if (keywords.includes(expiry)) {
@@ -68,7 +68,7 @@ export default function UserMultipleAccount() {
         break;
     }
 
-    localStorage.setItem("paymentType", buttonType);
+    // localStorage.setItem("paymentType", buttonType);
     setPaymentType(buttonType);
     setCheckShown(false);
     navigate('/payment-methods/add-payment', { state: { account: simpleAccount } });
@@ -76,9 +76,11 @@ export default function UserMultipleAccount() {
 
   return (
     <div className="relative bg-white shadow-md rounded-3xl mt-5">
+      
       <div className="drop-shadow-xl text-[var(--blue)] rounded-t-3xl text-lg pl-7 bg-white p-3">
         Payment Methods
       </div>
+
       <div className="pb-10 pt-5 px-5">
 
         {cardData.map((x, index) => (
@@ -121,6 +123,7 @@ export default function UserMultipleAccount() {
               ) : (
                 <>
                   {!isCardExpired(x.expiry) ? (
+
                     <div>
                       <span className="text-[#6C7293]">Expiry: </span>
                       {x.expiry}
@@ -128,13 +131,16 @@ export default function UserMultipleAccount() {
 
                   ) : (
                     <>
+
                       <div className="">
                         <span className="text-[#6C7293]">Expiry: </span>
                         {x.expiry}
                       </div>
+
                       <div className="mt-1 text-[#F1416C] border border-[#F1416C] rounded-3xl bg-[#FFD5DF] w-20 mx-auto">
                         expired
                       </div>
+
                     </>
                   )}
                 </>
@@ -158,16 +164,16 @@ export default function UserMultipleAccount() {
 
             <div
               className={`border-r-2 flex items-center justify-center cursor-pointer ${
-                x.default ? "text-black" : "text-[var(--blue)]"
+                x.default ? "text-black" : !x.verify ? "text-gray-400 cursor-default" : "text-[var(--blue)]"
               }`}
-              onClick={() => handleSetAsDefault(index)}
+              onClick={x.verify ? () => handleSetAsDefault(index) : ""}
             >
               {x.default ? "Default" : "Set as Default"}
             </div>
 
             {isCardExpired(x.expiry) ? (
               
-              <span className="text-[#329DFF] underline text-center cursor-pointer" 
+              <span className="text-[#329DFF] underline flex items-center justify-center cursor-pointer" 
               onClick={() => handleNavigate(x)}>
                 Update Now
                 </span>
@@ -199,7 +205,7 @@ export default function UserMultipleAccount() {
         buttonText="Verify Account"
         from="debitAccountVerified"
         onButtonClick={() => {
-          localStorage.setItem("paymentType", "button5");
+          // localStorage.setItem("paymentType", "button5");
           navigate("/payment-methods/add-payment");
           setPaymentType("button5");
           setCheckShown(false);

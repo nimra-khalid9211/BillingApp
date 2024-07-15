@@ -9,7 +9,7 @@ export const BillingConditionProvider = ({children})=>{
      const checkVerfication = true;
 
      const [tab,setTab] = useState(true);
-     const [bills, setBills] = useState();
+     const [bills, setBills] = useState([]);
      const [addBill, setAddBill] = useState(false);
      const [paymentType , setPaymentType] = useState("button1")
      const [checkShown , setCheckShown] = useState(true);

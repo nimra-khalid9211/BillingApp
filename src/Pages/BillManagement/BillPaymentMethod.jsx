@@ -1,10 +1,10 @@
 import { Button, Card, Collapse } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardData } from "../../data/cardData";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { IoChevronBack, IoChevronDownCircleOutline } from "react-icons/io5";
 import { formatAmount, isOverdue } from "../../Hooks";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { PaymentSuccessfullModal } from "../../Components/Modals";
 import { paymentSuccessfull } from "../../assets/image";
 import BreadCrumbs from "../../UI/BreadCrumbs";
@@ -14,9 +14,14 @@ import { BlueButton, WhiteButton } from "../../UI/Buttons";
 const BillPaymentMethod = () => {
   const { bills } = _BillingCondition();
   const navigate = useNavigate();
+  console.log(bills);
 
   const [receiptModal, setReceiptModal] = useState(false);
   const [selectedCardIndex, setSelectedCardIndex] = useState(-1); // State to track selected card index
+
+
+
+
 
   const totalAmount = bills?.reduce((total, bill) => {
     const amountString = isOverdue(bill.dueDate)

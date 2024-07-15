@@ -12,7 +12,6 @@ import { PDFTemplate } from "../PDFTemplate";
 import { isOverdue } from "../../Hooks";
 import { BlueButton } from "../../UI/Buttons";
 import { RxCross2 } from "react-icons/rx";
-import { AiOutlineCheck } from "react-icons/ai";
 import { GoCheck } from "react-icons/go";
 
 
@@ -79,7 +78,15 @@ export const SelectableBills = ({ type, from }) => {
 
   const unpaidBills = from === "dashboard" ? filteredBills.filter((x)=>x.status === "Unpaid").slice(0,6).map((x,index)=>x) : filteredBills;
 
-  // console.log(unpaidBills);
+  
+  const test = MyBillList?.sort((a,b) => {
+    const statusOrder ={
+      Unpaid: 0,
+      Paid: 1,
+    };
+
+   return statusOrder[a.status] - statusOrder[b.status]})
+  console.log(test, "multiple accounts ")
 
   return (
     <>
@@ -186,10 +193,10 @@ export const SelectableBills = ({ type, from }) => {
                 {x.billCompany}
               </td>
 
-              <td className={`px-6 py-2 ${dashedBorderRight}`}>{x.dueDate}</td>
+              <td className={`px-6 py-2 ${x.status === "Unpaid" && "text-[#f1416c]"}  ${dashedBorderRight}`}>{x.dueDate}</td>
 
               <td className={`px-6 py-2 ${dashedBorderRight}`}>
-                {overdue && x.status === "unpaid"
+                {overdue && x.status === "Unpaid"
                   ? x.afterDueAmount
                   : x.amount}
               </td>
@@ -215,26 +222,31 @@ export const SelectableBills = ({ type, from }) => {
                 <div className="flex flex-col justify-center items-center">
                   {payable ? (
                     <>
+
                       <div>
-                        <a
-                          href="#"
-                          className="font-medium text-white bg-[#00A3AC] border-2 border-[#00A3AC] rounded-xl py-1 px-3 text-xs hover:border-[var(--blue)] hover:text-[var(--blue)]"
+                        <span role="button" onClick={()=>{navigate("/bill-manager/payment-method")}}
+                          className="font-medium text-white bg-[#00A3AC] border-2 border-[#00A3AC] rounded-xl py-1 px-3 text-xs hover:drop-shadow-lg hover:text-white"
                         >
                           Pay Now
-                        </a>
+                        </span>
                       </div>
+
                       {overdue ? (
                         <span className="text-[#F1416C] pt-1 text-[10px]">
                           Overdue
                         </span>
+
                       ) : null}
                     </>
+
                   ) : (
                     <span className="text-[#F1416C] pt-1 text-xs">
                       Not Payable
                     </span>
+
                   )}
                 </div>
+                
               ) : (
                 <div className="flex items-center justify-evenly gap-2 px-6 py-2">
                   {/* bg-[#DBF0FF] hover:bg-[#acd7f6] */}

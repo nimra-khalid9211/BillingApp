@@ -304,8 +304,7 @@ input[type="number"] {
 }
 
 .cancel-btn:hover{
-  border: 2px solid #F1416C !important;
-  color: #F1416C !important;
+  border: 2px solid #b8b8b8 !important;
 }
 
 .other-tabs-fontW{

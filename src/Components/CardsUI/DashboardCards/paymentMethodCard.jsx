@@ -39,7 +39,7 @@ export default function PaymentMethodCard() {
       <div className="pt-4 py-2 px-3 rounded-bl-3xl rounded-br-3xl bg-[#d3e8f6]">
         {cardData.length > 0 ? (
           <>
-            {cardData.map((x, index) => (
+{[...cardData.filter((x) => x.default),...cardData.filter((x) =>!x.default).slice(0, 3)].map((x, index) => (
               <Card key={index} className="rounded-2xl drop-shadow-lg border-[var(--blue)] border mb-4">
                 <div className="px-5 py-[0.5rem]">
                   <div className="flex items-center justify-between">
