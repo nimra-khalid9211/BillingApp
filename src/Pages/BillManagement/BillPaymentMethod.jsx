@@ -10,6 +10,7 @@ import { paymentSuccessfull } from "../../assets/image";
 import BreadCrumbs from "../../UI/BreadCrumbs";
 import { FaMoneyBills } from "react-icons/fa6";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
+import ChangeAccount from "../../Components/CardsUI/ChangeAccount/changeAccount";
 
 const BillPaymentMethod = () => {
   const { bills } = _BillingCondition();
@@ -61,10 +62,9 @@ const BillPaymentMethod = () => {
       <div className='border-b mt-2 border-1'></div>
 
       <div className='mt-6'>
-        <span className='text-base font-medium'>Choose the Card you want to use for this Payment</span>
 
-     <div className='grid grid-cols-5 gap-2 mt-5'>
-     { CardData.map((x, index)=>( 
+     <div className='grid grid-cols-2 gap-2 my-5'>
+     {/* { CardData.map((x, index)=>( 
 
          <div key={index} className={`col-span-2 flex justify-between mt-1 items-start py-2 px-4 rounded-2xl border ${x.default ? "border-[#377CF6] bg-white" :"border-[#E8E7EC] bg-[#F8F8F8]"}`}>
 
@@ -84,7 +84,8 @@ const BillPaymentMethod = () => {
 
 
                 </div>
-        ))}
+        ))} */}
+        <ChangeAccount/>
 
 </div>
 

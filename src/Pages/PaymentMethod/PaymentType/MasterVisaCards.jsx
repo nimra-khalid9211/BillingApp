@@ -10,7 +10,7 @@ export default function MasterVisaCard() {
   return (
     <div>
       <div className="border-b pb-2 font-bold mt-10">
-        Credit / Debit Card Details
+        Card Details
       </div>
       <div className="w-1/2">
         <div className="grid grid-cols-2 gap-4 mt-5">

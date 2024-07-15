@@ -15,15 +15,15 @@ export default function AddPayment() {
   const navigate = useNavigate();
   // const { checkShown } = _BillingCondition();
   // console.log(checkShown);
-  const [checkShown, setCheckShown] = useState(true);
+  // const [checkShown, setCheckShown] = useState(true);
 
-  useEffect(() => {
-    if(localStorage.getItem("paymentType") === "button5"){
-      setCheckShown(false);
-    } else {
-      setCheckShown(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if(localStorage.getItem("paymentType") === "button5"){
+  //     setCheckShown(false);
+  //   } else {
+  //     setCheckShown(true);
+  //   }
+  // }, []);
   const { paymentType, setPaymentType } = _BillingCondition();
 
   const handlePaymentTypeClick = (type) => {
@@ -124,16 +124,14 @@ export default function AddPayment() {
           </div>
         </div>
       </div>
-      {checkShown && (
         <div className="fixed bottom-20">
           <WhiteButton customClass={"cancel-btn"}
             title={"Cancel"}
             clickEvent={() => navigate("/payment-methods")}
           />
 
-          <BlueButton customClass={"hover-color"} title={"Save"} />
+          <BlueButton customClass={"hover-color"} title={"Save"} clickEvent={() => navigate("/payment-methods")}/>
         </div>
-      )}
     </>
   );
 }

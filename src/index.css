@@ -663,3 +663,11 @@ input[type="number"] {
 .ant-switch.ant-switch-small .ant-switch-inner .ant-switch-inner-unchecked{
   margin-top: -15px !important;
 }
+/* UserMultipleAccount.css */
+.bg-red-200 {
+  border: 1px solid #c34040;
+}
+.bg-white {
+ border: 1px solid #fff;
+}
+

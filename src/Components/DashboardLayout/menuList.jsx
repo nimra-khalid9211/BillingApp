@@ -68,7 +68,7 @@ const menuList = [
     lists: [
       {
         id: 7,
-        classses : "mt-[7rem]",
+        classses : "mt-[14rem]",
         title: "Help",
         // icon: <img src={grayHelp} alt="" className="w-5 h-4" />,
         // icon1: <img src={whiteHelp} alt="" className="w-5 h-4" />,
@@ -93,7 +93,7 @@ const menuList = [
       },
       {
         id: 10,
-        classses: "mt-[3rem] border-solid border border-[#E8E7EC] rounded-xl",
+        classses: "mt-[1rem] border-solid border border-[#E8E7EC] rounded-xl",
         title: "Logout",
         // icon: <img src={grayLogout} alt="" className="w-5 h-4" />,
         // icon1: <img src={whiteLogout} alt="" className="w-5 h-4" />,

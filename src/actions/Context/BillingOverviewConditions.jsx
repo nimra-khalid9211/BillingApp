@@ -11,7 +11,7 @@ export const BillingConditionProvider = ({children})=>{
      const [tab,setTab] = useState(true);
      const [bills, setBills] = useState();
      const [addBill, setAddBill] = useState(false);
-     const [paymentType , setPaymentType] = useState("button1")
+     const [paymentType , setPaymentType] = useState()
      const [checkShown , setCheckShown] = useState(true);
      const [billingMenu, setBillingMenu] = useState(1)
      const [transactions, setTransactions] = useState(1)
