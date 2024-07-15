@@ -1,7 +1,12 @@
 import { TextField } from "@mui/material";
 import { InputCustom, InputDate } from "../../../UI/Inputs";
+import { useLocation } from "react-router-dom";
 
 export default function MasterVisaCard() {
+  const location = useLocation().state.account;
+  console.log(location.cvv , "state")
+
+
   return (
     <div>
       <div className="border-b pb-2 font-bold mt-10">
@@ -10,7 +15,7 @@ export default function MasterVisaCard() {
       <div className="w-1/2">
         <div className="grid grid-cols-2 gap-4 mt-5">
 
-          <InputCustom label={"Name on Card"} />
+          <InputCustom label={"Name on Card"} value={location.userName}/>
           {/* <TextField
             id="outlined-basic"
             label="Name on Card"
@@ -18,7 +23,7 @@ export default function MasterVisaCard() {
             size="small"
           /> */}
 
-          <InputCustom label={"Card Number"} />
+          <InputCustom label={"Card Number"} value={location.cardNumber}/>
           
           {/* <TextField
             id="outlined-basic"
@@ -27,7 +32,7 @@ export default function MasterVisaCard() {
             size="small"
           /> */}
 
-          <InputDate label={"Expiry Card"}/>
+          <InputCustom label={"Expiry Card"} value={location.expiry}/>
 
           {/* <TextField
             id="outlined-basic"
@@ -36,7 +41,7 @@ export default function MasterVisaCard() {
             size="small"
           /> */}
 
-          <InputCustom label={"CVV"} />
+          <InputCustom label={"CVV"} value={location.cvv}/>
 
           {/* <TextField
             id="outlined-basic"

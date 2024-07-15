@@ -121,18 +121,6 @@ export default function DebitCard(type) {
         cancelFirstHeading="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used."
         from="debitAccountCancelled"
       />
-      {/* 
-      <PaymentSuccessfullModal
-        receiptModal={verifyPopup}
-        setReceiptModal={handleModalClose}
-        title="Verify Your Bank Account"
-        debitTextOne="We will send you 2 small deposits (each between Rs 1.01 and Rs 1.50) to your Usman Fazal Bank Account for the verification."
-        debitTextTwo="Please enter the amounts to verify you own the account."
-        buttonText="Verify Account"
-        from="debitAccountVerified"
-        onButtonClick={handleDefaultSet}
-      />
-      */}
     </div>
   );
 }

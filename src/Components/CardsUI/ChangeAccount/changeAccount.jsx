@@ -35,7 +35,7 @@ export default function ChangeAccount(){
         setSelectedCardIndex(index); // Update state with selected card index
       };
     return(
-        <div className="grid grid-cols-6 gap-8 my-10">
+        <div className="grid grid-cols-6 gap-4 my-7">
         {cards.map((x, index) => (
           <Card
             key={index}

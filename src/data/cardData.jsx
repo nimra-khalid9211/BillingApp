@@ -4,11 +4,11 @@ import { bitmap, visaCard, easyPaisa,  jazzcash, bank } from "../assets/image";
 export const CardData = [
   {
     icon: <img src={bank} alt="" className="w-10" />,
-    title: "JazzCash", 
+    title: "Bank", 
     cardNumber: "5210",
     userName: "Usman Fazal",
     default: true,
-    expiry: "9/23",
+    expiry: "Bank",
     verify: false,
   },
 
@@ -16,10 +16,11 @@ export const CardData = [
     icon: <img src={bitmap} alt="" className="w-10" />,
     title: "Mastercard", 
     cardNumber: "5210",
-    userName: "Usman Fazal",
+    userName: "Nimra Khalid",
     default: false,
-    expiry: "9/25",
+    expiry: "9/22",
     verify: true,
+    cvv: 757
   },
 
   {
@@ -30,6 +31,7 @@ export const CardData = [
     userName: "Usman Fazal",
     expiry: "9/23",
     verify: true,
+    cvv: 757
   },
 
   {
