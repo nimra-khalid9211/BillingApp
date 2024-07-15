@@ -141,7 +141,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         <div className="absolute overflow-y-auto drop-shadow-2xl z-50 bg-white mt-2 rounded-2xl w-full h-36">
            {filteredCompanies.map((x, index)=>(
-            <div key={index} onClick={()=>handleSelectBill(x.title)} className="mx-3 p-2 px-4 border-l-white border-b border-l-2 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]">{x.title}</div>
+            <div key={index} onClick={()=>handleSelectBill(x.title)} className="mx-3 p-2 px-4 border-l-white border-b rounded-sm border-l-4 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]">{x.title}</div>
            ))}
         </div>
         }

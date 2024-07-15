@@ -24,11 +24,6 @@ const BreadCrumbs = ({
 
   const {checkVerfication} = _BillingCondition()
 
-  // const linkCheck = menuList.map((x)=>x.lists.map((y)=>(y.link === link )))
-
-  console.log(link)
-  console.log(link2)
-
   return (
 
     <div className="my-5 border-b pb-3">

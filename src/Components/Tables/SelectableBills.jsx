@@ -41,7 +41,7 @@ export const SelectableBills = ({ type, from }) => {
       const unpaidBills = filteredBills.filter((x) => 
       {
           const {payable} = isOverdue(x.dueDate);
-          return x.status === "unpaid" && payable
+          return x.status === "Unpaid" && payable
       })
 
       setSelectedBills(unpaidBills);
@@ -77,7 +77,7 @@ export const SelectableBills = ({ type, from }) => {
     setOpenModal(true);
   };
 
-  const unpaidBills = from === "dashboard" ? filteredBills.filter((x)=>x.status === "unpaid").slice(0,6).map((x,index)=>x) : filteredBills;
+  const unpaidBills = from === "dashboard" ? filteredBills.filter((x)=>x.status === "Unpaid").slice(0,6).map((x,index)=>x) : filteredBills;
 
   // console.log(unpaidBills);
 
@@ -143,7 +143,7 @@ export const SelectableBills = ({ type, from }) => {
         <tbody>
           {unpaidBills.map((x, index) =>{
           const {payable, overdue} = isOverdue(x.dueDate);
-            // console.log(payable)
+            // console.log(payable, 'from selectable bills')
            return (
             <tr key={index}
               className={`bg-white border-dashed text-xs hover:${payable ? "bg-[#F7F8F9]" : ""} border-b border-[#4653D72B] text-center h-16 text-black font-medium`}>
@@ -211,7 +211,7 @@ export const SelectableBills = ({ type, from }) => {
                            </td> }
                 
                 <td className={`px-6 py-2`}>
-              {x.status === "unpaid" ? (
+              {x.status === "Unpaid" ? (
                 <div className="flex flex-col justify-center items-center">
                   {payable ? (
                     <>
@@ -237,14 +237,14 @@ export const SelectableBills = ({ type, from }) => {
                 </div>
               ) : (
                 <div className="flex items-center justify-evenly gap-2 px-6 py-2">
-                  
-                  <Button className="p-2 border-0 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-lg">
-                    <IoMdEye size={20} color='#377CF6' onClick={() => SetModalAndID(x.id)} />
-                  </Button>
+                  {/* bg-[#DBF0FF] hover:bg-[#acd7f6] */}
+                  <div className="p-2 border-0 bg-[#DBF0FF] rounded-lg">
+                    <IoMdEye size={20} className="text-[#377CF6] hover:text-[var(--blue)] cursor-pointer" onClick={() => SetModalAndID(x.id)} />
+                  </div>
 
-                  <Button className="p-2 border-0 bg-[#DBF0FF] hover:bg-[#acd7f6] rounded-lg">
-                    <FiDownload size={20} color='#377CF6' onClick={PDFTemplate} />
-                  </Button>
+                  <div className="p-2 border-0 bg-[#DBF0FF]  rounded-lg">
+                    <FiDownload size={20} className="text-[#377CF6] hover:text-[var(--blue)] cursor-pointer" onClick={PDFTemplate} />
+                  </div>
 
                 </div>
               )}
