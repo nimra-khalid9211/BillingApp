@@ -634,3 +634,6 @@ input[type="number"] {
 .ant-switch.ant-switch-checked{
   background-color: #00A3AC !important;
 }
+.activeRadio {
+  border: 2px solid #377cf6; /* Border color for active radio button */
+}

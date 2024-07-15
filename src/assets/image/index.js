@@ -69,6 +69,7 @@ import bluePayment from "./bluePayment.png";
 import blueSetting from "./blueSetting.png";
 import blueTransaction from "./blueTransaction.png";
 import blueReport from "./blueReport.png";
+import bank from "./bank.png"
 
 export {
   grayDashboard,
@@ -142,4 +143,5 @@ export {
   Card2,
   Card3,
   billIcon,
+  bank,
 };

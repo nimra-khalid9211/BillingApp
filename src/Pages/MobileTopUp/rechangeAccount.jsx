@@ -15,9 +15,9 @@ export default function RechangeAccount() {
     <>
         <BreadCrumbs
         link={"/mobile-top-up"}
-        menu={"Mobile-top-up"} 
+        menu={"Mobile TopUp"} 
         btnIcon2={<IoChevronBack size={18} />}
-        subMenu={'Recharge'}
+        subMenu={'Recharge Now'}
         btnTitle2={"Back"}
         customClass2="hover-color"
         btnEvent2={() => { navigate("/mobile-top-up")}}

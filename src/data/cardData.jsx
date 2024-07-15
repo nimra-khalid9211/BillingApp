@@ -1,20 +1,29 @@
 
-import { bitmap, visaCard, easyPaisa, jazz, jazzc, jazzcash } from "../assets/image";
+import { bitmap, visaCard, easyPaisa,  jazzcash, bank } from "../assets/image";
 
 export const CardData = [
-
   {
-    icon: <img src={bitmap} alt="" />,
-    title: "Mastercard", 
+    icon: <img src={bank} alt="" className="w-10" />,
+    title: "JazzCash", 
     cardNumber: "5210",
     userName: "Usman Fazal",
     default: true,
     expiry: "9/23",
+    verify: false,
+  },
+
+  {
+    icon: <img src={bitmap} alt="" className="w-10" />,
+    title: "Mastercard", 
+    cardNumber: "5210",
+    userName: "Usman Fazal",
+    default: false,
+    expiry: "9/25",
     verify: true,
   },
 
   {
-    icon: <img src={visaCard} alt=""/>,
+    icon: <img src={visaCard} alt="" className="w-10"/>,
     title: "Visa", 
     cardNumber: "5210",
     default: false,
@@ -24,24 +33,25 @@ export const CardData = [
   },
 
   {
-    icon: <img src={easyPaisa} alt="" />,
+    icon: <img src={easyPaisa} alt="" className="w-10" />,
     title: "Easypaisa", 
     cardNumber: "5210",
     userName: "Usman Fazal",
     default: false,
-    expiry: "9/23",
+    expiry: "JazzCash",
     verify: true,
   },
-
   {
-    icon: <img src={jazzcash} alt="" />,
+    icon: <img src={jazzcash} alt="" className="w-10" />,
     title: "JazzCash", 
     cardNumber: "5210",
     userName: "Usman Fazal",
     default: false,
-    expiry: "9/23",
-    verify: false,
+    expiry: "Easypaisa",
+    verify: true,
   },
+
+
 
 ];
 

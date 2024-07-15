@@ -8,16 +8,16 @@ import { WhiteButton } from "../../UI/Buttons";
 export default function MobileTopUpTable() {
   const navigate = useNavigate();
 
-  const handleClick = (name, mobileOperator, mobileNumber) => {
-    navigate("/mobile-top-up/changing-account", {
-      state: {
-        componentName: name,
-        componentOperator: mobileOperator,
-        componentNumber: mobileNumber,
-      },
-    });
-    console.log(name);
-  };
+  // const handleClick = (name, mobileOperator, mobileNumber) => {
+  //   navigate("/mobile-top-up/changing-account", {
+  //     state: {
+  //       componentName: name,
+  //       componentOperator: mobileOperator,
+  //       componentNumber: mobileNumber,
+  //     },
+  //   });
+  //   console.log(name);
+  // };
 
 
 

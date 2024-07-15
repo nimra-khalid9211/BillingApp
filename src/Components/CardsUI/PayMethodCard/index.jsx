@@ -1,19 +1,21 @@
-import React from 'react'
-import { accounts } from '../../../data/tables'
-import { TikCheck, smallArrow } from '../../../assets/icon'
-import { maskCardNumber } from '../../../Hooks'
+import React, { useState } from 'react'
 import { Card } from 'antd'
 import { bitmap } from '../../../assets/image'
 import { FaAngleRight } from 'react-icons/fa'
+import ChangeAccount from '../ChangeAccount/changeAccount'
 
 const PayMethodCard = ({from}) => {
-
-    // console.log(from)
+  const [changeAccount , setChangeAccount] = useState(false);
+    
+  const handleClick =()=>{
+    setChangeAccount(!changeAccount)
+  }
 
   return (
-    <Card>
+    <>
+    <Card className='rounded-3xl drop-shadow-md'>
 
-      <div className='grid grid-cols-8 my-5 content-center'>
+      <div className='grid grid-cols-8 py-7 content-center'>
 
         <div className='col-span-2 border-r '>
 
@@ -33,16 +35,21 @@ const PayMethodCard = ({from}) => {
           <span className=' text-[#377CF6] bg-[#DBF0FF] px-6 py-2 rounded-lg font-medium'>Default</span>
         </div>
 
-        <div className='col-span-2 flex items-center justify-center'>
-          <span className=' text-[#377CF6] underline rounded-lg font-medium pr-1'>
+        <div className='col-span-2 flex items-center justify-center' onClick={handleClick}>
+          <a className=' text-[#377CF6] underline rounded-lg font-medium pr-1'>
             Change Account 
-            </span>
+            </a>
             <span className='text-[#377CF6] bg-[#E8E7EC] rounded-full'><FaAngleRight size={15}/></span>
         </div>
 
       </div>
+      
 
     </Card> 
+
+    {changeAccount && <ChangeAccount />}
+    </>
+
   )
 }
 

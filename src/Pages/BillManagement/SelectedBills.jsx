@@ -101,13 +101,13 @@ const SelectedBills = () => {
             </div>
             ))}
 
-            <div className='grid grid-cols-2 px-6 text-base font-medium'>
+            <div className='grid grid-cols-4 px-6 text-base font-medium'>
 
-              <div>
+              <div className='col-span-2'>
                   <span className='text-base text-semibold'>{bills?.length} Bills Selected</span>
               </div>
 
-              <div>
+              <div className='ml-[8rem] col-span-2'>
                 <span className='text-base'>Total Amount</span>
 
                 <span className='rounded-xl ml-6 text-white text-lg py-2 px-4 bg-[#377CF6]'>{totalAmount?.toLocaleString()}</span>
@@ -120,11 +120,11 @@ const SelectedBills = () => {
 
    
 
-    <div className='flex justify-start items-center py-4'>
+    <div className='fixed bottom-20'>
 
-        <WhiteButton clickEvent={()=>{navigate("/bill-manager"); setBills("")}} title={"Cancel"}/>
+        <WhiteButton clickEvent={()=>{navigate("/bill-manager"); setBills("")}} title={"Cancel"} />
 
-        <BlueButton clickEvent={()=>navigate("/bill-manager/payment-method")} customStyle={"11rem"} title={"Proceed to Payment"}/>
+        <BlueButton clickEvent={()=>navigate("/bill-manager/payment-method")} customStyle={"11rem"} title={"Proceed to Payment"} customClass='hover-color'/>
         
 
 

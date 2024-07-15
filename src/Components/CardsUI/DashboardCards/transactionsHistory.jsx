@@ -56,7 +56,7 @@ const data = [
 export default function TransactionsHistory() {
   return (
     <>
-      <div className="drop-shadow-lg bg-white h-[43rem] rounded-3xl mt-5">
+      <div className="drop-shadow-lg bg-white rounded-3xl mt-5">
         <div className="font-semibold w-full drop-shadow-lg bg-white py-4 px-6 rounded-t-[2rem]">
           Recent Transactions
         </div>
@@ -75,7 +75,7 @@ export default function TransactionsHistory() {
             return (
               <div
                 key={index}
-                className="flex items-center justify-between mt-5 px-5 pb-3 border-b"
+                className="flex items-center justify-between mt-5 px-5 pb-4 border-b"
               >
                 <div className="flex items-center">
 
@@ -111,7 +111,7 @@ export default function TransactionsHistory() {
             <div className="font-bold text-center">No Record Found</div>
           </>
         )}
-        <div className="fixed bottom-5 left-48 underline text-[var(--blue)] cursor-pointer text-center py-3">
+        <div className="w-full  underline text-[var(--blue)] cursor-pointer text-center py-6 bg-[#d3e8f6] rounded-b-3xl">
           <Link to="/transactions"> View All</Link>
         </div>
       </div>

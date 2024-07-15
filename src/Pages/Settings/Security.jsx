@@ -21,7 +21,7 @@ const security =[
   {
     heading: "Password",
     subHeading: "Set a unique password to protect your account",
-    action: <WhiteButton title={"Change Password"}/> 
+    action: <WhiteButton title={"Change Password"} customStyle={'12rem'}/> 
   },
   {
     heading: "2 Step Verification",

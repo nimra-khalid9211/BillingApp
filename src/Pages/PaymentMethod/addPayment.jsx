@@ -52,7 +52,7 @@ export default function AddPayment() {
           </div>
           <div className="flex items-center">
             <div
-              className={`w-[11rem] cursor-pointer relative ${
+              className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button1" ? "active-image" : ""
               }`}
               onClick={() => handlePaymentTypeClick("button1")}
@@ -60,7 +60,7 @@ export default function AddPayment() {
               <img src={master} alt="MasterCard" className="w-full" />
             </div>
             <div
-              className={`w-[11rem] cursor-pointer relative ${
+              className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button2" ? "active-image" : ""
               }`}
               onClick={() => handlePaymentTypeClick("button2")}
@@ -68,7 +68,7 @@ export default function AddPayment() {
               <img src={visa} alt="Visa" className="w-full" />
             </div>
             <div
-              className={`w-[11rem] cursor-pointer relative ${
+              className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button3" ? "active-image" : ""
               }`}
               onClick={() => handlePaymentTypeClick("button3")}
@@ -76,7 +76,7 @@ export default function AddPayment() {
               <img src={easypa} alt="EasyPaisa" className="w-full" />
             </div>
             <div
-              className={`w-[11rem] cursor-pointer relative ${
+              className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button4" ? "active-image" : ""
               }`}
               onClick={() => handlePaymentTypeClick("button4")}
@@ -84,7 +84,7 @@ export default function AddPayment() {
               <img src={jazz} alt="JazzCash" className="w-full" />
             </div>
             <div
-              className={`w-[11rem] cursor-pointer relative ${
+              className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button5" ? "active-image" : ""
               }`}
               onClick={() => handlePaymentTypeClick("button5")}

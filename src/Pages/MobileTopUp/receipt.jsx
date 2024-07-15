@@ -1,6 +1,7 @@
 import PaymentReciept from "../../Components/CardsUI/PaymentReciept";
 import { MobileTopUpReceipt } from "../../data/tables";
 import Recharge from "../../assets/image/recharge.png";
+import { Link } from "react-router-dom";
 
 export default function Receipt() {
   return (
@@ -20,9 +21,9 @@ export default function Receipt() {
             It is a long established fact that a reader will be distracted by
             the readable content of a page.
           </p>
-          <button className="text-[#377CF6] py-3 px-7 rounded-[3rem] border border-[#377CF6] mt-5">
+          <Link to='/mobile-top-up' className="text-[#377CF6] py-3 px-7 rounded-[3rem] border border-[#377CF6] mt-5">
             Back to Mobile Top up
-          </button>
+          </Link>
         </div>
       </div>
       <div className="bg-[#F8F9FD] p-5 rtl rounded-s-[3rem]">

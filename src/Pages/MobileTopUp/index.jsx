@@ -10,7 +10,7 @@ export default function MobileTopUp() {
   return (
     <>
       <BreadCrumbs
-        menu="Mobile Top UP"
+        menu="Mobile Top Up"
         btnTitle2={"Add Number"}
         customClass2="hover-color"
         customStyle={"9rem"}

@@ -27,7 +27,7 @@ export default function MasterVisaCard() {
             size="small"
           /> */}
 
-          <InputDate label={"Expiry on Card"}/>
+          <InputDate label={"Expiry Card"}/>
 
           {/* <TextField
             id="outlined-basic"
