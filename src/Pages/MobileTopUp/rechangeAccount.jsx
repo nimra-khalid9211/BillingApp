@@ -37,7 +37,7 @@ export default function RechangeAccount() {
        Mobile Top Up
       </div>
 
-      <div className="py-10 px-5">
+      <div className="py-10 px-5 bg-white">
         <div className="font-medium text-base text-[#F58021]">Default Payment</div>
         <div className="grid grid-cols-5 gap-4 rounded-2xl mt-5 bg-white p-5 drop-shadow-lg">
           <div className="flex items-center border-r-2">
@@ -65,7 +65,7 @@ export default function RechangeAccount() {
         </div>
       </div>
       {changeAccount &&
-        <div className="grid grid-cols-4 px-5 pb-5 gap-4">
+        <div className="grid grid-cols-4 px-5 pb-5 gap-4 bg-white">
         <ChangeAccount/>
       </div>}
     
