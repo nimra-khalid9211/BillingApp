@@ -25,11 +25,9 @@ export default function RechangeAccount() {
 
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
       
-      <div className="bg-[#377CF6] text-white p-3">
-
-        <span>Mobile Top Up</span>
-
-        </div>
+    <div className="drop-shadow-xl text-[var(--blue)] rounded-t-3xl text-lg pl-7 bg-white p-3">
+       Mobile Top Up
+      </div>
 
       <div className="py-10 px-5">
         <div className="font-medium text-base text-[#F58021]">Default Payment</div>

@@ -26,7 +26,7 @@ return (
 
     <Row style={{ minHeight: "100vh" }} className='bg-[#F6F6F8]'>
 
-    <Col md={4} xs={0} className="fixedColumn leftColumn rounded-r-[36px] bg-white z-10 left-sidebar-shadow">
+    <Col md={4} xs={0} className="fixedColumn rounded-r-[36px] bg-white z-10 left-sidebar-shadow">
       <LeftSideBar />
     </Col>
 
