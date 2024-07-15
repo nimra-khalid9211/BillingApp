@@ -50,9 +50,10 @@ export function maskCardNumber(cardNumber) {
 // };
 
 export const isOverdue = (dueDate) => {
+  // console.log(dueDate)
   const due = new Date(dueDate);
   const today = new Date();
-
+  
   // Set time to midnight for both dates
   due.setHours(0, 0, 0, 0);
   today.setHours(0, 0, 0, 0);
@@ -103,9 +104,14 @@ export const formatAmount1 = (amount) => {
 };
 
 // formatAmount.js
+// export const formatAmount = (amount) => {
+//   const [integerPart, decimalPart] = amount.toFixed(2).split(".");
+//   return { integerPart, decimalPart };
+// };
+
 export const formatAmount = (amount) => {
   const [integerPart, decimalPart] = amount.toFixed(2).split(".");
-  return { integerPart, decimalPart };
+  return { integerPart: integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ','), decimalPart };
 };
 
 // export const formatDate = (date) => {

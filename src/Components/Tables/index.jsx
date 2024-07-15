@@ -28,7 +28,7 @@ export const  MyBills = ({ from }) => {
 
       <div className="overflow-x-auto rounded-3xl mt-5 bg-[#ffffff]">
 
-      <div className="font-semibold w-full text-lg drop-shadow-xl text-[var(--blue)] bg-white p-4 rounded-t-3xl">
+      <div className="font-medium pl-7 w-full text-lg drop-shadow-xl text-[var(--blue)] bg-white p-4 rounded-t-3xl">
        {from === "BMB" ? "My Bills" : "Due Bills List"}
         </div>
       

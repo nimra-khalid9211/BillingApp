@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { CardData } from "../../data/cardData";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { IoChevronBack, IoChevronDownCircleOutline } from "react-icons/io5";
-import { isOverdue } from "../../Hooks";
+import { formatAmount, isOverdue } from "../../Hooks";
 import { useNavigate } from "react-router-dom";
 import { PaymentSuccessfullModal } from "../../Components/Modals";
 import { paymentSuccessfull } from "../../assets/image";
@@ -20,13 +20,17 @@ const BillPaymentMethod = () => {
 
   const totalAmount = bills?.reduce((total, bill) => {
     const amountString = isOverdue(bill.dueDate)
-      ? bill.afterDueAmount
-      : bill.amount;
+      ? bill.amount : bill.afterDueAmount;
 
     const amount = parseFloat(amountString.replace(/,/g, ""));
-
-    return Math.round((total + amount) * 100) / 100;
+    const math = Math.round((total + amount) * 100) / 100;
+    return math
   }, 0);
+
+  const fees = 1.23; 
+  const feesamount = totalAmount + fees
+
+  const formattedAmount = formatAmount(feesamount);
 
   const handleCardSelection = (index) => {
     setSelectedCardIndex(index); // Update state with selected card index
@@ -118,14 +122,21 @@ const BillPaymentMethod = () => {
 
         <span className='text-sm font-semibold'>{x.billname}</span>
 
-        <span className='text-lg font-semibold'>{isOverdue(x.dueDate) ? x.afterDueAmount : x.amount}</span>
+        <span className='text-lg font-semibold'>{isOverdue(x.dueDate) ? x.amount : x.afterDueAmount}</span>
       </div>))}
 
         <div className='flex items-center justify-between mt-3 p-4 rounded-xl border-[#377CF6] border-2 text-[#377CF6]'>
 
         <span className='text-base font-medium'>Total Payable Amount</span>
 
-        <span  className='text-2xl font-medium'>{totalAmount?.toLocaleString()}</span>
+       
+        <div>
+        <span className=" text-sm mx-0">Rs</span> 
+        <span  className='text-2xl font-medium relative mr-3'> {formattedAmount.integerPart}
+        <span className="text-sm align-super absolute top-0 ml-1">.{formattedAmount.decimalPart}</span>
+          {/* {totalAmount?.toLocaleString()} */}
+          </span>
+          </div>
 
         </div>
  

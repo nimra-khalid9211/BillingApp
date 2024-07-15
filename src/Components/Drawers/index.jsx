@@ -115,53 +115,38 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       <div className="">
         <DrawerCardLayout heading={"Bill Details"}>
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
-            <div className="col-span-4 relative">
-              <TextField
-                label={
-                  from === "addBill"
-                    ? "Company"
-                    : from === "quickPay"
-                    ? "Select Bill"
-                    : ""
-                }
-                value={bill}
-                onChange={filterSearch}
-                variant="outlined"
-                size="small"
-                fullWidth
-              />
+          
+             <div className="col-span-4 relative">
 
-              {list && (
-                <div className="absolute overflow-y-auto drop-shadow-2xl z-50 bg-white mt-2 rounded-2xl w-full h-36">
-                  {filteredCompanies.map((x, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handleSelectBill(x.title)}
-                      className="mx-3 p-2 px-4 border-l-white border-b rounded-sm border-l-4 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]"
-                    >
-                      {x.title}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+        <TextField label={from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""} 
+        value={bill} onChange={filterSearch} variant="outlined" size="small" fullWidth />
+  
+        {list && 
 
-            {from === "addBill" && (
-              <InputCustom
-                className={"col-span-2 mt-3"}
-                label={"Consumer ID"}
-              />
-            )}
+        <div className="absolute overflow-y-auto drop-shadow-2xl z-50 bg-white mt-2 rounded-2xl w-full h-36">
+           {filteredCompanies.map((x, index)=>(
+            <div key={index} onClick={()=>handleSelectBill(x.title)} className="mx-3 p-2 px-4 border-l-white border-b rounded-sm border-l-4 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]">{x.title}</div>
+           ))}
+        </div>
+        }
+        
+        </div>
 
-            {from === "addBill" && (
-              <InputCustom
-                className={"col-span-2 mt-3"}
-                label={"Bill Nick Name"}
-              />
-            )}
+            {from === "addBill" && 
+            <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"}/>
+            }
+
+           {from === "addBill" && 
+           <InputCustom className={"col-span-2 mt-3"} label={"Bill Nick Name"}/>
+            }
+
+            {from === "addBill" && <BlueButton title={"Fetch"} customClass={"hover-color"}/>}
+
           </div>
+
         </DrawerCardLayout>
-      </div>
+
+        </div>
 
       <DrawerCardLayout heading={"Payment Preference"}>
         {from === "addBill" || from === "quickPay" ? (

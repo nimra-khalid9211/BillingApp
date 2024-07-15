@@ -31,7 +31,7 @@ export default function MobileTopUpTable() {
 
   return (
     <div className="relative overflow-x-auto  rounded-3xl shadow-md  mt-5 bg-white">
-      <div className="drop-shadow-xl rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3">
+      <div className="drop-shadow-xl pl-7 rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3">
         Mobile Top Up
       </div>
 

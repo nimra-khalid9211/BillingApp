@@ -5,10 +5,18 @@ import Card from "../../assets/image/Bitmap.svg";
 import { useNavigate } from "react-router-dom";
 import { SiTicktick } from "react-icons/si";
 import BreadCrumbs from "../../UI/BreadCrumbs";
+import ChangeAccount from "../../Components/CardsUI/ChangeAccount/changeAccount";
+import { useState } from "react";
+import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 
 
 export default function RechangeAccount() {
   const navigate = useNavigate();
+  const [changeAccount, setChangeAccount] = useState(false);
+
+  const handleClick = () => {
+    setChangeAccount(!changeAccount);
+  };
 
 
   return (
@@ -23,7 +31,7 @@ export default function RechangeAccount() {
         btnEvent2={() => { navigate("/mobile-top-up")}}
       />
 
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
+    <div className="overflow-x-auto shadow-md sm:rounded-lg rounded-[25px] mt-5">
       
       <div className="bg-[#377CF6] text-white p-3">
 
@@ -50,14 +58,20 @@ export default function RechangeAccount() {
           <div className="border-r-2 flex items-center justify-center text-[#377CF6]">
             <div className="bg-[var(--secondary-color)] rounded-3xl w-[7rem] py-2 text-center">Default</div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center cursor-pointer"  onClick={handleClick}>
             <div className="text-[#377CF6] underline">Change Account</div>
-            <div className="ml-2">
-              <img src={smallArrow} alt="icon" />
-            </div>
+            {
+                changeAccount ?  <FaAngleDown size={15}  color="#377CF6"/> :  <FaAngleRight size={15} color="#377CF6"/>
+              }
           </div>
         </div>
       </div>
+      {changeAccount &&
+        <div className="grid grid-cols-4 px-5 pb-5 gap-4">
+        <ChangeAccount/>
+      </div>}
+    
+      
     </div>
     </>
   );

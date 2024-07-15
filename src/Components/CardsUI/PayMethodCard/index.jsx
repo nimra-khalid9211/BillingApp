@@ -48,8 +48,9 @@ const PayMethodCard = ({ from }) => {
           </div>
         </div>
       </Card>
-
+      <div className="grid grid-cols-2 gap-4 my-7">
       {changeAccount && <ChangeAccount />}
+      </div>
     </>
   );
 };

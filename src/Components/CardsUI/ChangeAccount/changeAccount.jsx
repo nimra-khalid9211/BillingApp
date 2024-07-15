@@ -35,11 +35,11 @@ export default function ChangeAccount(){
         setSelectedCardIndex(index); // Update state with selected card index
       };
     return(
-        <div className="grid grid-cols-6 gap-4 my-7">
+    <>
         {cards.map((x, index) => (
           <Card
             key={index}
-            className={`col-span-3 py-3 px-5 rounded-3xl drop-shadow-md ${
+            className={`py-3 px-5 rounded-3xl drop-shadow-md ${
               index === selectedCardIndex ? "activeRadio" : ""
             }`}
           >
@@ -75,6 +75,6 @@ export default function ChangeAccount(){
             </div>
           </Card>
         ))}
-      </div>
+    </>
     )
 }
