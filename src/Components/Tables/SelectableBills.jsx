@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MyBillHeading } from "./index";
 import { MyBillList } from "../../data/tables";
 import { Button, Switch } from "antd";
 import { FiDownload } from "react-icons/fi";
 import { IoMdEye } from "react-icons/io";
-import { FaShareNodes } from "react-icons/fa6";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { Link, useNavigate } from "react-router-dom";
 import { ViewReceiptModal } from "../Modals";
@@ -24,6 +23,8 @@ export const SelectableBills = ({ type, from }) => {
   const { setBills } = _BillingCondition();
 
   const [selectedBills, setSelectedBills] = useState([]);
+
+  const [isUniformPaymentMethod, setIsUniformPaymentMethod] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);
   const [id, setId] = useState();
@@ -86,7 +87,16 @@ export const SelectableBills = ({ type, from }) => {
     };
 
    return statusOrder[a.status] - statusOrder[b.status]})
-  console.log(test, "multiple accounts ")
+    // console.log(test, "multiple accounts ")
+
+    useEffect(() => {
+      // Determine unique payment methods
+      const uniquePaymentMethods = Array.from(new Set(filteredBills.map(bill => bill.payPreference)));
+      // Check if all bills have the same payment method
+      setIsUniformPaymentMethod(uniquePaymentMethods.length === 1);
+    }, [filteredBills]);
+
+    // console.log(isUniformPaymentMethod);
 
   return (
     <>
@@ -102,7 +112,7 @@ export const SelectableBills = ({ type, from }) => {
       <table className="w-full table-fixed text-sm">
         <thead className="text-[11px] text-[var(--blue)] text-center bg-[#DBF0FF]">
           <tr>
-            <th
+         { isUniformPaymentMethod &&  <th
               scope="col"
               className="w-10 p-4 border-dashed border-r border-[#4653D72B]"
             >
@@ -120,7 +130,7 @@ export const SelectableBills = ({ type, from }) => {
                 </label>
               </div>
               
-            </th>
+            </th>}
             
             {MyBillHeading.map((x, index) => {
               if (
@@ -155,7 +165,7 @@ export const SelectableBills = ({ type, from }) => {
             <tr key={index}
               className={`bg-white border-dashed text-xs hover:${payable ? "bg-[#F7F8F9]" : ""} border-b border-[#4653D72B] text-center h-16 text-black font-medium`}>
 
-              <td className="w-5 p-4 border-dashed border-r border-[#4653D72B]">
+              {isUniformPaymentMethod && <td className="w-5 p-4 border-dashed border-r border-[#4653D72B]">
 
                 <div className="flex items-center mr-2">
                   <input
@@ -172,7 +182,7 @@ export const SelectableBills = ({ type, from }) => {
                   </label>
                 </div>
 
-              </td>
+              </td>}
 
               <td
                 scope="row"

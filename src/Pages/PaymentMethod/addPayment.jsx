@@ -13,17 +13,7 @@ import {useEffect, useState} from "react";
 
 export default function AddPayment() {
   const navigate = useNavigate();
-  // const { checkShown } = _BillingCondition();
-  // console.log(checkShown);
-  // const [checkShown, setCheckShown] = useState(true);
-
-  // useEffect(() => {
-  //   if(localStorage.getItem("paymentType") === "button5"){
-  //     setCheckShown(false);
-  //   } else {
-  //     setCheckShown(true);
-  //   }
-  // }, []);
+ 
   const { paymentType, setPaymentType } = _BillingCondition();
 
   const handlePaymentTypeClick = (type) => {
@@ -50,10 +40,13 @@ export default function AddPayment() {
       </div>
         
         <div className="px-10 py-7 bg-white">
+
           <div className="font-semibold text-lg mb-5 text-[#176ba3]">
             Select Payment Method:
           </div>
+          
           <div className="flex items-center">
+
             <div
               className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button1" ? "active-image" : ""
@@ -62,6 +55,7 @@ export default function AddPayment() {
             >
               <img src={master} alt="MasterCard" className="w-full" />
             </div>
+
             <div
               className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button2" ? "active-image" : ""
@@ -70,6 +64,7 @@ export default function AddPayment() {
             >
               <img src={visa} alt="Visa" className="w-full" />
             </div>
+
             <div
               className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button3" ? "active-image" : ""
@@ -78,6 +73,7 @@ export default function AddPayment() {
             >
               <img src={easypa} alt="EasyPaisa" className="w-full" />
             </div>
+
             <div
               className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button4" ? "active-image" : ""
@@ -86,6 +82,7 @@ export default function AddPayment() {
             >
               <img src={jazz} alt="JazzCash" className="w-full" />
             </div>
+
             <div
               className={`w-[8rem] cursor-pointer relative ${
                 paymentType === "button5" ? "active-image" : ""
@@ -94,35 +91,45 @@ export default function AddPayment() {
             >
               <img src={debit} alt="Debit Card" className="w-full" />
             </div>
+            
           </div>
+
           <div>
+
             {paymentType === "button1" && (
               <div>
                 <MasterVisaCard />
               </div>
             )}
+
             {paymentType === "button2" && (
               <div>
                 <MasterVisaCard />
               </div>
             )}
+
             {paymentType === "button3" && (
               <div>
                 <JazzEasypaisa />
               </div>
             )}
+
             {paymentType === "button4" && (
               <div>
                 <JazzEasypaisa />
               </div>
             )}
+
             {paymentType === "button5" && (
               <div>
                 <DebitCard />
               </div>
             )}
+
           </div>
+          
         </div>
+
       </div>
         <div className="fixed bottom-20">
           <WhiteButton customClass={"cancel-btn"}

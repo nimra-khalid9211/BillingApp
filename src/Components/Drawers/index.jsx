@@ -1,21 +1,13 @@
-import {
-  Autocomplete,
-  Chip,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
-import { Card, Divider, Drawer, Input, Switch } from "antd";
-import React, { useEffect, useState } from "react";
+import { TextField,} from "@mui/material";
+import {  Card, Divider, Drawer, Switch } from "antd";
+import React, { useState } from "react";
 import DrawerCardLayout from "../../Components/DrawerCardLayout";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 import PayMethodCard from "../CardsUI/PayMethodCard";
 import { Cancel } from "../../assets/icon";
 import { InputCustom } from "../../UI/Inputs";
-import ChangeAccount from "../CardsUI/ChangeAccount/changeAccount";
+import { toast } from "react-toastify";
 
 const billingCompanies = [
   { title: "GEPCO" },
@@ -61,6 +53,8 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
   const [bill, setBill] = useState("");
   const [list, setList] = useState(false);
 
+  const [secondDrawer, setSecondDrawer] = useState(false);
+
   const filterSearch = (e) => {
     const value = e.target.value;
     value.length > 0 ? setList(true) : setList(false);
@@ -77,6 +71,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
   );
 
   return (
+
     <Drawer
       title={
         <div>
@@ -96,7 +91,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       onClose={() => setAddBill(false)}
       open={addBill}
       key="right"
-      width={1200}
+      width={secondDrawer ? 1450 : 1200}
       className="p-8 relative"
       style={{
         overflow: "unset",
@@ -105,6 +100,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         background: "#f6f6f8",
       }}
     >
+
       <div
         onClick={() => setAddBill(false)}
         className="absolute cursor-pointer left-[-1.5rem] z-50 top-[8rem]"
@@ -112,8 +108,9 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         <img src={Cancel} alt="" />
       </div>
 
-      <div className="">
-        <DrawerCardLayout heading={"Bill Details"}>
+
+        <DrawerCardLayout heading={"Select Bill"}>
+          
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
           
              <div className="col-span-4 relative">
@@ -146,18 +143,55 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         </DrawerCardLayout>
 
+        <DrawerCardLayout height={"13rem"} heading={"Bill Details"}>
+                      
+       <Card className="rounded-3xl p-5 drop-shadow-xl">
+
+        <div className="grid grid-cols-5 justify-items-center text-sm">
+
+          <div className="flex flex-col justify-self-start">
+              <span className="text-regular text-[#6C7293]">Consumer ID</span>
+              <span className="mt-1" style={{fontWeight: "600"}}>1234567891234567</span>
+          </div>
+
+          <div className="flex w-28 truncate flex-col">
+              <span className="text-[#6C7293]">Consumer Name</span>
+              <span className="mt-1" style={{fontWeight: "600"}}>Ahmed Ali Usama Asghar Ali Agha</span>
+          </div>
+
+          <div className="flex flex-col">
+              <span  className="text-[#6C7293]">Due Amount</span>
+              <span className="mt-1" style={{fontWeight: "600"}}>Rs <span>41,584</span></span>
+          </div>
+
+          <div className="flex flex-col">
+              <span  className="text-[#6C7293]">Due Date</span>
+              <span className="mt-1" style={{fontWeight: "600"}}>26 Jun 2024</span>
+          </div>
+
+          <div className="flex flex-col">
+              <span  className="text-[#6C7293]">Status</span>
+              <span className="mt-1 text-[#F1416C] border border-[#F1416C] bg-[#FFD5DF] text-[10px] rounded-full py-[2px] px-5" style={{fontWeight: "600"}}>Unpaid</span>
+          </div>
+
         </div>
+
+       </Card>
+
+        </DrawerCardLayout>
 
       <DrawerCardLayout heading={"Payment Preference"}>
         {from === "addBill" || from === "quickPay" ? (
           <div>
-            <div className="flex justify-between items-center w-60 mt-6 bg-white">
+
+            {/* <div className="flex justify-between items-center w-60 mt-6 bg-white">
               <span className="text-base font-medium mb-3">Auto Debit</span>
               <span>
                 <Switch defaultChecked size="small" />
               </span>
-            </div>
-            {from === "addBill" && <PayMethodCard from={from} />}
+            </div> */}
+ 
+            {from === "addBill" && <PayMethodCard from={from} secondDrawer={secondDrawer} setSecondDrawer={setSecondDrawer} />}
           </div>
         ) : null}
 
@@ -165,6 +199,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       </DrawerCardLayout>
 
       <div className="ml-[7rem] fixed bottom-10">
+
         <WhiteButton
           customClass={"cancel-btn"}
           title={"Cancel"}
@@ -172,6 +207,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         />
 
         <BlueButton
+          clickEvent={()=>{setAddBill(false); toast.success("Bill added Successfully!")}}
           customClass={"hover-color"}
           title={
             from === "addBill"
@@ -182,6 +218,8 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
           }
         />
       </div>
+
     </Drawer>
+
   );
 };

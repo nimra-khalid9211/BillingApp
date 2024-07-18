@@ -236,8 +236,8 @@ export const ReportModels = ({ report, setReport,title}) => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-10">
-          <WhiteButton title="Cancel" clickEvent={() => setReport(false)}/>
-          <BlueButton title="Generate Report" clickEvent={()=>navigate('/transaction-report')}/>
+          <WhiteButton customClass={"cancel-btn"} title="Cancel" clickEvent={() => setReport(false)}/>
+          <BlueButton customClass={"hover-color"} customStyle={"11rem"} title="Generate Report" clickEvent={()=>navigate('/transaction-report')}/>
         </div>
       </div>
     </Modal>

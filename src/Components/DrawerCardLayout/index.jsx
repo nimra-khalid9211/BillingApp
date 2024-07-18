@@ -1,17 +1,17 @@
 import { Card, Divider } from 'antd'
 import React from 'react'
 
-const DrawerCardLayout = ({heading, children}) => {
+const DrawerCardLayout = ({heading, height, from, children}) => {
   return (
-    <div className="flex  justify-center my-5">
+    <div className="flex justify-center my-5">
 
-    <Card className="w-4/5 drop-shadow-xl"
-    style={{ borderRadius: '30px' }}>
+    <Card className="w-[54rem] drop-shadow-xl"
+    style={{ borderRadius: '30px', height: height }}>
 
       <div className="mx-5 my-5">
-        <span className="text-base font-medium text-black">{heading}</span>
+        <span className="text-base font-semibold text-black">{heading}</span>
 
-        <Divider />
+     { from !== "secondDrawer" &&  <Divider />}
 
       {children}
 

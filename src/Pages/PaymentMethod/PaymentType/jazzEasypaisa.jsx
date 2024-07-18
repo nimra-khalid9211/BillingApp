@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { InputCustom } from "../../../UI/Inputs";
 
-export default function JazzEasypaisa() {
+export default function JazzEasypaisa({width}) {
   const [isVerified, setIsVerified] = useState(false);
 
   const handleVerifyClick = () => {
@@ -11,12 +11,14 @@ export default function JazzEasypaisa() {
   return (
     <div>
       <div className="border-b pb-2 font-bold mt-10">
-        JazzCash Account Details
+       Account Details
       </div>
-      <div className="w-4/5">
-        <div className="grid grid-cols-3 gap-4 my-5">
+      <div className={`${width ? width : "w-1/2"}`}>
+        <div className="grid grid-cols-5 gap-4 my-5">
 
+        <div className="col-span-2">
         <InputCustom label={"Account Holder Name"} />
+        </div>
         
           {/* <TextField
             id="outlined-basic"
@@ -25,7 +27,9 @@ export default function JazzEasypaisa() {
             size="small"
           /> */}
 
+<div className="col-span-2">
           <InputCustom label={"Mobile Number"} />
+          </div>
 
           {/* <TextField
             id="outlined-basic"
