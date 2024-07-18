@@ -50,11 +50,20 @@ export const PaymentSuccessfullModal = ({
   debitTextOne,
   debitTextTwo,
   cancelTitle,
+  cancelText,
+  delArray
 }) => {
   const handleButtonClick = () => {
     onButtonClick();
     setReceiptModal(false);
   };
+
+  // const handleDeleteBill = (index) => {
+  //   const updatedBills = [...bills];
+  //   updatedBills.splice(index, 1); // Remove the bill at the specified index
+  //   setBills(updatedBills); // Update the bills state
+  //   console.log("clicked")
+  // };
 
   return (
     <Modal
@@ -109,19 +118,20 @@ export const PaymentSuccessfullModal = ({
       )}
       {from === "debitAccountCancelled" && (
         <>
-          <div className="py-8 px-[7rem] text-center">
-            <div className="text-[#F1416C] font-medium text-lg mt-2 ">
+          <div className="py-8 px-[5rem] text-center">
+            <div className="text-[#F1416C] font-semibold text-lg mt-2 ">
               {cancelTitle}
             </div>
-            <div className="border-y border-r border-l-[0.5rem] border-[#DD2B37] bg-[#FDE1E3] text-start pl-4 py-4 mt-10 mb-5">
+            <div className="mt-10 font-medium">{cancelText}</div>
+            <div className="border-y border-r border-l-[0.5rem] border-[#DD2B37] bg-[#FDE1E3] text-start pl-4 py-4 my-5">
               <p className="text-[#DD2B37] font-semibold">Warning</p>
               <p className="font-semibold">You can not undo this action.</p>
             </div>
           </div>
-          <div className="bg-[#E8E7EC] py-4 text-center rounded-b-[2rem]">
+          <div className="bg-[#E8E7EC] py-5 text-center rounded-b-[2rem]">
             <button
               className="bg-[#DD2B37] text-white rounded-[2rem] px-[7rem] py-2 font-semibold ml-3 "
-              onClick={handleButtonClick}
+              onClick={delArray}
             >
               Yes, Cancel it
             </button>

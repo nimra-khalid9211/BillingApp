@@ -7,7 +7,7 @@ import { WhiteButton, BlueButton } from "../../../UI/Buttons";
 import { InputCustom } from "../../../UI/Inputs";
 
 export default function DebitCard(type) {
-  const [verified, setVerified] = useState(false);
+  // const [verified, setVerified] = useState(false);
   // const { checkShown } = _BillingCondition();
   const [cencelVerification, setCancelVerification] = useState(false);
   const [checkShown, setCheckShown] = useState(true);
