@@ -6,7 +6,7 @@ import { _BillingCondition } from "../../../actions/Context/BillingOverviewCondi
 import { WhiteButton, BlueButton } from "../../../UI/Buttons";
 import { InputCustom } from "../../../UI/Inputs";
 
-export default function DebitCard(type) {
+export default function DebitCard({type, width}) {
   const [verified, setVerified] = useState(false);
   // const { checkShown } = _BillingCondition();
   const [cencelVerification, setCancelVerification] = useState(false);
@@ -35,49 +35,31 @@ export default function DebitCard(type) {
       <div className="border-b pb-2 font-bold mt-10">
         Bank Direct Debit Details
       </div>
-      <div className="grid grid-cols-2 gap-4 place-content-between mt-5">
-        <div className="">
-          <div className="grid grid-cols-2 gap-4">
+      <div className={`${width ? "" :"grid grid-cols-2 gap-4 place-content-between"} mt-5`}>
+      
+      
+        <div className={`${width ? width : "w-1/2"}`}>
+          
+          <div className={`grid ${width ? "grid-cols-5" : 'grid-cols-2'} gap-4`}>
+            
+            <div className="col-span-2">
+            <InputCustom label={"Account Title"} />
+            </div>
 
-          <InputCustom label={"Account Title"} />
-
-            {/* <TextField
-              id="outlined-basic"
-              label="Account Title"
-              variant="outlined"
-              size="small"
-            /> */}
-
+            <div className="col-span-2">
             <InputCustom label={"Bank Name"} />
+            </div>
 
-            {/* <TextField
-              id="outlined-basic"
-              label="Bank Name "
-              variant="outlined"
-              size="small"
-            /> */}
+            <div className="col-span-2">
+            <InputCustom label={"Branch Number"} />  
+            </div>   
 
-            <InputCustom label={"Branch Number"} />
-
-            {/* <TextField
-              id="outlined-basic"
-              label="Branch Number"
-              variant="outlined"
-              size="small"
-            /> */}
-
+            <div className="col-span-2">
             <InputCustom label={"IBAN #"} />
+            </div>
 
-            {/* <TextField
-              id="outlined-basic"
-              label="IBAN#"
-              variant="outlined"
-              size="small"
-            /> */}
           </div>
-
-
-          {/* {checkShown ? (
+        
             <div className="my-5">
               <input type="checkbox" onClick={handleVerfied} />
               <label htmlFor="" className="ml-3">
@@ -87,28 +69,10 @@ export default function DebitCard(type) {
                 <span className="text-[#329DFF]">"Privacy Policy"</span>
               </label>
             </div>
-          ) : (
-            <div className="mt-5">
-              <WhiteButton
-                title="Cancel Verification"
-                clickEvent={handleCancelVerification}
-                customClass='cancel-btn' customStyle={"11rem"}
-              />
-              <BlueButton title="Verify Now"
-              customClass='hover-color' customStyle={"11rem"} />
-            </div>
-          )} */}
-            <div className="my-5">
-              <input type="checkbox" onClick={handleVerfied} />
-              <label htmlFor="" className="ml-3">
-                I agree to the
-                <span className="text-[#329DFF]"> "Terms & Conditions"</span>
-                and
-                <span className="text-[#329DFF]">"Privacy Policy"</span>
-              </label>
-            </div>
+
         </div>
-        {!checkShown && (
+
+        {/* {!checkShown && (
           <div className="flex justify-center">
             <div className="border border-[#FF9402] rounded-lg p-4 w-[23rem] h-[8rem]">
               <div className="flex items-start">
@@ -121,8 +85,10 @@ export default function DebitCard(type) {
               </div>
             </div>
           </div>
-        )}
+        )} */}
+
       </div>
+      
       <PaymentSuccessfullModal
         receiptModal={cencelVerification}
         setReceiptModal={handleModalClose}

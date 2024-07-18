@@ -2,62 +2,46 @@ import { TextField } from "@mui/material";
 import { InputCustom, InputDate } from "../../../UI/Inputs";
 import { useLocation } from "react-router-dom";
 
-export default function MasterVisaCard() {
-  const location = useLocation().state?.account;
-  // console.log(location.cvv , "state")
+export default function MasterVisaCard({width}) {
 
+  const location = useLocation().state?.account;
 
   return (
     <div>
       <div className="border-b pb-2 font-bold mt-10">
         Card Details
       </div>
-      <div className="w-1/2">
-        <div className="grid grid-cols-2 gap-4 mt-5">
+      <div className={`${width ? width : "w-1/2" }`}>
+        <div className={`grid grid-cols-5 gap-4 mt-5`}>
 
+          <div className="col-span-2">
           <InputCustom label={"Name on Card"} value={location?.userName}/>
-          {/* <TextField
-            id="outlined-basic"
-            label="Name on Card"
-            variant="outlined"
-            size="small"
-          /> */}
+          </div>
 
+          <div className="col-span-2">
           <InputCustom label={"Card Number"} value={location?.cardNumber}/>
+          </div>
           
-          {/* <TextField
-            id="outlined-basic"
-            label="Card Number"
-            variant="outlined"
-            size="small"
-          /> */}
 
+          <div className="col-span-2">
           <InputCustom label={"Expiry Card"} value={location?.expiry}/>
+          </div>
 
-          {/* <TextField
-            id="outlined-basic"
-            label="Expiry on Card"
-            variant="outlined"
-            size="small"
-          /> */}
-
+          <div className="col-span-2">
           <InputCustom label={"CVV"} value={location?.cvv}/>
-
-          {/* <TextField
-            id="outlined-basic"
-            label="CVV"
-            variant="outlined"
-            size="small"
-          /> */}
+          </div>
 
         </div>
+
         <div className="my-5">
           <input type="checkbox" />
           <label htmlFor="" className="ml-3">
             Set as Default
           </label>
         </div>
+
       </div>
+
     </div>
   );
 }
