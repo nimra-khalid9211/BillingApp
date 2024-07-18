@@ -51,7 +51,7 @@ input[type="date"]:in-range::-webkit-datetime-edit-text { 	color: transparent; }
 
 .centerColumn {
   /* padding: 10px; */
-  margin-left: 15.5%;
+  margin-left: 16%;
   /* Adjust as per left column width */
   /* margin-right: 20%; Adjust as per right column width */
 }

@@ -29,7 +29,7 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: false,
-    payPreference: "JazzCash-5215",
+    payPreference: "Mastercard-5215",
     status: "Unpaid",
     // actions:""
   },
@@ -44,7 +44,7 @@ export const MyBillList = [
     amount: "5,040",
     afterDueAmount: "5,630",
     autoDebit: false,
-    payPreference: "JazzCash-5215",
+    payPreference: "Mastercard-5215",
     status: "Paid",
     transactionID: "1713875280857-BETA",
     payDate: "15 May 2024",
@@ -61,7 +61,7 @@ export const MyBillList = [
     amount: "7,000",
     afterDueAmount: "7,630",
     autoDebit: true,
-    payPreference: "Easypaisa-5215",
+    payPreference: "Mastercard-5215",
     status: "Unpaid",
     // actions:""
   },

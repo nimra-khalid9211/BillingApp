@@ -1,21 +1,13 @@
-import {
-  Autocomplete,
-  Chip,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
-import { Card, Divider, Drawer, Input, Switch } from "antd";
-import React, { useEffect, useState } from "react";
+import { TextField,} from "@mui/material";
+import {  Divider, Drawer, Switch } from "antd";
+import React, { useState } from "react";
 import DrawerCardLayout from "../../Components/DrawerCardLayout";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 import PayMethodCard from "../CardsUI/PayMethodCard";
 import { Cancel } from "../../assets/icon";
 import { InputCustom } from "../../UI/Inputs";
-import ChangeAccount from "../CardsUI/ChangeAccount/changeAccount";
+import { toast } from "react-toastify";
 
 const billingCompanies = [
   { title: "GEPCO" },
@@ -105,6 +97,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         background: "#f6f6f8",
       }}
     >
+
       <div
         onClick={() => setAddBill(false)}
         className="absolute cursor-pointer left-[-1.5rem] z-50 top-[8rem]"
@@ -112,8 +105,9 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         <img src={Cancel} alt="" />
       </div>
 
-      <div className="">
+
         <DrawerCardLayout heading={"Bill Details"}>
+          
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
           
              <div className="col-span-4 relative">
@@ -146,8 +140,6 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         </DrawerCardLayout>
 
-        </div>
-
       <DrawerCardLayout heading={"Payment Preference"}>
         {from === "addBill" || from === "quickPay" ? (
           <div>
@@ -165,6 +157,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       </DrawerCardLayout>
 
       <div className="ml-[7rem] fixed bottom-10">
+
         <WhiteButton
           customClass={"cancel-btn"}
           title={"Cancel"}
@@ -172,6 +165,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         />
 
         <BlueButton
+          clickEvent={()=>{setAddBill(false); toast.success("Bill added Successfully!")}}
           customClass={"hover-color"}
           title={
             from === "addBill"
@@ -182,6 +176,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
           }
         />
       </div>
+
     </Drawer>
   );
 };
