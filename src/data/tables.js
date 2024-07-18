@@ -96,7 +96,7 @@ export const MyBillList = [
     // actions:""
   },
   {
-    id: "6",
+    id: "7",
     type: "gas",
     billname: "Home Gas",
     consumerID: "123456798",
@@ -111,7 +111,7 @@ export const MyBillList = [
     // actions:""
   },
   {
-    id: "6",
+    id: "8",
     type: "gas",
     billname: "Home Gas",
     consumerID: "123456798",
