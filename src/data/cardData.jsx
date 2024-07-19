@@ -9,7 +9,7 @@ export const CardData = [
     cardNumber: "5210",
     userName: "Nimra Khalid",
     default: true,
-    expiry: "9/22",
+    expiry: "9/24",
     verify: true,
     cvv: 757,
     autoDebit: true

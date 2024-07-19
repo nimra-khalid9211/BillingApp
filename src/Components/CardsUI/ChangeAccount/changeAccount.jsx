@@ -63,7 +63,7 @@ export default function ChangeAccount({ from }) {
                 onClick={(e) => e.stopPropagation()}
               />
               <div className="flex items-center gap-2 ml-2">
-                <div className="bg-[#DBF0FF] px-1 rounded-md">
+                <div className=" px-1 rounded-md">
                   {x.cardIcon}
                 </div>
                 <div className="text-base font-medium">

@@ -18,6 +18,7 @@ export const BillingConditionProvider = ({children})=>{
      const [helpMenu, setHelpMenu] = useState(1)
      const [settingMenu, setSettingMenu] = useState(1)
      const [dropdown, setDropdown] = useState(false);
+     const [selectedBills, setSelectedBills] = useState([]);
 
      // console.log(checkShown, "billling condition provider");
 
@@ -26,7 +27,7 @@ export const BillingConditionProvider = ({children})=>{
         <BillingCondition.Provider value={{tab,setTab, dropdown,
          checkVerfication, setDropdown, bills, setBills, addBill, setBillingMenu, billingMenu,
           setAddBill,paymentType,setPaymentType,checkShown,setCheckShown, setTransactions, transactions,
-          setHelpMenu, helpMenu, setSettingMenu, settingMenu
+          setHelpMenu, helpMenu, setSettingMenu, settingMenu,selectedBills,setSelectedBills
           }}>
 
             {children}
