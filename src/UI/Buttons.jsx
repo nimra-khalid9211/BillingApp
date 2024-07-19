@@ -27,7 +27,7 @@ export const BlueButton = ({title, clickEvent, icon, customClass, customStyle}) 
     )
   }
 
-  export const LargeButtons = ({title, clickEvent, icon,}) => {
+  export const LargeButtons = ({title, clickEvent, icon, from}) => {
     return (
       <Button shape='round' icon={<IoMdAdd size={20}/>}  className='btn-custom-style border-[#377CF6] text-base font-bold text-[#377CF6] ' 
       onClick={clickEvent}>

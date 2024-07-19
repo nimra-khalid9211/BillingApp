@@ -35,6 +35,7 @@ export default function Notification() {
         }
         <div className="text-center bg-[#DBF0FF] text-[#176BA3] py-3 absolute bottom-0 w-full">View All</div>
       </Card>
+      <div>nimra</div>
     </div>
   );
 }
