@@ -11,7 +11,8 @@ export const CardData = [
     default: true,
     expiry: "9/22",
     verify: true,
-    cvv: 757
+    cvv: 757,
+    autoDebit: true
   },
   
   {

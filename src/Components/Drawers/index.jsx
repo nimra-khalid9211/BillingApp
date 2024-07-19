@@ -183,13 +183,6 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       <DrawerCardLayout heading={"Payment Preference"}>
         {from === "addBill" || from === "quickPay" ? (
           <div>
-
-            {/* <div className="flex justify-between items-center w-60 mt-6 bg-white">
-              <span className="text-base font-medium mb-3">Auto Debit</span>
-              <span>
-                <Switch defaultChecked size="small" />
-              </span>
-            </div> */}
  
             {from === "addBill" && <PayMethodCard from={from} secondDrawer={secondDrawer} setSecondDrawer={setSecondDrawer} />}
           </div>
