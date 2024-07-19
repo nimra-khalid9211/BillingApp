@@ -30,6 +30,8 @@ export default function ChangeAccount({ from }) {
     },
   ];
   
+    console.log(from);
+
   const [selectedCardIndex, setSelectedCardIndex] = useState(-1);
 
   const handleCardSelection = (index) => {
@@ -38,15 +40,21 @@ export default function ChangeAccount({ from }) {
 
   return (
     <>
+
+<div className={`${from === "secondDrawer" ? "grid grid-cols-2 gap-3" : ""}`}>
+
       {cards.map((x, index) => (
-        <Card
-          key={index}
-          className={`py-3 px-5 rounded-3xl drop-shadow-md ${
+      
+       
+
+      <Card  key={index} 
+          className={`py-3 px-5 rounded-2xl mt-2 drop-shadow-md ${
             index === selectedCardIndex ? "activeRadio" : ""
           }`}
-          onClick={() => handleCardSelection(index)}
-        >
+          onClick={() => handleCardSelection(index)} >
+
           <div className="flex items-center justify-between">
+
             <div className="flex items-center">
               <input
                 type="radio"
@@ -63,28 +71,32 @@ export default function ChangeAccount({ from }) {
                 </div>
               </div>
             </div>
-            {from !== "mobileTopup" && (
-              <div className="flex flex-col mt-5">
-                <span className="text-base font-medium">
+           
+            <div className="flex flex-col py-5">
+
+                <span className={`text-base font-medium ${from !== "mobileTopup" || from === "secondDrawer" && "mt-5"}`}>
                   <span className="text-xs text-[#6C7293]">ending</span> {x.cardNumber}
                 </span>
-                <span
+
+                {from !== "mobileTopup" || from !== "secondDrawer" && (  <span
                   className={`text-end text-xs ${
                     x.default ? " text-[#24A959]" : "text-[#329DFF]"
                   }`}
                 >
                   {x.default ? "Default" : "Set as Default"}
-                </span>
-              </div>
-            )}
-            {from === "mobileTopup" && (
-              <span className="text-base font-medium">
-                <span className="text-xs text-[#6C7293]">ending</span> {x.cardNumber}
-              </span>
-            )}
+                </span> )}
+
+            </div>
+
           </div>
+          
         </Card>
+
+       
+
       ))}
+
+       </div>
     </>
   );
 }

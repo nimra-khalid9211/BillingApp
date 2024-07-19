@@ -68,7 +68,7 @@ const Header = () => {
   },[showDate])
 
   return (
-    <div className="flex items-center justify-between mx-3  mt-7">
+    <div className="flex items-center justify-between mx-3">
       <b className="text-2xl">
         <span className="text-[#6C7293] font-medium text-lg">Hello! </span> 
 
