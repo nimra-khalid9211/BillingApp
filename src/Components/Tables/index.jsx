@@ -6,6 +6,8 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { dueBills } from "../../assets/image";
 import { LargeButtons } from "../../UI/Buttons";
 import { PaymentSuccessfullModal } from "../Modals";
+import { RxCross2 } from "react-icons/rx";
+import { GoCheck } from "react-icons/go";
 
 export const MyBillHeading = [
   { title: "Bill Name" },
@@ -33,15 +35,15 @@ export const MyBills = ({ from }) => {
     const handleDeleteBill = () => {
 
      const updatedBills =bills.filter((x)=> x.id !== id) // Remove the bill at the specified index
-      console.log(updatedBills, "clicked")
+      // console.log(updatedBills, "clicked")
       
       setBills(updatedBills);
       setCancelVerification(false)
     };
  
   useEffect(()=>{handleDeleteBill},[id])
-  console.log(id,"id clivked")
-  console.log(bills,"ni")
+  // console.log(id,"id clivked")
+  // console.log(bills,"ni")
 
   // const handleModalClose = () => {
   //   setCancelVerification(true);
@@ -107,7 +109,7 @@ export const MyBills = ({ from }) => {
                 >
                   <th
                     scope="row"
-                    className="px-6 py-4 text-left font-medium whitespace-nowrap"
+                    className="w-40 truncate px-6 py-4 text-left font-medium whitespace-nowrap"
                     style={{
                       gridColumn: "span 1",
                       display: "flex",
@@ -117,13 +119,13 @@ export const MyBills = ({ from }) => {
                     {x.billname}
                   </th>
                   <td
-                    className="px-6 py-4 text-center"
+                    className="w-40 truncate px-6 py-4 text-center"
                     style={{ gridColumn: "span 1" }}
                   >
                     {x.consumerID}
                   </td>
                   <td
-                    className="px-6 py-4 text-center"
+                    className="w-40 truncate px-6 py-4 text-center"
                     style={{ gridColumn: "span 1" }}
                   >
                     {x.consumerName}
@@ -146,7 +148,7 @@ export const MyBills = ({ from }) => {
                       className="px-6 py-4 text-center"
                       style={{ gridColumn: "span 1" }}
                     >
-                      <Switch defaultChecked={x.autoDebit} />
+                      <Switch className="drop-shadow-xl" checkedChildren={<GoCheck size={15}/>} unCheckedChildren={<RxCross2 size={14}/>} defaultChecked={x.autoDebit} size="small"/>
                     </td>
                   )}
 
@@ -209,15 +211,17 @@ export const MyBills = ({ from }) => {
           </div>
         )}
       </div>
+
       <PaymentSuccessfullModal
         receiptModal={cencelVerification}
         setReceiptModal={setCancelVerification}
-        width={450}
+        width={400}
         cancelTitle="Delete Bill"
         cancelText="Are you sure you want to delete the bill for 'PTCL Home'?"
         from="debitAccountCancelled"
         delArray={handleDeleteBill}
       />
+
     </>
   );
 };

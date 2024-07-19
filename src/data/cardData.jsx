@@ -45,6 +45,7 @@ export const CardData = [
     expiry: "JazzCash",
     verify: true,
   },
+  
   {
     icon: <img src={jazzcash} alt="" className="w-10" />,
     title: "JazzCash", 
@@ -54,8 +55,6 @@ export const CardData = [
     expiry: "Easypaisa",
     verify: true,
   },
-
-
 
 ];
 

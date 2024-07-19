@@ -184,7 +184,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         {from === "addBill" || from === "quickPay" ? (
           <div>
  
-            {from === "addBill" && <PayMethodCard from={from} secondDrawer={secondDrawer} setSecondDrawer={setSecondDrawer} />}
+            {from === "addBill" && <PayMethodCard from={from}  secondDrawer={secondDrawer} setSecondDrawer={setSecondDrawer} />}
           </div>
         ) : null}
 

@@ -11,20 +11,19 @@ import { GoCheck } from "react-icons/go";
 
 const PayMethodCard = ({ from, secondDrawer, setSecondDrawer }) => {
   const [changeAccount, setChangeAccount] = useState(false);
+  const [changeCard, setChangeCard] = useState(false);
 
-  const handleClick = () => {
-    setChangeAccount(!changeAccount);
-  };
+  // console.log(from, "from paymethodcard")
+
 
   return (
     <>
      {CardData.length > 0 ? 
         CardData.filter((x)=> x.default === true).map((y)=>(
-        <Card className="rounded-3xl drop-shadow-xl">
+        <Card className={`rounded-3xl drop-shadow-xl ${from === "secondDrawer" ? "bg-[#F3F3F3]" : ""}`}>
           
           <div className={`${CardData.length === 1 ? "flex justify-between  items-center" : "grid grid-cols-5"} p-5 text-sm font-semibold`}>
 
-{/* ${CardData.length > 0 && "col-span-2"} */}
             <div className={`flex items-center text-center gap-2 ${CardData.length === 1 && "w-1/4"} border-r`}>
               <span>{y.icon}</span>
               <span>{y.userName}</span>
@@ -45,9 +44,9 @@ const PayMethodCard = ({ from, secondDrawer, setSecondDrawer }) => {
             </div>
 
             {CardData.length > 1 && 
-            <div className={`flex justify-center cursor-pointer text-[#377CF6] items-center ${CardData.length === 1 && "w-1/4"}`}>
-              <span className="underline">Change Account </span> 
-              <span className="p-[1px] rounded-full bg-[#E8E7EC] ml-1"><FaAngleRight/></span>
+            <div className={`flex justify-center ${from === "secondDrawer" ? "cursor-default" : "cursor-pointer"} text-[#377CF6] items-center ${CardData.length === 1 && "w-1/4"}`}>
+              <span className="underline" onClick={()=>{setSecondDrawer(true) }}>Change Account </span> 
+              <span className="p-[1px] rounded-full bg-[#E8E7EC] ml-1">{from === "secondDrawer" ? <FaAngleDown /> : <FaAngleRight/>}</span>
             </div>}
 
           </div>
@@ -75,9 +74,11 @@ const PayMethodCard = ({ from, secondDrawer, setSecondDrawer }) => {
         }
 
 
-      <SecondDrawer setSecondDrawer={setSecondDrawer} secondDrawer={secondDrawer}/>
+      <SecondDrawer from={CardData.length === 0 ? "addCard": CardData.length > 1 ? "changeCard" : ""} 
+      setChangeCard={setChangeCard} changeCard={changeCard} setSecondDrawer={setSecondDrawer} secondDrawer={secondDrawer}/>
 
-      <div className="grid grid-cols-2 gap-4 my-7">
+
+      <div className="grid grid-cols-2 gap-4 my-3">
       {changeAccount && <ChangeAccount />}
       </div>
     </>

@@ -20,10 +20,6 @@ const BillPaymentMethod = () => {
   const [receiptModal, setReceiptModal] = useState(false);
   const [selectedCardIndex, setSelectedCardIndex] = useState(-1); // State to track selected card index
 
-
-
-
-
   const totalAmount = bills?.reduce((total, bill) => {
     const amountString = isOverdue(bill.dueDate)
       ? bill.amount : bill.afterDueAmount;
@@ -44,6 +40,7 @@ const BillPaymentMethod = () => {
 
   return (
     <>
+
       <BreadCrumbs
         link={"/bill-manager"}
           menu={"Bill Management"}
@@ -69,27 +66,7 @@ const BillPaymentMethod = () => {
       <div className='mt-6'>
 
      <div className='grid grid-cols-2 gap-2 my-5'>
-     {/* { CardData.map((x, index)=>( 
-
-         <div key={index} className={`col-span-2 flex justify-between mt-1 items-start py-2 px-4 rounded-2xl border ${x.default ? "border-[#377CF6] bg-white" :"border-[#E8E7EC] bg-[#F8F8F8]"}`}>
-
-            <div className='flex'>
-                {x.icon}
-
-                <div className='pl-3'>
-
-                <div className="font-semibold w-[160px] text-medium text-base">{x.title}</div>
-                <div className="text-xs  text-[#377CF6]">{x.default ? "Default" : "Set as Default" }</div>
-
-                </div>
-
-                </div>
-
-                <input type='radio' checked={x.default ? true : false}/>
-
-
-                </div>
-        ))} */}
+  
         <ChangeAccount/>
 
 </div>
