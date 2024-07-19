@@ -30,7 +30,7 @@ export const DefaultAccount = () =>{
 
       <div className="flex items-center ml-7">
 
-        <div className="border">
+        <div className="">
           <img src={Card} alt="icon" />
         </div>
 

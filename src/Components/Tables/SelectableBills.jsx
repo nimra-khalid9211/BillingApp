@@ -22,7 +22,7 @@ export const SelectableBills = ({ type, from }) => {
 
   const { setBills } = _BillingCondition();
 
-  const [selectedBills, setSelectedBills] = useState([]);
+  const {selectedBills, setSelectedBills} = _BillingCondition()
 
   const [isUniformPaymentMethod, setIsUniformPaymentMethod] = useState(false);
 
@@ -63,14 +63,14 @@ export const SelectableBills = ({ type, from }) => {
     });
   };
 
-  const totalAmount = selectedBills.reduce((total, bill) => {
-    const amountString =
-      bill.status === "unpaid" && isOverdue(bill.dueDate)
-        ? bill.afterDueAmount
-        : bill.amount;
-    const amount = parseFloat(amountString.replace(/,/g, ""));
-    return Math.round((total + amount) * 100) / 100;
-  }, 0);
+  // const totalAmount = selectedBills.reduce((total, bill) => {
+  //   const amountString =
+  //     bill.status === "unpaid" && isOverdue(bill.dueDate)
+  //       ? bill.afterDueAmount
+  //       : bill.amount;
+  //   const amount = parseFloat(amountString.replace(/,/g, ""));
+  //   return Math.round((total + amount) * 100) / 100;
+  // }, 0);
 
   const SetModalAndID = (id) => {
     setId(id);
@@ -281,8 +281,8 @@ export const SelectableBills = ({ type, from }) => {
 
      </div>
 
-
-      {selectedBills.length > 0 && (
+     {/* moves in BillingOverView */}
+      {/* {selectedBills.length > 0 && (
         <div className="bg-[#E8E7EC] border-2 border-[var(--blue)] mt-10 h-[58px] px-10 rounded-[18px] flex justify-between items-center">
           <div>
             <span className="text-[#377CF6] font-medium text-lg ">
@@ -305,7 +305,7 @@ export const SelectableBills = ({ type, from }) => {
           </div>
 
         </div>
-      )}
+      )} */}
 
       {id && (
         <ViewReceiptModal

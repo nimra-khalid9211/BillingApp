@@ -20,28 +20,40 @@ export default function UserMultipleAccount() {
   const handleModalClose = () => {
     setVerifyPopup(false);
   };
-
-  const handleSetAsDefault = (index) => {
-    const updatedCards = [...cardData];
-    updatedCards.forEach((card) => (card.default = false));
-    updatedCards[index].default = true;
-    const [selectedCard] = updatedCards.splice(index, 1);
-    updatedCards.unshift(selectedCard);
-    setCardData(updatedCards);
-  };
-    
   const isCardExpired = (expiry) => {
     const keywords = ["JazzCash", "Easypaisa", "Bank"];
     if (keywords.includes(expiry)) {
       return false;
     }
-
     const [month, year] = expiry.split("/").map(Number);
     const now = new Date();
     const expDate = new Date(year + 2000, month - 1);
-
+  
     return now > expDate;
   };
+  
+  const handleSetAsDefault = (index) => {
+    const selectedCard = cardData[index];
+  
+    // Check if the selected card is expired
+    if (isCardExpired(selectedCard.expiry)) {
+      return; // Do nothing if the card is expired
+    }
+  
+    const updatedCards = [...cardData];
+    updatedCards.forEach((card) => {
+      card.default = false; // Reset default status for all cards
+    });
+    updatedCards[index].default = true; // Set the selected card as default
+  
+    // Move the selected card to the top of the list
+    const [movedCard] = updatedCards.splice(index, 1);
+    updatedCards.unshift(movedCard);
+  
+    setCardData(updatedCards);
+  };
+  
+  
 
   const handleNavigate = (account) => {
     const { id, userName, cardNumber, expiry, verify, default: isDefault, title,cvv } = account;
@@ -93,7 +105,7 @@ export default function UserMultipleAccount() {
         {cardData.map((x, index) => (
           <div
             key={index}
-            className={`grid grid-cols-6 gap-4 rounded-xl mt-5 py-7 px-4 shadow-xl ${isCardExpired(x.expiry) ? 'border border-[#E92F39]' : 'bg-white'}`} // Conditional class application
+            className={`grid grid-cols-6 gap-4 rounded-xl mt-5 py-7 px-4 shadow-lg ${isCardExpired(x.expiry) ? 'border border-[#E92F39]' : 'bg-white'}`} // Conditional class application
           >
             <div className="flex items-center border-r-2">
               <div className="flex items-center ml-5">
@@ -156,13 +168,14 @@ export default function UserMultipleAccount() {
               )}
             </button>
             <div
-              className={`border-r-2 flex items-center justify-center cursor-pointer ${
-                x.default ? "text-black" : !x.verify ? "text-gray-400 cursor-default" : "text-[var(--blue)]"
+              className={`border-r-2 flex items-center justify-center ${
+                x.default && !isCardExpired(x.expiry) ? "text-black cursor-pointer" : !x.verify ? "text-gray-400 cursor-default" : isCardExpired(x.expiry) ? "text-gray-400" : "cursor-pointer"
               }`}
               onClick={x.verify ? () => handleSetAsDefault(index) : ""}
             >
               {x.default ? "Default" : "Set as Default"}
             </div>
+
             {isCardExpired(x.expiry) ? (
               
               <span className="text-[#329DFF] underline flex items-center justify-center cursor-pointer" 
