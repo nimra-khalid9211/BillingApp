@@ -3,7 +3,7 @@ import React from "react";
 import { MyBillList } from "../../data/tables";
 import PaymentReciept from "../CardsUI/PaymentReciept";
 import { TextField } from "@mui/material";
-import { BlueButton, WhiteButton } from "../../UI/Buttons";
+import { BlueButton, LargeButtons, WhiteButton } from "../../UI/Buttons";
 import { useNavigate } from "react-router-dom";
 
 export const ViewReceiptModal = ({ setOpenModal, openModal, id, from }) => {
@@ -151,12 +151,13 @@ export const PaymentSuccessfullModal = ({
           </div>
 
           <div className="bg-[#E8E7EC] py-5 text-center rounded-b-[2rem]">
-            <button
+            {/* <button
               className="bg-[#DD2B37] text-white rounded-[2rem] px-[7rem] py-2 font-semibold ml-3 "
               onClick={delArray}
             >
               Yes, Cancel it
-            </button>
+            </button> */}
+            <LargeButtons title={"Yes, Delete Bill"} from={"delete"}/>
           </div>
 
         </>
