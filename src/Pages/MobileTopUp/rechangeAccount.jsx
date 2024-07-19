@@ -19,6 +19,7 @@ export const DefaultAccount = () =>{
   };
 
   return (
+    <>
     <div className="grid grid-cols-5 gap-4 rounded-2xl mt-5 bg-white p-5 drop-shadow-lg">
 
     <div className="flex items-center border-r-2">
@@ -58,12 +59,18 @@ export const DefaultAccount = () =>{
 
     </div>
 
-      {changeAccount &&
-        <div className="grid grid-cols-4 px-5 pb-5 gap-4 bg-white">
-        <ChangeAccount from="mobileTopup"/>
-      </div>}
+   
 
   </div>
+
+
+  {
+      changeAccount &&
+        <div className="grid grid-cols-4 pt-10 gap-4 bg-white ">
+        <ChangeAccount from="mobileTopup"/>
+      </div>
+      }
+    </>
   )
 }
 

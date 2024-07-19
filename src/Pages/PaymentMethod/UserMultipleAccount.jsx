@@ -10,6 +10,7 @@ export default function UserMultipleAccount() {
   const [cardData, setCardData] = useState(initialCardData);
   const [verifyPopup, setVerifyPopup] = useState(false);
   const { setPaymentType, setCheckShown } = _BillingCondition();
+
   const navigate = useNavigate();
 
   const handleVerifyPopup = () => {
@@ -73,6 +74,13 @@ export default function UserMultipleAccount() {
     setCheckShown(false);
     navigate('/payment-methods/add-payment', { state: { account: simpleAccount } });
   };
+
+  const deleteItem = (indexToDelete) => {
+    const updatedItems = cardData.filter((item, index) => index !== indexToDelete);
+    setCardData(updatedItems);
+    console.log("clicked")
+  };
+  console.log(cardData, "nimra")
 
   return (
     <div className="relative bg-white shadow-md rounded-3xl mt-5">
@@ -162,7 +170,8 @@ export default function UserMultipleAccount() {
                 Update Now
               </span>
             ) : (
-              <div className="flex justify-center items-center gap-3">
+              <div className="flex justify-center items-center gap-3 cursor-pointer" onClick={() => deleteItem(index)}
+>
                 <div className="p-2 rounded-lg bg-[#FFD5DF]">
                   <RiDeleteBin5Line size={15} color="#F1416C" />
                 </div>
