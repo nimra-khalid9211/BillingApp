@@ -94,14 +94,14 @@ const Header = () => {
                 </LocalizationProvider>
 
                 </div>}
-
+{/* 
         <div className="bg-white p-3 rounded-full">
           <CiSettings
             size={27}
             onClick={() => navigate(checkVerfication ? "/settings" : "#")}
             role="button"
           />
-        </div>
+        </div> */}
 
         <div className="bg-white relative p-3 flex cursor-pointer items-center rounded-full" >
           <Badge dot color="var(--blue)">

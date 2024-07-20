@@ -70,7 +70,7 @@ export default function TransactionsHistory() {
             return (
               <div
                 key={index}
-                className="flex bg-white items-center justify-between pt-5 px-5 pb-4 border-b"
+                className="flex bg-white items-center justify-between pt-5 px-5 pb-[1.2rem] border-b"
               >
                 <div className="flex items-center">
 
@@ -107,7 +107,7 @@ export default function TransactionsHistory() {
           </>
         )}
 
-        <div className="w-full  underline text-[var(--blue)] cursor-pointer text-center py-6 bg-[#d3e8f6] rounded-b-3xl">
+        <div className="w-full  underline text-[var(--blue)] cursor-pointer text-center py-4 bg-[#d3e8f6] rounded-b-3xl">
           <Link to="/transactions"> View All</Link>
         </div>
 
