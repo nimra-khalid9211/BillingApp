@@ -90,7 +90,7 @@ const Header = () => {
                 <b className='text-sm border-l border-[#6C7293] pl-2'>{formattedDate}</b>
                 </div>
 
-               {showDate && <div ref={calenderRef} className="absolute bg-white z-10 top-14 rounded-3xl right-60">
+               {showDate && <div ref={calenderRef} className="absolute bg-white z-10 top-20 rounded-3xl right-60">
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateCalendar readOnly/>
@@ -106,18 +106,24 @@ const Header = () => {
           />
         </div>
 
-        <div className="bg-white py-3 px-3 flex items-center rounded-full gap-3" onClick={handleNotification}>
-          <Badge dot color="var(--blue)">
-           
-            <FaRegBell size={22} />
-          </Badge>
+        <div className="relative">
+          <div
+            className="bg-white py-3 px-3 flex items-center rounded-full gap-3"
+            onClick={handleNotification}
+          >
+            <Badge dot color="var(--blue)">
+              <FaRegBell size={22} />
+            </Badge>
+          </div>
+          {notificationS && (
+            <div
+              ref={calenderRef}
+              className="absolute right-0 mt-2 bg-white z-10 rounded-3xl shadow-lg"
+            >
+              <Notification />
+            </div>
+          )}
         </div>
-
-        {
-        notificationS && ( <div ref={calenderRef}>   <Notification/></div>
-         
-        )
-      }
 
         <Dropdown
           overlay={checkVerfication ? dropdownMenu : ""}

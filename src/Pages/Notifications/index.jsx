@@ -39,7 +39,7 @@ export default function Notifications() {
               <span className="">
                 <FaCheckDouble size={10} />
               </span>
-              <div className="ml-1 cursor-pointer text-xs ">
+              <div className="ml-1 cursor-pointer text-xs font-semibold">
                 Mark All as Read
               </div>
             </div>

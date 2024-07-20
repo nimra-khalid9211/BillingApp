@@ -394,6 +394,25 @@ input[type="number"] {
   border-radius: 30px !important;
 }
 
+.disabled-delete-btn{
+  padding: 1.3rem 3rem !important;
+  background-color: #E8E7EC !important;
+  color: #6C7293;
+  border: 2px solid #6C7293;
+}
+
+.delete-btn{
+  padding: 1.3rem 3rem !important;
+  background-color: #DD2B37 !important;
+  color: white;
+  border: none;
+}
+
+.delete-btn:hover{
+  color: white !important;
+  background-color: #df444f !important;
+}
+
 /* ant dropdown  menu */
 
 .ant-dropdown .ant-dropdown-menu {

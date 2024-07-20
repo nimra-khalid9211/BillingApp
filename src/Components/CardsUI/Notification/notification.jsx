@@ -5,7 +5,7 @@ import { notification } from "../../../data/notification";
 
 export default function Notification() {
   return (
-    <div className="absolute top-[4rem] right-[10rem] border border-[#176BA3] rounded-3xl bg-white">
+    <div className="absolute top-[4rem] right-[10rem] border border-[#176BA3] rounded-3xl bg-white z-50">
       <Card className="rounded-3xl overflow-y-scroll h-[29rem] w-[26rem] border-[var(--blue)] border">
         <div className="flex items-center rounded-tl-3xl rounded-tr-3xl bg-white py-5 px-6 justify-between">
           <span className="font-semibold">Notification</span>
