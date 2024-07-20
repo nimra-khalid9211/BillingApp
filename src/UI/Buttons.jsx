@@ -8,7 +8,7 @@ export const WhiteButton = ({title,icon, clickEvent ,customClass, customStyle,cu
   return (
     <Button 
     shape='round' 
-    className={`btn-custom-padding mr-3 border-[#F58021] text-[#6C7293] ${customClass}`} 
+    className={`btn-custom-padding border-[#F58021] text-[#6C7293] ${customClass}`} 
     onClick={clickEvent} style={{width:customStyle, fontSize:customFont}} >
     {icon}
     {title}

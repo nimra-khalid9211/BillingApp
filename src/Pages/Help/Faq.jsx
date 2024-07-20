@@ -43,10 +43,10 @@ const Faq = () => {
                 <span className='text-sm text-[#6C7293] mt-2'>List of questions asked by our users</span>
             </div>
 
-          <div className='grid grid-cols-2 gap-5 mt-10'>
+          <div className='grid grid-cols-2 gap-5 mt-5'>
 
          {items.map((x, index)=> 
-         <Card key={index} className={`p-4 mt-6 drop-shadow-lg ${openIndex === index ? "h-auto" : "h-14"}`}>
+         <Card key={index} className={`p-4 drop-shadow-lg ${openIndex === index ? "h-auto" : "h-14"}`}>
 
             <div key={index} className='flex flex-col'>
 

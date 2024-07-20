@@ -11,11 +11,13 @@ import BreadCrumbs from "../../UI/BreadCrumbs";
 import { FaMoneyBills } from "react-icons/fa6";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
 import ChangeAccount from "../../Components/CardsUI/ChangeAccount/changeAccount";
+import { CiCircleChevDown, CiCircleChevRight } from "react-icons/ci";
 
 const BillPaymentMethod = () => {
   const { bills } = _BillingCondition();
   const navigate = useNavigate();
-  console.log(bills);
+
+    const [list, setList] = useState(true);
 
   const [receiptModal, setReceiptModal] = useState(false);
   const [selectedCardIndex, setSelectedCardIndex] = useState(-1); // State to track selected card index
@@ -71,11 +73,8 @@ const BillPaymentMethod = () => {
 
 </div>
 
-
       </div>
-
  
-
     </div>
 
     <div className='col-span-4 px-8 py-3 bg-[#F8F9FD] rounded-tr-3xl rounded-br-3xl'>
@@ -89,7 +88,10 @@ const BillPaymentMethod = () => {
         <div className='flex justify-between items-center text-base font-medium px-1'>
 
         <div className='flex items-center gap-2'>    
-      <IoChevronDownCircleOutline size={20} color='#6C7293'/>
+     {list ? 
+     <CiCircleChevDown  size={25} color='#6C7293' onClick={()=>setList(false)}/> :
+       <CiCircleChevRight size={25} color='#6C7293' onClick={()=>setList(true)}/>
+      }
 
       <span>Total Payable Amount</span>
       </div>
@@ -100,19 +102,20 @@ const BillPaymentMethod = () => {
 
       <div className='border-b mt-2 border-1'></div>
 
-      {bills && bills.map((x,index)=>(  
+      {list && bills?.map((x,index)=>{
+        const {overdue} = isOverdue(x.dueDate);
+       return (  
       <div key={index} className='flex justify-between items-center bg-[#EBF7FF] rounded-xl border-[#DBF0FF] mt-2 py-2 px-4'>
 
         <span className='text-sm font-semibold'>{x.billname}</span>
 
-        <span className='text-lg font-semibold'>{isOverdue(x.dueDate) ? x.amount : x.afterDueAmount}</span>
-      </div>))}
+        <span className='text-lg font-semibold'>{overdue ? x.afterDueAmount : x.amount }</span>
+      </div>)})}
 
         <div className='flex items-center justify-between mt-3 p-4 rounded-xl border-[#377CF6] border-2 text-[#377CF6]'>
 
         <span className='text-base font-medium'>Total Payable Amount</span>
-
-       
+     
         <div>
         <span className=" text-sm mx-0">Rs</span> 
         <span  className='text-2xl font-medium relative mr-3'> {formattedAmount.integerPart}

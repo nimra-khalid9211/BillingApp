@@ -40,7 +40,7 @@ const Security = () => {
     <CardLayout title={"Security"}> 
     
       {security.map((x, index)=>(
-          <div key={index} className='mx-10 my-5  grid grid-cols-5 border-b-2 pb-6'>
+          <div key={index} className={`mx-10 my-5  grid grid-cols-5 ${index !== security.length - 1 ? "border-b-2" : ""} pb-6`}>
            
             <div className='flex flex-col col-span-2'>
     

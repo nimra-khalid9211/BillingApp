@@ -4,6 +4,8 @@ import { _BillingCondition } from "../../actions/Context/BillingOverviewConditio
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 import TransactionRecord from "../../Components/Tables/TransactionRecord";
 import { isOverdue } from "../../Hooks";
+import { BlueButton } from "../../UI/Buttons";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   {
@@ -29,10 +31,12 @@ const items = [
 ];
 
 const BillingOverview = () => {
-  const [current, setCurrent] = useState("all");
-  const {selectedBills, setSelectedBills} = _BillingCondition()
+  const navigate = useNavigate();
 
-// console.log(selectedBills, "billing overview")
+  const [current, setCurrent] = useState("all");
+  const {selectedBills, setBills} = _BillingCondition()
+
+console.log(selectedBills, "billing overview")
 
     
 
@@ -97,7 +101,10 @@ const BillingOverview = () => {
             
             </div>
             
-            <button className="bg-[#176BA3] text-white py-1 px-2 rounded-2xl w-20">Pay All</button>
+             <BlueButton customClass="hover-color" customStyle={"6rem"}  title={"Pay All"}
+              clickEvent={() => { navigate("/bill-manager/selected-bills");setBills(selectedBills);}}>
+              Pay All
+              </BlueButton>
           
           </div>
           )

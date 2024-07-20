@@ -12,12 +12,15 @@ import { FaMoneyBills } from 'react-icons/fa6';
 const SelectedBills = () => {
     const navigate = useNavigate();
 
-    const {setBills, bills} = _BillingCondition();
+    const {setBills, selectableBills, bills} = _BillingCondition();
 
-    // console.log(bills)
+    console.log(bills, "selected bills")
+
+    // console.log(selectableBills, "selected bills")
 
     const totalAmount = bills?.reduce((total, bill) => {
-        const amountString = isOverdue(bill.dueDate)  ? bill.amount : bill.afterDueAmount;
+        const {overdue} = isOverdue(bill.dueDate)
+        const amountString = overdue  ? bill.afterDueAmount : bill.amount ;
 
         const amount = parseFloat(amountString.replace(/,/g, ''));
     //  console.log(amount)
@@ -50,7 +53,9 @@ const SelectedBills = () => {
       
         </div>
 
-           {bills?.map((x)=>(
+           {bills?.map((x)=>{
+             const {overdue} = isOverdue(x.dueDate)
+             return(
             <div key={x.id} className='bg-[#F1F1F1] my-4 rounded-3xl'> 
 
                 <div className='grid grid-cols-5 gap-4  py-7'>
@@ -91,7 +96,7 @@ const SelectedBills = () => {
                         </span>
                         
                         <span className='text-base font-medium'>
-                            {isOverdue(x.dueDate) ? x.amount : x.afterDueAmount}
+                            {overdue ?  x.afterDueAmount : x.amount }
                         </span>
                     </div>
 
@@ -104,7 +109,7 @@ const SelectedBills = () => {
                 </div>
 
             </div>
-            ))}
+            )})}
 
             <div className='grid grid-cols-4 px-6 text-base font-medium'>
 

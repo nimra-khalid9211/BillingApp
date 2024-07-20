@@ -30,7 +30,7 @@ export default function ChangeAccount({ from }) {
     },
   ];
   
-    console.log(from);
+    // console.log(from);
 
   const [selectedCardIndex, setSelectedCardIndex] = useState(-1);
 

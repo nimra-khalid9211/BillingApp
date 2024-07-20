@@ -290,12 +290,14 @@ input[type="number"] {
   color: var(--blue);
   background-color: transparent;
   border: 0;
+  box-shadow: none !important;
 }
 
 .back-btn:hover{
   color: var(--orange) !important;
   background-color: transparent !important;
 }
+
 
 
 .cancel-btn{
@@ -307,6 +309,7 @@ input[type="number"] {
 
 .cancel-btn:hover{
   border: 2px solid #b8b8b8 !important;
+  color: #b8b8b8 !important;
 }
 
 .other-tabs-fontW{
