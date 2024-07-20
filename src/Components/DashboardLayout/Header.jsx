@@ -51,9 +51,6 @@ const Header = () => {
   const calenderRef = useRef(null)
   const formattedDate = formatDate(new Date());
 
-  const handleNotification=()=>{
-    setNotificationS(!notificationS)
-  }
 
   useEffect(()=>{
     const handleClickOutside = (event) => {
@@ -90,7 +87,7 @@ const Header = () => {
                 <b className='text-sm border-l border-[#6C7293] pl-2'>{formattedDate}</b>
                 </div>
 
-               {showDate && <div ref={calenderRef} className="absolute bg-white z-10 top-20 rounded-3xl right-60">
+               {showDate && <div ref={calenderRef} className="absolute bg-white z-10 top-16 rounded-3xl right-60">
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateCalendar readOnly/>
@@ -98,7 +95,7 @@ const Header = () => {
 
                 </div>}
 
-        <div className="bg-white py-3 px-3 rounded-full gap-3">
+        <div className="bg-white p-3 rounded-full">
           <CiSettings
             size={27}
             onClick={() => navigate(checkVerfication ? "/settings" : "#")}
@@ -106,24 +103,22 @@ const Header = () => {
           />
         </div>
 
-        <div className="relative">
-          <div
-            className="bg-white py-3 px-3 flex items-center rounded-full gap-3"
-            onClick={handleNotification}
-          >
-            <Badge dot color="var(--blue)">
-              <FaRegBell size={22} />
-            </Badge>
-          </div>
-          {notificationS && (
-            <div
-              ref={calenderRef}
-              className="absolute right-0 mt-2 bg-white z-10 rounded-3xl shadow-lg"
-            >
-              <Notification />
-            </div>
-          )}
+        <div className="bg-white relative p-3 flex cursor-pointer items-center rounded-full" >
+          <Badge dot color="var(--blue)">
+           
+            <FaRegBell size={22}  onClick={()=>setNotificationS(!notificationS)}/>
+          </Badge>
         </div>
+
+        {
+        notificationS && ( <div ref={calenderRef} className="absolute top-16 z-10 right-40 drop-shadow-xl  rounded-3xl"> 
+        
+            <Notification setNotificationS={setNotificationS}/>
+         
+          </div>
+         
+        )
+      }
 
         <Dropdown
           overlay={checkVerfication ? dropdownMenu : ""}
