@@ -32,7 +32,7 @@ return (
 
     <Col md={20} xs={24} className="centerColumn">
 
-    <div className={`sticky top-10 rounded-3xl my-5 z-40 ${headerBg ? 'bg-white drop-shadow-xl p-2 py-4' : '' }`}>
+    <div className={`rounded-3xl my-5 z-40 }`}>
     <Header />
     </div>
     

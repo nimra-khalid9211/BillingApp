@@ -3,6 +3,7 @@ import { Menu, Tabs } from "antd";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 import TransactionRecord from "../../Components/Tables/TransactionRecord";
+import { isOverdue } from "../../Hooks";
 
 const items = [
   {
@@ -30,12 +31,17 @@ const items = [
 const BillingOverview = () => {
   const [current, setCurrent] = useState("all");
   const {selectedBills, setSelectedBills} = _BillingCondition()
-  
-  const totalAmount = selectedBills.reduce((total, bill) => {
+
+// console.log(selectedBills, "billing overview")
+
+    
+
+  const totalAmount  = selectedBills.reduce((total, bill) => {
+    const { overdue } = isOverdue(bill.dueDate); 
     const amountString =
-      bill.status === "unpaid" && isOverdue(bill.dueDate)
-        ? bill.afterDueAmount
-        : bill.amount;
+      bill.status === "Unpaid" && overdue
+        ? bill.afterDueAmount : bill.amount;
+        
     const amount = parseFloat(amountString.replace(/,/g, ""));
     return Math.round((total + amount) * 100) / 100;
   }, 0);
@@ -77,9 +83,22 @@ const BillingOverview = () => {
          {
           selectedBills.length > 0 && (
             <div className="w-[480px] flex items-center justify-between bg-[#DBF0FF] border border-[#176BA3] rounded-2xl p-5 text-xs font-semibold place-self-end">
+            
             <div className="border-r border-[#8AC3EC] w-28">{selectedBills.length} Bill{selectedBills.length >=2 ? "s" : ""} Selected</div>
-            <div className="border-r border-[#8AC3EC] w-44">Total Amount =  {totalAmount.toLocaleString()}</div>
+            
+            <div className="border-r border-[#8AC3EC] w-44">Total Amount = 
+           
+            <span className="text-[#6c7293] text-xs mx-2">Rs</span> 
+           
+            <span className="font-bold">
+                 {totalAmount.toLocaleString()}
+            
+            </span>
+            
+            </div>
+            
             <button className="bg-[#176BA3] text-white py-1 px-2 rounded-2xl w-20">Pay All</button>
+          
           </div>
           )
          }

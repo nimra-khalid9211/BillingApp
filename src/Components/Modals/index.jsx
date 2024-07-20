@@ -1,10 +1,11 @@
 import { Button, Divider, Input, Modal, Select } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import { MyBillList } from "../../data/tables";
 import PaymentReciept from "../CardsUI/PaymentReciept";
 import { TextField } from "@mui/material";
 import { BlueButton, LargeButtons, WhiteButton } from "../../UI/Buttons";
 import { useNavigate } from "react-router-dom";
+import OTPInput from "react-otp-input";
 
 export const ViewReceiptModal = ({ setOpenModal, openModal, id, from }) => {
   const bill = MyBillList.find((bill) => bill.id === id);
@@ -58,12 +59,15 @@ export const PaymentSuccessfullModal = ({
     setReceiptModal(false);
   };
 
+  const [data, setData] = useState('');
+
   // const handleDeleteBill = (index) => {
   //   const updatedBills = [...bills];
   //   updatedBills.splice(index, 1); // Remove the bill at the specified index
   //   setBills(updatedBills); // Update the bills state
   //   console.log("clicked")
   // };
+
 
   return (
     <Modal
@@ -143,27 +147,39 @@ export const PaymentSuccessfullModal = ({
 
             <div className="flex flex-col items-center mt-6 text-[#6C7293]">
               <span className="mb-4">Enter the 4 digit code to verify</span>
-            <Input.OTP length={4} />
-            <span className="mt-4">Didn't get a code? 
+
+              <OTPInput
+      value={data}
+      onChange={setData}
+      numInputs={4}
+      renderSeparator={<span className="px-1"> </span>}
+      renderInput={(props) => <input {...props} 
+      className={`border-2 text-center drop-shadow-lg ${data ? "border-[#176BA3]" :"border-[#6C7293]"} text-[3xl] text-[#176BA3] rounded-lg`}
+       style={{
+        width: '50px',
+        height: "50px",
+        fontSize: "28px"
+      }} />}
+    />
+
+            <span className="mt-4">Didn't get a code?
               <span className="text-[#329DFF]">Click to resend</span></span>
             </div>
 
           </div>
 
           <div className="bg-[#E8E7EC] py-5 text-center rounded-b-[2rem]">
-            {/* <button
-              className="bg-[#DD2B37] text-white rounded-[2rem] px-[7rem] py-2 font-semibold ml-3 "
-              onClick={delArray}
-            >
-              Yes, Cancel it
-            </button> */}
-            <LargeButtons title={"Yes, Delete Bill"} from={"delete"}/>
+           
+            <LargeButtons  disabled={data?.length === 4 ? false : true}  title={"Yes, Delete Bill"}
+             width={"20rem"} customClass={data?.length === 4 ?"delete-btn" : "disabled-delete-btn"} clickEvent={delArray} from={"delete"}/>
+         
           </div>
 
         </>
       )}
 
     </Modal>
+
   );
 };
 
