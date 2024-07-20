@@ -15,14 +15,13 @@ import CompleteProfile from "./CompleteProfile";
 import { SelectableBills } from "../../Components/Tables/SelectableBills";
 import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
 import { blueDashboard} from '../../assets/image/index'
-import Notification from "../../Components/CardsUI/Notification/notification";
 
 const Dashboard = () => {
   const {addBill, setAddBill, checkVerfication} = _BillingCondition();
   const [from, setFrom] = useState();
 
   return (
-      <div className="relative">
+      <div className="">
 
     {!checkVerfication ? <VerificationSteps/>  : 
     <>
@@ -94,7 +93,7 @@ const Dashboard = () => {
       }
 
       <AddBillDrawer addBill={addBill} setAddBill={setAddBill} from={from} />
-      <Notification/>
+      
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Avatar, Badge, Dropdown, Menu } from "antd";
+import { Avatar, Badge, Card, Dropdown, Menu } from "antd";
 import { CiSettings } from "react-icons/ci";
 import { FaAngleDown, FaAngleUp, FaRegBell, FaRegUser } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
@@ -7,11 +7,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { LuCalendarDays } from "react-icons/lu";
 import { formatDate } from "../../Hooks";
-
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useEffect, useRef, useState } from "react";
+import { FaCheckDouble } from "react-icons/fa6";
+import { notification } from "../../data/notification";
+import Notification from "../CardsUI/Notification/notification";
 
 const dropdownMenus = [
   {
@@ -45,18 +47,23 @@ const Header = () => {
 
   const { dropdown, checkVerfication } = _BillingCondition();
   const [showDate, setShowDate] = useState(false);
-  const calenderRef = useRef(null);
-
+  const [notificationS , setNotificationS] = useState(false)
+  const calenderRef = useRef(null)
   const formattedDate = formatDate(new Date());
+
+  const handleNotification=()=>{
+    setNotificationS(!notificationS)
+  }
 
   useEffect(()=>{
     const handleClickOutside = (event) => {
       if(calenderRef.current && !calenderRef.current.contains(event.target)){
         setShowDate(false);
+        setNotificationS(false)
       }
     };
 
-    if(showDate){
+    if(showDate || notificationS){
       document.addEventListener('mousedown', handleClickOutside)
     }else{
       document.removeEventListener("mousedown", handleClickOutside)
@@ -65,10 +72,10 @@ const Header = () => {
     return () =>{
         document.removeEventListener('mousedown', handleClickOutside)
     };
-  },[showDate])
+  },[showDate, notificationS])
 
   return (
-    <div className="flex items-center justify-between mx-3">
+    <div className="flex items-center justify-between mx-3 relative">
       <b className="text-2xl">
         <span className="text-[#6C7293] font-medium text-lg">Hello! </span> 
 
@@ -99,12 +106,18 @@ const Header = () => {
           />
         </div>
 
-        <div className="bg-white py-3 px-3 flex items-center rounded-full gap-3">
+        <div className="bg-white py-3 px-3 flex items-center rounded-full gap-3" onClick={handleNotification}>
           <Badge dot color="var(--blue)">
            
             <FaRegBell size={22} />
           </Badge>
         </div>
+
+        {
+        notificationS && ( <div ref={calenderRef}>   <Notification/></div>
+         
+        )
+      }
 
         <Dropdown
           overlay={checkVerfication ? dropdownMenu : ""}
@@ -131,6 +144,7 @@ const Header = () => {
         </Dropdown>
         
       </div>
+      
     </div>
   );
 };

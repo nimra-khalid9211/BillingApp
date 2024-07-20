@@ -25,6 +25,8 @@ import Profile from "../Pages/Profile";
 import Reports from "../Pages/Reports";
 import TransactionReportTable from "../Components/ReportsTables/transactionReportTable";
 import ReportTables from "../Components/ReportsTables/reportTables";
+import ViewNotification from "../Pages/Notifications/viewNotification";
+import Notifications from "../Pages/Notifications";
 
 export default function Router() {
   return (
@@ -50,6 +52,7 @@ export default function Router() {
           <Route path="/settings" element={<Settings/>} />
           <Route path="/help" element={<Help/>} />
           <Route path="/settings/profile" element={<Profile/>} />
+          <Route path ="/notification" element={<Notifications/>} />
 
         </Route>
         
