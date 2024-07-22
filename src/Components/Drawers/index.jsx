@@ -53,7 +53,11 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
   const [bill, setBill] = useState("");
   const [list, setList] = useState(false);
 
+  console.log(from, "from")
+
   const [secondDrawer, setSecondDrawer] = useState(false);
+
+  const [dropDown, setDropDown] = useState(false);
 
   const filterSearch = (e) => {
     const value = e.target.value;
@@ -116,9 +120,12 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
              <div className="col-span-4 relative">
 
         <TextField label={from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""} 
-        value={bill} onChange={filterSearch} variant="outlined" size="small" fullWidth />
+        value={bill} onChange={filterSearch}
+        onFocus={()=>setDropDown(true)}
+        onBlur={()=>setDropDown(false)}
+        variant="outlined" size="small" fullWidth />
   
-        {list && 
+        {dropDown && 
 
         <div className="absolute overflow-y-auto drop-shadow-2xl z-50 bg-white mt-2 rounded-2xl w-full h-36">
            {filteredCompanies.map((x, index)=>(
@@ -180,7 +187,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         </DrawerCardLayout>
 
-      <DrawerCardLayout heading={"Payment Preference"}>
+     {from !== "quickPay" && <DrawerCardLayout heading={"Payment Preference"}>
         {from === "addBill" || from === "quickPay" ? (
           <div>
  
@@ -189,18 +196,21 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         ) : null}
 
         {from === "quickPay" && <PayMethodCard from={from} />}
-      </DrawerCardLayout>
+      </DrawerCardLayout>}
 
-      <div className="ml-[7rem] fixed bottom-10">
+      <div className="ml-[7rem] fixed bottom-20">
 
         <WhiteButton
           customClass={"cancel-btn"}
           title={"Cancel"}
+          marginRight={"1rem"}
           clickEvent={() => setAddBill(false)}
         />
 
         <BlueButton
-          clickEvent={()=>{setAddBill(false); toast.success("Bill added Successfully!")}}
+          clickEvent={()=>{setAddBill(false); toast.success(`${ from === "addBill" ? "Bill added Successfully!" 
+            : from === "quickPay" ? "Bill paid Successfully!" : "Bill edit Successfully!" }`)}}
+
           customClass={"hover-color"}
           title={
             from === "addBill"

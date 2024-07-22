@@ -9,6 +9,8 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import { FaAngleDown } from "react-icons/fa6";
+import { IoIosArrowDown } from "react-icons/io";
 
 // Sample data
 const data = [
@@ -75,7 +77,7 @@ const GoogleChart = () => {
 
   const handleMenuClick = (e) => {
     message.info("Click on menu item.");
-    console.log("click", e);
+    // console.log("click", e);
   };
 
   const menuProps = {
@@ -85,21 +87,27 @@ const GoogleChart = () => {
 
   return (
     <div className="mt-5">
-      <div className="font-semibold w-full drop-shadow-lg bg-white py-4 px-10 rounded-t-3xl flex items-center justify-between">
+
+      <div className="font-medium w-full drop-shadow-lg text-lg bg-white p-4 pl-7 rounded-t-3xl flex items-center justify-between">
         <div className="text-[#176ba3]">Bills Statistics</div>
         <Dropdown menu={menuProps}>
-          <div className="border-2 py-1 px-5 rounded-full flex">
-            <div className="font-medium">This Year</div>
-            <div className="ml-5">
-              <DownOutlined />
+          <div className="border border-[#6C7293] flex justify-between cursor-pointer items-center mr-2 py-1 w-28 px-3 rounded-full">
+            <div className="font-medium text-sm">This Year</div>
+            <div className="pl-2">
+            <IoIosArrowDown />
             </div>
           </div>
         </Dropdown>
       </div>
-      <div className="rounded-b-3xl bg-white">
-        <div className="p-5">{renderChart("preserveEnd")}</div>
+
+      <div className="rounded-b-3xl flex flex-col justify-center bg-white">
+       
+        <div className="py-5">{renderChart("preserveEnd")}</div>
+
         <div className="flex space-x-4 items-center justify-center pb-10">
+         
           <div className="flex items-center space-x-2">
+         
           <div
               className={`flex items-center space-x-1 ${
                 selectedUtility === "All" ? "bg-gray-100 border-gray-500" : ""
@@ -107,8 +115,11 @@ const GoogleChart = () => {
               onClick={() => setSelectedUtility("All")}
             >
               <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+             
               <span>All</span>
+
             </div>
+
             <div
               className={`flex items-center space-x-1 ${
                 selectedUtility === "Electricity" ? "bg-blue-100 border-[#377CF6]" : ""
@@ -118,6 +129,7 @@ const GoogleChart = () => {
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
               <span>Electricity</span>
             </div>
+
             <div
               className={`flex items-center space-x-1 ${
                 selectedUtility === "Gas" ? "bg-green-100 border-[#24A959]" : ""
@@ -127,6 +139,7 @@ const GoogleChart = () => {
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span>Gas</span>
             </div>
+
             <div
               className={`flex items-center space-x-1 ${
                 selectedUtility === "PTCL" ? "border-red-500 bg-[#F9D2D4]" : ""
@@ -136,6 +149,7 @@ const GoogleChart = () => {
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
               <span>PTCL</span>
             </div>
+
             <div
               className={`flex items-center space-x-1 ${
                 selectedUtility === "Water" ? "border-blue-500 bg-[#DBF0FF]" : ""
@@ -145,6 +159,7 @@ const GoogleChart = () => {
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
               <span>Water</span>
             </div>
+
           </div>
         </div>
       </div>

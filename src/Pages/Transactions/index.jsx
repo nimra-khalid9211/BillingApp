@@ -4,27 +4,38 @@ import TransactionRecord from '../../Components/Tables/TransactionRecord';
 import BreadCrumbs from '../../UI/BreadCrumbs';
 import { _BillingCondition } from '../../actions/Context/BillingOverviewConditions';
 
+const billHeading = [
+  {title: "Payment Details"},
+  {title: "Consumer ID"},
+  {title: "Consumer Name"},
+  {title: "Company Code"},
+  {title: "Pay Date"},
+  {title: "Amount"},
+  {title: "Status"},
+  {title: "Actions"},
+];
 
 const Transactions = () => {
+  console.log("from transactions")
 
   const {transactions, setTransactions} =_BillingCondition();
 
   const items = () => {
     switch(transactions) { 
       case 1:
-        return <TransactionRecord type="all"/>;
+        return <TransactionRecord type="all" from="transactions" heading={billHeading}/>;
 
       case 2:
-          return <TransactionRecord type="master" from="transactions"/>;
+          return <TransactionRecord type="master" from="transactions" heading={billHeading}/>;
 
       case 3:
-            return <TransactionRecord type="visa" from="transactions"/>;
+            return <TransactionRecord type="visa" from="transactions" heading={billHeading}/>;
 
       case 4:
-              return <TransactionRecord type="jazzCash" from="transactions"/>;
+              return <TransactionRecord type="jazzCash" from="transactions" heading={billHeading}/>;
 
       case 5:
-                return <TransactionRecord type="easyPaisa" from="transactions"/>;
+                return <TransactionRecord type="easyPaisa" from="transactions" heading={billHeading}/>;
    
       }
      };

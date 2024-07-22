@@ -65,7 +65,7 @@ export const MyBills = ({ from }) => {
 
         {MyBillList.length > 0 ? (
           <table className="w-full text-xs rounded-3xl mt-2">
-            <thead className="text-xs bg-[#DBF0FF] text-[var(--blue)]">
+            <thead className="font-medium text-sm bg-[#DBF0FF] text-[var(--blue)]">
               <tr className="grid grid-cols-8 gap4">
                 {MyBillHeading.map((x, index) => {
                   // Conditionally render "Auto Debit" column only when from === 'BMB'
@@ -81,8 +81,8 @@ export const MyBills = ({ from }) => {
                     <th
                       key={index}
                       scope="col"
-                      className={`px-6 py-4 ${
-                        index === 0 ? "text-left" : "text-center"
+                      className={`px-6 py-3 ${
+                        index === 0 ? "text-left pl-12" : "text-center"
                       }`}
                     >
                       {x.title}
@@ -96,7 +96,7 @@ export const MyBills = ({ from }) => {
               {bills.map((x, index) => (
                 <tr
                   key={index}
-                  className="text-black font-medium shadow-2xl rounded-xl"
+                  className="text-black font-medium shadow-for-all shadow-md rounded-xl"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(8, 1fr)",
@@ -107,9 +107,10 @@ export const MyBills = ({ from }) => {
                     borderRadius: "16px",
                   }}
                 >
+
                   <th
                     scope="row"
-                    className="w-40 truncate px-6 py-4 text-left font-medium whitespace-nowrap"
+                    className="w-40 truncate px-6  text-left font-semibold whitespace-nowrap"
                     style={{
                       gridColumn: "span 1",
                       display: "flex",
@@ -118,26 +119,30 @@ export const MyBills = ({ from }) => {
                   >
                     {x.billname}
                   </th>
+
                   <td
-                    className="w-40 truncate px-6 py-4 text-center"
+                    className="w-40 truncate px-6 0 text-center"
                     style={{ gridColumn: "span 1" }}
                   >
                     {x.consumerID}
                   </td>
+
                   <td
-                    className="w-40 truncate px-6 py-4 text-center"
+                    className="w-40 truncate px-6 0 text-center"
                     style={{ gridColumn: "span 1" }}
                   >
                     {x.consumerName}
                   </td>
+
                   <td
-                    className="px-6 py-4 text-center"
+                    className="px-6 0 text-center"
                     style={{ gridColumn: "span 1" }}
                   >
                     {x.billCompany}
                   </td>
+
                   <td
-                    className="px-6 py-4 text-center"
+                    className="px-6 0 text-center"
                     style={{ gridColumn: "span 1" }}
                   >
                     {x.dueDate}
@@ -145,7 +150,7 @@ export const MyBills = ({ from }) => {
 
                   {from === "BMB" && (
                     <td
-                      className="px-6 py-4 text-center"
+                      className="px-6 0 text-center"
                       style={{ gridColumn: "span 1" }}
                     >
                       <Switch className="drop-shadow-xl" checkedChildren={<GoCheck size={15}/>} unCheckedChildren={<RxCross2 size={14}/>} defaultChecked={x.autoDebit} size="small"/>
@@ -154,7 +159,7 @@ export const MyBills = ({ from }) => {
 
                   {from === "dashboard" && (
                     <td
-                      className="px-6 py-4 text-center"
+                      className="px-6 0 text-center"
                       style={{ gridColumn: "span 1" }}
                     >
                       {x.amount}
@@ -163,7 +168,7 @@ export const MyBills = ({ from }) => {
 
                   {from === "BMB" && (
                     <td
-                      className="px-6 py-4 text-center"
+                      className="px-6 0 text-center"
                       style={{ gridColumn: "span 1" }}
                     >
                       {x.payPreference}
@@ -171,7 +176,7 @@ export const MyBills = ({ from }) => {
                   )}
 
                   <td
-                    className="px-6 py-4 text-center"
+                    className="px-6 0 text-center"
                     style={{
                       gridColumn: "span 1",
                       display: "flex",
@@ -193,10 +198,11 @@ export const MyBills = ({ from }) => {
                         {/* <div className="p-2 rounded-lg bg-[#DBF0FF] text-center">
                           <FaEdit size={20} color="#006AB2" />
                         </div> */}
-                          <RiDeleteBin5Line size={20} color="#F1416C" />
+                          <RiDeleteBin5Line size={18} color="#F1416C" />
                       </div>
                     )}
                   </td>
+
                 </tr>
               ))}
             </tbody>

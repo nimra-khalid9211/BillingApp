@@ -12,7 +12,7 @@ export const MyBillList = [
     amount: "10,000",
     afterDueAmount: "10,630",
     autoDebit: true,
-    payPreference: "Mastercard-5215",
+    payPreference: "JazzCash-5215",
     status: "Unpaid",
     transactionID: "1713875280652-ALFA",
     payDate: "23 May 2024",

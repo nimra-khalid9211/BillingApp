@@ -110,11 +110,11 @@ export const SelectableBills = ({ type, from }) => {
       <div className={`overflow-x-auto bg-white rounded-bl-3xl rounded-br-3xl mt-2 ${from === "dashboard" && 'h-[433px]'}`}>
 
       <table className="w-full table-fixed text-sm">
-        <thead className="text-[11px] text-[var(--blue)] text-center bg-[#DBF0FF]">
+        <thead className="font-medium text-sm text-[var(--blue)] text-center bg-[#DBF0FF]">
           <tr>
          { isUniformPaymentMethod &&  <th
               scope="col"
-              className="w-10 p-4 border-dashed border-r border-[#4653D72B]"
+              className="w-10 px-4 py-2 border-dashed border-r border-[#4653D72B]"
             >
 
               <div className="flex items-center ">
@@ -146,7 +146,7 @@ export const SelectableBills = ({ type, from }) => {
                 <th
                   scope="col"
                   key={index}
-                  className={`px-6 py-2 border-dashed  ${
+                  className={`w-20 truncate px-6 py-3 border-dashed  ${
                     index < MyBillHeading.length - 1 ? "border-r border-[#4653D72B]" : ""
                   } ${index === 0 ? "text-left" : "text-center"}`}
                 >
@@ -163,9 +163,9 @@ export const SelectableBills = ({ type, from }) => {
             // console.log(payable, 'from selectable bills')
            return (
             <tr key={index}
-              className={`bg-white border-dashed text-xs hover:${payable ? "bg-[#F7F8F9]" : ""} border-b border-[#4653D72B] text-center h-16 text-black font-medium`}>
+              className={`border-dashed border-b border-[#4653D72B] text-xs hover:${payable ? "bg-[#F7F8F9]" : ""}text-center h-16 text-black font-medium`}>
 
-              {isUniformPaymentMethod && <td className="w-5 p-4 border-dashed border-r border-[#4653D72B]">
+              {isUniformPaymentMethod && <td className="w-5 px-4 py-2 border-dashed border-r border-[#4653D72B]">
 
                 <div className="flex items-center mr-2">
                   <input
@@ -191,35 +191,35 @@ export const SelectableBills = ({ type, from }) => {
                 {x.billname}
               </td>
 
-              <td className={`w-14 px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`w-14 text-center px-6 py-2 ${dashedBorderRight}`}>
                 {x.consumerID}
               </td>
 
-              <td className={`w-12 truncate px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`w-12 text-center truncate px-6 py-2 ${dashedBorderRight}`}>
                 {x.consumerName}
               </td>
 
-              <td className={`w-12 truncate px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`w-12 text-center truncate px-6 py-2 ${dashedBorderRight}`}>
                 {x.billCompany}
               </td>
 
-              <td className={`px-6 py-2 ${x.status === "Unpaid" && "text-[#f1416c]"}  ${dashedBorderRight}`}>{x.dueDate}</td>
+              <td className={`px-6 text-center py-2 ${x.status === "Unpaid" && "text-[#f1416c]"}  ${dashedBorderRight}`}>{x.dueDate}</td>
 
-              <td className={`px-6 py-2 ${dashedBorderRight}`}>
+              <td className={`px-6 text-center py-2 ${dashedBorderRight}`}>
                 {overdue && x.status === "Unpaid"
                   ? x.afterDueAmount
                   : x.amount}
               </td>
            
-                 {from !== "dashboard" && <td className={`px-6 py-2 ${dashedBorderRight}`}>
+                 {from !== "dashboard" && <td className={`text-center px-6 py-2 ${dashedBorderRight}`}>
                     <Switch className="drop-shadow-xl" checkedChildren={<GoCheck size={15}/>} unCheckedChildren={<RxCross2 size={14}/>} defaultChecked={x.autoDebit} size="small"/>
                   </td>}
 
-              { from !== "dashboard" &&  <td className={`px-6 py-2 ${dashedBorderRight}`}>
+              { from !== "dashboard" &&  <td className={`px-6 text-center py-2 ${dashedBorderRight}`}>
                     {x.payPreference}
                   </td>}
 
-                  { from !== "dashboard" && <td className={`${dashedBorderRight} `}>
+                  { from !== "dashboard" && <td className={`${dashedBorderRight} text-center`}>
 
                   <span className={`w-16 py-1 rounded-md ${x.status === "Paid" ? "bg-[#E8FFF3] px-4 text-[#1e9f1f] border border-[#1e9f1f]": "bg-[#f9cdcd] text-[#f1416c] border border-[#f1416c] px-2"}`}>
                     {x.status}

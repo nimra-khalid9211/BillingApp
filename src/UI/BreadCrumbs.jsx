@@ -22,7 +22,9 @@ const BreadCrumbs = ({
   customStyle
 }) => {
 
-  const {checkVerfication} = _BillingCondition()
+  const {checkVerfication} = _BillingCondition();
+
+  console.log(checkVerfication)
 
   return (
 
@@ -36,8 +38,9 @@ const BreadCrumbs = ({
         
         {/* {checkVerfication ? "text-[#009EF7] pl-1" : 'text-[#6C7293] pl-1'} */}
 
-          <Link to={link}>
-          <b className={`${ !checkVerfication || link  ?  "text-[#009EF7] pl-1": "text-[#6C7293] pl-1"}`}>{menu}</b> &nbsp;
+          <Link to={link} className={`${!checkVerfication || link  ?  "text-[#009EF7] pl-1": "text-[#6C7293] hover:text-[#6C7293] pl-1"} `}
+          style={{cursor: !checkVerfication || link  ? "pointer" : "default"}}>
+          <b>{menu}</b> &nbsp;
           </Link>
 
           {subMenu &&  <>
@@ -50,6 +53,7 @@ const BreadCrumbs = ({
 
           {thirdMenu && <span className="text-[#6C7293]">/</span>} &nbsp;
           <b className="text-[#6C7293]">{thirdMenu}</b>
+
         </div>
 
         <div>
@@ -57,6 +61,7 @@ const BreadCrumbs = ({
             <WhiteButton
               title={btnTitle1}
               icon={btnIcon1}
+              marginRight={"10px"}
               clickEvent={btnEvent1}
               customClass={customClass}
             />

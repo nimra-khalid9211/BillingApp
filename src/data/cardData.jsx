@@ -3,7 +3,7 @@ import { bitmap, visaCard, easyPaisa,  jazzcash, bank } from "../assets/image";
 
 export const CardData = [
   
-  {
+  { id:1,
     icon: <img src={bitmap} alt="" className="w-10" />,
     title: "Mastercard", 
     cardNumber: "5210",
@@ -15,7 +15,7 @@ export const CardData = [
     autoDebit: true
   },
   
-  {
+  { id:2,
     icon: <img src={bank} alt="" className="w-10" />,
     title: "Bank", 
     cardNumber: "5210",
@@ -25,7 +25,7 @@ export const CardData = [
     verify: false,
   },
 
-  {
+  { id:3,
     icon: <img src={visaCard} alt="" className="w-10"/>,
     title: "Visa", 
     cardNumber: "5210",
@@ -36,7 +36,7 @@ export const CardData = [
     cvv: 757
   },
 
-  {
+  { id:4,
     icon: <img src={easyPaisa} alt="" className="w-10" />,
     title: "Easypaisa", 
     cardNumber: "5210",
@@ -46,7 +46,7 @@ export const CardData = [
     verify: true,
   },
   
-  {
+  { id:5,
     icon: <img src={jazzcash} alt="" className="w-10" />,
     title: "JazzCash", 
     cardNumber: "5210",

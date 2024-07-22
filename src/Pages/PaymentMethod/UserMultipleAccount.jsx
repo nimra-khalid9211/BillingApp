@@ -10,6 +10,11 @@ export default function UserMultipleAccount() {
   const [cardData, setCardData] = useState(initialCardData);
   const [verifyPopup, setVerifyPopup] = useState(false);
   const { setPaymentType, setCheckShown } = _BillingCondition();
+  const [id, setId] = useState()
+  
+
+  
+  const [deleteVerification, setDeleteVerification] = useState(false);
 
   const navigate = useNavigate();
 
@@ -52,8 +57,7 @@ export default function UserMultipleAccount() {
   
     setCardData(updatedCards);
   };
-  
-  
+
 
   const handleNavigate = (account) => {
     const { id, userName, cardNumber, expiry, verify, default: isDefault, title,cvv } = account;
@@ -87,12 +91,17 @@ export default function UserMultipleAccount() {
     navigate('/payment-methods/add-payment', { state: { account: simpleAccount } });
   };
 
-  const deleteItem = (indexToDelete) => {
-    const updatedItems = cardData.filter((item, index) => index !== indexToDelete);
+  const deleteItem = () => {
+    const updatedItems =cardData.filter((x)=> x.id !== id) 
+    console.log(updatedItems, "updated items");
     setCardData(updatedItems);
-    console.log("clicked")
+    setDeleteVerification(false)
+    // console.log("clicked")
   };
-  console.log(cardData, "nimra")
+  // console.log(id)
+  
+  useEffect(()=>{deleteItem},[id])
+
 
   return (
     <div className="relative bg-white shadow-md rounded-3xl mt-5">
@@ -112,7 +121,7 @@ export default function UserMultipleAccount() {
                 <div className="w-8 h-6 flex items-center justify-center">
                   {x.icon}
                 </div>
-                <div className="ml-3 font-medium text-lg">
+                <div className="ml-3 font-medium text-base">
                   {x.userName}
                 </div>
               </div>
@@ -173,7 +182,7 @@ export default function UserMultipleAccount() {
               }`}
               onClick={x.verify ? () => handleSetAsDefault(index) : ""}
             >
-              {x.default ? "Default" : "Set as Default"}
+              {x.default ? "Default" : <span className={`${x.verify && !isCardExpired(x.expiry) ? "text-[#329DFF] underline" : ""}`}>Set as Default</span>}
             </div>
 
             {isCardExpired(x.expiry) ? (
@@ -183,10 +192,9 @@ export default function UserMultipleAccount() {
                 Update Now
               </span>
             ) : (
-              <div className="flex justify-center items-center gap-3 cursor-pointer" onClick={() => deleteItem(index)}
->
+              <div className="flex justify-center items-center gap-3 cursor-pointer">
                 <div className="p-2 rounded-lg bg-[#FFD5DF]">
-                  <RiDeleteBin5Line size={15} color="#F1416C" />
+                  <RiDeleteBin5Line size={15} color="#F1416C"  onClick={()=>{setId(x.id);setDeleteVerification(true)}}/>
                 </div>
               </div>
             )}
@@ -208,6 +216,11 @@ export default function UserMultipleAccount() {
           setCheckShown(false);
         }}
       />
+
+<PaymentSuccessfullModal from="debitAccountCancelled"  cancelTitle={"Delete Bill"}
+        receiptModal={deleteVerification}  width={400} delArray={deleteItem}
+        setReceiptModal={setDeleteVerification}/>
+
     </div>
   );
 }

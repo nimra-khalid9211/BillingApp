@@ -20,7 +20,7 @@ export const DefaultAccount = () =>{
 
   return (
     <>
-    <div className="grid grid-cols-5 gap-4 rounded-2xl mt-5 bg-white p-5 drop-shadow-lg">
+    <div className="grid grid-cols-5 gap-4 rounded-2xl mt-5 bg-white p-5 shadow-for-all">
 
     <div className="flex items-center border-r-2">
 
@@ -59,14 +59,12 @@ export const DefaultAccount = () =>{
 
     </div>
 
-   
-
   </div>
 
 
   {
       changeAccount &&
-        <div className="grid grid-cols-4 pt-10 gap-4 bg-white ">
+        <div className="">
         <ChangeAccount from="mobileTopup"/>
       </div>
       }
@@ -79,8 +77,6 @@ export const DefaultAccount = () =>{
 
 export default function RechangeAccount() {
   const navigate = useNavigate();
-
-
 
   return (
     <>

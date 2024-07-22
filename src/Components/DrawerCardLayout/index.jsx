@@ -3,9 +3,9 @@ import React from 'react'
 
 const DrawerCardLayout = ({heading, height, from, children}) => {
   return (
-    <div className="flex justify-center my-5">
+    <div className="flex justify-center my-10">
 
-    <Card className="w-[54rem] drop-shadow-xl rounded-3xl"
+    <Card className="w-[54rem] shadow-for-all rounded-3xl"
     style={{ height: height }}> 
      {/* borderRadius: '30px', */}
 

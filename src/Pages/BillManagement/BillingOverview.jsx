@@ -30,13 +30,25 @@ const items = [
   },
 ];
 
+const billHeading = [
+  {title: "Bill Name"},
+  {title: "Consumer ID"},
+  {title: "Consumer Name"},
+  {title: "Company Code"},
+  {title: "Bill Month"},
+  {title: "Pay Date"},
+  {title: "Amount"},
+  {title: "Status"},
+  {title: "Actions"},
+];
+
 const BillingOverview = () => {
   const navigate = useNavigate();
 
   const [current, setCurrent] = useState("all");
   const {selectedBills, setBills} = _BillingCondition()
 
-console.log(selectedBills, "billing overview")
+// console.log(selectedBills, "billing overview")
 
     
 
@@ -61,13 +73,13 @@ console.log(selectedBills, "billing overview")
       case "all":
         return <SelectableBills type="all" />;
       case "electricity":
-        return <TransactionRecord type="electricity" from="billingOverview" />;
+        return <TransactionRecord type="electricity" from="billingOverview" heading={billHeading}/>;
       case "gas":
-        return <TransactionRecord type="gas" from="billingOverview" />;
+        return <TransactionRecord type="gas" from="billingOverview" heading={billHeading} />;
       case "water":
-        return <TransactionRecord type="water" from="billingOverview" />;
+        return <TransactionRecord type="water" from="billingOverview" heading={billHeading} />;
       case "internet":
-        return <TransactionRecord type="internet" from="billingOverview" />;
+        return <TransactionRecord type="internet" from="billingOverview" heading={billHeading} />;
       default:
         return <div>Select a menu item</div>;
     }
@@ -75,7 +87,7 @@ console.log(selectedBills, "billing overview")
 
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-5">
         <div className="grid grid-cols-2">
           <Menu
             onClick={onClick}

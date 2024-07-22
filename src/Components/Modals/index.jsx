@@ -61,14 +61,6 @@ export const PaymentSuccessfullModal = ({
 
   const [data, setData] = useState('');
 
-  // const handleDeleteBill = (index) => {
-  //   const updatedBills = [...bills];
-  //   updatedBills.splice(index, 1); // Remove the bill at the specified index
-  //   setBills(updatedBills); // Update the bills state
-  //   console.log("clicked")
-  // };
-
-
   return (
     <Modal
       centered
@@ -171,7 +163,7 @@ export const PaymentSuccessfullModal = ({
           <div className="bg-[#E8E7EC] py-5 text-center rounded-b-[2rem]">
            
             <LargeButtons  disabled={data?.length === 4 ? false : true}  title={"Yes, Delete Bill"}
-             width={"20rem"} customClass={data?.length === 4 ?"delete-btn" : "disabled-delete-btn"} clickEvent={delArray} from={"delete"}/>
+             width={"20rem"} customClass={data?.length === 4 ?"delete-btn" : "disabled-delete-btn"} clickEvent={()=>{delArray();setData([])}} from={"delete"}/>
          
           </div>
 
@@ -185,11 +177,19 @@ export const PaymentSuccessfullModal = ({
 
 export const ReportModels = ({ report, setReport,title}) => {
   const navigate = useNavigate()
-  const options = [
+
+  const operators = [
     { label: "Jazz", value: "option1" },
     { label: "Ufone", value: "option2" },
     { label: "Telenor", value: "option3" },
     { label: "Zong", value: "option4" },
+  ];
+
+  const numbers = [
+    { label: "03231234567", value: "option1" },
+    { label: "03331234567", value: "option2" },
+    { label: "03421234567", value: "option3" },
+    { label: "03161234567", value: "option4" },
   ];
 
 
@@ -203,52 +203,68 @@ export const ReportModels = ({ report, setReport,title}) => {
       className={'report-modal no-overfow-y'}
     >
       <div className="p-10">
+
         <div className="text-center text-xl font-semibold text-[#377CF6] border-b pb-2">
         {title}
         </div>
+
         <div className="mt-10">
+         
           <label htmlFor="" className="">
             Select Operator
           </label>
+
           <Select
             mode="multiple"
             allowClear
             className="custom-select"
+            popupClassName="custom-dropdown"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               outline: "none",
             }}
             placeholder="Please select"
-            defaultValue={["All"]}
+            // defaultValue={["All"]}
             // onChange={handleChange}
-            options={options}
+            options={operators}
           />
+
         </div>
+
         <div className="mt-7">
+
           <label htmlFor="" className="">
             Select Number
           </label>
+
           <Select
             mode="multiple"
             allowClear
             className="custom-select"
+            popupClassName="custom-dropdown"
             style={{
               width: "100%",
               backgroundColor: "transparent",
             }}
             placeholder="Please select"
-            defaultValue={["All"]}
+            // defaultValue={[""]}
             // onChange={handleChange}
-            options={options}
+            options={numbers}
           />
+
         </div>
+
         <div className="text-[#0083FF] font-semibold mt-5">
           Select Date Range
         </div>
+
         <div className="mt-5 grid grid-cols-2 gap-4">
+         
           <div>
+
             <label htmlFor="">From</label>
+            
             <TextField
               type="date"
               variant="outlined"
@@ -260,9 +276,12 @@ export const ReportModels = ({ report, setReport,title}) => {
                 style: { fontSize: "16px" },
               }}
             />
+
           </div>
+
           <div>
             <label htmlFor="">To</label>
+
             <TextField
               type="date"
               variant="outlined"
@@ -274,12 +293,16 @@ export const ReportModels = ({ report, setReport,title}) => {
                 style: { fontSize: "16px" },
               }}
             />
+
           </div>
+
         </div>
+
         <div className="grid grid-cols-2 gap-4 mt-10">
-          <WhiteButton customClass={"cancel-btn"} title="Cancel" clickEvent={() => setReport(false)}/>
-          <BlueButton customClass={"hover-color"} customStyle={"11rem"} title="Generate Report" clickEvent={()=>navigate('/transaction-report')}/>
+          <WhiteButton customClass={"cancel-btn"} customStyle={"100%"} title="Cancel" clickEvent={() => setReport(false)}/>
+          <BlueButton customClass={"hover-color"} customStyle={"100%"} title="Generate Report" clickEvent={()=>navigate('/transaction-report')}/>
         </div>
+
       </div>
     </Modal>
   );

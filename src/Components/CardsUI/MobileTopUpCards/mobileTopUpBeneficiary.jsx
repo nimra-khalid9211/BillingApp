@@ -23,7 +23,7 @@ export default function MobileTopUpBeneficiary() {
           </div>
         </div>
         <div className="font-medium mt-2 w-full ml-3">
-          <label htmlFor="">Mobile Name</label>
+          <label htmlFor="">Mobile Number</label>
           <div className="my-2 bg-[#E8E7EC] py-2 pl-2 w-full rounded-lg border border-[#6C7293]">
             {location.mobileNumber}
           </div>

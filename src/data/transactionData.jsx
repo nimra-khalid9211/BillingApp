@@ -1,7 +1,4 @@
 export const transactionData = [
-    {
-        title: "May 2024",
-        transaction:[
             {
                 billName: "Office Electricity Bill",
                 cosumerID: 123456789,
@@ -19,11 +16,11 @@ export const transactionData = [
             {
                 billName: "Home gas Bill",
                 cosumerID: 123456789,
-                consumerName: "Usman Afzal",
+                consumerName: "Ahmed Ali Abdullah Salman Asghar",
                 companyCode: "SNGPL",
                 billMonth: "May 2024",
                 cardType: "easyPaisa",
-                cardHolderName: "Usman Fazal",
+                cardHolderName: "Ahmed Ali",
                 cardNumber: 1234567891239875,
                 amount: 10000,
                 payDate: "08 May 2024",
@@ -44,11 +41,6 @@ export const transactionData = [
                 status: "Paid", 
                 type: "water"
             },
-        ]
-    },
-    {
-        title: "April 2024",
-        transaction:[
             {
                 billName: "Home Electricity Bill",
                 cosumerID: 123456789,
@@ -92,5 +84,3 @@ export const transactionData = [
                 type: "internet"
             },
         ]
-    },
-]

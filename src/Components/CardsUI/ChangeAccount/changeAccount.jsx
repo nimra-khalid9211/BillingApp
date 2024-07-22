@@ -41,17 +41,15 @@ export default function ChangeAccount({ from }) {
   return (
     <>
 
-<div className={`${from === "secondDrawer" ? "grid grid-cols-2 gap-3" : ""}`}>
+<div className={`${from === "secondDrawer" ? "grid grid-cols-2 gap-3" : "grid grid-cols-4 gap-3"}`}>
 
       {cards.map((x, index) => (
       
-       
-
       <Card  key={index} 
-          className={`py-3 px-5 rounded-2xl mt-2 drop-shadow-md ${
-            index === selectedCardIndex ? "activeRadio" : ""
-          }`}
-          onClick={() => handleCardSelection(index)} >
+        className={`py-3 px-5 rounded-3xl mt-3 shadow-for-all border-2 
+        ${x.default ? "" : "bg-[#F3F3F3]"} 
+        ${index === selectedCardIndex ? "activeRadio" : ""}`}
+        onClick={() => handleCardSelection(index)} >
 
           <div className="flex items-center justify-between">
 
@@ -78,7 +76,7 @@ export default function ChangeAccount({ from }) {
                   <span className="text-xs text-[#6C7293]">ending</span> {x.cardNumber}
                 </span>
 
-                {from !== "mobileTopup" || from !== "secondDrawer" && (  <span
+                {from === "mobileTopup" || from !== "secondDrawer" && (  <span
                   className={`text-end text-xs ${
                     x.default ? " text-[#24A959]" : "text-[#329DFF]"
                   }`}
@@ -91,8 +89,6 @@ export default function ChangeAccount({ from }) {
           </div>
           
         </Card>
-
-       
 
       ))}
 

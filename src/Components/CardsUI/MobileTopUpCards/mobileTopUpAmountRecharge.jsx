@@ -12,8 +12,8 @@ export default function MobileTopUpAmountRecharge() {
           <div className="text-lg mr-2">Rs.</div>
           <div className="my-2">
             <input
-              type="number"
-              className="outline-none bg-[#E8E7EC] p-2 w-full rounded-lg border border-[#6C7293]"
+              type="number" placeholder="Enter amount here"
+              className="outline-none  p-2 w-full rounded-lg border border-[#6C7293]"
             />
           </div>
         </div>

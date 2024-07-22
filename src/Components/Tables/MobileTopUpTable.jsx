@@ -6,20 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { WhiteButton } from "../../UI/Buttons";
 
 export default function MobileTopUpTable() {
-  const navigate = useNavigate();
-
-  // const handleClick = (name, mobileOperator, mobileNumber) => {
-  //   navigate("/mobile-top-up/changing-account", {
-  //     state: {
-  //       componentName: name,
-  //       componentOperator: mobileOperator,
-  //       componentNumber: mobileNumber,
-  //     },
-  //   });
-  //   console.log(name);
-  // };
-
-
+  const navigate = useNavigate(); 
 
   const MobileTopUpTitles = [
     { title: "Name" },

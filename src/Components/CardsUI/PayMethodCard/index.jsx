@@ -20,6 +20,7 @@ const PayMethodCard = ({ from, secondDrawer, setSecondDrawer }) => {
     <>
      {CardData.length > 0 ? 
         CardData.filter((x)=> x.default === true).map((y)=>(
+          
         <Card className={`rounded-3xl drop-shadow-xl ${from === "secondDrawer" ? "bg-[#F3F3F3]" : ""}`}>
           
           <div className={`${CardData.length === 1 ? "flex justify-between  items-center" : "grid grid-cols-5"} p-5 text-sm font-semibold`}>
