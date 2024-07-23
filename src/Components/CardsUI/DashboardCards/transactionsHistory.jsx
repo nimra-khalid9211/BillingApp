@@ -64,50 +64,57 @@ export default function TransactionsHistory() {
 
       
         {data.length > 0 ? (
-          data.map((data, index) => {
-            const { integerPart, decimalPart } = formatAmount(data.total);
+          data.map((datas, index) => {
+            const { integerPart, decimalPart } = formatAmount(datas.total);
 
             return (
               <div
                 key={index}
-                className="flex bg-white items-center justify-between pt-5 px-5 pb-[1.2rem] border-b"
+                className="flex bg-white items-center justify-between pt-5 px-5 pb-[1.2rem]"
+                style={{borderBottom:`${index === data.length - 1 ? "" : "1px dashed #4653D72B"}`}}
               >
                 <div className="flex items-center">
 
                   <div className="bg-[#EDF1FF] text-[var(--blue)] rounded-full h-[3rem] w-[3rem] flex justify-center items-center">
-                    {data.icon}
+                    {datas.icon}
                   </div>
                   
                   <div className="ml-5 mt-4">
-                    <div className="font-semibold">{data.title}</div>
-                    <div className="text-[10px] mt-1">{data.date}</div>
+                    <div className="font-semibold">{datas.title}</div>
+                    <div className="text-[10px] mt-1">{datas.date}</div>
                   </div>
+
                 </div>
+
                 <div>
+
                   <div className="relative font-medium pr-7">
+
                     <div>
                       <span className="text-[#6C7293] text-sm mr-1">Rs</span>
                       <span className="text-base">{integerPart}</span>
                       <span className="absolute text-sm">.{decimalPart}</span>
                     </div>
+
                   </div>
-                  {/* <div className="mt-1 border rounded-[1rem] border-[#DA2B26] text-center text-[#DA2B26]">
-                  {data.percent}
-                </div> */}
+
                 </div>
+
               </div>
             );
           })
         ) : (
           <>
+
             <div className="flex items-center justify-center my-10">
               <img src={transaction} alt="" className="w-36 h-52" />
             </div>
+
             <div className="font-bold text-center">No Record Found</div>
           </>
         )}
 
-        <div className="w-full  underline text-[var(--blue)] cursor-pointer text-center py-4 bg-[#d3e8f6] rounded-b-3xl">
+        <div className="w-full  underline text-[var(--blue)] cursor-pointer text-center py-[17px] bg-[#d3e8f6] rounded-b-3xl">
           <Link to="/transactions"> View All</Link>
         </div>
 

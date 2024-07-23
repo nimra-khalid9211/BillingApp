@@ -32,35 +32,58 @@ export default function DebitCard({type, width}) {
 
   return (
     <div>
+
       <div className="border-b pb-2 font-bold mt-10">
         Bank Direct Debit Details
       </div>
-      <div className={`${width ? "" :"grid grid-cols-2 gap-4 place-content-between"} mt-5`}>
+
+      {/* <div className={`${width ? "" :"grid grid-flow-row grid-cols-2 gap-4 place-content-between"} mt-5`}> */}
       
-      
-        <div className={`${width ? width : "w-1/2"}`}>
+        {/* <div className={`${width ? width : "w-1/2"}`}> */}
           
-          <div className={`grid ${width ? "grid-cols-5" : 'grid-cols-2'} gap-4`}>
+          {/* <div className={`grid ${width ? "grid-cols-5" : 'grid-cols-2'} gap-4`}>
             
-            <div className="col-span-2">
-            <InputCustom label={"Account Title"} />
+            <div className={`${width ? "col-span-2" : "col-span-1"}`}>
+            <InputCustom label={"Account Title"} className={"w-full"}/>
             </div>
 
-            <div className="col-span-2">
+            <div className={`${width ? "col-span-2" : "col-span-1"}`}>
             <InputCustom label={"Bank Name"} />
             </div>
 
-            <div className="col-span-2">
+            <div className={`${width ? "col-span-2" : "col-span-1"}`}>
             <InputCustom label={"Branch Number"} />  
             </div>   
 
-            <div className="col-span-2">
+            <div className={`${width ? "col-span-2" : "col-span-1"}`}>
             <InputCustom label={"IBAN #"} />
             </div>
 
+          </div> */}
+
+          <div className={`${width ? width : "w-1/2" }`}>
+          <div className={`grid grid-cols-5 gap-4 mt-5`}>
+
+          <div className="col-span-2">
+          <InputCustom label={"Name on Card"} />
+          </div>
+
+          <div className="col-span-2">
+          <InputCustom label={"Card Number"} />
+          </div>
+
+          <div className="col-span-2">
+          <InputCustom label={"Expiry Card"} />
+          </div>
+
+          <div className="col-span-2">
+          <InputCustom label={"CVV"} />
+          </div>
+
+          </div>
           </div>
         
-            <div className="my-5">
+            <div className="ml-1 my-5">
               <input type="checkbox" onClick={handleVerfied} />
               <label htmlFor="" className="ml-3">
                 I agree to the
@@ -70,7 +93,7 @@ export default function DebitCard({type, width}) {
               </label>
             </div>
 
-        </div>
+        {/* </div> */}
 
         {/* {!checkShown && (
           <div className="flex justify-center">
@@ -87,7 +110,7 @@ export default function DebitCard({type, width}) {
           </div>
         )} */}
 
-      </div>
+      {/* </div> */}
       
       <PaymentSuccessfullModal
         receiptModal={cencelVerification}

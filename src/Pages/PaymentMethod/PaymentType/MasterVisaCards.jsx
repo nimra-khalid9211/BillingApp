@@ -33,12 +33,12 @@ export default function MasterVisaCard({width}) {
 
         </div>
 
-        <div className="my-5">
+       { !location &&  <div className="my-5">
           <input type="checkbox" />
           <label htmlFor="" className="ml-3">
             Set as Default
           </label>
-        </div>
+        </div>}
 
       </div>
 

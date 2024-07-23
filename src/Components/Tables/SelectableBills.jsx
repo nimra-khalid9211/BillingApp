@@ -100,7 +100,7 @@ export const SelectableBills = ({ type, from }) => {
 
   return (
     <>
-      <div className="bg-white rounded-3xl  mt-5">
+      <div className="bg-white rounded-3xl  mt-5 mb-7">
        
       <div className="drop-shadow-xl text-[#377CF6] bg-white p-3 px-7 text-xl flex justify-between items-center rounded-t-3xl">
         <div className="text-[var(--blue)] text-lg font-medium">{from === "dashboard" ? "Due Bills" : "All Bills"}</div>
@@ -163,7 +163,7 @@ export const SelectableBills = ({ type, from }) => {
             // console.log(payable, 'from selectable bills')
            return (
             <tr key={index}
-              className={`border-dashed border-b border-[#4653D72B] text-xs hover:${payable ? "bg-[#F7F8F9]" : ""}text-center h-16 text-black font-medium`}>
+              className={`border-dashed ${index === unpaidBills.length-1 ? "" : "border-b"} border-[#4653D72B] text-xs hover:${payable ? "bg-[#F7F8F9]" : ""}text-center h-16 text-black font-medium`}>
 
               {isUniformPaymentMethod && <td className="w-5 px-4 py-2 border-dashed border-r border-[#4653D72B]">
 

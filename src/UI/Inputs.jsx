@@ -1,7 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import React, { useState } from 'react'
 
-export const InputCustom = ({label, type, className,value}) => {
+export const InputCustom = ({label, type, className, value, disabled, onChange, borderStyle}) => {
 
   return (
 
@@ -14,8 +14,12 @@ export const InputCustom = ({label, type, className,value}) => {
         fontSize: "16px",
         fontWeight: "600",
         borderRadius: "10px",
+        // border: `${borderStyle}`,
+        
       },
     }}
+    onChange={onChange}
+    disabled={disabled}
     variant="outlined"
     size="small"
     fullWidth

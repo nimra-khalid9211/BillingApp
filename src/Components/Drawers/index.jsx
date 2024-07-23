@@ -1,6 +1,6 @@
 import { TextField,} from "@mui/material";
 import {  Card, Divider, Drawer, Switch } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DrawerCardLayout from "../../Components/DrawerCardLayout";
 import { bitmap, easyPaisa, jazzcash, visaCard } from "../../assets/image";
 import { BlueButton, WhiteButton } from "../../UI/Buttons";
@@ -8,6 +8,7 @@ import PayMethodCard from "../CardsUI/PayMethodCard";
 import { Cancel } from "../../assets/icon";
 import { InputCustom } from "../../UI/Inputs";
 import { toast } from "react-toastify";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
 const billingCompanies = [
   { title: "GEPCO" },
@@ -52,18 +53,32 @@ const cards = [
 export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
   const [bill, setBill] = useState("");
   const [list, setList] = useState(false);
+  var [data, setData] = useState();
 
-  console.log(from, "from")
+  const { editData } = _BillingCondition();
+
+  useEffect(() => {
+    if (editData) {
+      // const { billname } = editData;
+      setData(editData);
+    }
+  }, [editData]);
+  // console.log(data)
+
+  const handleChange = (e) => {
+    setData(e.target.value)
+  }
 
   const [secondDrawer, setSecondDrawer] = useState(false);
 
   const [dropDown, setDropDown] = useState(false);
 
-  const filterSearch = (e) => {
+    const filterSearch = (e) => {
     const value = e.target.value;
     value.length > 0 ? setList(true) : setList(false);
     setBill(value); // Update the input field value
   };
+  // console.log(bill, "drawer line 83")
 
   const handleSelectBill = (selectedCompany) => {
     setBill(selectedCompany); // Set the selected bill title
@@ -83,8 +98,9 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
             {from === "addBill"
               ? "Add Bill"
               : from === "quickPay"
-              ? "Quick Pay"
-              : ""}
+              ? "Quick Pay" : 
+              from === "editBill" 
+              ? "Edit Bill" : "" }
           </span>
 
           <Divider style={{ borderTop: "1px solid #6C7293" }} />
@@ -113,35 +129,40 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
       </div>
 
 
-        <DrawerCardLayout heading={"Select Bill"}>
+        <DrawerCardLayout heading={`${from === "editBill" ? "Edit Bill" : "Select Bill"}`}>
           
           <div className="grid grid-cols-5 gap-8 mb-10 bg-white">
           
              <div className="col-span-4 relative">
 
-        <TextField label={from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : ""} 
-        value={bill} onChange={filterSearch}
-        onFocus={()=>setDropDown(true)}
-        onBlur={()=>setDropDown(false)}
+        <TextField label={from === "addBill" ? "Company" : from === "quickPay" ? "Select Bill" : "Company"} 
+
+        value={from === "editBill" ? data?.billCompany : bill} onChange={filterSearch} 
+        disabled={from ==="editBill" && true}
+
+        onFocus={()=>setDropDown(from === "editBill" ? "" :true)}
+        onBlur={()=>setDropDown(from === "editBill" ? "" :false)}
         variant="outlined" size="small" fullWidth />
   
         {dropDown && 
 
         <div className="absolute overflow-y-auto drop-shadow-2xl z-50 bg-white mt-2 rounded-2xl w-full h-36">
            {filteredCompanies.map((x, index)=>(
-            <div key={index} onClick={()=>handleSelectBill(x.title)} className="mx-3 p-2 px-4 border-l-white border-b rounded-sm border-l-4 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]">{x.title}</div>
+            <div key={index} onClick={()=>handleSelectBill(x.title)} className=" cursor-pointer mx-3 p-2 px-4 border-l-white border-b rounded-sm border-l-4 hover:bg-[#dbf0ff] hover:border-l-[var(--blue)]">{x.title}</div>
            ))}
         </div>
         }
         
         </div>
 
-            {from === "addBill" && 
-            <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"}/>
+            {(from === "addBill" || from === "editBill") && 
+            <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"} 
+            disabled={from ==="editBill" && true} value={from === "editBill" ?data?.consumerID : ""}/>
             }
 
-           {from === "addBill" && 
-           <InputCustom className={"col-span-2 mt-3"} label={"Bill Nick Name"}/>
+           {(from === "addBill" || from === "editBill")  && 
+           <InputCustom className={"col-span-2 mt-3"} label={"Bill Nick Name"} onChange={handleChange} 
+           value={from === "editBill" ? data?.billname : ""}/>
             }
 
             {from === "addBill" && <BlueButton title={"Fetch"} customClass={"hover-color"}/>}
@@ -187,18 +208,25 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         </DrawerCardLayout>
 
-     {from !== "quickPay" && <DrawerCardLayout heading={"Payment Preference"}>
-        {from === "addBill" || from === "quickPay" ? (
-          <div>
  
-            {from === "addBill" && <PayMethodCard from={from}  secondDrawer={secondDrawer} setSecondDrawer={setSecondDrawer} />}
+     <DrawerCardLayout heading={"Payment Preference"}>
+        {from === "addBill" || from === "quickPay" || from === "editBill" ? (
+         
+         <div>
+ 
+            <PayMethodCard from={from}  secondDrawer={secondDrawer} setSecondDrawer={setSecondDrawer} />
+
           </div>
+
         ) : null}
 
-        {from === "quickPay" && <PayMethodCard from={from} />}
-      </DrawerCardLayout>}
+        {/* {from === "quickPay" && <PayMethodCard from={from} />} */}
 
-      <div className="ml-[7rem] fixed bottom-20">
+        {/* {from === "editBill" && <PayMethodCard />} */}
+
+      </DrawerCardLayout>
+
+      <div className="ml-[9rem] fixed bottom-20">
 
         <WhiteButton
           customClass={"cancel-btn"}
@@ -217,7 +245,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
               ? "Add Bill"
               : from === "quickPay"
               ? "Quick Pay"
-              : ""
+              : "Save Changes"
           }
         />
       </div>

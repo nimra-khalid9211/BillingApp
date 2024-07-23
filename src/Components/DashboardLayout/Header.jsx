@@ -87,7 +87,7 @@ const Header = () => {
                 <b className='text-sm border-l border-[#6C7293] pl-2'>{formattedDate}</b>
                 </div>
 
-               {showDate && <div ref={calenderRef} className="absolute bg-white z-10 top-16 rounded-3xl right-60">
+               {showDate && <div ref={calenderRef} className="absolute bg-white shadow-for-all z-10 top-16 rounded-3xl right-60">
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateCalendar readOnly/>
@@ -140,7 +140,7 @@ const Header = () => {
               </b>
             </div>
 
-            {dropdown ? <FaAngleUp /> : <FaAngleDown />}
+            <span className="pr-1">{dropdown ? <FaAngleUp /> : <FaAngleDown />}</span>
           </div>
         </Dropdown>
         

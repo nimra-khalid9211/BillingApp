@@ -133,7 +133,7 @@ export default function AddPayment() {
       </div>
         <div className="fixed bottom-20">
           <WhiteButton customClass={"cancel-btn"}
-            title={"Cancel"}
+            title={"Cancel"} marginRight={"1rem"}
             clickEvent={() => navigate("/payment-methods")}
           />
 

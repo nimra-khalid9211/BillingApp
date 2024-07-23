@@ -46,7 +46,7 @@ export default function ChangeAccount({ from }) {
       {cards.map((x, index) => (
       
       <Card  key={index} 
-        className={`py-3 px-5 rounded-3xl mt-3 shadow-for-all border-2 
+        className={`py-3 px-5 rounded-3xl mt-3 drop-shadow-lg border-2 
         ${x.default ? "" : "bg-[#F3F3F3]"} 
         ${index === selectedCardIndex ? "activeRadio" : ""}`}
         onClick={() => handleCardSelection(index)} >

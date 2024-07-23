@@ -12,8 +12,6 @@ export default function UserMultipleAccount() {
   const { setPaymentType, setCheckShown } = _BillingCondition();
   const [id, setId] = useState()
   
-
-  
   const [deleteVerification, setDeleteVerification] = useState(false);
 
   const navigate = useNavigate();
@@ -25,6 +23,7 @@ export default function UserMultipleAccount() {
   const handleModalClose = () => {
     setVerifyPopup(false);
   };
+
   const isCardExpired = (expiry) => {
     const keywords = ["JazzCash", "Easypaisa", "Bank"];
     if (keywords.includes(expiry)) {
@@ -114,7 +113,8 @@ export default function UserMultipleAccount() {
         {cardData.map((x, index) => (
           <div
             key={index}
-            className={`grid grid-cols-6 gap-4 rounded-xl mt-5 py-7 px-4 shadow-lg ${isCardExpired(x.expiry) ? 'border border-[#E92F39]' : 'bg-white'}`} // Conditional class application
+            className={`shadow-for-all grid grid-cols-6 gap-4 rounded-xl mt-5 py-4 px-4
+               ${isCardExpired(x.expiry) ? 'border border-[#E92F39]' : 'bg-white'}`} // Conditional class application
           >
             <div className="flex items-center border-r-2">
               <div className="flex items-center ml-5">
@@ -176,9 +176,10 @@ export default function UserMultipleAccount() {
                 </div>
               )}
             </button>
+
             <div
               className={`border-r-2 flex items-center justify-center ${
-                x.default && !isCardExpired(x.expiry) ? "text-black cursor-pointer" : !x.verify ? "text-gray-400 cursor-default" : isCardExpired(x.expiry) ? "text-gray-400" : "cursor-pointer"
+                x.default && !isCardExpired(x.expiry) ? "text-black font-bold cursor-pointer" : !x.verify ? "text-gray-400 cursor-default" : isCardExpired(x.expiry) ? "text-gray-400" : "cursor-pointer"
               }`}
               onClick={x.verify ? () => handleSetAsDefault(index) : ""}
             >

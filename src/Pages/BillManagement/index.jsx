@@ -5,12 +5,13 @@ import Bills from "./Bills";
 import BillingOverview from "./BillingOverview";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 import { AddBillDrawer } from "../../Components/Drawers";
-import { FaMoneyBills } from "react-icons/fa6";
-import {blueBill} from '../../assets/image/index'
 
 const BillManagement = () => {
-  const { addBill, setAddBill, billingMenu, setBillingMenu } = _BillingCondition();
-  const [from, setFrom] = useState(false);
+  const [ billingMenu, setBillingMenu ] = useState(1);
+
+  const { addBill, from, setFrom, setAddBill } = _BillingCondition();
+  // const [from, setFrom] = useState(false);
+  // console.log(from, "frm use bill maangement indx")
 
   const getSubMenu = () => {
     switch (billingMenu) {
@@ -31,7 +32,7 @@ const BillManagement = () => {
         subMenu={getSubMenu()}
         btnTitle2={"Add Bill"}
         customClass2="hover-color"
-        btnEvent2={() => { setAddBill(true); setFrom("addBill"); }} />
+        btnEvent2={() => { setAddBill(true); setFrom("addBill")}} />
 
       <div>
         <Button

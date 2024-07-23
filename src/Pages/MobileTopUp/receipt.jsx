@@ -1,10 +1,28 @@
 import PaymentReciept from "../../Components/CardsUI/PaymentReciept";
 import { MobileTopUpReceipt } from "../../data/tables";
 import Recharge from "../../assets/image/recharge.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import BreadCrumbs from "../../UI/BreadCrumbs";
+import { IoChevronBack } from "react-icons/io5";
 
 export default function Receipt() {
+  const navigate = useNavigate()
+
   return (
+
+      <>
+      <BreadCrumbs
+        link={"/mobile-top-up"}
+        menu={"Mobile TopUp"} 
+        btnIcon2={<IoChevronBack size={18} />}
+        subMenu={'Recharge Now'}
+        thirdMenu={"Recharge"}
+        link2={"/mobile-top-up"}
+        btnTitle2={"Back"}
+        customClass2="back-btn"
+        btnEvent2={() => { navigate("/mobile-top-up")}}
+      />
+
     <div className="grid grid-cols-2">
       <div className="bg-white p-5 ltr rounded-s-[3rem]">
         <div className="border-b-2 p-2 font-semibold text-lg mb-10">
@@ -35,5 +53,8 @@ export default function Receipt() {
         </div>
       </div>
     </div>
+
+    </>
+
   );
 }

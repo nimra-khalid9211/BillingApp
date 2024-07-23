@@ -50,12 +50,12 @@ export default function MobileTopUpTable() {
               key={index}
               className={`text-black font-medium border-b border-dashed border-[#4653D72B]`} >
 
-              <th
+              <td
                 scope="row"
                 className="px-10 py-4 font-medium  whitespace-nowrap  text-start border-r border-dashed border-[#4653D72B]"
               >
                 {x.name}
-              </th>
+              </td>
 
               <td className="px-10 py-4 border-r border-dashed border-[#4653D72B] text-center">{x.mobileOperator}</td>
               
@@ -69,9 +69,9 @@ export default function MobileTopUpTable() {
 
               <td className="px-10 py-4 flex justify-center items-center gap-3">
 
-                  <div className="p-2 rounded-lg bg-[#DBF0FF]">
+                  {/* <div className="p-2 rounded-lg bg-[#DBF0FF]">
                     <FaEdit size={15} color="#377CF6" />
-                  </div>
+                  </div> */}
 
                   <div className="p-2 rounded-lg bg-[#FFD5DF]">
                     <RiDeleteBin5Line size={15} color="#F1416C" />

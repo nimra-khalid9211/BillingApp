@@ -12,9 +12,8 @@ import { GoCheck } from "react-icons/go";
 const PayMethodCard = ({ from, secondDrawer, setSecondDrawer }) => {
   const [changeAccount, setChangeAccount] = useState(false);
   const [changeCard, setChangeCard] = useState(false);
-
-  // console.log(from, "from paymethodcard")
-
+  
+  // console.log(from, "from...")
 
   return (
     <>

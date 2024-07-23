@@ -17,8 +17,7 @@ import GoogleChart from "../../Components/CardsUI/DashboardCards/googleChart";
 import { blueDashboard} from '../../assets/image/index'
 
 const Dashboard = () => {
-  const {addBill, setAddBill, checkVerfication} = _BillingCondition();
-  const [from, setFrom] = useState();
+  const {addBill, from, setFrom, setAddBill, checkVerfication} = _BillingCondition();
 
   return (
       <div className="">

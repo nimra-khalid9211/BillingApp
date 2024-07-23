@@ -8,6 +8,8 @@ import { LargeButtons } from "../../UI/Buttons";
 import { PaymentSuccessfullModal } from "../Modals";
 import { RxCross2 } from "react-icons/rx";
 import { GoCheck } from "react-icons/go";
+import { AddBillDrawer } from "../Drawers";
+import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
 export const MyBillHeading = [
   { title: "Bill Name" },
@@ -22,11 +24,13 @@ export const MyBillHeading = [
   { title: "Actions" },
 ];
 
-const dashedBorderRight = "";
+
 
 export const MyBills = ({ from }) => {
 
   const [cencelVerification, setCancelVerification] = useState(false);
+
+  const { addBill, setAddBill, from: froms , setFrom: setFroms, editData, setEditData } = _BillingCondition();
   
   const [bills, setBills] = useState(MyBillList); // State to manage bills array
 
@@ -54,7 +58,7 @@ export const MyBills = ({ from }) => {
     <>
       {/* {JSON.stringify(MyBillList)} */}
 
-      <div className="overflow-x-auto rounded-3xl mt-5 bg-[#ffffff]">
+      <div className="overflow-x-auto rounded-3xl mt-5 mb-8 bg-[#ffffff]">
         <div className="font-medium pl-7 w-full text-lg drop-shadow-xl text-[var(--blue)] bg-white p-4 rounded-t-3xl">
           {from === "BMB" ? "My Bills" : "Due Bills List"}
         </div>
@@ -65,6 +69,7 @@ export const MyBills = ({ from }) => {
 
         {MyBillList.length > 0 ? (
           <table className="w-full text-xs rounded-3xl mt-2">
+            
             <thead className="font-medium text-sm bg-[#DBF0FF] text-[var(--blue)]">
               <tr className="grid grid-cols-8 gap4">
                 {MyBillHeading.map((x, index) => {
@@ -194,12 +199,19 @@ export const MyBills = ({ from }) => {
                     )}
 
                     {from === "BMB" && (
-                      <div className=" p-2 rounded-lg bg-[#FFD5DF] ml-12 cursor-pointer" onClick={()=>{setCancelVerification(true); setId(x.id)}}>
-                        {/* <div className="p-2 rounded-lg bg-[#DBF0FF] text-center">
-                          <FaEdit size={20} color="#006AB2" />
-                        </div> */}
-                          <RiDeleteBin5Line size={18} color="#F1416C" />
+
+                        <div className="flex ml-12 gap-3">
+
+                        <div className="p-2 rounded-lg bg-[#DBF0FF]">
+                          <FaEdit size={15} color="#006AB2" role="button" onClick={()=>{setAddBill(true); setFroms("editBill"); setEditData(x);}}/>
+                        </div>
+
+                        <div className=" p-2 rounded-lg bg-[#FFD5DF]">
+                          <RiDeleteBin5Line size={15} color="#F1416C" role="button" onClick={()=>{setCancelVerification(true); setId(x.id)}}/>
+                        </div>
+
                       </div>
+
                     )}
                   </td>
 
@@ -208,7 +220,7 @@ export const MyBills = ({ from }) => {
             </tbody>
           </table>
         ) : (
-          <div className="w-[50%] mx-auto flex justify-center items-center flex-col py-5">
+          <div className="w-[50%] mx-auto flex justify-center items-center flex-col py-5 mb-6">
             <img src={dueBills} className="w-80 h-48" />
 
             <div className="my-10">
@@ -227,6 +239,8 @@ export const MyBills = ({ from }) => {
         from="debitAccountCancelled"
         delArray={handleDeleteBill}
       />
+
+      <AddBillDrawer from={froms} addBill={addBill} setAddBill={setAddBill}/>
 
     </>
   );
