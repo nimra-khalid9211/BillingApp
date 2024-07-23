@@ -1,4 +1,4 @@
-import { debit, easypa, jazz, master, visa } from "../../assets/image";
+import { bank, bitmap, debit, easypa, easyPaisa, jazz, jazzcash, master, visa, visaCard } from "../../assets/image";
 import MasterVisaCard from "./PaymentType/MasterVisaCards";
 import Buttons from "../../Components/SaveCancelButton/buttons";
 import JazzEasypaisa from "./PaymentType/jazzEasypaisa";
@@ -45,51 +45,56 @@ export default function AddPayment() {
             Select Payment Method:
           </div>
           
-          <div className="flex items-center">
+          <div className="flex items-center gap-5">
 
             <div
-              className={`w-[8rem] cursor-pointer relative ${
-                paymentType === "button1" ? "active-image" : ""
-              }`}
+              className={`w-[6rem] h-[3rem] flex justify-center items-center
+               ${paymentType === "button1" ? "active-image" : "inactive-image" }
+                `} 
+               
               onClick={() => handlePaymentTypeClick("button1")}
             >
-              <img src={master} alt="MasterCard" className="w-full" />
+              <img src={bitmap} alt="MasterCard" width={41} />
             </div>
 
             <div
-              className={`w-[8rem] cursor-pointer relative ${
-                paymentType === "button2" ? "active-image" : ""
-              }`}
+              className={`w-[6rem] h-[3rem] flex justify-center items-center
+               ${paymentType === "button2" ? "active-image" : "inactive-image" }
+                `} 
+               
               onClick={() => handlePaymentTypeClick("button2")}
             >
-              <img src={visa} alt="Visa" className="w-full" />
+              <img src={visaCard} alt="MasterCard" width={53} />
             </div>
 
             <div
-              className={`w-[8rem] cursor-pointer relative ${
-                paymentType === "button3" ? "active-image" : ""
-              }`}
+              className={`w-[6rem] h-[3rem] flex justify-center items-center
+               ${paymentType === "button3" ? "active-image" : "inactive-image" }
+                `} 
+               
               onClick={() => handlePaymentTypeClick("button3")}
             >
-              <img src={easypa} alt="EasyPaisa" className="w-full" />
+              <img src={easyPaisa} alt="MasterCard"  width={32} />
             </div>
 
             <div
-              className={`w-[8rem] cursor-pointer relative ${
-                paymentType === "button4" ? "active-image" : ""
-              }`}
+              className={`w-[6rem] h-[3rem] flex justify-center items-center
+               ${paymentType === "button4" ? "active-image" : "inactive-image" }
+                `} 
+               
               onClick={() => handlePaymentTypeClick("button4")}
             >
-              <img src={jazz} alt="JazzCash" className="w-full" />
+              <img src={jazzcash} alt="MasterCard" width={36} />
             </div>
 
             <div
-              className={`w-[8rem] cursor-pointer relative ${
-                paymentType === "button5" ? "active-image" : ""
-              }`}
+              className={`w-[6rem] h-[3rem] flex justify-center items-center
+               ${paymentType === "button5" ? "active-image" : "inactive-image" }
+                `} 
+               
               onClick={() => handlePaymentTypeClick("button5")}
             >
-              <img src={debit} alt="Debit Card" className="w-full" />
+              <img src={bank} alt="MasterCard" width={29} />
             </div>
             
           </div>

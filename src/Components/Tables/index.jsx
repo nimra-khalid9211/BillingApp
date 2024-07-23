@@ -11,12 +11,12 @@ import { GoCheck } from "react-icons/go";
 import { AddBillDrawer } from "../Drawers";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
 
-export const MyBillHeading = [
+const MyBillHeading = [
   { title: "Bill Name" },
   { title: "Consumer ID" },
   { title: "Consumer Name" },
   { title: "Billing Company" },
-  { title: "Due Date" },
+  { title: "Date Added" },
   { title: "Amount Due" },
   { title: "Auto Debit" },
   { title: "Payment Method" },

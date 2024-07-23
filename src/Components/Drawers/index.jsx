@@ -142,7 +142,12 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         onFocus={()=>setDropDown(from === "editBill" ? "" :true)}
         onBlur={()=>setDropDown(from === "editBill" ? "" :false)}
-        variant="outlined" size="small" fullWidth />
+        variant="outlined" size="small" fullWidth 
+        InputProps={{
+          style: {
+            backgroundColor: from === "editBill" ? "#e8e7ec" : ""
+          }}}
+          />
   
         {dropDown && 
 
@@ -156,7 +161,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
         </div>
 
             {(from === "addBill" || from === "editBill") && 
-            <InputCustom className={"col-span-2 mt-3"} label={"Consumer ID"} 
+            <InputCustom className={"col-span-2 mt-3"} label = {"Consumer ID"} backgroundColor = {from === "editBill" && "#e8e7ec"}
             disabled={from ==="editBill" && true} value={from === "editBill" ?data?.consumerID : ""}/>
             }
 

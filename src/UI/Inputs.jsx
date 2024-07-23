@@ -1,20 +1,21 @@
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import React, { useState } from 'react'
 
-export const InputCustom = ({label, type, className, value, disabled, onChange, borderStyle}) => {
+export const InputCustom = ({label, type, className, value, disabled, onChange, backgroundColor, name}) => {
 
   return (
 
     <TextField
     label={label}
     type={type}
+    name={name}
     className={className}
     InputProps={{
       style: {
         fontSize: "16px",
         fontWeight: "600",
         borderRadius: "10px",
-        // border: `${borderStyle}`,
+        backgroundColor: `${backgroundColor}`,
         
       },
     }}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { MyBillHeading } from "./index";
 import { MyBillList } from "../../data/tables";
 import { Button, Switch } from "antd";
 import { FiDownload } from "react-icons/fi";
@@ -13,6 +12,18 @@ import { BlueButton } from "../../UI/Buttons";
 import { RxCross2 } from "react-icons/rx";
 import { GoCheck } from "react-icons/go";
 
+const MyBillHeading = [
+  { title: "Bill Name" },
+  { title: "Consumer ID" },
+  { title: "Consumer Name" },
+  { title: "Billing Company" },
+  { title: "Due Date" },
+  { title: "Amount Due" },
+  { title: "Auto Debit" },
+  { title: "Payment Method" },
+  { title: "Status" },
+  { title: "Actions" },
+];
 
 const dashedBorderRight = "border-r border-dashed border-[#4653D72B]";
 

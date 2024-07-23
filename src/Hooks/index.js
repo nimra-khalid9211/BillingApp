@@ -90,6 +90,47 @@ export const CNICDashes = (value) => {
   }
 };
 
+export const formatExpiryDate = (value) => {
+  // Remove all non-digit characters
+  value = value.replace(/\D/g, "");
+
+  // Truncate the value if it exceeds 6 digits (MMYYYY)
+  if (value.length > 6) {
+    value = value.slice(0, 6);
+  }
+
+  // Format the input value with a slash
+  if (value.length <= 2) {
+    return value;
+  } else {
+    return `${value.slice(0, 2)} / ${value.slice(2)}`;
+  }
+};
+
+export const formatCardNumber = (value) => {
+  // Remove all non-digit characters
+  value = value.replace(/\D/g, "");
+
+  // Truncate the value if it exceeds 6 digits (MMYYYY)
+  if (value.length > 16) {
+    value = value.slice(0, 16);
+  }
+
+  // Format the input value with a slash
+  if (value.length <= 4) {
+    return value;
+  } else if (value.length <= 8) {
+    return `${value.slice(0, 4)} ${value.slice(5, 8)}`;
+  } else if (value.length <= 12){
+    return `${value.slice(0, 4)} ${value.slice(5, 8)} ${value.slice(9, 12)}`;
+  }else {
+    return `${value.slice(0, 4)} ${value.slice(5, 8)} ${value.slice(9, 12)} ${value.slice(16)}`;
+  }
+};
+
+
+
+
 // ***DIGITS FORMAT****
 
 export const formatAmount1 = (amount) => {

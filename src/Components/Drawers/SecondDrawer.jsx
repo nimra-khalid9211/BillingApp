@@ -64,7 +64,7 @@ const SecondDrawer = ({from, secondDrawer, setSecondDrawer, changeCard, setChang
         
       }
 
-        <div className="ml-[17rem] fixed bottom-10">
+        <div className="ml-[17rem] fixed bottom-20">
 
 <WhiteButton
   customClass={"cancel-btn"}

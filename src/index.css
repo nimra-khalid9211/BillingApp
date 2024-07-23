@@ -244,17 +244,19 @@ input[type="number"] {
 }
 /* PAYMENT TYPE TABS STYLING */
 
-.active-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.active-image{
   background-color: #dbf0ff;
   border: 2px solid #377cf6;
-  opacity: 50%;
-  pointer-events: none;
+  opacity: 80%;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.inactive-image{
+  box-shadow: 3px 3px 20px 0px rgba(43, 43, 43, 0.2);
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
   border-radius: 1rem;
 }
 

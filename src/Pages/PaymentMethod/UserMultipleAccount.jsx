@@ -116,6 +116,7 @@ export default function UserMultipleAccount() {
             className={`shadow-for-all grid grid-cols-6 gap-4 rounded-xl mt-5 py-4 px-4
                ${isCardExpired(x.expiry) ? 'border border-[#E92F39]' : 'bg-white'}`} // Conditional class application
           >
+
             <div className="flex items-center border-r-2">
               <div className="flex items-center ml-5">
                 <div className="w-8 h-6 flex items-center justify-center">
@@ -126,6 +127,7 @@ export default function UserMultipleAccount() {
                 </div>
               </div>
             </div>
+
             <div className="border-r-2 text-center font-medium text-lg">
               <span className="text-xs text-[#9095ae]">
                 ending
@@ -134,6 +136,7 @@ export default function UserMultipleAccount() {
                 </span>
               </span>
             </div>
+
             <div className="border-r-2 text-center">
               {["JazzCash", "Easypaisa", "Bank"].includes(x.expiry) ? (
                 <div className="">{x.expiry}</div>
@@ -162,6 +165,7 @@ export default function UserMultipleAccount() {
                 </>
               )}
             </div>
+            
             <button className={`border-r-2 text-center cursor-default`}>
               {x.verify ? (
                 <div className="text-[#24A959]">Verified</div>
