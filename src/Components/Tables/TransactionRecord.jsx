@@ -4,7 +4,7 @@ import { Collapse } from 'antd';
 import { bitmap, easyPaisa, jazzc, visaCard } from '../../assets/image';
 import { IoMdEye } from 'react-icons/io';
 import { MdOutlineFileDownload } from 'react-icons/md';
-import ViewReceiptModal from '../Modals';
+import {ViewReceiptModal} from '../Modals';
 import { PDFTemplate } from '../PDFTemplate';
 
 const {Panel} = Collapse;

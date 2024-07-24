@@ -1,13 +1,27 @@
-import TextField from "@mui/material/TextField";
+
 import { useState } from "react";
 import { InputCustom } from "../../../UI/Inputs";
+import { formatMobileNumber } from "../../../Hooks";
 
 export default function JazzEasypaisa({width}) {
   const [isVerified, setIsVerified] = useState(false);
+  const [data, setData] = useState({accountName: "", accountNumber: ""});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    let formattedValue = value;
+    if (name === "accountNumber") {
+      formattedValue = formatMobileNumber(value);
+    }
+
+    setData(prev => ({ ...prev, [name]: formattedValue }));
+  };
 
   const handleVerifyClick = () => {
     setIsVerified(!isVerified);
   };
+
   return (
     <div>
       <div className="border-b pb-2 font-bold mt-10">
@@ -17,28 +31,19 @@ export default function JazzEasypaisa({width}) {
         <div className="grid grid-cols-5 gap-4 my-5">
 
         <div className="col-span-2">
-        <InputCustom label={"Account Holder Name"} />
+        <InputCustom label={"Account Holder Name"} type={"text"} name={"accountName"} value={data.accountName} onChange={handleChange}/>
         </div>
-        
-          {/* <TextField
-            id="outlined-basic"
-            label="Account Holder Name"
-            variant="outlined"
-            size="small"
-          /> */}
 
-<div className="col-span-2">
-          <InputCustom label={"Mobile Number"} />
-          </div>
+        <div className="col-span-2">
+      <InputCustom 
+        label={"Mobile Number"} 
+        type={'text'} 
+        name={"accountNumber"} 
+        value={data.accountNumber} 
+        onChange={handleChange} 
+      />
+    </div>
 
-          {/* <TextField
-            id="outlined-basic"
-            label="Mobile Numberr"
-            variant="outlined"
-            size="small"
-          /> */}
-
-          
           <button
             className="text-[#329DFF] underline text-start ml-7"
             onClick={handleVerifyClick}

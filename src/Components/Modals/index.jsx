@@ -308,4 +308,86 @@ export const ReportModels = ({ report, setReport,title}) => {
   );
 };
 
-export default ViewReceiptModal;
+
+export const ChangePasswordModel = ({changePassword, setChangePassword}) =>{
+
+  const [password, setPassword] = useState({oldPassword: '', newPassword: "", confirmPassword: ""});
+  const [error, setError] = useState(false);
+
+  const handleChange = (e) =>{
+      const {name, value} = e.target;
+
+      setPassword(prev=>({...prev,[name]:value}))
+
+      if(name === "newPassword" || name === "confirmPassword"){
+        const {newPassword, confirmPassword} = {...password, [name]: value}
+
+        if(newPassword && confirmPassword && newPassword !== confirmPassword){
+          setError(true);
+        }else{
+          setError(false);
+        }
+      }
+  }
+
+  return(
+    <Modal
+    centered
+    open={changePassword}
+    footer={null}
+    width={450}
+    // onOk={() => setReport(false)}
+    onCancel={() => setChangePassword(false)}
+    className={'report-modal no-overfow-y'}
+    title={
+      <div className="flex flex-col justify-center items-center py-6">
+        <span className="text-xl text-[var(--blue)]">Change Password</span>
+       <Divider />
+      </div>
+    }
+  >
+        <div className="px-3">
+
+        <div className="text-center">
+       <span className="font-semibold text-[#2D3945]">Your email is <span className="text-[var(--blue)]">saadhassan@gmail.com</span></span>
+        </div>
+
+        <div className="py-6 px-6">
+          
+        <div>
+        <label className="text-xs text-[#000000]">Current Password</label>
+        <Input.Password placeholder="Current password" size="large" onChange={handleChange} name="oldPassword"
+        value={password.oldPassword} style={{ fontWeight: "600", fontSize: "14px"}}/>
+        </div>
+
+        <div className="my-4">
+        <label className="text-xs text-[#000000]">New Password</label>
+        <Input.Password placeholder="New password" size="large"  onChange={handleChange} name="newPassword"
+        value={password.newPassword} style={{ fontWeight: "600", fontSize: "14px"}}/>
+        </div>
+
+        <div>
+        <label className="text-xs text-[#000000]">Confirm Password</label>
+        <Input.Password placeholder="Confirm password" size="large" onChange={handleChange} name="confirmPassword"
+        value={password.confirmPassword} style={{ fontWeight: "600", fontSize: "14px"}}/>
+        </div>
+
+        {error &&  <span className={`text-xs text-red-500`}>Password not matched</span>}
+
+
+       {/* <div>
+       <span className={`text-xs ${error ? "text-red-500" : "text-white"}`}>Password not matched</span>
+       </div> */}
+
+        <div className="flex my-6">
+          <WhiteButton title={"Cancel"} customClass={"cancel-btn"} clickEvent={()=>setChangePassword(false)} marginRight={"1rem"} customStyle={"100%"}/>
+          <BlueButton title={"Update"} customClass={"hover-color"} customStyle={"100%"}/>
+        </div>
+
+        </div>
+
+        </div>
+
+    </Modal>
+  )
+}

@@ -1,41 +1,42 @@
-import { TextField } from "@mui/material";
-import { InputCustom, InputDate } from "../../../UI/Inputs";
+
+import { InputCustom } from "../../../UI/Inputs";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { formatCardNumber, formatCardNumber, formatExpiryDate } from "../../../Hooks";
+import {  formatCardNumber, formatExpiryDate } from "../../../Hooks";
 
 export default function MasterVisaCard({width}) {
 
   const location = useLocation().state?.account;
 
-  const [data, setData] = useState({cardNumber:"", expiryDate:""});
+  const [data, setData] = useState({cardNumber:"", expiryDate:"", userName: "", cvv: ""});
 
-  console.log(data);
 
-  const [incorrect, setIncorrect] = useState(false);
+  // const [incorrect, setIncorrect] = useState(false);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
 
-        const {name, value} = e.target;
+    // Use the appropriate formatting function based on the input name
+    let formattedValue = value;
+    if (name === "cardNumber") {
+      formattedValue = formatCardNumber(value);
+    } else if (name === "expiryDate") {
+      formattedValue = formatExpiryDate(value);
+    } else if (name === "cvv"){
+     
+      formattedValue = value.slice(0,3);
+    }
 
-        const formatCardNumber = name === "cardNumber" ? formatCardNumber(value)
-
-     // Remove non-digit characters
-      // console.log(value)
-  //   const cardNumber = formatCardNumber(value);
-  //   console.log(cardNumber);
-
-  //  const formattedDate =  formatExpiryDate(value);
-
-   
-
-  //  console.log(formattedDate, "from date formatter");
+    setData(prevState => ({
+      ...prevState,
+      [name]: formattedValue
+    }));
   };
 
-  const isValidMonthYear = (input) => {
-    const check = /^(0[1-9]|1[0-2])\/\d{4}$/;
-    return check.test(input);
-  };
+  // const isValidMonthYear = (input) => {
+  //   const check = /^(0[1-9]|1[0-2])\/\d{4}$/;
+  //   return check.test(input);
+  // };
 
   return (
     <div>
@@ -46,23 +47,21 @@ export default function MasterVisaCard({width}) {
         <div className={`grid grid-cols-5 gap-4 mt-5`}>
 
           <div className="col-span-2">
-          <InputCustom label={"Name on Card"} value={location?.userName} />
+          <InputCustom label={"Name on Card"} value={location?.userName ? location?.userName : data.userName} name={"userName"} onChange={!location?.cardNumber && handleChange}/>
           </div>
 
           <div className="col-span-2">
-          <InputCustom label={"Card Number"} name="cardNumber" value={location?.cardNumber ? location?.cardNumber : data.cardNumber} onChange={handleChange}/>
+          <InputCustom label={"Card Number"} name="cardNumber" value={location?.cardNumber ? location?.cardNumber : data.cardNumber} onChange={!location?.cardNumber && handleChange}/>
           </div>
           
 
           <div className="col-span-2">
-          <InputCustom label={"MM/YYYY"} name={"expiryDate"} onChange={e=>handleChange(e)} value={location?.expiry ? location?.expiry : data.expiryDate}/>
-          {incorrect && <span className="text-xs text-red-600">
-            Invalid Date format e.g 01/2024
-            </span>}
+          <InputCustom label={"MM/YYYY"} name={"expiryDate"} onChange={!location?.cardNumber &&  handleChange} value={location?.expiry ? location?.expiry : data.expiryDate}/>
+          
           </div>
 
           <div className="col-span-2">
-          <InputCustom label={"CVV"} value={location?.cvv}/>
+          <InputCustom label={"CVV"} value={location?.cvv ? location?.cvv : data.cvv} name={"cvv"} onChange={!location?.cardNumber && handleChange}/>
           </div>
 
         </div>

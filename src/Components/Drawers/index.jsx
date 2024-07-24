@@ -176,7 +176,7 @@ export const AddBillDrawer = ({ addBill, setAddBill, from }) => {
 
         </DrawerCardLayout>
 
-        <DrawerCardLayout height={"13rem"} heading={"Bill Details"}>
+        <DrawerCardLayout height={"7rem"} heading={"Bill Details"}>
                       
        <Card className="rounded-3xl p-5 drop-shadow-xl">
 

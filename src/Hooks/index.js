@@ -111,27 +111,37 @@ export const formatCardNumber = (value) => {
   // Remove all non-digit characters
   value = value.replace(/\D/g, "");
 
-  // Truncate the value if it exceeds 6 digits (MMYYYY)
-  if (value.length > 16) {
-    value = value.slice(0, 16);
+  // Insert space after every 4 digits
+  value = value.replace(/(\d{4})/g, '$1 ');
+
+  // Trim any trailing space
+  value = value.trim();
+
+  // Truncate the value if it exceeds 19 characters
+  if (value.length > 19) {
+    value = value.slice(0, 19);
   }
 
-  // Format the input value with a slash
-  if (value.length <= 4) {
-    return value;
-  } else if (value.length <= 8) {
-    return `${value.slice(0, 4)} ${value.slice(5, 8)}`;
-  } else if (value.length <= 12){
-    return `${value.slice(0, 4)} ${value.slice(5, 8)} ${value.slice(9, 12)}`;
-  }else {
-    return `${value.slice(0, 4)} ${value.slice(5, 8)} ${value.slice(9, 12)} ${value.slice(16)}`;
-  }
+  return value;
 };
 
+export const formatMobileNumber = (value) => {
+  // Remove all non-digit characters
+  value = value.replace(/\D/g, "");
 
+  // If the length is greater than 4, insert a space after the first 4 digits
+  if (value.length > 4) {
+    value = value.slice(0, 4) + ' ' + value.slice(4);
+  }
 
+  // Truncate the value if it exceeds 12 characters (since "1234 1234567" is 12 characters)
+  if (value.length > 12) {
+    value = value.slice(0, 12);
+  }
 
-// ***DIGITS FORMAT****
+  return value;
+};
+
 
 export const formatAmount1 = (amount) => {
   const formatter = new Intl.NumberFormat("en-IN", {

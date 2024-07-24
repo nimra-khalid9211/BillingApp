@@ -8,7 +8,7 @@ const CardLayout = ({children, title, from}) => {
   return (
 
     <>
-    <Card className='rounded-3xl mt-3 h-[36rem]'>
+    <Card className='rounded-3xl mt-3 h-[40rem]'>
 
     <div className="drop-shadow-xl rounded-t-3xl text-[var(--blue)] bg-white font-medium text-lg p-3 px-6">
         {title}
