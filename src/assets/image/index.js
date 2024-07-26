@@ -71,8 +71,12 @@ import blueTransaction from "./blueTransaction.png";
 import blueReport from "./blueReport.png";
 import bank from "./bank.png"
 import help from './Help.png'
+import basket from './basket.png'
+import list from './list.png'
 
 export {
+  basket,
+  list,
   help,
   grayDashboard,
   grayBill,
