@@ -20,6 +20,14 @@ body,
   font-family: "Excon-Regular", sans-serif !important;
 }
 
+.medium{
+  font-family: "Excon-Medium", sans-serif !important;
+}
+
+.bold{
+  font-family: "Excon-Bold", sans-serif !important;
+}
+
 .overflow-y-scroll::-webkit-scrollbar {
   width: 8px; /* Width of the scrollbar */
   background-color: transparent; /* Make the background transparent */
@@ -725,3 +733,6 @@ input[type="number"] {
   width: 2rem !important;
 }
 
+.opt-active:active{
+    border-color: var(--blue) !important;
+}

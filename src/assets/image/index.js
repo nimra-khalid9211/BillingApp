@@ -70,8 +70,10 @@ import blueSetting from "./blueSetting.png";
 import blueTransaction from "./blueTransaction.png";
 import blueReport from "./blueReport.png";
 import bank from "./bank.png"
+import help from './Help.png'
 
 export {
+  help,
   grayDashboard,
   grayBill,
   grayGovt,

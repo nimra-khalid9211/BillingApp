@@ -22,7 +22,7 @@ const PayMethodCard = ({ from, secondDrawer, setSecondDrawer }) => {
           
         <Card className={`rounded-3xl drop-shadow-xl ${from === "secondDrawer" ? "bg-[#F3F3F3]" : ""}`}>
           
-          <div className={`${CardData.length === 1 ? "flex justify-between  items-center" : "grid grid-cols-5"} p-5 text-sm font-semibold`}>
+          <div className={`${CardData.length === 1 ? "flex justify-between  items-center" : "grid grid-cols-5"} p-5 text-sm medium`}>
 
             <div className={`flex items-center text-center gap-2 ${CardData.length === 1 && "w-1/4"} border-r`}>
               <span>{y.icon}</span>

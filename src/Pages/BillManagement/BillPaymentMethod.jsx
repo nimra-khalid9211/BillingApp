@@ -107,9 +107,9 @@ const BillPaymentMethod = () => {
        return (  
       <div key={index} className='flex justify-between items-center bg-[#EBF7FF] rounded-xl border-[#DBF0FF] mt-2 py-2 px-4'>
 
-        <span className='text-sm font-semibold'>{x.billname}</span>
+        <span className='text-sm medium'>{x.billname}</span>
 
-        <span className='text-lg font-semibold'>{overdue ? x.afterDueAmount : x.amount }</span>
+        <span className='text-lg medium'>{overdue ? x.afterDueAmount : x.amount }</span>
       </div>)})}
 
         <div className='flex items-center justify-between mt-3 p-4 rounded-xl border-[#377CF6] border-2 text-[#377CF6]'>

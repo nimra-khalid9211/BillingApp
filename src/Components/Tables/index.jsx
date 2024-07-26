@@ -115,7 +115,7 @@ export const MyBills = ({ from }) => {
 
                   <th
                     scope="row"
-                    className="w-40 truncate px-6  text-left font-semibold whitespace-nowrap"
+                    className="w-40 truncate px-6  text-left medium whitespace-nowrap"
                     style={{
                       gridColumn: "span 1",
                       display: "flex",

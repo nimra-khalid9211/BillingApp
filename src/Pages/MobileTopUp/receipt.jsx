@@ -25,7 +25,7 @@ export default function Receipt() {
 
     <div className="grid grid-cols-2">
       <div className="bg-white p-5 ltr rounded-s-[3rem]">
-        <div className="border-b-2 p-2 font-semibold text-lg mb-10">
+        <div className="border-b-2 p-2 medium text-lg mb-10">
           Mobile Top Up Successful
         </div>
         <div className=" flex flex-col justify-center items-center">
@@ -45,7 +45,7 @@ export default function Receipt() {
         </div>
       </div>
       <div className="bg-[#F8F9FD] p-5 rtl rounded-s-[3rem]">
-        <div className="border-b-2 p-2 font-semibold text-lg mb-10">
+        <div className="border-b-2 p-2 medium text-lg mb-10">
           Payment Receipt
         </div>
         <div className="w-3/5 mx-auto mb-2">

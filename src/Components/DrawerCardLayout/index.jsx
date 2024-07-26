@@ -10,7 +10,7 @@ const DrawerCardLayout = ({heading, height, from, children,  }) => {
      {/* borderRadius: '30px', */}
 
       <div className="mx-5 my-5" >
-        <span className="text-base font-semibold text-black">{heading}</span>
+        <span className="text-base medium text-black">{heading}</span>
 
      { from !== "secondDrawer" &&  <Divider />}
 

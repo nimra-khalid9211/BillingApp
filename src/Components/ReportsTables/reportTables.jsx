@@ -14,7 +14,7 @@ export default function ReportTables(){
       <div className="flex justify-between items-center mb-4 px-20">
         <div></div>
         <h2 className="text-xl font-bold">Transaction Reports</h2>
-        <div className="font-semibold">
+        <div className="medium">
           <button className="text-blue-500 mr-4">Download</button>
           <button className="text-blue-500">Print</button>
         </div>

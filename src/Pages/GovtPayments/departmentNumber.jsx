@@ -24,12 +24,12 @@ export default function DepartmentNumber() {
 
     
       </div>
-      <div className="w-[60%] mx-auto text-center font-semibold py-20 flex items-center justify-center flex-col">
+      <div className="w-[60%] mx-auto text-center medium py-20 flex items-center justify-center flex-col">
         <div className='w-24 h-24'>
           <img src={location.componentIcon} alt="" className='w-full h-full' />
         </div>
         <div className="text-lg mt-5">{location.componentName}</div>
-        <p className="text-sm mt-3 font-semibold">Please enter your 17 digits PSID to view your E-Challan</p>
+        <p className="text-sm mt-3 medium">Please enter your 17 digits PSID to view your E-Challan</p>
         <div className="w-[22rem] mx-auto mt-10">
           <input
             type="number"

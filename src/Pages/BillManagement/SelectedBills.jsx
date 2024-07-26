@@ -48,7 +48,7 @@ const SelectedBills = () => {
     <div className='w-100 bg-white p-6 rounded-3xl'>
 
         <div className='flex justify-between items-center'>
-        <span className='text-2xl font-semibold'>Selected Bills ({bills?.length})</span>
+        <span className='text-2xl medium'>Selected Bills ({bills?.length})</span>
 
       
         </div>

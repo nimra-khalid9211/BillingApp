@@ -11,6 +11,7 @@ import { isOverdue } from "../../Hooks";
 import { BlueButton } from "../../UI/Buttons";
 import { RxCross2 } from "react-icons/rx";
 import { GoCheck } from "react-icons/go";
+import ToggleButton from "../../UI/ToggleButton";
 
 const MyBillHeading = [
   { title: "Bill Name" },
@@ -223,7 +224,7 @@ export const SelectableBills = ({ type, from }) => {
               </td>
            
                  {from !== "dashboard" && <td className={`text-center px-6 py-2 ${dashedBorderRight}`}>
-                    <Switch className="drop-shadow-xl" checkedChildren={<GoCheck size={15}/>} unCheckedChildren={<RxCross2 size={14}/>} defaultChecked={x.autoDebit} size="small"/>
+                   <ToggleButton />
                   </td>}
 
               { from !== "dashboard" &&  <td className={`px-6 text-center py-2 ${dashedBorderRight}`}>

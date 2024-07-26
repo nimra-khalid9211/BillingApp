@@ -58,7 +58,7 @@ export default function TransactionsHistory() {
     <>
       <div className="drop-shadow-lg bg-[#d3e8f6] rounded-3xl  mt-8">
 
-        <div className="font-semibold w-full drop-shadow-lg bg-white py-3 px-6 rounded-t-3xl">
+        <div className="medium w-full drop-shadow-lg bg-white py-3 px-6 rounded-t-3xl">
           Recent Transactions
         </div>
 
@@ -80,7 +80,7 @@ export default function TransactionsHistory() {
                   </div>
                   
                   <div className="ml-5 mt-4">
-                    <div className="font-semibold">{datas.title}</div>
+                    <div className="medium">{datas.title}</div>
                     <div className="text-[10px] mt-1">{datas.date}</div>
                   </div>
 

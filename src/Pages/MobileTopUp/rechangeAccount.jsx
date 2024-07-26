@@ -34,13 +34,13 @@ export const DefaultAccount = () =>{
           <img src={Card} alt="icon" />
         </div>
 
-        <div className="ml-5 font-semibold text-lg">User Name</div>
+        <div className="ml-5 medium text-lg">User Name</div>
       </div>
 
 
     </div>
 
-    <div className="border-r-2 text-center font-semibold text-lg"><span className="text-[#6C7293] text-[10px] ">ending</span> 2413</div>
+    <div className="border-r-2 text-center medium text-lg"><span className="text-[#6C7293] text-[10px] ">ending</span> 2413</div>
    
     <div className="border-r-2 text-center">Expiry: 10/26</div>
   

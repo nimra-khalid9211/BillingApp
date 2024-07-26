@@ -98,7 +98,7 @@ const BillingOverview = () => {
           />
          {
           selectedBills.length > 0 && (
-            <div className="w-[480px] flex items-center justify-between bg-[#DBF0FF] border border-[#176BA3] rounded-2xl p-5 text-xs font-semibold place-self-end">
+            <div className="w-[480px] flex items-center justify-between bg-[#DBF0FF] border border-[#176BA3] rounded-2xl p-5 text-xs medium place-self-end">
             
             <div className="border-r border-[#8AC3EC] w-28">{selectedBills.length} Bill{selectedBills.length >=2 ? "s" : ""} Selected</div>
             

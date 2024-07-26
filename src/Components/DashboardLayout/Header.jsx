@@ -1,7 +1,6 @@
-import { Avatar, Badge, Card, Dropdown, Menu } from "antd";
+import { Avatar, Badge, Dropdown, Menu } from "antd";
 import { CiSettings } from "react-icons/ci";
 import { FaAngleDown, FaAngleUp, FaRegBell, FaRegUser } from "react-icons/fa";
-import { IoSearchOutline } from "react-icons/io5";
 import { RiLogoutBoxLine, RiUserLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { _BillingCondition } from "../../actions/Context/BillingOverviewConditions";
@@ -11,8 +10,6 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useEffect, useRef, useState } from "react";
-import { FaCheckDouble } from "react-icons/fa6";
-import { notification } from "../../data/notification";
 import Notification from "../CardsUI/Notification/notification";
 
 const dropdownMenus = [
@@ -94,14 +91,6 @@ const Header = () => {
                 </LocalizationProvider>
 
                 </div>}
-{/* 
-        <div className="bg-white p-3 rounded-full">
-          <CiSettings
-            size={27}
-            onClick={() => navigate(checkVerfication ? "/settings" : "#")}
-            role="button"
-          />
-        </div> */}
 
         <div className="bg-white relative p-3 flex cursor-pointer items-center rounded-full" >
           <Badge dot color="var(--blue)">
@@ -133,7 +122,7 @@ const Header = () => {
 
             <div className="flex flex-col">
               <b
-                className="text-sm font-semibold"
+                className="text-sm medium"
                 style={{ lineHeight: "0.7rem" }}
               >
                 Shaun Abbott

@@ -24,7 +24,6 @@ const BreadCrumbs = ({
 
   const {checkVerfication} = _BillingCondition();
 
-  // console.log(checkVerfication)
 
   return (
 

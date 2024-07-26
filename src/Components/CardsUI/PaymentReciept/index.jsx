@@ -11,25 +11,25 @@ export default function PaymentReciept({ bill, from }) {
         
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-[#6C7293] font-medium">Transaction ID</span>
-          <span className="font-semibold text-black">123456789</span>
+          <span className="medium text-black">123456789</span>
         </div>
 
         {from === "paymentReceipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Bill Name</span>
-            <span className="font-semibold text-black">biling</span>
+            <span className="medium text-black">biling</span>
           </div>
         )}
         {from === "Receipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Top Up Name</span>
-            <span className="font-semibold text-black">{bill.topUpName}</span>
+            <span className="medium text-black">{bill.topUpName}</span>
           </div>
         )}
         {from === "Receipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Mobile Operator</span>
-            <span className="font-semibold text-black">
+            <span className="medium text-black">
               {bill.mobileOperator}
             </span>
           </div>
@@ -37,7 +37,7 @@ export default function PaymentReciept({ bill, from }) {
         {from === "Receipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Mobile Number</span>
-            <span className="font-semibold text-black">
+            <span className="medium text-black">
               {bill.mobileNumber}
             </span>
           </div>
@@ -45,32 +45,32 @@ export default function PaymentReciept({ bill, from }) {
         {from === "paymentReceipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Consumer ID</span>
-            <span className="font-semibold text-black">123456789</span>
+            <span className="medium text-black">123456789</span>
           </div>
         )}
 
         {from === "paymentReceipt" && (
           <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
             <span className="text-[#6C7293] font-medium">Company Code</span>
-            <span className="font-semibold text-black">GEPCO</span>
+            <span className="medium text-black">GEPCO</span>
           </div>
         )}
 
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-[#6C7293] font-medium">Pay Date</span>
-          <span className="font-semibold text-black">10 June 2024</span>
+          <span className="medium text-black">10 June 2024</span>
         </div>
 
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-[#6C7293] font-medium">Pay Time</span>
-          <span className="font-semibold text-black">10: 12 AM</span>
+          <span className="medium text-black">10: 12 AM</span>
         </div>
 
         <div className="flex justify-between py-3 border-dashed border-b border-[#eff0fb]">
           <span className="text-lg text-[#377CF6] font-medium">
             Amount Paid
           </span>
-          <span className="text-2xl text-[#377CF6] font-semibold">
+          <span className="text-2xl text-[#377CF6] medium">
             23,000
           </span>
         </div>

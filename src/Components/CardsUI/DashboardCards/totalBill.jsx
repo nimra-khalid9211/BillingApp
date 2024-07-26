@@ -5,7 +5,7 @@ export default function TotalBill() {
 
   return (
 
-    <div className="flex border-[var(--blue)] justify-between border rounded-3xl font-semibold drop-shadow-xl bg-white">
+    <div className="flex border-[var(--blue)] justify-between border rounded-3xl medium drop-shadow-xl bg-white">
 
       <div className="py-5 px-7 text-lg">
 

@@ -39,7 +39,7 @@ export default function GovtPaymentTable() {
             >
               <th
                 scope="row"
-                className="px-6 py-4 font-semibold text-[#329DFF] whitespace-nowrap dark:text-white"
+                className="px-6 py-4 medium text-[#329DFF] whitespace-nowrap dark:text-white"
               >
                 {x.psid}
               </th>

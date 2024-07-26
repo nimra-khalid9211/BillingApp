@@ -42,13 +42,13 @@ export default function AddDetails({ addNumber, setAddNumber }) {
     >
       <div className="">
       <div onClick={() => setAddNumber(false)} className="absolute left-[-1.5rem] z-50 top-[8rem] cursor-pointer"><img src={Cancel} alt="" /></div>
-        {/* <p className="text-[#646464] font-semibold mt-5">
+        {/* <p className="text-[#646464] medium mt-5">
           Add your account details
         </p> */}
 
        <div className="w-full bg-white py-5 px-5 rounded-tl-[80px] border-b">
          
-          <div className="text-xl text-[#176ba3] font-semibold pl-5">Add Number</div>
+          <div className="text-xl text-[#176ba3] medium pl-5">Add Number</div>
         
         </div>
 
@@ -56,7 +56,7 @@ export default function AddDetails({ addNumber, setAddNumber }) {
 
         <div className="rounded-[30px] p-7 mt-5 shadow-lg shadow-[#8a918e] bg-white">
           
-          <div className="border-b pb-2 font-semibold">Number Details</div>
+          <div className="border-b pb-2 medium">Number Details</div>
 
           <div className="grid grid-cols-2 gap-4 mt-5">
 

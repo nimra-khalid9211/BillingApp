@@ -8,7 +8,7 @@ export default function Notification({setNotificationS}) {
     <div className="">
       <Card className="rounded-3xl overflow-y-scroll h-[29rem] w-[26rem]">
         <div className="flex items-center rounded-tl-3xl rounded-tr-3xl bg-white py-5 px-6 justify-between">
-          <span className="font-semibold">Notification</span>
+          <span className="medium">Notification</span>
           <Link to={"#"}>
             <div className="flex items-center text-[#176BA3] ">
               <span className="">
@@ -25,7 +25,7 @@ export default function Notification({setNotificationS}) {
             <div className="flex items-center">
               <div>{x.icon}</div>
               <div className="ml-5 text-xs">
-                <span className="text-[#176BA3] font-semibold">{x.billName} </span>
+                <span className="text-[#176BA3] medium">{x.billName} </span>
                 <span>{x.title}</span>
               </div>
             </div>

@@ -61,7 +61,7 @@ const Security = () => {
       {security.map((x, index)=>(
         <>
         <Card className={`relative mt-2 mx-12 px-10 drop-shadow-md ${x.bgcustom} ${x.border} rounded-3xl`}>
-            <div className='h-24 grid grid-cols-4 justify-items-start content-center font-semibold'>
+            <div className='h-24 grid grid-cols-4 justify-items-start content-center medium'>
 
               <div className='flex flex-col justify-start'>
                 <span className='text-base'>{x.heading}</span>

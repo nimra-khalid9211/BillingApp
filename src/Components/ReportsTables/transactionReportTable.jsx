@@ -22,7 +22,7 @@ export default function TransactionReportTable() {
       <div className="flex justify-between items-center mb-4 px-20">
         <div></div>
         <h2 className="text-xl font-bold">Transaction Reports</h2>
-        <div className="font-semibold flex">
+        <div className="medium flex">
           <div className="flex items-center mr-3">
             <GrDownload color="#377CF6" />
             <button className="text-blue-500 mr-4 ml-2">Download</button>
@@ -89,10 +89,10 @@ export default function TransactionReportTable() {
           </tbody>
           <tfoot>
             <tr className="border-t bg-[#E8E7EC]">
-              <td colSpan={8} className="text-right py-3 px-4 font-semibold">
+              <td colSpan={8} className="text-right py-3 px-4 medium">
                 Total Amount Paid:
               </td>
-              <td className="py-3 px-4 font-semibold">8798</td>
+              <td className="py-3 px-4 medium">8798</td>
             </tr>
           </tfoot>
         </table>

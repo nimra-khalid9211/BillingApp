@@ -53,7 +53,7 @@ export default function GovtDepartments() {
                       alt={item.title}
                     />
                   </div>
-                  <div className="ml-2 text-base font-semibold">
+                  <div className="ml-2 text-base medium">
                     {item.title}
                   </div>
                 </div>

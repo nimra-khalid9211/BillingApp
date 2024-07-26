@@ -24,7 +24,7 @@ export default function AllReports() {
           className="bg-[#DBF0FF] border border-[#B8DEF9] rounded-[2rem] p-5 text-center w-[22rem] shadow-xl"
         >
       
-          <div className="text-lg font-semibold mt-5">{report.title}</div>
+          <div className="text-lg medium mt-5">{report.title}</div>
         
           <p className="text-sm my-5">{report.description}</p>
         

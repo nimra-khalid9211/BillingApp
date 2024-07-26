@@ -121,19 +121,19 @@ export const PaymentSuccessfullModal = ({
         <>
           <div className="py-8 px-[2rem] text-[#DD2B37]  text-center">
 
-            <div className="text-[#DD2B37] font-semibold text-lg mt-2">
+            <div className="text-[#DD2B37] medium text-lg mt-2">
               {cancelTitle}
             </div>
 
             <Divider />
 
             {/* <div className="mt-10 font-medium">{cancelText}</div> */}
-            <div className="border-l-4 border mt-4 bg-[#FDE1E3] text-[#DD2B37] border-[#DD2B37] px-2 py-3 font-semibold text-start">
+            <div className="border-l-4 border mt-4 bg-[#FDE1E3] text-[#DD2B37] border-[#DD2B37] px-2 py-3 medium text-start">
               <span className=" ">Warning! You can not undo this action.</span>
             </div>
 
 
-            <div className="text-sm font-semibold mt-5 text-black">
+            <div className="text-sm medium mt-5 text-black">
               <span>PTCL Home Bill will be deleted permanently</span>
             </div>
 
@@ -204,7 +204,7 @@ export const ReportModels = ({ report, setReport,title}) => {
     >
       <div className="p-10">
 
-        <div className="text-center text-xl font-semibold text-[#377CF6] border-b pb-2">
+        <div className="text-center text-xl medium text-[#377CF6] border-b pb-2">
         {title}
         </div>
 
@@ -255,7 +255,7 @@ export const ReportModels = ({ report, setReport,title}) => {
 
         </div>
 
-        <div className="text-[#0083FF] font-semibold mt-5">
+        <div className="text-[#0083FF] medium mt-5">
           Select Date Range
         </div>
 
@@ -349,7 +349,7 @@ export const ChangePasswordModel = ({changePassword, setChangePassword}) =>{
         <div className="px-3">
 
         <div className="text-center">
-       <span className="font-semibold text-[#2D3945]">Your email is <span className="text-[var(--blue)]">saadhassan@gmail.com</span></span>
+       <span className="medium text-[#2D3945]">Your email is <span className="text-[var(--blue)]">saadhassan@gmail.com</span></span>
         </div>
 
         <div className="py-6 px-6">

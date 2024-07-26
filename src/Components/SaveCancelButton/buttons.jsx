@@ -13,7 +13,7 @@ export default function Buttons({
         {button1}
       </button>
       <button
-        className="bg-[#377CF6] text-white rounded-[2rem] px-10 py-3 font-semibold ml-3"
+        className="bg-[#377CF6] text-white rounded-[2rem] px-10 py-3 medium ml-3"
         onClick={onButton2Click}
       >
         {button2}

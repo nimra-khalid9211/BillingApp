@@ -72,12 +72,12 @@ export default function JazzEasypaisa({width}) {
             </div>
             <p className="mt-5">
               Didn't get a code?
-              <span className="text-[#377CF6] font-semibold">
+              <span className="text-[#377CF6] medium">
                 {" "}
                 Click to resend
               </span>
             </p>
-            {/* <button className="bg-[#24A959] text-white rounded-[2rem] px-10 py-3 font-semibold my-7">
+            {/* <button className="bg-[#24A959] text-white rounded-[2rem] px-10 py-3 medium my-7">
               Verify Account
             </button> */}
           </div>

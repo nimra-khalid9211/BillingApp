@@ -41,7 +41,7 @@ export default function AddPayment() {
         
         <div className="px-10 py-7 bg-white">
 
-          <div className="font-semibold text-lg mb-5 text-[#176ba3]">
+          <div className="medium text-lg mb-5 text-[#176ba3]">
             Select Payment Method:
           </div>
           

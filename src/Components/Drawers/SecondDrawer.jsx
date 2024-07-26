@@ -9,6 +9,8 @@ import PayMethodCard from '../CardsUI/PayMethodCard'
 import ChangeAccount from '../CardsUI/ChangeAccount/changeAccount'
 import { formatMobileNumber } from '../../Hooks'
 import OTPInput from 'react-otp-input'
+import { MdOutlineCheck } from 'react-icons/md'
+import { FaCircleCheck } from 'react-icons/fa6'
 
 const SecondDrawer = ({from, secondDrawer, setSecondDrawer, changeCard, setChangeCard}) => {
   // console.log(from);
@@ -94,7 +96,7 @@ export default SecondDrawer
 
 
 export const ChangeNumberDrawer = ({setChangeNumber, changeNumber}) =>{
-  const [newNumber, setNewNumber] = useState({number:"03"});
+  const [newNumber, setNewNumber] = useState({number:""});
   const [verify, setVerify] = useState(false);
   const [otp, setOtp] = useState('');
 
@@ -139,39 +141,41 @@ export const ChangeNumberDrawer = ({setChangeNumber, changeNumber}) =>{
         <img src={Cancel} alt="" />
       </div>
 
-      <DrawerCardLayout heading={"Current Number"} height={"150px"} >
+     {otp.length < 4 &&  <DrawerCardLayout heading={"Current Number"} height={"120px"} >
 
-        <div className='flex justify-center items-center h-full'>
+        <div className='flex justify-center pt-5'>
 
           <div className='w-60 rounded-xl bg-[#F2F2F2] border-[#6C7293] border text-center p-2'>
-            <span className='text-base font-semibold'>0302 1100888</span>
+            <span className='text-base medium'>0302 1100888</span>
+            <span></span>
           </div>
 
         </div>
 
-      </DrawerCardLayout>
+      </DrawerCardLayout>}
 
-      <DrawerCardLayout heading={"Enter New Number"} height={"250px"} >
+     <DrawerCardLayout heading={"Enter New Number"} height={"250px"} >
 
-        <div className='flex justify-center flex-col items-center gap-5 h-full'>
+        <div className='flex flex-col items-center gap-5 pt-5'>
 
-        <input  name="number" className='w-60 rounded-xl border-[#6C7293] border text-center p-2 text-base font-semibold'
+        <input  name="number" 
+        className={`w-60 rounded-xl border-[#6C7293] border text-center p-2 text-base medium ${otp.length === 4 && "bg-[#F2F2F2]"}`}
         value={newNumber.number} onChange={changeHandler}  />
         
-        {!verify ? 
+        { otp.length < 4 ?  !verify ? 
         <span role='button' className='underline text-sm text-[#329DFF]' 
         onClick={()=>setVerify(true)}>Verify Now</span>
         
         :
 
         <div>
-           <OTPInput
+           <OTPInput className=''
       value={otp}
       onChange={setOtp}
       numInputs={4}
       renderSeparator={<span className="px-1"> </span>}
       renderInput={(props) => <input {...props} 
-      className={`border-2 text-center drop-shadow-lg border-[#176BA3]  text-[3xl] text-[#176BA3] rounded-lg`}
+      className={`border-2 text-center drop-shadow-lg border-[#176BA3]  text-3xl text-[#176BA3] rounded-lg`}
        style={{
         width: '50px',
         height: "50px",
@@ -184,7 +188,15 @@ export const ChangeNumberDrawer = ({setChangeNumber, changeNumber}) =>{
 
         </div>
       
-      }
+     :
+     <div className='text-[#24A959] medium text-sm flex items-center gap-2'>
+      
+      <span><FaCircleCheck size={20}/></span>
+      
+      <span>Number verified</span>
+      
+      </div>
+     }
 
         </div>
 

@@ -11,7 +11,7 @@ export default function ViewNotification() {
           <div className="flex items-center">
             <div>{x.icon}</div>
             <div className="ml-5 text-xs">
-              <span className="text-[#176BA3] font-semibold">
+              <span className="text-[#176BA3] medium">
                 {x.billName} &nbsp;
               </span>
               <span>{x.title}</span>

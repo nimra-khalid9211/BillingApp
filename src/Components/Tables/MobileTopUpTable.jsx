@@ -69,10 +69,6 @@ export default function MobileTopUpTable() {
 
               <td className="px-10 py-4 flex justify-center items-center gap-3">
 
-                  {/* <div className="p-2 rounded-lg bg-[#DBF0FF]">
-                    <FaEdit size={15} color="#377CF6" />
-                  </div> */}
-
                   <div className="p-2 rounded-lg bg-[#FFD5DF]">
                     <RiDeleteBin5Line size={15} color="#F1416C" />
                   </div>
