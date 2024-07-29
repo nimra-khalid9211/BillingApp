@@ -13,7 +13,10 @@ const Settings = () => {
  return (
         <>
 
-        <BreadCrumbs icon = {blueSetting } menu={"Settings"}/>
+        <BreadCrumbs icon = {blueSetting } menu={"Settings"} link={"/settings"} 
+        subMenu={
+          settingMenu === 1 ? "Security": settingMenu === 2 ? "Notification"  : ""
+        }/>
 
         <div>
         <Button

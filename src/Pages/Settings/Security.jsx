@@ -7,6 +7,7 @@ import { RxCross2 } from 'react-icons/rx'
 import { GoCheck } from 'react-icons/go'
 import { ChangePasswordModel } from '../../Components/Modals/index.jsx'
 import { ChangeNumberDrawer } from '../../Components/Drawers/SecondDrawer.jsx'
+import ToggleButton from '../../UI/ToggleButton/index.jsx'
 
 
 const Security = () => {
@@ -43,20 +44,18 @@ const Security = () => {
     {
       heading: "2 Step Verification",
       subHeading: "Making your account extra secure. Along with your password, you'll need to enter a code.",
-      action: <Switch className="drop-shadow-xl" checkedChildren={<GoCheck size={15}/>} 
-      unCheckedChildren={<RxCross2 size={14}/>} defaultChecked={true} size="small"/>
+      action: <ToggleButton />
     },
     {
       heading: "Show Calendar in Navigation Bar",
       subHeading: "Enable / Disable Calendar in Navigation Bar.",
-      action: <Switch className="drop-shadow-xl" checkedChildren={<GoCheck size={15}/>} 
-      unCheckedChildren={<RxCross2 size={14}/>} defaultChecked={true} size="small"/> 
+      action: <ToggleButton />
     },
   ]
 
   return ( 
    
-    <CardLayout title={"Security"}> 
+    <CardLayout title={"Security"} height={"h-[40rem]"}> 
  
       {security.map((x, index)=>(
         <>
@@ -64,16 +63,16 @@ const Security = () => {
             <div className='h-24 grid grid-cols-4 justify-items-start content-center medium'>
 
               <div className='flex flex-col justify-start'>
-                <span className='text-base'>{x.heading}</span>
+                <span className='text-base medium'>{x.heading}</span>
                 <span className='font-normal text-[#6C7293]'>{x.subHeading}</span>
               </div>
 
              {x.email && <div className='flex items-center justify-self-center'>
-                <span className='text-sm'>{x.email}</span>
+                <span className='text-sm  medium'>{x.email}</span>
               </div>}
 
               {x.phone && <div className='flex items-center justify-self-center'>
-                <span className='text-sm'>{x.phone}</span>
+                <span className='text-sm  medium'>{x.phone}</span>
               </div>}
 
               {x.verfied && <div className='flex items-center justify-self-center'>

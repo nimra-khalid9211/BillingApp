@@ -9,10 +9,11 @@ const Notifications = () => {
     console.log('radio checked', e.target.value);
     setValue(e.target.value);
   };
+
   return (
-    <CardLayout title={"Notifications"}> 
+    <CardLayout title={"Notifications"} height={"h-[36rem]"}> 
     
-    <div className='flex justify-around'>
+    <div className='flex justify-around mt-10'>
 
       <span className='text-base font-medium'>Notification Preferences</span>
 

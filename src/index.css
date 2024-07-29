@@ -127,6 +127,10 @@ input[type="number"] {
   color: black;
 }
 
+.ant-divider-horizontal .custom-margin{
+  margin-top: 10rem !important;
+}
+
 .ant-drawer .ant-drawer-body {
   padding: 0 24px;
 }
@@ -735,4 +739,32 @@ input[type="number"] {
 
 .opt-active:active{
     border-color: var(--blue) !important;
+}
+
+
+.custom-gradient-box {
+  background: linear-gradient(135deg, #86FF53 20%, #46962F 100%) no-repeat padding-box;
+  background-clip: padding-box;
+}
+
+.custom-gradient-box2 {
+  background: linear-gradient(135deg, #015C8C 20%, #303E4D 100%) no-repeat padding-box;
+  background-clip: padding-box;
+}
+
+
+.triangle-right {
+	width: 0;
+	height: 0px;
+	border-top: 0px solid transparent;
+	border-left: 70px solid #DBF0FF;
+	border-bottom: 60px solid transparent;
+}
+
+.triangle-right2 {
+  width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-right: 70px solid #feeef2;
+	border-bottom: 60px solid transparent;
 }

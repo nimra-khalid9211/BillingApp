@@ -63,7 +63,7 @@ const border = "border-r border-dashed border-[#d9d9d9]"
 
 
 
-const TicketTable = () => {
+const TicketTable = ({setTicket}) => {
   return (
     <div className='mt-4'>
 
@@ -92,7 +92,7 @@ const TicketTable = () => {
                         
                         <td className={`text-center ${border}`}>
                           <div className='flex items-center justify-center'>
-                          <span className={`border py-1 px-5 cursor-pointer rounded-full ${x.status ? "text-[#24A959] border-[#24A959] hover:text-green-500 hover:border-green-500" : "border-[#6C7293] text-[#6C7293]"}`}>
+                          <span className={`border py-1 px-5 rounded-full ${x.status ? "text-[#24A959] border-[#24A959] hover:text-green-500 hover:border-green-500" : "border-[#6C7293] text-[#6C7293]"}`}>
                           {x.status ? "Open" : "Close"}
                           </span>
                           </div>
@@ -101,7 +101,8 @@ const TicketTable = () => {
                         <td className='flex justify-center mt-2'>
                         
                         <div className="p-2 border-0 bg-[#DBF0FF] rounded-lg w-9">
-                        <IoMdEye size={20} className="text-[#377CF6] hover:text-[var(--blue)] cursor-pointer" />
+                        <IoMdEye size={20} onClick={()=>setTicket(3)}
+                        className="text-[#377CF6] hover:text-[var(--blue)] cursor-pointer" />
                         </div>
                        
                         </td>

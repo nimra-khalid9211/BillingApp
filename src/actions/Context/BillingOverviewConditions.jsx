@@ -19,7 +19,9 @@ export const BillingConditionProvider = ({children})=>{
      const [settingMenu, setSettingMenu] = useState(1)
      const [dropdown, setDropdown] = useState(false);
      const [selectedBills, setSelectedBills] = useState([]);
-  const [from, setFrom] = useState();
+     const [from, setFrom] = useState();
+     const [support, setSupport] = useState(0)
+
 
   const [editData, setEditData] = useState();
 
@@ -30,7 +32,8 @@ export const BillingConditionProvider = ({children})=>{
         <BillingCondition.Provider value={{tab,setTab, dropdown,
          checkVerfication, setDropdown, bills, setBills, addBill, setBillingMenu, billingMenu, from, setFrom, 
           setAddBill,paymentType,setPaymentType,checkShown,setCheckShown, setTransactions, transactions,
-          setHelpMenu, editData, setEditData, helpMenu, setSettingMenu, settingMenu,selectedBills,setSelectedBills
+          setHelpMenu, editData, setEditData, helpMenu, setSettingMenu, settingMenu,selectedBills,setSelectedBills,
+          support, setSupport
           }}>
 
             {children}

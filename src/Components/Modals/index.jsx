@@ -6,6 +6,7 @@ import { TextField } from "@mui/material";
 import { BlueButton, LargeButtons, WhiteButton } from "../../UI/Buttons";
 import { useNavigate } from "react-router-dom";
 import OTPInput from "react-otp-input";
+import { ticket } from "../../assets/image";
 
 export const ViewReceiptModal = ({ setOpenModal, openModal, id, from }) => {
   const bill = MyBillList.find((bill) => bill.id === id);
@@ -387,6 +388,52 @@ export const ChangePasswordModel = ({changePassword, setChangePassword}) =>{
         </div>
 
         </div>
+
+    </Modal>
+  )
+}
+
+
+export const TicketModel = ({successModel, setSuccessModel, setTicket, setSupport}) => {
+
+  return (
+    <Modal
+    centered
+    open={successModel}
+    footer={null}
+    width={500}
+    onCancel={() => setSuccessModel(false)}
+    className={'report-modal no-overfow-y'}
+  >
+
+    <div className="flex flex-col justify-center items-center">
+    
+    <div className="w-[25rem]">
+
+    <div className="mt-10 flex justify-center">
+    <img src={ticket} alt="" width={400}/>
+    </div>
+
+    <div className="flex flex-col justify-center items-center">
+      <span className="text-lg medium">Your inquiry has been</span>
+      <span className="text-2xl medium text-[var(--blue)]">Successfully Submitted</span>
+    </div>
+
+    <div className="my-10">
+      <span className="text-sm">
+      It is a long established fact that a reader will be distracted by the readable content
+      of a page when looking at its layout.
+      </span>
+    </div>
+
+    <div className="flex justify-center mb-10">
+      <BlueButton title={"View Ticket"} customClass={"hover-color"} clickEvent={()=>{setSuccessModel(false); setTicket(1); setSupport(0)}}/> 
+    </div>
+
+    </div>
+
+      </div>   
+    
 
     </Modal>
   )

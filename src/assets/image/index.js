@@ -73,8 +73,16 @@ import bank from "./bank.png"
 import help from './Help.png'
 import basket from './basket.png'
 import list from './list.png'
+import ticket from './ticket.png'
+import sender from './sender.png'
+import receiver from './receiver.png'
+import profile from './profile.webp'
 
 export {
+  profile,
+  sender,
+  receiver,
+  ticket,
   basket,
   list,
   help,
