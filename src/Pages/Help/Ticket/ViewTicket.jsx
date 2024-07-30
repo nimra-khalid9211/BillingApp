@@ -1,10 +1,37 @@
+import { Card, Input } from 'antd'
 import React from 'react'
+import { BsSend } from 'react-icons/bs';
+import { SlPicture } from 'react-icons/sl';
+import { VscSend } from 'react-icons/vsc';
+
+const {TextArea} = Input;
+
+
+// add logic if ticket is closed then display still having 
+// issues and if ticket is open then mark as resolved
+
+const messages = [
+  {
+    sender: "user",
+    text: "Bill paying problem"
+  },
+  {
+    sender: "admin",
+    text: "Thank you for letting us know"
+  },
+  {
+    sender: "admin",
+    text: "We'll solve this problem asap"
+  },
+]
+
 
 const ViewTicket = () => {
   return (
-    <div className='mx-7 my-10'>
 
-    <div className='border-2 border-[var(--blue)] p-8 rounded-3xl flex justify-between items-center'>
+    <div className='mx-7 my-10' style={{minHeight: "60vh"}}>
+
+    {/* <div className='border-2 border-[var(--blue)] p-8 rounded-3xl flex justify-between items-center'>
       
         <div className='flex flex-col w-1/2'>
 
@@ -28,113 +55,69 @@ const ViewTicket = () => {
             <span className='medium'>Still having Issues?</span>
         </div>
 
-    </div>
+        
 
-    <div className='grid grid-cols-5 my-10'>
+    </div> */}
+        
+    <div className='my-10'>
 
-            <div className='col-span-4 relative '>
+           {messages.map((x, index)=> 
 
-            <div className='absolute right-0 top-7'>
-                
-            <div className="triangle-right"></div>
+           <div key={index} className={`flex ${x.sender === "user" ? "justify-end" : "justify-start"} mx-2`}>
+              
+                <div className={`${x.sender === "user" ? "bg-[var(--blue)] text-white rounded-tl-xl" : "bg-[#f1f6fa] text-[#8288a4] rounded-tr-xl" } mt-5 w-1/2 p-3 rounded-b-xl`}>
+                  {x.text}
 
-            </div>
+                  <div className='text-[10px] text-end'>
+                  12:52PM
+                 </div>
 
-            <div className='bg-[#DBF0FF] text-[#4C6580] mt-7 p-5 px-10' style={{width: "95%"}}>
-
-            <p className='text-xl '>05 Days - 3 Hours (Friday, 6 June 2022, 6:25 AM)</p>
-            
-           <div className='text-base my-8'>
-            <p className='mb-8'>Hey Team, </p>
-
-            <p>There are employees who turn in late timesheets and this can be a challenging 
-                problem for employers as well. Sadly, it is then obligation of the employer 
-                to pay employees on the agreed payday even without a submitted timesheet. </p>
-
-            <p className='my-8'>There is no law that allows an employer to withhold payment due to missing timesheets.   
-                
-            <p>A practical way to manage this issue is to have defined policies and procedures for
-               reporting hours worked.</p></p> 
-
-            <p>Educating your employees on the expectancy for completing the timesheets on time is key
-               to ensuring that you are abiding by wage payment requirements. </p>
-                          
-            <p className='my-8'>You should treat this policy as a disciplinary measure if the behavior continues. 
-               Withholding the paycheck to gain compliance may subject the firm to potential claims
-               for unpaid wages.</p>          
-
-            <p>To prevent this issue, you can upgrade your timekeeping to an automated time 
-               tracking system.</p>  
-               </div>
-
-               </div>
+                </div>
 
             </div>
 
-            <div className='col-span-1 pt-10 self-center justify-self-center'>
-                    <div className='size-48 flex justify-center items-center text-6xl text-white rounded-full custom-gradient-box'>
-                        NA
-                    </div>
+            )}
+        
+      <div className='mt-5'>
 
-                    <div className='mt-4 text-xl text-center flex justify-center text-[#6C7293]'>
-                      <span className='w-12'> Naeem Afzal </span> 
-                        </div>
-            </div>
+        <Card className='fixed bottom-10 rounded-3xl' style={{width: "79%"}}>
 
-            <div className='col-span-1 pt-10 self-center justify-self-center'>
-        <div className='size-48 flex justify-center items-center text-6xl text-white rounded-full custom-gradient-box2'>
-            NA
-        </div>
+          <div className='py-3 px-5 bg-[#f6f8fa] rounded-t-3xl'>
 
-        <div className='mt-4 text-xl text-center flex justify-center text-[#6C7293]'>
-          <span className='w-12'> Naeem Afzal </span> 
-            </div>
-            </div>
+          <div className=' flex justify-between items-center w-48'>
 
-      <div className='col-span-4 relative'>
+          <div>
 
-        <div className='absolute left-0 top-7'>
-            <div className='triangle-right2'></div>
-        </div>
+          <label htmlFor='uploadFile' className='flex items-center gap-2 pl-3 hover:text-[var(--blue)]'>  
+          <SlPicture /> Upload File</label>
 
-        <div className='flex justify-end'>
+          <input type="file" hidden id='uploadFile' />
 
-        <div className='bg-[#feeef2] text-[#4C6580] mt-7 p-5 px-10' style={{width: "95%"}}>
+          </div>
 
-            <p className='text-xl '>05 Days - 3 Hours (Friday, 6 June 2022, 6:25 AM)</p>
-            
-           <div className='text-base my-8'>
-            <p className='mb-8'>Hey Team, </p>
+          </div> 
 
-            <p>There are employees who turn in late timesheets and this can be a challenging 
-                problem for employers as well. Sadly, it is then obligation of the employer 
-                to pay employees on the agreed payday even without a submitted timesheet. </p>
+          </div>
 
-            <p className='my-8'>There is no law that allows an employer to withhold payment due to missing timesheets.   
-                
-            <p>A practical way to manage this issue is to have defined policies and procedures for
-               reporting hours worked.</p></p> 
+          <div className='relative'>
+            <TextArea autoSize={{ minRows: 5, maxRows: 8 }}className='px-5' placeholder='Type message here...'/>
 
-            <p>Educating your employees on the expectancy for completing the timesheets on time is key
-               to ensuring that you are abiding by wage payment requirements. </p>
-                          
-            <p className='my-8'>You should treat this policy as a disciplinary measure if the behavior continues. 
-               Withholding the paycheck to gain compliance may subject the firm to potential claims
-               for unpaid wages.</p>          
+              <div className='absolute bottom-2 right-3'>
+                <div className='p-3 bg-[#f6f8fa] text-[var(--blue)] rounded-full'>
+                <VscSend size={20} />
+                </div>
+              </div>
 
-            <p>To prevent this issue, you can upgrade your timekeeping to an automated time 
-               tracking system.</p>  
-               </div>
+          </div>
 
-               </div>
-
-        </div>
+        </Card>
 
       </div>
 
     </div>
-
+            
     </div>
+
   )
 }
 

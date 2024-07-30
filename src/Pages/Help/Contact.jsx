@@ -47,7 +47,7 @@ const Contact = () => {
 
                
                <div className='ml-10 flex items-center text-[#192440] mt-2'>
-                    <span className='text-base w-32'>Billing Query &nbsp;</span>
+                    <span className='text-base w-32'>Billing &nbsp;</span>
                    <span className='bg-[#F2F2F2] rounded-xl py-2 px-4'>billing-query@bpay.com</span>
                </div>
 

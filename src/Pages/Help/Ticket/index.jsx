@@ -15,7 +15,7 @@ const Ticket = () => {
 
     const [ticket, setTicket] = useState(1);
     const {support, setSupport} = _BillingCondition();
-  const [successModel, setSuccessModel] = useState(false);
+    const [successModel, setSuccessModel] = useState(false);
 
   return (
 
@@ -28,7 +28,27 @@ const Ticket = () => {
     title={
       ticket === 1 ? "Tickets" :
       ticket === 2 ? "Create Ticket" : 
-      ticket === 3 ? "View Ticket" : 
+      ticket === 3 ? 
+      <div className='flex justify-between items-center w-4/5'>
+
+      <div>
+      <span className='text-xs text-[#8d92ab]'>Subject:</span> <span className='w-60 truncate text-sm text-black'>Bill Management Module Giving Error</span>
+      </div>
+        
+        <div>
+        <span className='text-xs text-[#8d92ab]'>Dept:</span> <span className='text-sm text-black'>Technical Support </span>
+        </div>
+
+        <div>
+        <span className='text-xs text-[#8d92ab]'>Ticket ID:</span> <span className='text-sm text-black'>#302-02</span>
+        </div>
+
+          <div>
+          <span className='border px-4 py-1 text-sm rounded-lg text-[#6c7293] border-[#6c7293]'>Open</span>
+          </div>
+        
+      </div> 
+      : 
       ""
     }
     >
